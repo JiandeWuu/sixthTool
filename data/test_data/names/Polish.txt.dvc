@@ -1,0 +1,5 @@
+outs:
+- md5: 71aca5ee180890e83daeae1b01429dc0
+  size: 1165
+  path: Polish.txt
+  isexec: true

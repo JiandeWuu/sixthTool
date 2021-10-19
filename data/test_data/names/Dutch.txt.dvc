@@ -1,0 +1,5 @@
+outs:
+- md5: 6ab7bbaf044b499721053f90e0773c5e
+  size: 2351
+  path: Dutch.txt
+  isexec: true

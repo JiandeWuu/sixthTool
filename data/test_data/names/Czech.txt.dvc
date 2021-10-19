@@ -1,0 +1,5 @@
+outs:
+- md5: a35a6c5b756b50dd188d6d52f3251d88
+  size: 3919
+  path: Czech.txt
+  isexec: true

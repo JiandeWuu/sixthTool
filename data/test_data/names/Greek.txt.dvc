@@ -1,0 +1,5 @@
+outs:
+- md5: 2edefe72c04ef0dafcc08080a06e71fc
+  size: 1981
+  path: Greek.txt
+  isexec: true

@@ -1,0 +1,5 @@
+outs:
+- md5: 80327fae66e0ac14495bc0f62fc0c63f
+  size: 5657
+  path: Italian.txt
+  isexec: true

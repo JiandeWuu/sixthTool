@@ -1,0 +1,5 @@
+outs:
+- md5: 1c081f30420eb147fb747a90e3d2a7af
+  size: 339
+  path: Vietnamese.txt
+  isexec: true
