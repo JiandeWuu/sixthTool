@@ -1,9 +1,5 @@
-import time
 import torch
-import torch.autograd as autograd
-import torch.nn as nn
 import torch.optim as optim
-import torch.utils.data as Data
 
 # import process_data_th
 import BilstmCrfStringBatch
