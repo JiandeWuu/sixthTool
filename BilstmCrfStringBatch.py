@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-import sys
 import time
 
 import torch
 import torch.nn as nn
-import torch.jit as Tensor
-from typing import List, Tuple, Dict, AnyStr
+from typing import List, Dict
+
 def log_sum_exp(vec):
     max_score = vec[0, argmax(vec)]
     max_score_broadcast = max_score.view(1, -1).expand(1, vec.size()[1])
