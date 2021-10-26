@@ -1,0 +1,4 @@
+outs:
+- md5: 6228fbaaa1df7fc479c51698c1aa29f9
+  size: 540120837
+  path: human_RNA_sequence.txt

@@ -1,0 +1,4 @@
+outs:
+- md5: 3adb00b7265693f63adc3995fbb50fb9
+  size: 393783
+  path: all_miRNA_sequence.txt
