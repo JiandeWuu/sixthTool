@@ -1,0 +1,4 @@
+outs:
+- md5: 15fac4667adc8ec168bd5b87005d6693
+  size: 540120811
+  path: human_RNA_sequence_sub.fasta
