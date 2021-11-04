@@ -1,0 +1,4 @@
+outs:
+- md5: 21137f6df1b53ec0315ee2568df5b8d2
+  size: 303121
+  path: human_RNA_sequence_sub_cdhit80.clstr
