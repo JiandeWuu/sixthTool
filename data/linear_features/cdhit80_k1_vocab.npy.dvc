@@ -1,0 +1,4 @@
+outs:
+- md5: 65d6c91a0f3275eeba61f95a7ccc844a
+  size: 144
+  path: cdhit80_k1_vocab.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 5ab8626548711b3d1da2727f06758174
+  size: 114130
+  path: k2_logfile.txt

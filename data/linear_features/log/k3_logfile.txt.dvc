@@ -1,0 +1,4 @@
+outs:
+- md5: a0e57e8db92130cc8bd4c8e52934a084
+  size: 114227
+  path: k3_logfile.txt

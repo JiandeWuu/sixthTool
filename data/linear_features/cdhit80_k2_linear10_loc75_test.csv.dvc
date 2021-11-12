@@ -1,0 +1,4 @@
+outs:
+- md5: df861ba3d142b3f691bfdddb860daf25
+  size: 2409876
+  path: cdhit80_k2_linear10_loc75_test.csv

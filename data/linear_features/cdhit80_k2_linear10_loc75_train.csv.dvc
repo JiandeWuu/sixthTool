@@ -1,0 +1,4 @@
+outs:
+- md5: 35f5fcef953f850bece4119d33b21b21
+  size: 9634958
+  path: cdhit80_k2_linear10_loc75_train.csv
