@@ -1,0 +1,4 @@
+outs:
+- md5: 97176cc2eb755ff20316c00518e428cf
+  size: 2356
+  path: test_svm.pickle

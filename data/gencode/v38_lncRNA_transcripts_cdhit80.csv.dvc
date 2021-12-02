@@ -1,0 +1,4 @@
+outs:
+- md5: 6415f0c1d22bd7229cf5fb4e3fc39795
+  size: 45331409
+  path: v38_lncRNA_transcripts_cdhit80.csv

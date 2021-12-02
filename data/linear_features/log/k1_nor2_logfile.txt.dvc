@@ -1,0 +1,4 @@
+outs:
+- md5: b30355e0b415cb599e346f7213bb5acc
+  size: 114135
+  path: k1_nor2_logfile.txt

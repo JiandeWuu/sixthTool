@@ -1,0 +1,4 @@
+outs:
+- md5: 0290de12e05e818a69dcf35c470d090e
+  size: 22
+  path: dle_linear_score_logfile_1.txt

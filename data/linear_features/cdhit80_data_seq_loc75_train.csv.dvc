@@ -1,0 +1,4 @@
+outs:
+- md5: 9200ebd3a8763fea8cd330aa6d789604
+  size: 4708763
+  path: cdhit80_data_seq_loc75_train.csv

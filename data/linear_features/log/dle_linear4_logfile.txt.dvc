@@ -1,0 +1,4 @@
+outs:
+- md5: 270dd0609a1dfcf3fa324aebb95a8b28
+  size: 590
+  path: dle_linear4_logfile.txt

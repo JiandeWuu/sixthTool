@@ -1,0 +1,4 @@
+outs:
+- md5: 58c0383932d11b47980275d47ac703b2
+  size: 856192
+  path: k1_power10.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: e47464e1d8cd1e071776ea0a5c5e5d51
+  size: 11356
+  path: dle_score_logfile.txt

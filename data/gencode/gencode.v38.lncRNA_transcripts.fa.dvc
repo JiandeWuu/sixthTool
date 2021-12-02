@@ -1,0 +1,4 @@
+outs:
+- md5: 04935e649eb9cf9191f414bbbe0433b5
+  size: 71293535
+  path: gencode.v38.lncRNA_transcripts.fa

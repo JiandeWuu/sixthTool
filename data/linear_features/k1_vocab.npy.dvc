@@ -1,0 +1,4 @@
+outs:
+- md5: 94e79e7efae8878ce922e6fabbb4902c
+  size: 144
+  path: k1_vocab.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 630d201cbe1027b88538b7a86aab3bde
+  size: 13697152
+  path: k3_power10.npy
