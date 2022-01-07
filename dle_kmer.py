@@ -17,7 +17,7 @@ def k_mers(data, n):
     vocab = build_vocab(kmer_array)
     return kmer_array, vocab
 
-data = pd.read_csv("data/linear_features/cdhit80_data_seq_loc75_train.csv")
+data = pd.read_csv("data/linear_features/cdhit80_data_seq_loc75_test.csv")
 
 k_array = [1, 2, 3, 4]
 
@@ -47,5 +47,5 @@ for k in k_array:
         linear_data = np.array(linear_data)
         features_data.append(linear_data.tolist())
     
-    with open("data/linear_features/kmer_d/k" + str(k), 'wb') as f:
+    with open("data/linear_features/kmer_d/test/k" + str(k), 'wb') as f:
         pickle.dump(features_data, f)

@@ -3,7 +3,7 @@ import pickle
 
 import numpy as np
 
-k_array = [4]
+k_array = [1, 2, 3, 4]
 power_array = [4, 6, 8, 10]
 nor_array = [0, 1, 2, 3]
 
