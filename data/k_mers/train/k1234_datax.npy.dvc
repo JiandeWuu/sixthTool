@@ -1,0 +1,4 @@
+outs:
+- md5: d32989e81bfd43e76db2049d68ce8bcc
+  size: 6615168
+  path: k1234_datax.npy

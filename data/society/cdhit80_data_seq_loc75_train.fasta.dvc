@@ -1,0 +1,4 @@
+outs:
+- md5: a63b0e001d5adabe08b263760388e569
+  size: 4686758
+  path: cdhit80_data_seq_loc75_train.fasta

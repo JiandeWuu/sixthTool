@@ -1,0 +1,4 @@
+outs:
+- md5: 03d739f70eb9f5e16bcd48b40ac1942a
+  size: 119037
+  path: cdhit80_data_seq_loc75_aucg_MAC.csv

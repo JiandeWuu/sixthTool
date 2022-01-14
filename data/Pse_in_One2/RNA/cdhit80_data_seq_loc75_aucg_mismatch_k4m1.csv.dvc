@@ -1,0 +1,4 @@
+outs:
+- md5: de99c08c316b8de5d0fe7e400a2f723a
+  size: 4162161
+  path: cdhit80_data_seq_loc75_aucg_mismatch_k4m1.csv

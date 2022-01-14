@@ -1,0 +1,4 @@
+outs:
+- md5: 627ea61f92fa0fe3fbae8031e234b75d
+  size: 12950819
+  path: kmers_train_f10s200.txt

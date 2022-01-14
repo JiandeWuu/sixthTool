@@ -1,0 +1,4 @@
+outs:
+- md5: 5790d24eba3331df231f70cb5354bdd6
+  size: 478945
+  path: cdhit80_data_seq_loc75_train_PCPseDNCGeneral_all_index.csv

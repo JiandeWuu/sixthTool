@@ -1,0 +1,4 @@
+outs:
+- md5: ddf63f390d720f3d4d110d5b49c0e479
+  size: 15051755
+  path: linear_point_f10s10.txt

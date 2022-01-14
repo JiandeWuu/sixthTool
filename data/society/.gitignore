@@ -11,3 +11,7 @@
 /cdhit80_merge.csv
 /cdhit80_data.csv
 /cdhit80_data_seq.csv
+/cdhit80_data_seq_loc75.fasta
+/cdhit80_data_seq_loc75_aucg.fasta
+/cdhit80_data_seq_loc75_train.fasta
+/cdhit80_data_seq_loc75_test.fasta

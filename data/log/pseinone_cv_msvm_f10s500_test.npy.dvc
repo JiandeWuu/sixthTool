@@ -1,0 +1,4 @@
+outs:
+- md5: b3a7e84d99cb2805eaced2f99e3fec79
+  size: 688
+  path: pseinone_cv_msvm_f10s500_test.npy

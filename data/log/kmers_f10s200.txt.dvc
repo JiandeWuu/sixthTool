@@ -1,0 +1,4 @@
+outs:
+- md5: 832cf5d132f5952222ab37f24b99fea7
+  size: 13270172
+  path: kmers_f10s200.txt

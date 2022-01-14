@@ -1,0 +1,4 @@
+outs:
+- md5: b8e5249e78882e722a8a53d2d1191026
+  size: 6409808
+  path: cdhit80_data_seq_loc75_train_PseKNC_k4.csv

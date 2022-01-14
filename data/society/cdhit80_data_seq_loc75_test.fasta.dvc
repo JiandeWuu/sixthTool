@@ -1,0 +1,4 @@
+outs:
+- md5: 3cb4bf2f945d0e3647d06946c6f27af2
+  size: 1209185
+  path: cdhit80_data_seq_loc75_test.fasta

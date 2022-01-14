@@ -1,0 +1,4 @@
+outs:
+- md5: f1200a58597b2b3c62c374fbbbc07789
+  size: 2166
+  path: dle_linear_test.txt

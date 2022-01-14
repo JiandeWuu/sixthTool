@@ -1,0 +1,4 @@
+outs:
+- md5: 8af6748003b84cb03eee5d0b11fb9eaf
+  size: 24448
+  path: data_len.npy

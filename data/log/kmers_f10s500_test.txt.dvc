@@ -1,0 +1,4 @@
+outs:
+- md5: 9ec97b191879127a3a7537edfb415c6f
+  size: 20469925
+  path: kmers_f10s500_test.txt

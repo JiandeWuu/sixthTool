@@ -11,7 +11,7 @@ num_array = [1, 2, 3, 5, 8, 10]
 for k in k_array:
     for power in power_array:
         for nor in nor_array:
-            kmer_linear_density = np.load("data/linear_features/linear/k" + str(k) + "p" + str(power) + "nor" + str(nor) + ".npy")
+            kmer_linear_density = np.load("data/linear_features/linear/train/k" + str(k) + "p" + str(power) + "nor" + str(nor) + ".npy")
             for num in num_array:
                 print("k=%s, nor=%s, num=%s" % (k, nor, num))
 
@@ -29,4 +29,4 @@ for k in k_array:
                     token_data = np.array([token_data])
                     data_x = token_data if data_x is None else np.append(data_x, token_data, axis=0)
                 print(data_x.shape)
-                np.save("data/linear_features/point/k" + str(k) + "p" + str(power) + "nor" + str(nor) + "n" + str(num), data_x)
+                np.save("data/linear_features/point/train/k" + str(k) + "p" + str(power) + "nor" + str(nor) + "n" + str(num), data_x)

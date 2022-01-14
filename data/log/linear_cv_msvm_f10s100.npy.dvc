@@ -1,0 +1,4 @@
+outs:
+- md5: c0354e2095175520d1afb161b41826ef
+  size: 11072
+  path: linear_cv_msvm_f10s100.npy

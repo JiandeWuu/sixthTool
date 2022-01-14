@@ -1,0 +1,4 @@
+outs:
+- md5: 6b5635871775a2abfdbefc0b1c2d2509
+  size: 7616
+  path: pseinone_dna_cv_msvm_f10s500.npy

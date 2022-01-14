@@ -1,0 +1,4 @@
+outs:
+- md5: 4c2856f97fe9638ee9df7ea00624563f
+  size: 992
+  path: kmers_cv_msvm_f10s200.npy

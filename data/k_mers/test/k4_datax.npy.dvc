@@ -1,0 +1,4 @@
+outs:
+- md5: c715192439d109b159616f2aeac8e343
+  size: 1245312
+  path: k4_datax.npy

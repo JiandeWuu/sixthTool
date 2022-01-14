@@ -165,8 +165,8 @@ def cv_msvm_score(x, y, folder, size=15, parameter=""):
     return score_array
 
 
-dir_path = "data/Pse_in_One2/DNA/train/"
-# dir_path = "data/k_mers/"
+# dir_path = "data/Pse_in_One2/DNA/train/"
+dir_path = "data/k_mers/train/"
 # dir_path = "data/linear_features/linear/"
 onlyfiles = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
@@ -175,19 +175,19 @@ data_y = np.load("data/data_y_train.npy")
 log_array = []
 start_time = time.time()
 for file_name in onlyfiles:
-    if file_name.split(".")[-1] == "csv":
+    if file_name.split(".")[-1] == "npy":
         file_time = time.time()
         
-        data_x = np.genfromtxt(dir_path + file_name, delimiter=',')
-        # data_x = np.load(dir_path + file_name)
+        # data_x = np.genfromtxt(dir_path + file_name, delimiter=',')
+        data_x = np.load(dir_path + file_name)
         # data_x = data_x.reshape(data_x.shape[0],-1)
 
         if data_x.shape[1] < 400:
-            score_array = cv_msvm_score(data_x, data_y, 10, size=100, parameter="")
+            score_array = cv_msvm_score(data_x, data_y, 10, size=500, parameter="")
             cv_msvm_auroc = sum(score_array) / len(score_array)
             
             log_array.append([file_name, data_x.shape[1], time.time() - file_time, cv_msvm_auroc])
             print("file name=%s, time=%.2f" % (file_name, time.time() - file_time))
 
 print(log_array)
-np.save("data/log/pseinone_train_cv_msvm_f10s100.npy", np.array(log_array))
+np.save("data/log/kmers_train_cv_msvm_f10s500.npy", np.array(log_array))

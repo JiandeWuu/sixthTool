@@ -1,0 +1,4 @@
+outs:
+- md5: 5779b35002ee205ceda90bf2da42a8d5
+  size: 119760
+  path: cdhit80_data_seq_loc75_test_PCPseDNCGeneral_all_index.csv
