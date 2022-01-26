@@ -1,0 +1,4 @@
+outs:
+- md5: a11671525c9c8742eb8d2e7ea1075e82
+  size: 17877
+  path: kmers_cv_msvm_s1t0_f10s10.txt

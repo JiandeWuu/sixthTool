@@ -1,0 +1,4 @@
+outs:
+- md5: 5833ab88d8f240bdae87c5ce0170dcdf
+  size: 128
+  path: kmers_train_cv_msvm_s1t0_f10s500.npy

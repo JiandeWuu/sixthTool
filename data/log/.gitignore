@@ -68,3 +68,13 @@
 /kmers_train_cv_msvm_f10s500.npy
 /dle_point_train.txt
 /dle_point_test.txt
+/kmers_cv_msvm_s1t0_f10s1.txt
+/kmers_cv_msvm_s1t0_f10s10.txt
+/cluster_ensemble_svm_f10s3000.txt
+/cluster_ensemble_svm_f10s2000.txt
+/cluster_ensemble_svm_f10s1000.txt
+/cluster_ensemble_svm_f10s10000.txt
+/cluster_ensemble_svm_f10s15000.txt
+/kmers_cv_msvm_s1t0_f10s500.txt
+/kmers_train_cv_msvm_s1t0_f10s500.npy
+/Pse_in_One2_cv_msvm_s1t0_f10s500.npy

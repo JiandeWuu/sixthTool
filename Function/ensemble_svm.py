@@ -1,3 +1,4 @@
+import time
 import math
 
 import numpy as np
@@ -8,26 +9,20 @@ from libsvm.svmutil import svm_parameter
 from libsvm.svmutil import svm_train
 from libsvm.svmutil import svm_predict
 
-class ensemble_SVM():
-    def __init__(self, class_weight='None'):
-        self.class_weight = class_weight
+class ensemble_svm():
+    def __init__(self):
         self.model_array = None
+        self.model_size = None
     
-    def train(self, x, y, size=1, parameter=""):
-        if self.class_weight == 'balanced':
-            data = None
-            label = None
-            for i in range(size):
-                d, l = self.balanced_data(x, y)
-                if data is None:
-                    data = d
-                    label = l
-                else:
-                    data = np.append(data, d, axis=0)
-                    label = np.append(label, l, axis=0)
-        
+    def train(self, data, label, parameter=""):
+        train_time = time.time()
         model_array = []
+        self.model_size = len(data)
+        
+        i = 0
         for d, l in zip(data, label):
+            step_time = time.time()
+            i += 1
             arr = np.arange(len(l))
             np.random.shuffle(arr)
             d = d[arr]
@@ -37,11 +32,16 @@ class ensemble_SVM():
             param = svm_parameter(parameter)
             m = svm_train(prob, param)
             model_array.append(m)
+            p_label, p_acc, p_val = svm_predict(l, d, m)
+            
+            print("auroc:", metrics.roc_auc_score(l, p_label))
+            print("ensemble svm step: %s/%s | %.2fs" % (i, self.model_size, time.time() - step_time))
         
         self.model_array = model_array
+        print("ensemble svm train: %.2fs" % (time.time() - train_time))
         
         return None
-    
+
     def test(self, x, y):
         output = None
         for m in self.model_array:
@@ -52,11 +52,13 @@ class ensemble_SVM():
                 output = np.append(output, np.array([p_label]), axis=0)
         
         pred_y = []
+        pred_y_score = []
         for o in output.T:
             u, c = np.unique(o, return_counts=True)
             pred_y.append(u[c == c.max()][0])
-        
-        return metrics.roc_auc_score(y, pred_y)
+            pred_y_score.append(c.max() / sum(c))
+            
+        return metrics.roc_auc_score(y, pred_y), sum(pred_y_score) / len(pred_y_score)
     
     def predict(self, x):
         output = None
@@ -66,92 +68,12 @@ class ensemble_SVM():
                 output = np.array([p_label])
             else:
                 output = np.append(output, np.array([p_label]), axis=0)
-        
+
         pred_y = []
+        pred_y_score = []
         for o in output.T:
             u, c = np.unique(o, return_counts=True)
             pred_y.append(u[c == c.max()][0])
+            pred_y_score.append(c.max() / sum(c))
         
-        return pred_y
-    
-    def balanced_data(self, x, y):
-        unique, count = np.unique(y, return_counts=True)
-        min_count = min(count)
-        big_batch = math.ceil(max(count) / min_count)
-        min_u = np.where(count == min_count, unique, -1)
-        
-        data = None
-        label = None
-        for u in unique:
-            u_data = None
-            if not u in min_u:
-                while u_data is None or len(u_data) != big_batch * min_count:
-                    x_u = x[y == u]
-                    np.random.shuffle(x_u)
-                    mod = len(x_u) % min_count
-                    if mod != 0:
-                        arr = np.arange(len(x_u) - mod)
-                        np.random.shuffle(arr)
-                        x_u = np.append(x_u, x_u[arr[mod - min_count:]], axis=0)
-                    if u_data is None:
-                        u_data = x_u
-                    else:
-                        u_data = np.append(u_data, x_u[:(big_batch * min_count) - len(u_data)], axis=0)
-                u_data = np.array(np.split(u_data, big_batch))
-            else:
-                x_u = x[y == u]
-                x_u = np.expand_dims(x_u, axis=0)
-                u_data = np.repeat(x_u, big_batch, axis=0)
-
-            if data is None:
-                data = u_data
-                label = np.full((big_batch, min_count), u)
-            else:
-                data = np.append(data, u_data, axis=1)  
-                label = np.append(label, np.full((big_batch, min_count), u), axis=1)
-
-        return data, label
-
-def CV(x, y, folder):
-    unique, count = np.unique(y, return_counts=True)
-    cv_x = []
-    cv_y = []
-    for u in unique:
-        u_x = x[y == u]
-        u_y = y[y == u]
-        arr = np.arange(len(u_x))
-        np.random.shuffle(arr)
-        u_x = u_x[arr]
-        u_y = u_y[arr]
-        
-        linspace = np.linspace(0, len(u_x), folder + 1, dtype=int)
-        
-        for i in range(folder):
-            if unique[0] == u:
-                cv_x.append(u_x[linspace[i]:linspace[i+1]])
-                cv_y.append(u_y[linspace[i]:linspace[i+1]])
-            else:
-                cv_x[i] = np.append(cv_x[i], u_x[linspace[i]:linspace[i+1]], axis=0)
-                cv_y[i] = np.append(cv_y[i], u_y[linspace[i]:linspace[i+1]], axis=0)
-    return cv_x, cv_y
-
-def cv_msvm_score(x, y, folder, size=15, parameter=""):
-    cv_x, cv_y = CV(x, y, folder)
-    score_array = []
-    for j in range(len(cv_x)):
-        train_x = None
-        for i in range(len(cv_x)):
-            if i == j :
-                test_x = cv_x[i]
-                test_y = cv_y[i]
-            else:
-                if train_x is None:
-                    train_x = cv_x[i]
-                    train_y = cv_y[i]
-                else:
-                    train_x = np.append(train_x, cv_x[i], axis=0)
-                    train_y = np.append(train_y, cv_y[i], axis=0)
-        msvm = ensemble_SVM(class_weight='balanced')
-        msvm.train(train_x, train_y, size=size, parameter=parameter)
-        score_array.append(msvm.test(test_x, test_y))
-    return score_array
+        return pred_y, pred_y_score
