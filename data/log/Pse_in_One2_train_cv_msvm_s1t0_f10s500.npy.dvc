@@ -1,0 +1,4 @@
+outs:
+- md5: 11987ba38f6817b6f29a3a004c26e070
+  size: 1222
+  path: Pse_in_One2_train_cv_msvm_s1t0_f10s500.npy
