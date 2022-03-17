@@ -124,4 +124,17 @@ def ensemble_data(x, y, size=1):
             data = np.append(data, d, axis=0)
             label = np.append(label, l, axis=0)
     return data, label
-    
+
+def cluster_sampler(data, cluster_class, size=1):
+    class_nums, class_counts = np.unique(cluster_class, return_counts=True)
+    l = len(data)
+    output_data = None
+    for i in range(len(class_nums)):
+        class_idx = np.arange(l)[cluster_class == class_nums[i]]
+        n = math.ceil(size / l * len(class_idx))
+        np.random.shuffle(class_idx)
+        if output_data is None:
+            output_data = data[class_idx[:n], :]
+        else:
+            output_data = np.append(output_data, data[class_idx[:n], :], axis=0)
+    return output_data

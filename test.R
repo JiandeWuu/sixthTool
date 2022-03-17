@@ -31,22 +31,24 @@ library(readr)
 # data
 #####
 setwd("R/cluster_output/")
-k2p10nor3 <- read_csv("~/R/sixthTool/data/linear_features/linear/train/k2p10nor3.csv")
+
+
+k3p10nor2n10 <- read_csv("~/R/sixthTool/data/linear_features/point/train/k3p10nor2n10.csv")
 
 k1234_PCPseDNCGa_TNCGa_PseDNC <- read_csv("~/R/sixthTool/data/merge_data/k1234_PCPseDNCGa_TNCGa_PseDNC.csv")
 k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol <- read_csv("~/R/sixthTool/data/merge_data/k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol.csv")
 k1234_PCPseDNCGa_TNCGa_PseDNC_nucleus <- read_csv("~/R/sixthTool/data/merge_data/k1234_PCPseDNCGa_TNCGa_PseDNC_nucleus.csv")
 
-d = as.matrix(k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol)
+d = as.matrix(k3p10nor2n10)
 d = t(d)
 dim(d)
-
+d
 # ConsensusClusterPlus
 #####
 seed=11111
 maxK = 10
 
-results = ConsensusClusterPlus(d,maxK=maxK,reps=200,title="k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol__pam_reps200", clusterAlg="pam",seed=seed,plot="pngBMP")
+results = ConsensusClusterPlus(d,maxK=maxK,reps=200,title="k3p10nor2n10__pam_reps200", clusterAlg="pam",seed=seed,plot="pngBMP")
 
 Kvec = 2:maxK
 x1 = 0.1; x2 = 0.9 # threshold defining the intermediate sub-interval
@@ -60,13 +62,13 @@ for(i in Kvec){
 # The optimal K
 optK = Kvec[which.min(PAC)]
 
-saveRDS(results, file = "k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol__pam_reps200/results.rds")
+saveRDS(results, file = "k3p10nor3n10__pam_reps200/results.rds")
 
 M = results[10][[1]]$consensusClass
 
 M
 
-write.table(M, file = "k1234_PCPseDNCGa_TNCGa_PseDNC_cytosol__pam_reps200/consensusClass_k10.csv", col.names=FALSE, row.names=FALSE)
+write.table(M, file = "k3p10nor3n10__pam_reps200/consensusClass_k10.csv", col.names=FALSE, row.names=FALSE)
 
 ####
 # preparing input data
@@ -114,3 +116,20 @@ rcc4 = ConsensusClusterPlus(d,maxK=4,reps=100,pItem=0.8,pFeature=1,title="exampl
 myDistFunc = function(x){ dist(x,method="manhattan")}
 rcc5 = ConsensusClusterPlus(d,maxK=4,reps=100,pItem=0.8,pFeature=1,title="example3",distance="myDistFunc",clusterAlg="pam")
 ##example of clusterAlg as hook:
+
+
+
+#####
+purity <- read_csv("~/R/sixthTool/data/test_data/purity_timer2.0_expHNSC_500.csv")
+dim(purity)
+test = purity[122:56578,2:501]
+dim(test)
+test[complete.cases(test), ]
+
+
+d = as.matrix(test)
+mode(d) = "numeric"
+d = d[rowSums(d==0)!=ncol(d), ]
+d = t(d)
+dim(d)
+results = ConsensusClusterPlus(d,maxK=3,reps=10,title="purity", clusterAlg="pam",seed="1111",plot="pngBMP")

@@ -1,0 +1,4 @@
+outs:
+- md5: 6c8e095c3d2bd5df45f4cd7251892276
+  size: 22174
+  path: list.csv

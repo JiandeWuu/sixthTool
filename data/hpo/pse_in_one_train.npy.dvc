@@ -1,0 +1,4 @@
+outs:
+- md5: bf7cd3f2a3acacfec17af53768d4c4f4
+  size: 1662
+  path: pse_in_one_train.npy
