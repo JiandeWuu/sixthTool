@@ -1,0 +1,4 @@
+outs:
+- md5: 7301e03509540aead17d6b5742656fb6
+  size: 177248
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DCC_lag1_train.npy

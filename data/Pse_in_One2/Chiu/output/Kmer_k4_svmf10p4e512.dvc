@@ -1,0 +1,4 @@
+outs:
+- md5: a45ea387ca99b4941055d9c8cc34c00c
+  size: 35280
+  path: Kmer_k4_svmf10p4e512

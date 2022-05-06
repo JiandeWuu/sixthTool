@@ -15,15 +15,15 @@ space = {'kernel': {'00': {'C': [-10, 10]},
                     '01': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
                     '02': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     '03': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    # '10': {'n': [0, 1]},
-                    # '11': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    # '12': {'logGamma': [-10, 10], 'n': [0, 1]},
-                    # '13': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
+                    '10': {'n': [0, 1]},
+                    '11': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    '12': {'logGamma': [-10, 10], 'n': [0, 1]},
+                    '13': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
                     }
         }
 
-size = 5
-num_evals = 1000
+size = 100
+num_evals = 100
 
 def train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n):
     """A generic SVM training function, with arguments based on the chosen kernel."""
@@ -51,21 +51,21 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='00', C=0, logGamma
     return roc_score
 
 
-dir_path = "data/Pse_in_One2/DNA/train/"
+dir_path = "data/Pse_in_One2/DNA_0320/train/"
 # dir_path = "data/k_mers/train/"
 # dir_path = "data/linear_features/linear/train/"
 onlyfiles = [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
-data_y = np.load("data/data_y_train.npy")
+data_y = np.load("data/society/train_y_0320_loc75_01.npy")
 
 log_array = []
 start_time = time.time()
 for file_name in onlyfiles:
-    if file_name.split(".")[-1] == "csv":
+    if file_name.split(".")[-1] == "npy":
         file_time = time.time()
         
-        data_x = np.genfromtxt(dir_path + file_name, delimiter=',')
-        # data_x = np.load(dir_path + file_name)
+        # data_x = np.genfromtxt(dir_path + file_name, delimiter=',')
+        data_x = np.load(dir_path + file_name)
         # data_x = data_x.reshape(data_x.shape[0],-1)
 
         if data_x.shape[1] < 500:
@@ -79,4 +79,6 @@ for file_name in onlyfiles:
             log_array.append([file_name, time.time() - file_time, optimal_svm_pars, info.optimum])
             
 print(log_array)
-np.save("data/hpo/pse_in_one_train.npy", np.array(log_array))
+np.save("data/hpo/pse_in_one_0320_train.npy", np.array(log_array))
+
+print("ALL TIME: %d" % (time.time() - start_time))

@@ -1,0 +1,4 @@
+outs:
+- md5: 64ba6c13c5ad004d12f7422584835349
+  size: 290432
+  path: benchmark_Kmer_k3_test.npy

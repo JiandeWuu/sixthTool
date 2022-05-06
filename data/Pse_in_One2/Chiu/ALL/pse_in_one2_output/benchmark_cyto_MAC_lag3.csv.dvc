@@ -1,0 +1,4 @@
+outs:
+- md5: 4258e8eb312cde882739c69dc0945aa0
+  size: 14261
+  path: benchmark_cyto_MAC_lag3.csv

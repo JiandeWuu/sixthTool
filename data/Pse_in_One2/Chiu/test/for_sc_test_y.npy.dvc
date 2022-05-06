@@ -1,0 +1,4 @@
+outs:
+- md5: 888ef71f9e573d0332e38163781401ff
+  size: 4656
+  path: for_sc_test_y.npy

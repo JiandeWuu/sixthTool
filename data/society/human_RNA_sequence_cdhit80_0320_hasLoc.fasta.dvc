@@ -1,0 +1,4 @@
+outs:
+- md5: 6f75b38244b368525daa0443d2a1ef52
+  size: 2849594
+  path: human_RNA_sequence_cdhit80_0320_hasLoc.fasta

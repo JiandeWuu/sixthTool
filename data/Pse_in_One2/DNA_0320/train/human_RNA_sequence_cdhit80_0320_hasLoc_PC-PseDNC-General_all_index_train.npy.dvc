@@ -1,0 +1,4 @@
+outs:
+- md5: 524311cc3c043e924e7a67d77d0e226f
+  size: 106400
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_PC-PseDNC-General_all_index_train.npy

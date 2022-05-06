@@ -1,0 +1,4 @@
+outs:
+- md5: f482d05064ac0c96274d29ceb728d266
+  size: 170845
+  path: benchmark_nuc_DAC_lag1.csv

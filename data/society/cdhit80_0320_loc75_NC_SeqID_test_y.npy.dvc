@@ -1,0 +1,4 @@
+outs:
+- md5: 3c133907cf599032c7cc690666ccdf33
+  size: 1608
+  path: cdhit80_0320_loc75_NC_SeqID_test_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: dd6ce68ffe9c20c4bbe7bf9562541e17
+  size: 326144
+  path: benchmark_PC-PseDNC-General_all_index_train.npy

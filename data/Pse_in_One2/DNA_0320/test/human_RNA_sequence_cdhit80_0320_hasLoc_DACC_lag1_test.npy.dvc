@@ -1,0 +1,4 @@
+outs:
+- md5: 45cb7723a0a417bf13709194581fbe89
+  size: 53408
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DACC_lag1_test.npy

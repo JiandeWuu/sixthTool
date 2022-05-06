@@ -1,0 +1,4 @@
+outs:
+- md5: 03ffefbb13b8f505403fd685dcfef67f
+  size: 133328
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DCC_lag3_test.npy

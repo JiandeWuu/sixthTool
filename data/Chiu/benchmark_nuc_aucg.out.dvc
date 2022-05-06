@@ -1,0 +1,4 @@
+outs:
+- md5: 386d01e11af7ac8f1f6727e578707509
+  size: 5086940
+  path: benchmark_nuc_aucg.out

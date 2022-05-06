@@ -1,0 +1,4 @@
+outs:
+- md5: 53cf12eaef741d4f5856665558d96ae3
+  size: 6016
+  path: cdhit80_0320_loc75_NC_SeqID_train_y.npy

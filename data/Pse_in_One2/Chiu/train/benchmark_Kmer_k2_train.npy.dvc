@@ -1,0 +1,4 @@
+outs:
+- md5: 5c53610dcc262e8a7209cd956abf2985
+  size: 289920
+  path: benchmark_Kmer_k2_train.npy

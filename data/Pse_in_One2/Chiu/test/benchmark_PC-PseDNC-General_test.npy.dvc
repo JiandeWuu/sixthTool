@@ -1,0 +1,4 @@
+outs:
+- md5: fa022d75c55f870975fbb630e01842ce
+  size: 81776
+  path: benchmark_PC-PseDNC-General_test.npy

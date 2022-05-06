@@ -1,0 +1,4 @@
+outs:
+- md5: 1fdef27c40c85dfa991a1eaedcc9b458
+  size: 47087
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_NMBAC_lag2.csv

@@ -12,11 +12,11 @@ from sklearn import metrics
 
 # from libsvm.svmutil import *
 
-k_array = [1, 2]
+k_array = [3, 4]
 power_array = [4, 6, 8, 10]
 nor_array = [0, 1, 2, 3]
 
-data_y = np.load("data/linear_features/data_y.npy")
+data_y = np.load("data/society/train_y_0320_loc75_01.npy")
 
 score_history = None
 start_time = time.time()
@@ -24,7 +24,7 @@ for k in k_array:
     for power in power_array:
         for nor in nor_array:
             print("k=%s, power=%s, nor=%s" % (k, power, nor))
-            kmer_linear_density = np.load("data/linear_features/linear/k" + str(k) + "p" + str(power) + "nor" + str(nor) + ".npy")
+            kmer_linear_density = np.load("data/linear_features/linear/0320/train/k" + str(k) + "p" + str(power) + "nor" + str(nor) + "_train.npy")
             data_x = kmer_linear_density.reshape(kmer_linear_density.shape[0],-1)
             print(data_x.shape)
             x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=0.20, shuffle=True, random_state=12)

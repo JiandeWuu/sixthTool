@@ -1,0 +1,4 @@
+outs:
+- md5: 7ba1481a96eb73c62cbe0a5bd14d02f4
+  size: 255144
+  path: human_RNA_sequence_cdhit

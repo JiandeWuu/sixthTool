@@ -1,0 +1,4 @@
+outs:
+- md5: 886c05e33a16a4f4a39129edb27e273d
+  size: 1039232
+  path: k2p10nor3_train_2d.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: dd41e3b771a8b8d908457e8bbbf9a2eb
+  size: 1608
+  path: test_idx_0320_loc75.npy

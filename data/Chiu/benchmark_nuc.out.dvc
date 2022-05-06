@@ -1,0 +1,4 @@
+outs:
+- md5: d6d10274c6de17796425bd4d2648b513
+  size: 5086940
+  path: benchmark_nuc.out

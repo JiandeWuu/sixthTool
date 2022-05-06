@@ -1,0 +1,4 @@
+outs:
+- md5: 4cc77c4d3f82ba3e8091d1b40d7e7cef
+  size: 213248
+  path: k2p8nor1_test.npy

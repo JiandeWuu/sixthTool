@@ -1,0 +1,4 @@
+outs:
+- md5: 812d42a6cdfaa83407e86ee30d108b45
+  size: 6032
+  path: train_y_0320_loc75_01.npy

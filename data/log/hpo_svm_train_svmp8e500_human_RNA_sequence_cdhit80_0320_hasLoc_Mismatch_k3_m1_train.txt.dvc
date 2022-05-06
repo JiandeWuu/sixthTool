@@ -1,0 +1,4 @@
+outs:
+- md5: b9dfedf040f873dbfbd610e1fff235a9
+  size: 199
+  path: hpo_svm_train_svmp8e500_human_RNA_sequence_cdhit80_0320_hasLoc_Mismatch_k3_m1_train.txt

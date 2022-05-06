@@ -1,0 +1,4 @@
+outs:
+- md5: c18898aed60924d4e544c505fa22a6ac
+  size: 70976
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DAC_lag2_train.npy

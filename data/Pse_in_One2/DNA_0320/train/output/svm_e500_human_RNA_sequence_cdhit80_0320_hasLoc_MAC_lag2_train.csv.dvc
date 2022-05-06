@@ -1,0 +1,4 @@
+outs:
+- md5: fc90ec291c32e9ea6624f7a37f96b37c
+  size: 33648
+  path: svm_e500_human_RNA_sequence_cdhit80_0320_hasLoc_MAC_lag2_train.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: 4f8d5f564362939edda5cc3f84117bad
+  size: 136208
+  path: benchmark_DCC_lag1_test.npy

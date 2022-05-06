@@ -1,0 +1,4 @@
+outs:
+- md5: 3cb00fc370e80f3b1f3ecf94ba5d4146
+  size: 145024
+  path: benchmark_Triplet_test.npy

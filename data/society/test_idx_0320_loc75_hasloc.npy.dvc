@@ -1,0 +1,4 @@
+outs:
+- md5: 754cb4a124180154521b1951bf5262ab
+  size: 1608
+  path: test_idx_0320_loc75_hasloc.npy

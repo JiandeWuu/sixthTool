@@ -1,0 +1,6 @@
+/output.Ensembl.withAdjPval
+/refseq2rbp_onehot.csv
+/refseq2rbp_onehot_test.csv
+/refseq2rbp_onehot_train.csv
+/Ensembl.out
+/RNAAtlas.out

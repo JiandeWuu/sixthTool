@@ -1,0 +1,4 @@
+outs:
+- md5: d9769d565bd900b2b786d8b24584fd3d
+  size: 260189
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_PC-PseDNC-General.csv

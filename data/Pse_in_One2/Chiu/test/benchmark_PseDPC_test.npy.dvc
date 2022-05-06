@@ -1,0 +1,4 @@
+outs:
+- md5: e1c6dda9a6b35fd1dcc5af8544bcb235
+  size: 54464
+  path: benchmark_PseDPC_test.npy

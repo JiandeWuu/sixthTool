@@ -1,0 +1,4 @@
+outs:
+- md5: 1dede0ca87eed2d74884a04c5c1a8d34
+  size: 1845104
+  path: benchmark_PseSSC_train.npy

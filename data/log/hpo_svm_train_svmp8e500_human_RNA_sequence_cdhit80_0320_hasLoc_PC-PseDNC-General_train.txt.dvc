@@ -1,0 +1,4 @@
+outs:
+- md5: e9d1f5ccf5ba1e823b3d478e2dccaf99
+  size: 398
+  path: hpo_svm_train_svmp8e500_human_RNA_sequence_cdhit80_0320_hasLoc_PC-PseDNC-General_train.txt

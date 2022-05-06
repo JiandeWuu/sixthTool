@@ -120,6 +120,10 @@ rcc5 = ConsensusClusterPlus(d,maxK=4,reps=100,pItem=0.8,pFeature=1,title="exampl
 
 
 #####
+library(ConsensusClusterPlus)
+library(readr)
+
+setwd("R/cluster_output/")
 purity <- read_csv("~/R/sixthTool/data/test_data/purity_timer2.0_expHNSC_500.csv")
 dim(purity)
 test = purity[122:56578,2:501]
@@ -131,5 +135,9 @@ d = as.matrix(test)
 mode(d) = "numeric"
 d = d[rowSums(d==0)!=ncol(d), ]
 d = t(d)
+
+d = d[1:500, 1:5000]
+
 dim(d)
+
 results = ConsensusClusterPlus(d,maxK=3,reps=10,title="purity", clusterAlg="pam",seed="1111",plot="pngBMP")

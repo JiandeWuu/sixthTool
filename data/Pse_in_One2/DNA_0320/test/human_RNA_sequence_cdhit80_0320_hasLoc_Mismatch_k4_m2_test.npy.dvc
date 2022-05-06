@@ -1,0 +1,4 @@
+outs:
+- md5: 5437e91d3c6c1c5705802814245316f1
+  size: 379008
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_Mismatch_k4_m2_test.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 36739c5c03c5fb94f30e38af9ab449e0
+  size: 556051
+  path: benchmark_cyto_aucg.out

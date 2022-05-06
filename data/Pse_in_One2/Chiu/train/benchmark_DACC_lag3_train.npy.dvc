@@ -1,0 +1,4 @@
+outs:
+- md5: f845545a699476b851bfa982f6a03857
+  size: 1956224
+  path: benchmark_DACC_lag3_train.npy

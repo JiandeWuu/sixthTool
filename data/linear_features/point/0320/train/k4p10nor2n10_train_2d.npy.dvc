@@ -1,0 +1,4 @@
+outs:
+- md5: 93d6cf14177c8976edc202af4b5abda6
+  size: 15114368
+  path: k4p10nor2n10_train_2d.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 4fd05e225f0c10156bef49cd513a1747
+  size: 164768
+  path: cdhit80_0320_loc75_NC_SeqID_RNAfold_bpRNA_train_x.npy

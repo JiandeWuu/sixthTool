@@ -1,0 +1,4 @@
+outs:
+- md5: 6371b981ea40d1f1d3d0d2b9cc44bb81
+  size: 64856844
+  path: lncRNA.fasta (chr1_22,X,Y only)

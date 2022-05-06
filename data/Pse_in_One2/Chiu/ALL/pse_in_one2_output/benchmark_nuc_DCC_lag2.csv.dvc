@@ -1,0 +1,4 @@
+outs:
+- md5: 6165ffeaeeb1569b8e8f1adc5eb82366
+  size: 1690009
+  path: benchmark_nuc_DCC_lag2.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: 8696218c5f543fc41c77d8ab1a825a70
+  size: 50818
+  path: nohup.out

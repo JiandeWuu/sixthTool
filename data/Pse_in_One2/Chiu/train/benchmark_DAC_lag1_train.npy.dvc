@@ -1,0 +1,4 @@
+outs:
+- md5: 4f50099e5180253624d421f14dda18a9
+  size: 108800
+  path: benchmark_DAC_lag1_train.npy

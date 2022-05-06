@@ -1,0 +1,4 @@
+outs:
+- md5: ef4ce68b99c74a8b85d8fce39238c938
+  size: 472449
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DCC_lag1.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: 15acb3af6bed8f1bd700931d6f7b5d5d
+  size: 6032
+  path: train_idx_0320_loc75_hasloc.npy

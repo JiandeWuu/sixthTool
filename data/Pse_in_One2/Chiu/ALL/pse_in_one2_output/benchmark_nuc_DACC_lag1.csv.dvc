@@ -1,0 +1,4 @@
+outs:
+- md5: 7a55bc59b017075d606f581484e577c6
+  size: 1015804
+  path: benchmark_nuc_DACC_lag1.csv

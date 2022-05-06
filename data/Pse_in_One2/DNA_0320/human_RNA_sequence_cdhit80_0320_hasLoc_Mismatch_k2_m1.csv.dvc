@@ -1,0 +1,4 @@
+outs:
+- md5: bc25da5b40dacb0209a347cc7eda47cc
+  size: 134650
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_Mismatch_k2_m1.csv

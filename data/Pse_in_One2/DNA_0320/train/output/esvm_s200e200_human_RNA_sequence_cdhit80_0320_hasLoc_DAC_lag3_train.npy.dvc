@@ -1,0 +1,4 @@
+outs:
+- md5: e6edf90f9621b84d9894a4d139c6147d
+  size: 13201
+  path: esvm_s200e200_human_RNA_sequence_cdhit80_0320_hasLoc_DAC_lag3_train.npy

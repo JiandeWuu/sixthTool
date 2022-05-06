@@ -2,7 +2,10 @@ import math
 
 import numpy as np
 
-def CV(x, y, fold):
+def CV(x, y, fold, seed=None):
+    if seed:
+        np.random.seed(seed)
+    
     arr = np.arange(len(y))
     np.random.shuffle(arr)
     x = x[arr]

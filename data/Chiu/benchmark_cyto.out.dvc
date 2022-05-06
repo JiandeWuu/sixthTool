@@ -1,0 +1,4 @@
+outs:
+- md5: dc4c8c584a6c5b6f35c1e10fb998bbd1
+  size: 556051
+  path: benchmark_cyto.out

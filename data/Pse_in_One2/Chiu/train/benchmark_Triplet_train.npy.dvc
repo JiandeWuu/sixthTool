@@ -1,0 +1,4 @@
+outs:
+- md5: b846b28848a9c78a9201b99eac6c433f
+  size: 578944
+  path: benchmark_Triplet_train.npy

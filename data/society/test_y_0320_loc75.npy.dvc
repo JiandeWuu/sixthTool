@@ -1,0 +1,4 @@
+outs:
+- md5: 3cee7f881c453b9f46a85d7d527725e2
+  size: 678
+  path: test_y_0320_loc75.npy

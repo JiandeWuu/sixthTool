@@ -1,0 +1,4 @@
+outs:
+- md5: 6bda52f5cec3e21e164a0a94db8d42bd
+  size: 45585
+  path: svme500_cdhit80_0320_loc75_NC_SeqID_RNAfold_bpRNA_train.csv

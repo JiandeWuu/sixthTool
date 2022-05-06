@@ -1,0 +1,4 @@
+outs:
+- md5: 1048d9b6310906ff40d22dc959ed7fbd
+  size: 9008
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_MAC_lag1_test.npy

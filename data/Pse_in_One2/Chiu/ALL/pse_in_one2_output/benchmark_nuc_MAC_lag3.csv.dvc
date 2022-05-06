@@ -1,0 +1,4 @@
+outs:
+- md5: 1be5441c8570d060e39112b737c65e99
+  size: 96828
+  path: benchmark_nuc_MAC_lag3.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: eba4a12cf91dbff27037845d519aab3f
+  size: 18216
+  path: for_sc_train_y.npy

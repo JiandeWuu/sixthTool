@@ -1,0 +1,4 @@
+outs:
+- md5: ca29ab0c61b473f2a6c340f5255e052a
+  size: 272288
+  path: benchmark_SC-PseDNC-General_all_index_test.npy

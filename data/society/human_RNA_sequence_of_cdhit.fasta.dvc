@@ -1,0 +1,4 @@
+outs:
+- md5: 6725413ffa4f2953b3c94a94f239ff16
+  size: 539997776
+  path: human_RNA_sequence_of_cdhit.fasta

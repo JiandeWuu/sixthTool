@@ -1,0 +1,4 @@
+outs:
+- md5: ed01cdd6a8ef37ee52e95aec42e27505
+  size: 1817021
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_Mismatch_k4_m3.csv

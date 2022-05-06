@@ -1,0 +1,4 @@
+outs:
+- md5: b82a8597a06149359b8ccc49db2acf12
+  size: 249328
+  path: benchmark_nuc_Mismatch_k2_m1.csv

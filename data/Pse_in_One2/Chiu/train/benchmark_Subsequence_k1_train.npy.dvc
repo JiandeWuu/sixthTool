@@ -1,0 +1,4 @@
+outs:
+- md5: 9bd5f6868479d4cc0b23912bc49e7663
+  size: 72576
+  path: benchmark_Subsequence_k1_train.npy

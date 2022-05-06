@@ -1,0 +1,4 @@
+outs:
+- md5: 5b1bf2163451ef96a1e81d13f06607de
+  size: 15086
+  path: cdhit80_0320_loc75_NC_SeqID_train.csv

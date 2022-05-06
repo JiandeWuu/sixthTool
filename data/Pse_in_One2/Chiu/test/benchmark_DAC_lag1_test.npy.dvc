@@ -1,0 +1,4 @@
+outs:
+- md5: 675c438b68dc98af6ea55725127c1a6c
+  size: 27344
+  path: benchmark_DAC_lag1_test.npy

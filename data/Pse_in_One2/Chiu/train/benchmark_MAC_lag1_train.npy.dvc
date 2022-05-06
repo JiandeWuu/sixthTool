@@ -1,0 +1,4 @@
+outs:
+- md5: f42cdd5f41d966c51c6119c5542e042e
+  size: 108800
+  path: benchmark_MAC_lag1_train.npy

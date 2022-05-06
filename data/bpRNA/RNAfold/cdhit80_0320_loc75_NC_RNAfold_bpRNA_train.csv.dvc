@@ -1,0 +1,4 @@
+outs:
+- md5: bd2fa5a97cbd98fb8e85ae0d31391977
+  size: 42933
+  path: cdhit80_0320_loc75_NC_RNAfold_bpRNA_train.csv

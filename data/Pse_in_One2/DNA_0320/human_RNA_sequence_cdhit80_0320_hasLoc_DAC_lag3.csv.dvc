@@ -1,0 +1,4 @@
+outs:
+- md5: 5a481102be7fb40b985588fdf2f92d86
+  size: 276636
+  path: human_RNA_sequence_cdhit80_0320_hasLoc_DAC_lag3.csv

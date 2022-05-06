@@ -1,0 +1,4 @@
+outs:
+- md5: 2761c71d484a3d627f1189aa1abb16cc
+  size: 13928
+  path: svm_e200_human_RNA_sequence_cdhit80_0320_hasLoc_DACC_lag3_train.npy

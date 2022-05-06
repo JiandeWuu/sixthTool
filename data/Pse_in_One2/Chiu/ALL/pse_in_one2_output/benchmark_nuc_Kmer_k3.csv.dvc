@@ -1,0 +1,4 @@
+outs:
+- md5: d3e5648356618a0fad2f8ef6cd63391c
+  size: 1705813
+  path: benchmark_nuc_Kmer_k3.csv

@@ -1,0 +1,4 @@
+outs:
+- md5: 0d2c19f9c6f05c1db9c00e36414b8704
+  size: 326720
+  path: benchmark_DACC_lag2_test.npy

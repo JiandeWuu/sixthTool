@@ -1,0 +1,4 @@
+outs:
+- md5: 60e7f91186d9c4bc657941623a5f27ce
+  size: 108800
+  path: benchmark_NMBAC_lag3_train.npy

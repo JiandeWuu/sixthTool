@@ -1,0 +1,4 @@
+outs:
+- md5: b79bd4d8c5ea5b7295df7bbe03aabfa7
+  size: 27344
+  path: benchmark_NMBAC_lag1_test.npy
