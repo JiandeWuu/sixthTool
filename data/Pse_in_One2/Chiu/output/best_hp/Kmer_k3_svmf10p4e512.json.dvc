@@ -1,0 +1,4 @@
+outs:
+- md5: 7b48654003ceee134654efff3012edc2
+  size: 135
+  path: Kmer_k3_svmf10p4e512.json

@@ -1,0 +1,4 @@
+outs:
+- md5: 286011fced18e612a913384c84c892cb
+  size: 62345
+  path: Kmer_k3_libsvmf10p4e512

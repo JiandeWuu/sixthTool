@@ -1,0 +1,4 @@
+outs:
+- md5: 3e3fb6be65d299ac0a39a18f430bdab5
+  size: 135
+  path: DAC_lag1_svmf10p4e512.json
