@@ -203,7 +203,7 @@ def svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max
     return clf
 
 def eval_svm_model(data_x, data_y, fold, kernel, C, logGamma, degree, coef0, nu):
-    cv_x, cv_y = CV(data_x, data_y, fold)
+    cv_x, cv_y = CV_balanced(data_x, data_y, fold)
 
     acc_array = []
     recall_array = []

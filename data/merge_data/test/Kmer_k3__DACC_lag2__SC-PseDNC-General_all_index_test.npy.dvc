@@ -1,0 +1,4 @@
+outs:
+- md5: aa6b87483636a70f57157af3c71d7ffd
+  size: 889184
+  path: Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index_test.npy

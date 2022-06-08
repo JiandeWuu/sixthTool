@@ -1,0 +1,4 @@
+outs:
+- md5: a986c73a7e9c89b0f305b093b065f636
+  size: 2463360
+  path: Kmer_k3__DACC_lag2_train.npy

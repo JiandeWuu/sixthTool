@@ -1,0 +1,4 @@
+outs:
+- md5: 78cc4e63c9a3a1cb2b88645483f70ebc
+  size: 11582920
+  path: merge_data_Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index_esvmf10p4e512.txt

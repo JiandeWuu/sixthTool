@@ -28,10 +28,10 @@ esvm_space = {'kernel': {
                     '01': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
                     '02': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     '03': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    '10': {'n': [0, 1]},
-                    '11': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    '12': {'logGamma': [-10, 10], 'n': [0, 1]},
-                    '13': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
+                    # '10': {'n': [0, 1]},
+                    # '11': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    # '12': {'logGamma': [-10, 10], 'n': [0, 1]},
+                    # '13': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
                     }
         }
 
@@ -109,6 +109,62 @@ def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='00', C=0, logGamm
     roc_score, pred_score = model.test(x_test, y_test)
     return roc_score
 
+
+def cv_esvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=3, coef0=0, n=0.5):
+    cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
+    
+    acc_array = []
+    recall_array = []
+    prec_array = []
+    spec_array = []
+    f1sc_array = []
+    auroc_array = []
+    cm_array = []
+    for i in range(fold):
+        x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
+        model = esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n)
+        
+        roc_score, pred_score = model.test(x_test, y_test)
+        y_train_pred, _ = model.predict(x_train)
+        y_test_pred, _ = model.predict(x_test)
+        
+        auroc_array.append(roc_score)
+        
+        cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
+        
+        tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
+        
+        acc_array.append((tn + tp) / (tn + fp + fn + tp))
+        recall_array.append(tp / (fn + tp))
+        prec_array.append(tp / (fp + tp))
+        spec_array.append(tn / (tn + fp))
+        f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
+    
+    json_dcit = {
+        "fold Accy": acc_array,
+        "avg Accy": sum(acc_array) / len(acc_array),
+        "std Accy": np.std(acc_array),
+        "fold Recall": recall_array,
+        "avg Recall": sum(recall_array) / len(recall_array),
+        "std Recall": np.std(recall_array),
+        "fold Prec": prec_array,
+        "avg Prec": sum(prec_array) / len(prec_array),
+        "std Prec": np.std(prec_array),
+        "fold Spec": spec_array,
+        "avg Spec": sum(spec_array) / len(spec_array),
+        "std Spec": np.std(spec_array),
+        "fold F1sc": f1sc_array,
+        "avg F1sc": sum(f1sc_array) / len(f1sc_array),
+        "std F1sc": np.std(f1sc_array),
+        "fold AUROC": auroc_array,
+        "avg AUROC": sum(auroc_array) / len(auroc_array),
+        "std AUROC": np.std(auroc_array),
+        "confusion matrix": cm_array
+    }
+    
+    with open('%s.json' % (args.output), 'w') as fp:
+        json.dump(json_dcit, fp)
+
 def libsvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, w0, w1, n):
     """A generic SVM training function, with arguments based on the chosen kernel."""
 
@@ -133,7 +189,7 @@ def libsvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, w0,
 def libsvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='02', C=1, logGamma=1, degree=3, coef0=0, w0=1, w1=1, n=0.5):
     model = libsvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, w0, w1, n)
     p_label, p_acc, p_val = svm_predict(y_test, x_test, model)
-    p_val = np.where(np.isnan(p_val), 0, p_val) 
+    p_val = np.where(np.isfinite(p_val), p_val, 0) 
     roc_score = metrics.roc_auc_score(y_test, p_val)
     return roc_score
 
@@ -154,7 +210,7 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
         y_train_pred, p_acc, p_val = svm_predict(y_train, x_train, model)
         y_test_pred, p_acc, p_val = svm_predict(y_test, x_test, model)
         
-        p_val = np.where(np.isnan(p_val), 0, p_val) 
+        p_val = np.where(np.isfinite(p_val), 0, p_val) 
         roc_score = metrics.roc_auc_score(y_test, p_val)
         auroc_array.append(roc_score)
         
@@ -231,7 +287,8 @@ def svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n):
 def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5):
     model = svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n)
     decision_values = model.decision_function(x_test)
-    decision_values = np.where(np.isnan(decision_values), 0, decision_values) 
+    # decision_values = np.where(np.isnan(decision_values), 0, decision_values) 
+    decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
     try:
         roc_score = metrics.roc_auc_score(y_test, decision_values)
     except:
@@ -240,13 +297,14 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, lo
     return roc_score
 
 def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5):
-    cv_x, cv_y = svm_function.CV(data_x, data_y, fold, seed=1212)
+    cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
     
     acc_array = []
     recall_array = []
     prec_array = []
     spec_array = []
     f1sc_array = []
+    auroc_array = []
     cm_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
@@ -254,7 +312,14 @@ def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degr
         
         y_train_pred = model.predict(x_train)
         y_test_pred = model.predict(x_test)
-        # np.save("%s_y_fold%s" % (args.output, i), np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]))
+        
+        decision_values = model.decision_function(x_test)
+        decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
+        try:
+            roc_score = metrics.roc_auc_score(y_test, decision_values)
+            auroc_array.append(roc_score)
+        except:
+            print(decision_values)
         
         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
         
@@ -269,14 +334,22 @@ def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degr
     json_dcit = {
         "fold Accy": acc_array,
         "avg Accy": sum(acc_array) / len(acc_array),
+        "std Accy": np.std(acc_array),
         "fold Recall": recall_array,
         "avg Recall": sum(recall_array) / len(recall_array),
+        "std Recall": np.std(recall_array),
         "fold Prec": prec_array,
         "avg Prec": sum(prec_array) / len(prec_array),
+        "std Prec": np.std(prec_array),
         "fold Spec": spec_array,
         "avg Spec": sum(spec_array) / len(spec_array),
+        "std Spec": np.std(spec_array),
         "fold F1sc": f1sc_array,
         "avg F1sc": sum(f1sc_array) / len(f1sc_array),
+        "std F1sc": np.std(f1sc_array),
+        "fold AUROC": auroc_array,
+        "avg AUROC": sum(auroc_array) / len(auroc_array),
+        "std AUROC": np.std(auroc_array),
         "confusion matrix": cm_array
     }
     
@@ -291,7 +364,7 @@ if args.method == 'svm':
     optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
     
-    cv_libsvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5)
+    cv_svm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5)
     
 elif args.method == 'libsvm':
     cv_libsvm_tuned_auroc = cv_decorator(libsvm_tuned_auroc)
@@ -303,14 +376,10 @@ elif args.method == 'libsvm':
 elif args.method == 'esvm':
     cv_esvm_tuned_auroc = cv_decorator(esvm_tuned_auroc)
     optimal_svm_pars, info, _ = optunity.maximize_structured(cv_esvm_tuned_auroc, esvm_space, num_evals=args.num_evals, pmap=pmap)
+    print("optunity done.")
 
-    x_train, x_test, y_train, y_test = train_test_split(data_x, data_y, test_size=1/args.fold, random_state=1212)
-    model = esvm_train_model(x_train, y_train, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5)
-    
-    y_train_pred = model.predict(x_train)
-    np.save(args.output + "_y_train", np.array([y_train, y_train_pred]))
-    y_test_pred = model.predict(x_test)
-    np.save(args.output + "_y_test", np.array([y_test, y_test_pred]))
+    cv_esvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5)
+
 
 
 print("Optimal parameters" + str(optimal_svm_pars))

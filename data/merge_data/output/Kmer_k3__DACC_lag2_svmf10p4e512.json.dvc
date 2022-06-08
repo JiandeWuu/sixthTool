@@ -1,0 +1,4 @@
+outs:
+- md5: a9dcad5f295bbf96b84e1187f042c9fe
+  size: 2147
+  path: Kmer_k3__DACC_lag2_svmf10p4e512.json
