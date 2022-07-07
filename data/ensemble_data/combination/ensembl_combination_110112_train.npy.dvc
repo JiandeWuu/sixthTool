@@ -1,0 +1,4 @@
+outs:
+- md5: 9d366f51a8ef0cf3802b5ed51d6008e1
+  size: 108416
+  path: ensembl_combination_110112_train.npy

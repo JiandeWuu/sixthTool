@@ -1,0 +1,4 @@
+outs:
+- md5: 7239f2df035c047ef2245c1a33be3f99
+  size: 18208
+  path: ensembl_combination_011110_test.npy

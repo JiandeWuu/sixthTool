@@ -1,0 +1,4 @@
+outs:
+- md5: 3d5933294d4d800405ed0f4c9c65b4dd
+  size: 139090
+  path: rnaatlas_combination_01102_train_svmf10p4e512.txt

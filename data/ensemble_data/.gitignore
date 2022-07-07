@@ -1,0 +1,14 @@
+/merge_r.csv
+/merge_e.csv
+/ensembl_merge_train.npy
+/ensembl_merge_train_y.npy
+/ensembl_merge_test.npy
+/ensembl_merge_test_y.npy
+/ensembl_merge_no_lnclocatorv2_train.npy
+/ensembl_merge_no_lnclocatorv2_test.npy
+/rnaatlas_merge_train.npy
+/rnaatlas_merge_train_y.npy
+/rnaatlas_merge_test.npy
+/rnaatlas_merge_test_y.npy
+/rnaatlas_merge_no_lnclocatorv2_train.npy
+/rnaatlas_merge_no_lnclocatorv2_test.npy
