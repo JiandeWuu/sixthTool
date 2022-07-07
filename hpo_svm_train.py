@@ -210,7 +210,7 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
         y_train_pred, p_acc, p_val = svm_predict(y_train, x_train, model)
         y_test_pred, p_acc, p_val = svm_predict(y_test, x_test, model)
         
-        p_val = np.where(np.isfinite(p_val), 0, p_val) 
+        p_val = np.where(np.isfinite(p_val), p_val, 0) 
         roc_score = metrics.roc_auc_score(y_test, p_val)
         auroc_array.append(roc_score)
         
