@@ -1,0 +1,4 @@
+outs:
+- md5: 72ad9d1a9e67725f4c622840c3c10b63
+  size: 551
+  path: save_model__nuc_lncRNA__cyto_lncRNA__svm.txt

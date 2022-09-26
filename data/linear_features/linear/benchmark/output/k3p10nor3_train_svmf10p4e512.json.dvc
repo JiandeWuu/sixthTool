@@ -1,0 +1,4 @@
+outs:
+- md5: 9bd5fe633b065b4f70d3d331f6fe5062
+  size: 2148
+  path: k3p10nor3_train_svmf10p4e512.json

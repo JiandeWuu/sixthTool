@@ -1,0 +1,4 @@
+outs:
+- md5: e50b8c75b54252b2d312a0d5672e070f
+  size: 798464
+  path: k2p10nor1_test.npy

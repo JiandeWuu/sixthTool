@@ -1,0 +1,4 @@
+outs:
+- md5: 402af1ee9d6516877f503984f1c06c52
+  size: 10392
+  path: rnaatlas_combination_train_yid.npy

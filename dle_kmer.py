@@ -17,12 +17,12 @@ def k_mers(data, n):
     vocab = build_vocab(kmer_array)
     return kmer_array, vocab
 
-data = pd.read_csv("data/society/cdhit80_0320_loc75.csv")
+data = pd.read_csv("data/Chiu/jand_benchmark_loc.csv")
 
 k_array = [1, 2, 3, 4]
 
 for k in k_array:
-    kmer_array, vocab = k_mers(data['Sequence'], k)
+    kmer_array, vocab = k_mers(data['Seq'], k)
         
     features_data = []
     for s in kmer_array:
@@ -30,9 +30,10 @@ for k in k_array:
         t = time.time()
         # Weights
         w = np.reshape(np.arange(len(s)), (-1, 1)) - np.arange(len(s))
-        w_abs = np.abs(w)
-        w_max = (w.max() + 1)
-        w = w_abs - w_max
+        # w_abs = np.abs(w)
+        # w_max = (w.max() + 1)
+        # w = w_abs - w_max
+        w = np.abs(w) - w.max() + 1
         w = np.power(w , 2)
         # 最大權重
         L = np.sum(w, axis=0)
@@ -47,5 +48,5 @@ for k in k_array:
         linear_data = np.array(linear_data)
         features_data.append(linear_data.tolist())
     
-    with open("data/linear_features/kmer_d/0320/k" + str(k), 'wb') as f:
+    with open("data/linear_features/kmer_d/benchmark/k" + str(k), 'wb') as f:
         pickle.dump(features_data, f)

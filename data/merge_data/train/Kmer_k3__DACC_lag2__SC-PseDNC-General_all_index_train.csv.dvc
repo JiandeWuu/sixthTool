@@ -1,0 +1,4 @@
+outs:
+- md5: 4f0c71882fc2f7ab0a604b6df4d2e92b
+  size: 5093154
+  path: Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index_train.csv

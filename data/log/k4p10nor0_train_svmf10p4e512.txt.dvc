@@ -1,0 +1,4 @@
+outs:
+- md5: b3787de21e134299da827726d932ff8b
+  size: 80245
+  path: k4p10nor0_train_svmf10p4e512.txt

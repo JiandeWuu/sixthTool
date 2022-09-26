@@ -1,0 +1,17 @@
+/mRNA_in_APEX_DACC_lag2.csv
+/mRNA_in_APEX_Kmer_k3.csv
+/mRNA_in_APEX_SC-PseDNC-General_all_index.csv
+/benchmark_mRNA_cyto_DACC_lag2.csv
+/benchmark_mRNA_cyto_Kmer_k3.csv
+/benchmark_mRNA_cyto_SC-PseDNC-General_all_index.csv
+/benchmark_mRNA_nuc_DACC_lag2.csv
+/benchmark_mRNA_nuc_Kmer_k3.csv
+/benchmark_mRNA_nuc_SC-PseDNC-General_all_index.csv
+/cyto_mRNA_train.npy
+/cyto_mRNA_test.npy
+/nuc_mRNA_train.npy
+/nuc_mRNA_test.npy
+/cyto_lncRNA_train.npy
+/nuc_lncRNA_train.npy
+/cyto_lncRNA_test.npy
+/nuc_lncRNA_test.npy

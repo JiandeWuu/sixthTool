@@ -6,5 +6,5 @@ sudo docker run -d -p 8787:8787 -v /data/jand:/home/rstudio/R -e PASSWORD=zxczxc
 
 
 kill $(ps -A -ostat,ppid | awk '/[zZ]/ && !a[$2]++ {print $2}')
-
+kill $(ps aux| grep "python hpo_svm_train.py" | awk '{print $2}')
 ["Cytosolic", "Nucleus"], [0, 1]

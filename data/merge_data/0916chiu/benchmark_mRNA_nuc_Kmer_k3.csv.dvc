@@ -1,0 +1,4 @@
+outs:
+- md5: 95250f7f21f8cac1732b1f8bb351d5d7
+  size: 4177173
+  path: benchmark_mRNA_nuc_Kmer_k3.csv

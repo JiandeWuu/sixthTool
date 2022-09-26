@@ -1,0 +1,4 @@
+outs:
+- md5: c3a98a47e476dae6404e879f2017f10b
+  size: 3126821
+  path: benchmark_mRNA_cyto_Kmer_k3.csv

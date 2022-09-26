@@ -1,0 +1,4 @@
+outs:
+- md5: 64af6de2ee90d9455d0feac2e3797721
+  size: 279395125
+  path: ensembl_combination_011010_train_esvmf10p4e512s200.txt

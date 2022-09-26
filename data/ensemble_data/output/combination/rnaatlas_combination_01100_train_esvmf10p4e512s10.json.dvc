@@ -1,0 +1,4 @@
+outs:
+- md5: c8320bd2563e56a4b18301e098cac372
+  size: 2066
+  path: rnaatlas_combination_01100_train_esvmf10p4e512s10.json

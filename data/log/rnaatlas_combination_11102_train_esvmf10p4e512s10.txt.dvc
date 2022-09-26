@@ -1,0 +1,4 @@
+outs:
+- md5: 59af8592483275da47b7181e475fb541
+  size: 16559
+  path: rnaatlas_combination_11102_train_esvmf10p4e512s10.txt

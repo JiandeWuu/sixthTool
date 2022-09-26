@@ -15,7 +15,7 @@ for k in k_array:
             nor_d = True if nor == 1 or nor == 3 else False
             nor_l = True if nor == 2 or nor == 3 else False
             
-            with open('data/linear_features/kmer_d/0320/k' + str(k), 'rb') as f:
+            with open('data/linear_features/kmer_d/benchmark/k' + str(k), 'rb') as f:
                 kmer_d = pickle.load(f)
                 
             linear_data = None
@@ -35,4 +35,4 @@ for k in k_array:
                 token_data = np.array([token_data])
                 linear_data = token_data if linear_data is None else np.append(linear_data, token_data, axis=0)
             print(linear_data.shape)
-            np.save("data/linear_features/linear/0320/k" + str(k) + "p" + str(power) + "nor" + str(nor), linear_data)
+            np.save("data/linear_features/linear/benchmark/k" + str(k) + "p" + str(power) + "nor" + str(nor), linear_data)

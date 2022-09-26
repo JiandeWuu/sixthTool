@@ -1,0 +1,4 @@
+outs:
+- md5: 2b36c6c374d4370e0f0be32a9393c394
+  size: 2506585
+  path: mRNA_in_APEX_Kmer_k3.csv

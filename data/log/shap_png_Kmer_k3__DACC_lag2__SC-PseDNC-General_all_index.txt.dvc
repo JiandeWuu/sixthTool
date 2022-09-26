@@ -1,0 +1,4 @@
+outs:
+- md5: 6332050924b8cf884c5ad3541541632d
+  size: 49420
+  path: shap_png_Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index.txt

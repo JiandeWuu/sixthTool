@@ -1,0 +1,4 @@
+outs:
+- md5: 5eab0d528b3767779889cbf8b7b99931
+  size: 5264
+  path: rnaatlas_combination_10100_test.npy
