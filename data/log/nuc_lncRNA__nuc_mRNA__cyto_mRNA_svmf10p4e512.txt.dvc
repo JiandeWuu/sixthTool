@@ -1,0 +1,4 @@
+outs:
+- md5: 3e44b511cfe365a7d895337b1922c9db
+  size: 122531
+  path: nuc_lncRNA__nuc_mRNA__cyto_mRNA_svmf10p4e512.txt

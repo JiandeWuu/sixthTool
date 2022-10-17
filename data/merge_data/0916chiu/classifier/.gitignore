@@ -22,3 +22,9 @@
 /nuc_lncRNA__cyto_lncRNA__nuc_mRNA__cyto_mRNA_test_y.npy
 /nuc_lncRNA__cyto_lncRNA_train.npy
 /nuc_lncRNA__cyto_lncRNA_train_y.npy
+/nuc_lncRNA__nuc_mRNA__cyto_mRNA_train_y.npy
+/cyto_lncRNA_test_y.npy
+/nuc_lncRNA__nuc_mRNA__cyto_mRNA_train.npy
+/nuc_lncRNA__nuc_mRNA__cyto_mRNA_test_y.npy
+/nuc_lncRNA__nuc_mRNA__cyto_mRNA_test.npy
+/cyto_lncRNA_test.npy
