@@ -46,7 +46,7 @@ print("AUROC: %.2f" % (roc_score))
 
 f = lambda x: model.predict_proba(x)[:,1]
 explainer = shap.Explainer(f, x)
-shap_values = explainer(test_x)
+shap_values = explainer(test_x, max_evals=2 * x.shape[1] + 1)
 
 fig = shap.plots.waterfall(shap_values[0])
 print("save plot file: %s" % (args.output))

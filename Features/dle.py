@@ -4,15 +4,45 @@ import time
 
 import numpy as np
 
+from tqdm import tqdm
+
 def build_vocab(data):
     word_counts = Counter(row.lower() for sample in data for row in sample)
     vocab = [w for w, f in iter(word_counts.items())]
     return vocab
 
 def k_mers(data, n):
-    kmer_array = [[s[i:i + n].lower() for i in range(len(s) - n)] for s in data]
+    kmer_array = [[s[i:i + n].lower() for i in range(len(s) - n + 1)] for s in data]
     vocab = build_vocab(kmer_array)
     return kmer_array, vocab
+
+def linear_feature(data, k, num, nor=False):
+    kmer_array, vocab = k_mers(data, k)
+    features_data = []
+    for s in tqdm(kmer_array):
+        s = np.array(s)
+
+        # Weights
+        w = np.linspace(0, len(s) - 1, num=num)
+        w = np.reshape(w, (-1, 1)) - np.arange(len(s))
+        w = np.abs(w) - len(s)
+        w = np.power(w , 2).T
+        # 最大權重
+        L = np.sum(w, axis=0)
+        
+        v_has = np.array([s == v for v in vocab])
+        linear_data = np.dot(v_has, w) / L
+        features_data.append(linear_data.tolist())
+        
+    features_data = np.array(features_data)
+    
+    if nor:
+        d_max = np.reshape(np.max(features_data, axis=2), (len(features_data), -1, 1))
+        d_min = np.reshape(np.min(features_data, axis=2), (len(features_data), -1, 1))
+        features_data = (features_data - d_min) / (d_max - d_min)
+        features_data = np.array(features_data)
+    
+    return features_data, vocab
 
 def dle(seqs, k=1, power=4, normalized=0, output=0):
     """Density Linear Encoder 

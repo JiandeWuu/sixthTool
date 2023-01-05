@@ -4,17 +4,20 @@ import math
 import numpy as np
 
 from sklearn import metrics
-from libsvm.svmutil import svm_problem
-from libsvm.svmutil import svm_parameter
-from libsvm.svmutil import svm_train
-from libsvm.svmutil import svm_predict
+# from libsvm.svmutil import svm_problem
+# from libsvm.svmutil import svm_parameter
+# from libsvm.svmutil import svm_train
+# from libsvm.svmutil import svm_predict
+
+
+from . import svm_function
 
 class ensemble_svm():
     def __init__(self):
         self.model_array = None
         self.model_size = None
     
-    def train(self, data, label, parameter=""):
+    def train(self, data, label, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7):
         train_time = time.time()
         model_array = []
         self.model_size = len(data)
@@ -27,14 +30,16 @@ class ensemble_svm():
             np.random.shuffle(arr)
             d = d[arr]
             l = l[arr]
-
-            prob = svm_problem(l, d)
-            param = svm_parameter(parameter)
-            m = svm_train(prob, param)
-            model_array.append(m)
-            p_label, p_acc, p_val = svm_predict(l, d, m)
             
-            print("auroc:", metrics.roc_auc_score(l, p_label))
+            m = svm_function.svm_train_model(d, l, kernel, C, logGamma, degree, coef0, n, max_iter=max_iter)
+            
+            model_array.append(m)
+            decision_values = m.decision_function(d)
+            
+            try:
+                print("auroc:", metrics.roc_auc_score(l, decision_values))
+            except:
+                print("error return 0.5.")
             print("ensemble svm step: %s/%s | %.2fs" % (i, self.model_size, time.time() - step_time))
         
         self.model_array = model_array
@@ -45,7 +50,7 @@ class ensemble_svm():
     def test(self, x, y):
         output = None
         for m in self.model_array:
-            p_label, p_acc, p_val = svm_predict(y, x, m)
+            p_label = m.predict(x)
             if output is None:
                 output = np.array([p_label])
             else:
@@ -58,12 +63,12 @@ class ensemble_svm():
             pred_y.append(u[c == c.max()][0])
             pred_y_score.append(c.max() / sum(c))
             
-        return metrics.roc_auc_score(y, pred_y), sum(pred_y_score) / len(pred_y_score)
+        return metrics.roc_auc_score(y, pred_y)
     
     def predict(self, x):
         output = None
         for m in self.model_array:
-            p_label, p_acc, p_val = svm_predict([], x, m)
+            p_label = m.predict(x)
             if output is None:
                 output = np.array([p_label])
             else:
