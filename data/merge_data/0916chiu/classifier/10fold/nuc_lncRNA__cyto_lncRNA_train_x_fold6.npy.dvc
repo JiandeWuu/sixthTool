@@ -1,0 +1,4 @@
+outs:
+- md5: 85284ff306cfea9468cf6a2fa3248a07
+  size: 3195712
+  path: nuc_lncRNA__cyto_lncRNA_train_x_fold6.npy

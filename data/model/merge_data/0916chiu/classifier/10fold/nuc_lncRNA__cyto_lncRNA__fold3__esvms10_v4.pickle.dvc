@@ -1,0 +1,4 @@
+outs:
+- md5: 678a85c093d6fedc2fd271d3bda6a10a
+  size: 41987837
+  path: nuc_lncRNA__cyto_lncRNA__fold3__esvms10_v4.pickle

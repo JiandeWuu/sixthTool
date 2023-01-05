@@ -1,0 +1,4 @@
+outs:
+- md5: d78a9f837182280eb38c7a094c1e294d
+  size: 354496
+  path: nuc_lncRNA__cyto_lncRNA_valid_x_fold6.npy

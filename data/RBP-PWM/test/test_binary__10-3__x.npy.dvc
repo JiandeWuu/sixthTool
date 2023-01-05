@@ -1,0 +1,4 @@
+outs:
+- md5: c390e19e0f265f3a8456d70f34b6276d
+  size: 490016
+  path: test_binary__10-3__x.npy

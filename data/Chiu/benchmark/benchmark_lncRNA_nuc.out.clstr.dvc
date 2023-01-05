@@ -1,0 +1,4 @@
+outs:
+- md5: 5057cfa92a30cca8d3bd312a5bdd0e02
+  size: 185088
+  path: benchmark_lncRNA_nuc.out.clstr

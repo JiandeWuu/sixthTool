@@ -1,0 +1,4 @@
+outs:
+- md5: 335a19e2cf3e5c62cf6597f96b2f8977
+  size: 18240
+  path: k8_train_y.npy

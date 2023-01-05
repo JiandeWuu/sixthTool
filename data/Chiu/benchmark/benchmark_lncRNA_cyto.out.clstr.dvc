@@ -1,0 +1,4 @@
+outs:
+- md5: 534ece16fbeedd066f37d31e2193a2bc
+  size: 30020
+  path: benchmark_lncRNA_cyto.out.clstr

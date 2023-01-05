@@ -1,0 +1,4 @@
+outs:
+- md5: 070349895adae7a49ba60c01d9d23e89
+  size: 327059
+  path: benchmark_mRNA_cyto.out.clstr

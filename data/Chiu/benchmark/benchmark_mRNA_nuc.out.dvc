@@ -1,0 +1,4 @@
+outs:
+- md5: 8c2d8715e0805a240333f9b3cc82deca
+  size: 19808587
+  path: benchmark_mRNA_nuc.out

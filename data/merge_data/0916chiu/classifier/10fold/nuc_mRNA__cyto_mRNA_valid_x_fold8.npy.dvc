@@ -1,0 +1,4 @@
+outs:
+- md5: c0241e903b44f14dc1d91eea89c007c8
+  size: 1318816
+  path: nuc_mRNA__cyto_mRNA_valid_x_fold8.npy

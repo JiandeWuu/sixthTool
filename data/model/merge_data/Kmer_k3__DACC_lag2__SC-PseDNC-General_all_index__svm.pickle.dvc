@@ -1,0 +1,4 @@
+outs:
+- md5: 0ac5c5cf75c0dc6a342192792f47cfd0
+  size: 2616820
+  path: Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index__svm.pickle

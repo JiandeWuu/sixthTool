@@ -1,0 +1,4 @@
+outs:
+- md5: 63b9934f60b9e787afcc6471ddc37bbd
+  size: 1146
+  path: mrna_cyto_out_v2.txt

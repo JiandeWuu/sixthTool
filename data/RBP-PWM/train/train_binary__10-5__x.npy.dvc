@@ -1,0 +1,4 @@
+outs:
+- md5: 08ba98afef88223d93ff2f6116d7c107
+  size: 1956224
+  path: train_binary__10-5__x.npy

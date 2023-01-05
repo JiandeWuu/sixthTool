@@ -1,0 +1,4 @@
+outs:
+- md5: 4a4c86645fe7b3c4c71422d18511b1dd
+  size: 1152
+  path: mrna_nuc_out.txt

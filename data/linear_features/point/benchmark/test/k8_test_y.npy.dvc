@@ -1,0 +1,4 @@
+outs:
+- md5: c190c5d900aa0463e945290e72099f01
+  size: 4664
+  path: k8_test_y.npy

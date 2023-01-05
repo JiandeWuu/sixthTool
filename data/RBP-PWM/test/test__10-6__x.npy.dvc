@@ -1,0 +1,4 @@
+outs:
+- md5: 669fd43a731281f790089ca6c47603f8
+  size: 490016
+  path: test__10-6__x.npy
