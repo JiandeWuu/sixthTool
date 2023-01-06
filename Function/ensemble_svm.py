@@ -48,22 +48,9 @@ class ensemble_svm():
         return None
 
     def test(self, x, y):
-        output = None
-        for m in self.model_array:
-            p_label = m.predict(x)
-            if output is None:
-                output = np.array([p_label])
-            else:
-                output = np.append(output, np.array([p_label]), axis=0)
-        
-        pred_y = []
-        pred_y_score = []
-        for o in output.T:
-            u, c = np.unique(o, return_counts=True)
-            pred_y.append(u[c == c.max()][0])
-            pred_y_score.append(c.max() / sum(c))
+        pred_y, pred_y_score = self.predict(x)
             
-        return metrics.roc_auc_score(y, pred_y)
+        return metrics.roc_auc_score(y, pred_y_score)
     
     def predict(self, x):
         output = None
@@ -79,6 +66,10 @@ class ensemble_svm():
         for o in output.T:
             u, c = np.unique(o, return_counts=True)
             pred_y.append(u[c == c.max()][0])
-            pred_y_score.append(c.max() / sum(c))
-        
+
+            if (u == 1).any():
+                pred_y_score.append(c[u == 1][0] / sum(c))
+            else:
+                pred_y_score.append(0)
+
         return pred_y, pred_y_score
