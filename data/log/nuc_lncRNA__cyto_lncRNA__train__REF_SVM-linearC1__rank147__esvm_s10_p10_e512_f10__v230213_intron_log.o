@@ -1,0 +1,3257 @@
+Input file: /data/jand/sixthTool/data/merge_data/0916chiu/classifier/REF_rank/nuc_lncRNA__cyto_lncRNA__train__REF_SVM-linearC1__rank147.npy
+Label file: data/merge_data/0916chiu/classifier/nuc_lncRNA__cyto_lncRNA_train_y.npy
+Method model: esvm
+auroc: 0.6564692938319312
+ensemble svm step: 1/70 | 1.39s
+auroc: 0.6465536905097345
+ensemble svm step: 2/70 | 1.41s
+auroc: 0.6381274403252426
+ensemble svm step: 3/70 | 1.49s
+auroc: 0.6541480497524452
+ensemble svm step: 4/70 | 1.22s
+auroc: 0.6334446993787654
+ensemble svm step: 5/70 | 1.21s
+auroc: 0.6284667713239142
+ensemble svm step: 6/70 | 1.36s
+auroc: 0.6626279703202781
+ensemble svm step: 7/70 | 1.32s
+auroc: 0.6239718767191296
+ensemble svm step: 8/70 | 1.36s
+auroc: 0.6685317124877564
+ensemble svm step: 9/70 | 1.32s
+auroc: 0.639670463846288
+ensemble svm step: 10/70 | 1.32s
+auroc: 0.6347730413664479
+ensemble svm step: 11/70 | 1.36s
+auroc: 0.6564558762360959
+ensemble svm step: 12/70 | 1.32s
+auroc: 0.6604677373908142
+ensemble svm step: 13/70 | 1.36s
+auroc: 0.6564827114277664
+ensemble svm step: 14/70 | 1.32s
+auroc: 0.6645869393122141
+ensemble svm step: 15/70 | 1.36s
+auroc: 0.6627353110869594
+ensemble svm step: 16/70 | 1.32s
+auroc: 0.6656737645748636
+ensemble svm step: 17/70 | 1.36s
+auroc: 0.6184974976183768
+ensemble svm step: 18/70 | 1.36s
+auroc: 0.6241731406566571
+ensemble svm step: 19/70 | 1.36s
+auroc: 0.6395094526962659
+ensemble svm step: 20/70 | 1.32s
+auroc: 0.6525245206563888
+ensemble svm step: 21/70 | 1.36s
+auroc: 0.6260113512860767
+ensemble svm step: 22/70 | 1.32s
+auroc: 0.6536381811107086
+ensemble svm step: 23/70 | 1.32s
+auroc: 0.6606555837325069
+ensemble svm step: 24/70 | 1.36s
+auroc: 0.6604274846033088
+ensemble svm step: 25/70 | 1.32s
+auroc: 0.6582001636946692
+ensemble svm step: 26/70 | 1.36s
+auroc: 0.6291376511156731
+ensemble svm step: 27/70 | 1.32s
+auroc: 0.6617155738034859
+ensemble svm step: 28/70 | 1.32s
+auroc: 0.6638758067329495
+ensemble svm step: 29/70 | 1.44s
+auroc: 0.6436286546176656
+ensemble svm step: 30/70 | 1.32s
+auroc: 0.6423405654174885
+ensemble svm step: 31/70 | 1.36s
+auroc: 0.6357391082665809
+ensemble svm step: 32/70 | 1.32s
+auroc: 0.6631646741536852
+ensemble svm step: 33/70 | 1.36s
+auroc: 0.6741939379302015
+ensemble svm step: 34/70 | 1.32s
+auroc: 0.6310429497242683
+ensemble svm step: 35/70 | 1.36s
+auroc: 0.6505923868561231
+ensemble svm step: 36/70 | 1.36s
+auroc: 0.6374833957251539
+ensemble svm step: 37/70 | 1.32s
+auroc: 0.6733217942009151
+ensemble svm step: 38/70 | 1.36s
+auroc: 0.6201076091185982
+ensemble svm step: 39/70 | 1.36s
+auroc: 0.6549933582900616
+ensemble svm step: 40/70 | 1.36s
+auroc: 0.6568986568986569
+ensemble svm step: 41/70 | 1.32s
+auroc: 0.6156932200888245
+ensemble svm step: 42/70 | 1.36s
+auroc: 0.6251794603442955
+ensemble svm step: 43/70 | 1.36s
+auroc: 0.6677937447168217
+ensemble svm step: 44/70 | 1.32s
+auroc: 0.6394826175045956
+ensemble svm step: 45/70 | 1.32s
+auroc: 0.65149136577708
+ensemble svm step: 46/70 | 1.36s
+auroc: 0.6555300621234688
+ensemble svm step: 47/70 | 1.44s
+auroc: 0.629057145540662
+ensemble svm step: 48/70 | 1.36s
+auroc: 0.6464866025305586
+ensemble svm step: 49/70 | 1.32s
+auroc: 0.6484858243100002
+ensemble svm step: 50/70 | 1.40s
+auroc: 0.6661433804290948
+ensemble svm step: 51/70 | 1.32s
+auroc: 0.6475331750057024
+ensemble svm step: 52/70 | 1.32s
+auroc: 0.6437091601926768
+ensemble svm step: 53/70 | 1.32s
+auroc: 0.6283460129613976
+ensemble svm step: 54/70 | 1.36s
+auroc: 0.6395497054837714
+ensemble svm step: 55/70 | 1.32s
+auroc: 0.6461779978263494
+ensemble svm step: 56/70 | 1.32s
+auroc: 0.6551677870359189
+ensemble svm step: 57/70 | 1.36s
+auroc: 0.6478149445182413
+ensemble svm step: 58/70 | 1.32s
+auroc: 0.6600115391324184
+ensemble svm step: 59/70 | 1.36s
+auroc: 0.6371345382334394
+ensemble svm step: 60/70 | 1.32s
+auroc: 0.6224154356022488
+ensemble svm step: 61/70 | 1.36s
+auroc: 0.6630841685786741
+ensemble svm step: 62/70 | 1.36s
+auroc: 0.6382481986877592
+ensemble svm step: 63/70 | 1.36s
+auroc: 0.6386507265628145
+ensemble svm step: 64/70 | 1.32s
+auroc: 0.6285875296864308
+ensemble svm step: 65/70 | 1.36s
+auroc: 0.6700344832212964
+ensemble svm step: 66/70 | 1.32s
+auroc: 0.6413744985173557
+ensemble svm step: 67/70 | 1.23s
+auroc: 0.6339679856163373
+ensemble svm step: 68/70 | 1.23s
+auroc: 0.6268969126111984
+ensemble svm step: 69/70 | 1.19s
+auroc: 0.6441787760469079
+ensemble svm step: 70/70 | 1.20s
+ensemble svm train: 93.58s
+auroc: 0.6392475895316805
+ensemble svm step: 1/70 | 1.20s
+auroc: 0.615444214876033
+ensemble svm step: 2/70 | 1.24s
+auroc: 0.6651170798898072
+ensemble svm step: 3/70 | 1.24s
+auroc: 0.6175390266299357
+ensemble svm step: 4/70 | 1.24s
+auroc: 0.6125315656565656
+ensemble svm step: 5/70 | 1.24s
+auroc: 0.6173668503213958
+ensemble svm step: 6/70 | 1.24s
+auroc: 0.644828971533517
+ensemble svm step: 7/70 | 1.28s
+auroc: 0.6564508723599632
+ensemble svm step: 8/70 | 1.21s
+auroc: 0.6246986914600552
+ensemble svm step: 9/70 | 1.28s
+auroc: 0.6388028007346189
+ensemble svm step: 10/70 | 1.20s
+auroc: 0.6508120982552802
+ensemble svm step: 11/70 | 1.24s
+auroc: 0.6126893939393939
+ensemble svm step: 12/70 | 1.24s
+auroc: 0.6302513774104683
+ensemble svm step: 13/70 | 1.24s
+auroc: 0.6220443067033976
+ensemble svm step: 14/70 | 1.20s
+auroc: 0.63544536271809
+ensemble svm step: 15/70 | 1.32s
+auroc: 0.6208964646464645
+ensemble svm step: 16/70 | 1.24s
+auroc: 0.6575269742883378
+ensemble svm step: 17/70 | 1.28s
+auroc: 0.6357897153351699
+ensemble svm step: 18/70 | 1.24s
+auroc: 0.6311266069788797
+ensemble svm step: 19/70 | 1.24s
+auroc: 0.6316431359044996
+ensemble svm step: 20/70 | 1.20s
+auroc: 0.6413137052341599
+ensemble svm step: 21/70 | 1.28s
+auroc: 0.6186581726354453
+ensemble svm step: 22/70 | 1.24s
+auroc: 0.6398789026629936
+ensemble svm step: 23/70 | 1.24s
+auroc: 0.653150826446281
+ensemble svm step: 24/70 | 1.24s
+auroc: 0.6336949035812673
+ensemble svm step: 25/70 | 1.24s
+auroc: 0.6332788108356291
+ensemble svm step: 26/70 | 1.33s
+auroc: 0.6471533516988063
+ensemble svm step: 27/70 | 1.31s
+auroc: 0.6363923324150597
+ensemble svm step: 28/70 | 1.21s
+auroc: 0.6126893939393938
+ensemble svm step: 29/70 | 1.24s
+auroc: 0.6272956841138659
+ensemble svm step: 30/70 | 1.24s
+auroc: 0.6331927226813591
+ensemble svm step: 31/70 | 1.28s
+auroc: 0.6316718319559229
+ensemble svm step: 32/70 | 1.24s
+auroc: 0.665891873278237
+ensemble svm step: 33/70 | 1.20s
+auroc: 0.6382145316804408
+ensemble svm step: 34/70 | 1.28s
+auroc: 0.6553030303030304
+ensemble svm step: 35/70 | 1.24s
+auroc: 0.6375975665748393
+ensemble svm step: 36/70 | 1.28s
+auroc: 0.6265639348025711
+ensemble svm step: 37/70 | 1.24s
+auroc: 0.6347566574839303
+ensemble svm step: 38/70 | 1.24s
+auroc: 0.6503099173553719
+ensemble svm step: 39/70 | 1.28s
+auroc: 0.6129907024793388
+ensemble svm step: 40/70 | 1.22s
+auroc: 0.6465076905417815
+ensemble svm step: 41/70 | 1.24s
+auroc: 0.6253873966942148
+ensemble svm step: 42/70 | 1.28s
+auroc: 0.6493772956841138
+ensemble svm step: 43/70 | 1.24s
+auroc: 0.6259613177226814
+ensemble svm step: 44/70 | 1.24s
+auroc: 0.6287304866850322
+ensemble svm step: 45/70 | 1.20s
+auroc: 0.6665949265381084
+ensemble svm step: 46/70 | 1.24s
+auroc: 0.6508694903581268
+ensemble svm step: 47/70 | 1.24s
+auroc: 0.5988722451790633
+ensemble svm step: 48/70 | 1.28s
+auroc: 0.6356031910009182
+ensemble svm step: 49/70 | 1.24s
+auroc: 0.6235938934802571
+ensemble svm step: 50/70 | 1.24s
+auroc: 0.6403380394857666
+ensemble svm step: 51/70 | 1.24s
+auroc: 0.6449294077134986
+ensemble svm step: 52/70 | 1.24s
+auroc: 0.6319300964187328
+ensemble svm step: 53/70 | 1.28s
+auroc: 0.6358040633608815
+ensemble svm step: 54/70 | 1.24s
+auroc: 0.5988148530762167
+ensemble svm step: 55/70 | 1.24s
+auroc: 0.6453598484848484
+ensemble svm step: 56/70 | 1.24s
+auroc: 0.6174385904499542
+ensemble svm step: 57/70 | 1.28s
+auroc: 0.6423898071625345
+ensemble svm step: 58/70 | 1.24s
+auroc: 0.6357323232323232
+ensemble svm step: 59/70 | 1.23s
+auroc: 0.6486742424242424
+ensemble svm step: 60/70 | 1.28s
+auroc: 0.6350149219467401
+ensemble svm step: 61/70 | 1.24s
+auroc: 0.649205119375574
+ensemble svm step: 62/70 | 1.27s
+auroc: 0.6643996786042241
+ensemble svm step: 63/70 | 1.28s
+auroc: 0.6394628099173554
+ensemble svm step: 64/70 | 1.24s
+auroc: 0.6377697428833793
+ensemble svm step: 65/70 | 1.27s
+auroc: 0.629376147842057
+ensemble svm step: 66/70 | 1.24s
+auroc: 0.6450585399449036
+ensemble svm step: 67/70 | 1.24s
+auroc: 0.6426480716253443
+ensemble svm step: 68/70 | 1.24s
+auroc: 0.6244834710743802
+ensemble svm step: 69/70 | 1.24sauroc: 0.6681426022085363
+ensemble svm step: 1/70 | 1.49s
+auroc: 0.653141730064807
+ensemble svm step: 2/70 | 1.41s
+auroc: 0.6451314253512055
+ensemble svm step: 3/70 | 1.48s
+auroc: 0.6643320049913457
+ensemble svm step: 4/70 | 1.33s
+auroc: 0.643051697996753
+ensemble svm step: 5/70 | 1.36s
+auroc: 0.6339679856163373
+ensemble svm step: 6/70 | 1.32s
+auroc: 0.6802184384601968
+ensemble svm step: 7/70 | 1.36s
+auroc: 0.6256624937943619
+ensemble svm step: 8/70 | 1.32s
+auroc: 0.6822847482188142
+ensemble svm step: 9/70 | 1.32s
+auroc: 0.6479491204765929
+ensemble svm step: 10/70 | 1.32s
+auroc: 0.6348937997289646
+ensemble svm step: 11/70 | 1.36s
+auroc: 0.6713762428048142
+ensemble svm step: 12/70 | 1.32s
+auroc: 0.6698466368796039
+ensemble svm step: 13/70 | 1.32s
+auroc: 0.668571965275262
+ensemble svm step: 14/70 | 1.36s
+auroc: 0.673080277475882
+ensemble svm step: 15/70 | 1.32s
+auroc: 0.6768103691180614
+ensemble svm step: 16/70 | 1.32s
+auroc: 0.673764574863476
+ensemble svm step: 17/70 | 1.36s
+auroc: 0.6200136859477519
+ensemble svm step: 18/70 | 1.32s
+auroc: 0.6376846596626817
+ensemble svm step: 19/70 | 1.41s
+auroc: 0.6474795046223618
+ensemble svm step: 20/70 | 1.32s
+auroc: 0.6576097894779214
+ensemble svm step: 21/70 | 1.36s
+auroc: 0.6341692495538649
+ensemble svm step: 22/70 | 1.32s
+auroc: 0.6606287485408364
+ensemble svm step: 23/70 | 1.36s
+auroc: 0.6687866468086249
+ensemble svm step: 24/70 | 1.32s
+auroc: 0.6705711870547035
+ensemble svm step: 25/70 | 1.32s
+auroc: 0.665257819103973
+ensemble svm step: 26/70 | 1.36s
+auroc: 0.6371077030417689
+ensemble svm step: 27/70 | 1.32s
+auroc: 0.6728924311341893
+ensemble svm step: 28/70 | 1.30s
+auroc: 0.6755625327053898
+ensemble svm step: 29/70 | 1.38s
+auroc: 0.6505387164727825
+ensemble svm step: 30/70 | 1.36s
+auroc: 0.649451891210133
+ensemble svm step: 31/70 | 1.36s
+auroc: 0.6444202927719411
+ensemble svm step: 32/70 | 1.32s
+auroc: 0.6640368178829716
+ensemble svm step: 33/70 | 1.36s
+auroc: 0.6797219874142952
+ensemble svm step: 34/70 | 1.32s
+auroc: 0.6422063894591367
+ensemble svm step: 35/70 | 1.35s
+auroc: 0.6527123669980813
+ensemble svm step: 36/70 | 1.36s
+auroc: 0.6431187859759289
+ensemble svm step: 37/70 | 1.32s
+auroc: 0.6855720591984329
+ensemble svm step: 38/70 | 1.33s
+auroc: 0.6318345878785439
+ensemble svm step: 39/70 | 1.40s
+auroc: 0.6661836332166003
+ensemble svm step: 40/70 | 1.32s
+auroc: 0.6793731299225805
+ensemble svm step: 41/70 | 1.36s
+auroc: 0.6174509251432329
+ensemble svm step: 42/70 | 1.36s
+auroc: 0.629808530907432
+ensemble svm step: 43/70 | 1.32s
+auroc: 0.6797488226059655
+ensemble svm step: 44/70 | 1.36s
+auroc: 0.6456010412054368
+ensemble svm step: 45/70 | 1.32s
+auroc: 0.6603067262407921
+ensemble svm step: 46/70 | 1.36s
+auroc: 0.6653114894873137
+ensemble svm step: 47/70 | 1.32s
+auroc: 0.6376712420668464
+ensemble svm step: 48/70 | 1.36s
+auroc: 0.656818151323646
+ensemble svm step: 49/70 | 1.32s
+auroc: 0.65524829261093
+ensemble svm step: 50/70 | 1.44s
+auroc: 0.6738048276509815
+ensemble svm step: 51/70 | 1.33s
+auroc: 0.6567644809403052
+ensemble svm step: 52/70 | 1.32s
+auroc: 0.6524305974855426
+ensemble svm step: 53/70 | 1.36s
+auroc: 0.6362892296958231
+ensemble svm step: 54/70 | 1.32s
+auroc: 0.6482040547974615
+ensemble svm step: 55/70 | 1.32s
+auroc: 0.6533027412148291
+ensemble svm step: 56/70 | 1.32s
+auroc: 0.6624267063827504
+ensemble svm step: 57/70 | 1.36s
+auroc: 0.6607629244991883
+ensemble svm step: 58/70 | 1.32s
+auroc: 0.6638892243287847
+ensemble svm step: 59/70 | 1.32s
+auroc: 0.6492372096767701
+ensemble svm step: 60/70 | 1.36s
+auroc: 0.6247635148734051
+ensemble svm step: 61/70 | 1.40s
+auroc: 0.6683841189335695
+ensemble svm step: 62/70 | 1.32s
+auroc: 0.6458828107179756
+ensemble svm step: 63/70 | 1.36s
+auroc: 0.6444739631552818
+ensemble svm step: 64/70 | 1.32s
+auroc: 0.6374565605334837
+ensemble svm step: 65/70 | 1.36s
+auroc: 0.6796012290517786
+ensemble svm step: 66/70 | 1.32s
+auroc: 0.6499751774477049
+ensemble svm step: 67/70 | 1.35s
+auroc: 0.646674448872251
+ensemble svm step: 68/70 | 1.32s
+auroc: 0.6301708059949818
+ensemble svm step: 69/70 | 1.31s
+auroc: 0.650203276576903
+ensemble svm step: 70/70 | 1.36s
+ensemble svm train: 94.24s
+auroc: 0.6435376492194674
+ensemble svm step: 1/70 | 1.24s
+auroc: 0.6197055785123967
+ensemble svm step: 2/70 | 1.24s
+auroc: 0.6758350550964188
+ensemble svm step: 3/70 | 1.24s
+auroc: 0.6201360192837466
+ensemble svm step: 4/70 | 1.24s
+auroc: 0.6290461432506887
+ensemble svm step: 5/70 | 1.24s
+auroc: 0.6233643250688705
+ensemble svm step: 6/70 | 1.24s
+auroc: 0.6529929981634528
+ensemble svm step: 7/70 | 1.24s
+auroc: 0.6661931818181818
+ensemble svm step: 8/70 | 1.20s
+auroc: 0.6287735307621671
+ensemble svm step: 9/70 | 1.24s
+auroc: 0.6463929063360881
+ensemble svm step: 10/70 | 1.24s
+auroc: 0.6585313360881543
+ensemble svm step: 11/70 | 1.26s
+auroc: 0.6208390725436179
+ensemble svm step: 12/70 | 1.23s
+auroc: 0.6462781221303948
+ensemble svm step: 13/70 | 1.32s
+auroc: 0.6267935032139578
+ensemble svm step: 14/70 | 1.24s
+auroc: 0.6389032369146006
+ensemble svm step: 15/70 | 1.24s
+auroc: 0.6208964646464645
+ensemble svm step: 16/70 | 1.24s
+auroc: 0.6649735996326905
+ensemble svm step: 17/70 | 1.24s
+auroc: 0.6432363406795225
+ensemble svm step: 18/70 | 1.24s
+auroc: 0.6311266069788797
+ensemble svm step: 19/70 | 1.24s
+auroc: 0.6375114784205693
+ensemble svm step: 20/70 | 1.24s
+auroc: 0.6465937786960514
+ensemble svm step: 21/70 | 1.24s
+auroc: 0.6281278696051422
+ensemble svm step: 22/70 | 1.24s
+auroc: 0.6441546143250689
+ensemble svm step: 23/70 | 1.24s
+auroc: 0.6589761248852158
+ensemble svm step: 24/70 | 1.24s
+auroc: 0.6406393480257118
+ensemble svm step: 25/70 | 1.24s
+auroc: 0.6332788108356291
+ensemble svm step: 26/70 | 1.24s
+auroc: 0.6538395316804408
+ensemble svm step: 27/70 | 1.24s
+auroc: 0.6511134067952249
+ensemble svm step: 28/70 | 1.24s
+auroc: 0.6129046143250689
+ensemble svm step: 29/70 | 1.24s
+auroc: 0.6324466253443526
+ensemble svm step: 30/70 | 1.24s
+auroc: 0.6377840909090909
+ensemble svm step: 31/70 | 1.24s
+auroc: 0.6339388200183655
+ensemble svm step: 32/70 | 1.24s
+auroc: 0.6769828971533517
+ensemble svm step: 33/70 | 1.28s
+auroc: 0.6449867998163453
+ensemble svm step: 34/70 | 1.24s
+auroc: 0.6625057392102848
+ensemble svm step: 35/70 | 1.24s
+auroc: 0.6481577134986226
+ensemble svm step: 36/70 | 1.24s
+auroc: 0.6397210743801652
+ensemble svm step: 37/70 | 1.20s
+auroc: 0.6406536960514234
+ensemble svm step: 38/70 | 1.24s
+auroc: 0.6579143709825528
+ensemble svm step: 39/70 | 1.24s
+auroc: 0.61489898989899
+ensemble svm step: 40/70 | 1.24s
+auroc: 0.6503386134067952
+ensemble svm step: 41/70 | 1.24s
+auroc: 0.6308109504132231
+ensemble svm step: 42/70 | 1.24s
+auroc: 0.6518882001836547
+ensemble svm step: 43/70 | 1.24s
+auroc: 0.6299070247933884
+ensemble svm step: 44/70 | 1.24s
+auroc: 0.6335514233241506
+ensemble svm step: 45/70 | 1.24s
+auroc: 0.6722767447199265
+ensemble svm step: 46/70 | 1.24s
+auroc: 0.661644857667585
+ensemble svm step: 47/70 | 1.24s
+auroc: 0.6020718549127639
+ensemble svm step: 48/70 | 1.24s
+auroc: 0.6431359044995408
+ensemble svm step: 49/70 | 1.24s
+auroc: 0.6302800734618916
+ensemble svm step: 50/70 | 1.24s
+auroc: 0.6476698806244261
+ensemble svm step: 51/70 | 1.20s
+auroc: 0.6477703168044078
+ensemble svm step: 52/70 | 1.24s
+auroc: 0.6429493801652892
+ensemble svm step: 53/70 | 1.24s
+auroc: 0.6463785583103765
+ensemble svm step: 54/70 | 1.24s
+auroc: 0.6081410697887971
+ensemble svm step: 55/70 | 1.28s
+auroc: 0.6512425390266299
+ensemble svm step: 56/70 | 1.23s
+auroc: 0.626650022956841
+ensemble svm step: 57/70 | 1.24s
+auroc: 0.6505538337924701
+ensemble svm step: 58/70 | 1.24s
+auroc: 0.6488894628099173
+ensemble svm step: 59/70 | 1.24s
+auroc: 0.6486742424242424
+ensemble svm step: 60/70 | 1.28s
+auroc: 0.6396923783287419
+ensemble svm step: 61/70 | 1.24s
+auroc: 0.655317378328742
+ensemble svm step: 62/70 | 1.24s
+auroc: 0.6729511019283747
+ensemble svm step: 63/70 | 1.24s
+auroc: 0.6468520431588614
+ensemble svm step: 64/70 | 1.28s
+auroc: 0.6466224747474748
+ensemble svm step: 65/70 | 1.24s
+auroc: 0.643767217630854
+ensemble svm step: 66/70 | 1.24s
+auroc: 0.6501233930211203
+ensemble svm step: 67/70 | 1.24s
+auroc: 0.6474116161616162
+ensemble svm step: 68/70 | 1.28s
+auroc: 0.6371527777777777
+ensemble svm step: 69/70 | 1.24s
+auroc:auroc: 0.5
+ensemble svm step: 1/70 | 1.49s
+auroc: 0.5
+ensemble svm step: 2/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 3/70 | 1.52s
+auroc: 0.5
+ensemble svm step: 4/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 5/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 6/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 7/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 8/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 9/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 10/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 11/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 12/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 13/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 14/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 15/70 | 1.41s
+auroc: 0.5
+ensemble svm step: 16/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 17/70 | 1.46s
+auroc: 0.5
+ensemble svm step: 18/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 19/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 20/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 21/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 22/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 23/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 24/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 25/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 26/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 27/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 28/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 29/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 30/70 | 1.41s
+auroc: 0.5
+ensemble svm step: 31/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 32/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 33/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 34/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 35/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 36/70 | 1.48s
+auroc: 0.5
+ensemble svm step: 37/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 38/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 39/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 40/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 41/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 42/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 43/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 44/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 45/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 46/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 47/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 48/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 49/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 50/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 51/70 | 1.48s
+auroc: 0.5
+ensemble svm step: 52/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 53/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 54/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 55/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 56/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 57/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 58/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 59/70 | 1.43s
+auroc: 0.5
+ensemble svm step: 60/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 61/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 62/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 63/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 64/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 65/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 66/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 67/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 68/70 | 1.48s
+auroc: 0.5
+ensemble svm step: 69/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 70/70 | 1.40s
+ensemble svm train: 100.16s
+auroc: 0.5
+ensemble svm step: 1/70 | 1.30s
+auroc: 0.5
+ensemble svm step: 2/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 3/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 4/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 5/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 6/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 7/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 8/70 | 1.35s
+auroc: 0.5
+ensemble svm step: 9/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 10/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 11/70 | 1.30s
+auroc: 0.5
+ensemble svm step: 12/70 | 1.31s
+auroc: 0.5
+ensemble svm step: 13/70 | 1.31s
+auroc: 0.5
+ensemble svm step: 14/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 15/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 16/70 | 1.35s
+auroc: 0.5
+ensemble svm step: 17/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 18/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 19/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 20/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 21/70 | 1.31s
+auroc: 0.5
+ensemble svm step: 22/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 23/70 | 1.31s
+auroc: 0.5
+ensemble svm step: 24/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 25/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 26/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 27/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 28/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 29/70 | 1.35s
+auroc: 0.5
+ensemble svm step: 30/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 31/70 | 1.34s
+auroc: 0.5
+ensemble svm step: 32/70 | 1.47s
+auroc: 0.5
+ensemble svm step: 33/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 34/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 35/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 36/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 37/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 38/70 | 1.31s
+auroc: 0.5
+ensemble svm step: 39/70 | 1.35s
+auroc: 0.5
+ensemble svm step: 40/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 41/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 42/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 43/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 44/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 45/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 46/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 47/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 48/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 49/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 50/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 51/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 52/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 53/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 54/70 | 1.33s
+auroc: 0.5
+ensemble svm step: 55/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 56/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 57/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 58/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 59/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 60/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 61/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 62/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 63/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 64/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 65/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 66/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 67/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 68/70 | 1.32s
+auroc: 0.5
+ensemble svm step: 69/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 70/70 | 1.36s
+ensemble svm train: 93.18s
+auroc: 0.5
+ensemble svm step: 1/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 2/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 3/70 | 2.09s
+auroc: 0.5
+ensemble svm step: 4/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 5/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 6/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 7/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 8/70 | 1.39s
+auroc: 0.5
+ensemble svm step: 9/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 10/70 | 1.44s
+auroc: 0.5
+ensemble svm step: 11/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 12/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 13/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 14/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 15/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 16/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 17/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 18/70 | 0.46s
+auroc: 0.5
+ensemble svm step: 19/70 | 0.13s
+auroc: 0.5
+ensemble svm step: 20/70 | 0.13s
+auroc: 0.5
+ensemble svm step: 21/70 | 0.13s
+auroc: 0.5
+ensemble svm step: 22/70 | 1.18s
+auroc: 0.5
+ensemble svm step: 23/70 | 1.39s
+auroc: 0.5
+ensemble svm step: 24/70 | 1.39s
+auroc: 0.5
+ensemble svm step: 25/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 26/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 27/70 | 1.35s
+auroc: 0.5
+ensemble svm step: 28/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 29/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 30/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 31/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 32/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 33/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 34/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 35/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 36/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 37/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 38/70 | 1.39s
+auroc: 0.5
+ensemble svm step: 39/70 | 1.37s
+auroc: 0.5
+ensemble svm step: 40/70 | 1.40s
+auroc: 0.5
+ensemble svm step: 41/70 | 1.41s
+auroc: 0.5
+ensemble svm step: 42/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 43/70 | 1.38s
+auroc: 0.5
+ensemble svm step: 44/70 | 1.42s
+auroc: 0.5
+ensemble svm step: 45/70 | 1.36s
+auroc: 0.5
+ensemble svm step: 46/70 | 1.44sauroc: 0.6585758563780542
+ensemble svm step: 1/70 | 2.10s
+auroc: 0.649223792080935
+ensemble svm step: 2/70 | 2.04s
+auroc: 0.6381006051335723
+ensemble svm step: 3/70 | 2.12s
+auroc: 0.6569254920903272
+ensemble svm step: 4/70 | 2.05s
+auroc: 0.6382213634960887
+ensemble svm step: 5/70 | 2.08s
+auroc: 0.6284399361322438
+ensemble svm step: 6/70 | 2.08s
+auroc: 0.6667740074333481
+ensemble svm step: 7/70 | 2.04s
+auroc: 0.6239987119107998
+ensemble svm step: 8/70 | 2.08s
+auroc: 0.6726509144091561
+ensemble svm step: 9/70 | 2.04s
+auroc: 0.6398448925921454
+ensemble svm step: 10/70 | 2.06s
+auroc: 0.6347864589622831
+ensemble svm step: 11/70 | 1.97s
+auroc: 0.6594614177031759
+ensemble svm step: 12/70 | 1.84s
+auroc: 0.6630304981953333
+ensemble svm step: 13/70 | 1.86s
+auroc: 0.6564827114277664
+ensemble svm step: 14/70 | 2.08s
+auroc: 0.6646003569080492
+ensemble svm step: 15/70 | 2.04s
+auroc: 0.6643722577788511
+ensemble svm step: 16/70 | 2.08s
+auroc: 0.6679950086543494
+ensemble svm step: 17/70 | 2.04s
+auroc: 0.618510915214212
+ensemble svm step: 18/70 | 2.08s
+auroc: 0.6241731406566572
+ensemble svm step: 19/70 | 2.04s
+auroc: 0.6407975418964429
+ensemble svm step: 20/70 | 2.08s
+auroc: 0.6525245206563889
+ensemble svm step: 21/70 | 2.04s
+auroc: 0.6260113512860767
+ensemble svm step: 22/70 | 2.04s
+auroc: 0.6536381811107086
+ensemble svm step: 23/70 | 2.08s
+auroc: 0.6606690013283419
+ensemble svm step: 24/70 | 2.04s
+auroc: 0.6604274846033088
+ensemble svm step: 25/70 | 2.08s
+auroc: 0.659702934428209
+ensemble svm step: 26/70 | 2.04s
+auroc: 0.6290705631364972
+ensemble svm step: 27/70 | 2.08s
+auroc: 0.663298850112037
+ensemble svm step: 28/70 | 2.04s
+auroc: 0.6668679306041944
+ensemble svm step: 29/70 | 2.08s
+auroc: 0.6454668652470851
+ensemble svm step: 30/70 | 2.04s
+auroc: 0.6446752270928096
+ensemble svm step: 31/70 | 2.08s
+auroc: 0.6354975915415475
+ensemble svm step: 32/70 | 2.04s
+auroc: 0.6631512565578501
+ensemble svm step: 33/70 | 2.08s
+auroc: 0.6742073555260368
+ensemble svm step: 34/70 | 2.04s
+auroc: 0.6338338096579855
+ensemble svm step: 35/70 | 2.08s
+auroc: 0.6505923868561231
+ensemble svm step: 36/70 | 2.04s
+auroc: 0.6378859236002093
+ensemble svm step: 37/70 | 2.08s
+auroc: 0.6745562130177515
+ensemble svm step: 38/70 | 2.04s
+auroc: 0.6201076091185982
+ensemble svm step: 39/70 | 2.07s
+auroc: 0.6569389096861624
+ensemble svm step: 40/70 | 2.04s
+auroc: 0.6644125105663566
+ensemble svm step: 41/70 | 2.07s
+auroc: 0.6156932200888245
+ensemble svm step: 42/70 | 2.04s
+auroc: 0.6251794603442955
+ensemble svm step: 43/70 | 2.08s
+auroc: 0.6707187806088906
+ensemble svm step: 44/70 | 2.04s
+auroc: 0.6394557823129252
+ensemble svm step: 45/70 | 2.08s
+auroc: 0.6514511129895746
+ensemble svm step: 46/70 | 2.03s
+auroc: 0.6555434797193039
+ensemble svm step: 47/70 | 2.08s
+auroc: 0.629057145540662
+ensemble svm step: 48/70 | 2.06s
+auroc: 0.6494250560184627
+ensemble svm step: 49/70 | 2.08s
+auroc: 0.6505789692602879
+ensemble svm step: 50/70 | 2.12s
+auroc: 0.6687463940211192
+ensemble svm step: 51/70 | 2.04s
+auroc: 0.6475465926015377
+ensemble svm step: 52/70 | 2.06s
+auroc: 0.6446752270928096
+ensemble svm step: 53/70 | 2.04s
+auroc: 0.6283594305572328
+ensemble svm step: 54/70 | 2.08s
+auroc: 0.6395765406754418
+ensemble svm step: 55/70 | 2.06s
+auroc: 0.6461914154221847
+ensemble svm step: 56/70 | 2.08s
+auroc: 0.655181204631754
+ensemble svm step: 57/70 | 2.04s
+auroc: 0.6527123669980813
+ensemble svm step: 58/70 | 2.04s
+auroc: 0.6600249567282535
+ensemble svm step: 59/70 | 2.04s
+auroc: 0.6393886943337492
+ensemble svm step: 60/70 | 2.08s
+auroc: 0.6224020180064136
+ensemble svm step: 61/70 | 2.06s
+auroc: 0.663084168578674
+ensemble svm step: 62/70 | 2.08s
+auroc: 0.6407036187255968
+ensemble svm step: 63/70 | 2.04s
+auroc: 0.6386238913711442
+ensemble svm step: 64/70 | 2.08s
+auroc: 0.6314454775993238
+ensemble svm step: 65/70 | 2.04s
+auroc: 0.6722349689382656
+ensemble svm step: 66/70 | 2.08s
+auroc: 0.6413879161131909
+ensemble svm step: 67/70 | 2.04s
+auroc: 0.6339277328288317
+ensemble svm step: 68/70 | 2.08s
+auroc: 0.6268834950153631
+ensemble svm step: 69/70 | 2.04s
+auroc: 0.6441653584510728
+ensemble svm step: 70/70 | 2.08s
+ensemble svm train: 143.80s
+auroc: 0.6392332415059688
+ensemble svm step: 1/70 | 1.87s
+auroc: 0.615444214876033
+ensemble svm step: 2/70 | 1.92s
+auroc: 0.6651170798898072
+ensemble svm step: 3/70 | 1.92s
+auroc: 0.617524678604224
+ensemble svm step: 4/70 | 1.88s
+auroc: 0.6130337465564739
+ensemble svm step: 5/70 | 1.92s
+auroc: 0.6173668503213958
+ensemble svm step: 6/70 | 1.92s
+auroc: 0.644828971533517
+ensemble svm step: 7/70 | 1.92s
+auroc: 0.6564939164370982
+ensemble svm step: 8/70 | 1.92s
+auroc: 0.6247417355371901
+ensemble svm step: 9/70 | 1.92s
+auroc: 0.6391758494031221
+ensemble svm step: 10/70 | 1.92s
+auroc: 0.6516155876951332
+ensemble svm step: 11/70 | 1.92s
+auroc: 0.6127611340679522
+ensemble svm step: 12/70 | 1.73s
+auroc: 0.6302513774104683
+ensemble svm step: 13/70 | 1.73s
+auroc: 0.6220443067033976
+ensemble svm step: 14/70 | 1.73s
+auroc: 0.6354597107438017
+ensemble svm step: 15/70 | 1.73s
+auroc: 0.6208964646464648
+ensemble svm step: 16/70 | 1.77s
+auroc: 0.6575269742883378
+ensemble svm step: 17/70 | 1.71s
+auroc: 0.6358040633608815
+ensemble svm step: 18/70 | 1.75s
+auroc: 0.6311266069788797
+ensemble svm step: 19/70 | 1.80s
+auroc: 0.6316431359044996
+ensemble svm step: 20/70 | 2.03s
+auroc: 0.6413137052341598
+ensemble svm step: 21/70 | 1.92s
+auroc: 0.6186581726354453
+ensemble svm step: 22/70 | 1.92s
+auroc: 0.6398789026629936
+ensemble svm step: 23/70 | 1.92s
+auroc: 0.6531508264462811
+ensemble svm step: 24/70 | 1.92s
+auroc: 0.6336949035812673
+ensemble svm step: 25/70 | 1.92s
+auroc: 0.6332788108356291
+ensemble svm step: 26/70 | 1.96s
+auroc: 0.6471676997245179
+ensemble svm step: 27/70 | 1.92s
+auroc: 0.6394915059687787
+ensemble svm step: 28/70 | 1.92s
+auroc: 0.6126750459136823
+ensemble svm step: 29/70 | 1.92s
+auroc: 0.6272956841138659
+ensemble svm step: 30/70 | 1.92s
+auroc: 0.6331783746556474
+ensemble svm step: 31/70 | 1.92s
+auroc: 0.6316431359044995
+ensemble svm step: 32/70 | 1.88s
+auroc: 0.665891873278237
+ensemble svm step: 33/70 | 1.92s
+auroc: 0.6382001836547291
+ensemble svm step: 34/70 | 1.92s
+auroc: 0.6553030303030304
+ensemble svm step: 35/70 | 1.92s
+auroc: 0.637611914600551
+ensemble svm step: 36/70 | 1.92s
+auroc: 0.6265926308539944
+ensemble svm step: 37/70 | 1.92s
+auroc: 0.634727961432507
+ensemble svm step: 38/70 | 1.92s
+auroc: 0.6525338613406794
+ensemble svm step: 39/70 | 2.01s
+auroc: 0.6129907024793388
+ensemble svm step: 40/70 | 1.92s
+auroc: 0.6465220385674931
+ensemble svm step: 41/70 | 1.92s
+auroc: 0.6253443526170799
+ensemble svm step: 42/70 | 1.92s
+auroc: 0.6494059917355371
+ensemble svm step: 43/70 | 1.92s
+auroc: 0.6259469696969697
+ensemble svm step: 44/70 | 1.93s
+auroc: 0.6286874426078972
+ensemble svm step: 45/70 | 1.92s
+auroc: 0.66660927456382
+ensemble svm step: 46/70 | 1.92s
+auroc: 0.6507977502295684
+ensemble svm step: 47/70 | 1.92s
+auroc: 0.5988578971533518
+ensemble svm step: 48/70 | 1.92s
+auroc: 0.6355888429752066
+ensemble svm step: 49/70 | 1.91s
+auroc: 0.6235938934802571
+ensemble svm step: 50/70 | 1.92s
+auroc: 0.6408258723599632
+ensemble svm step: 51/70 | 1.92s
+auroc: 0.644915059687787
+ensemble svm step: 52/70 | 1.92s
+auroc: 0.6319444444444444
+ensemble svm step: 53/70 | 1.92s
+auroc: 0.6358040633608815
+ensemble svm step: 54/70 | 1.92s
+auroc: 0.5987861570247934
+ensemble svm step: 55/70 | 1.88s
+auroc: 0.6453455004591369
+ensemble svm step: 56/70 | 1.92s
+auroc: 0.6174242424242424
+ensemble svm step: 57/70 | 1.92s
+auroc: 0.6448433195592287
+ensemble svm step: 58/70 | 1.96s
+auroc: 0.6357036271808999
+ensemble svm step: 59/70 | 1.85s
+auroc: 0.6486598943985308
+ensemble svm step: 60/70 | 1.96s
+auroc: 0.6350149219467401
+ensemble svm step: 61/70 | 1.98s
+auroc: 0.6492194674012857
+ensemble svm step: 62/70 | 1.94s
+auroc: 0.6643853305785125
+ensemble svm step: 63/70 | 1.88s
+auroc: 0.6394628099173554
+ensemble svm step: 64/70 | 1.92s
+auroc: 0.6377840909090908
+ensemble svm step: 65/70 | 1.94s
+auroc: 0.6293617998163453
+ensemble svm step: 66/70 | 1.94s
+auroc: 0.6450298438934802
+ensemble svm step: 67/70 | 1.94s
+auroc: 0.6426480716253443
+ensemble svm step: 68/70 | 1.92s
+auroc: 0.6244691230486685
+ensemble svm step: 69/70 | 1.92sauroc: 1.0
+ensemble svm step: 1/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 2/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 3/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 4/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 5/70 | 1.99s
+auroc: 1.0
+ensemble svm step: 6/70 | 2.04s
+auroc: 1.0
+ensemble svm step: 7/70 | 1.98s
+auroc: 1.0
+ensemble svm step: 8/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 9/70 | 1.94s
+auroc: 1.0
+ensemble svm step: 10/70 | 1.87s
+auroc: 1.0
+ensemble svm step: 11/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 12/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 13/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 14/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 15/70 | 1.94s
+auroc: 1.0
+ensemble svm step: 16/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 17/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 18/70 | 2.05s
+auroc: 1.0
+ensemble svm step: 19/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 20/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 21/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 22/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 23/70 | 2.03s
+auroc: 1.0
+ensemble svm step: 24/70 | 2.22s
+auroc: 1.0
+ensemble svm step: 25/70 | 2.09s
+auroc: 1.0
+ensemble svm step: 26/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 27/70 | 2.04s
+auroc: 1.0
+ensemble svm step: 28/70 | 1.98s
+auroc: 1.0
+ensemble svm step: 29/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 30/70 | 1.98s
+auroc: 1.0
+ensemble svm step: 31/70 | 2.05s
+auroc: 1.0
+ensemble svm step: 32/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 33/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 34/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 35/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 36/70 | 2.03s
+auroc: 1.0
+ensemble svm step: 37/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 38/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 39/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 40/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 41/70 | 1.95s
+auroc: 1.0
+ensemble svm step: 42/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 43/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 44/70 | 1.86s
+auroc: 1.0
+ensemble svm step: 45/70 | 1.99s
+auroc: 1.0
+ensemble svm step: 46/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 47/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 48/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 49/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 50/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 51/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 52/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 53/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 54/70 | 1.99s
+auroc: 1.0
+ensemble svm step: 55/70 | 2.21s
+auroc: 1.0
+ensemble svm step: 56/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 57/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 58/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 59/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 60/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 61/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 62/70 | 2.01s
+auroc: 1.0
+ensemble svm step: 63/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 64/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 65/70 | 2.05s
+auroc: 1.0
+ensemble svm step: 66/70 | 1.99s
+auroc: 1.0
+ensemble svm step: 67/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 68/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 69/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 70/70 | 1.95s
+ensemble svm train: 137.95s
+auroc: 1.0
+ensemble svm step: 1/70 | 1.77s
+auroc: 1.0
+ensemble svm step: 2/70 | 1.81s
+auroc: 1.0
+ensemble svm step: 3/70 | 1.81s
+auroc: 1.0
+ensemble svm step: 4/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 5/70 | 1.81s
+auroc: 1.0
+ensemble svm step: 6/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 7/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 8/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 9/70 | 1.76s
+auroc: 1.0
+ensemble svm step: 10/70 | 1.76s
+auroc: 1.0
+ensemble svm step: 11/70 | 1.87s
+auroc: 1.0
+ensemble svm step: 12/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 13/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 14/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 15/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 16/70 | 1.87s
+auroc: 1.0
+ensemble svm step: 17/70 | 1.76s
+auroc: 1.0
+ensemble svm step: 18/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 19/70 | 1.98s
+auroc: 1.0
+ensemble svm step: 20/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 21/70 | 2.03s
+auroc: 1.0
+ensemble svm step: 22/70 | 2.12s
+auroc: 1.0
+ensemble svm step: 23/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 24/70 | 2.03s
+auroc: 1.0
+ensemble svm step: 25/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 26/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 27/70 | 1.81s
+auroc: 1.0
+ensemble svm step: 28/70 | 1.72s
+auroc: 1.0
+ensemble svm step: 29/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 30/70 | 1.77s
+auroc: 1.0
+ensemble svm step: 31/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 32/70 | 1.77s
+auroc: 1.0
+ensemble svm step: 33/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 34/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 35/70 | 1.78s
+auroc: 1.0
+ensemble svm step: 36/70 | 1.90s
+auroc: 1.0
+ensemble svm step: 37/70 | 1.70s
+auroc: 1.0
+ensemble svm step: 38/70 | 1.72s
+auroc: 1.0
+ensemble svm step: 39/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 40/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 41/70 | 1.77s
+auroc: 1.0
+ensemble svm step: 42/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 43/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 44/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 45/70 | 1.77s
+auroc: 1.0
+ensemble svm step: 46/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 47/70 | 1.73s
+auroc: 1.0
+ensemble svm step: 48/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 49/70 | 2.03s
+auroc: 1.0
+ensemble svm step: 50/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 51/70 | 1.81s
+auroc: 1.0
+ensemble svm step: 52/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 53/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 54/70 | 1.79s
+auroc: 1.0
+ensemble svm step: 55/70 | 1.73s
+auroc: 1.0
+ensemble svm step: 56/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 57/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 58/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 59/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 60/70 | 1.79s
+auroc: 1.0
+ensemble svm step: 61/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 62/70 | 1.72s
+auroc: 1.0
+ensemble svm step: 63/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 64/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 65/70 | 1.75s
+auroc: 1.0
+ensemble svm step: 66/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 67/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 68/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 69/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 70/70 | 1.80s
+ensemble svm train: 129.06s
+auroc: 1.0
+ensemble svm step: 1/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 2/70 | 1.94s
+auroc: 1.0
+ensemble svm step: 3/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 4/70 | 1.82s
+auroc: 1.0
+ensemble svm step: 5/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 6/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 7/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 8/70 | 1.82s
+auroc: 1.0
+ensemble svm step: 9/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 10/70 | 1.87s
+auroc: 1.0
+ensemble svm step: 11/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 12/70 | 1.95s
+auroc: 1.0
+ensemble svm step: 13/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 14/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 15/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 16/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 17/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 18/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 19/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 20/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 21/70 | 2.01s
+auroc: 1.0
+ensemble svm step: 22/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 23/70 | 2.02s
+auroc: 1.0
+ensemble svm step: 24/70 | 1.94s
+auroc: 1.0
+ensemble svm step: 25/70 | 1.90s
+auroc: 1.0
+ensemble svm step: 26/70 | 1.96s
+auroc: 1.0
+ensemble svm step: 27/70 | 1.79s
+auroc: 1.0
+ensemble svm step: 28/70 | 1.97s
+auroc: 1.0
+ensemble svm step: 29/70 | 1.83s
+auroc: 1.0
+ensemble svm step: 30/70 | 1.95s
+auroc: 1.0
+ensemble svm step: 31/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 32/70 | 1.80s
+auroc: 1.0
+ensemble svm step: 33/70 | 1.86s
+auroc: 1.0
+ensemble svm step: 34/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 35/70 | 1.89s
+auroc: 1.0
+ensemble svm step: 36/70 | 1.85s
+auroc: 1.0
+ensemble svm step: 37/70 | 2.00s
+auroc: 1.0
+ensemble svm step: 38/70 | 1.98s
+auroc: 1.0
+ensemble svm step: 39/70 | 1.95s
+auroc: 1.0
+ensemble svm step: 40/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 41/70 | 1.84s
+auroc: 1.0
+ensemble svm step: 42/70 | 1.88s
+auroc: 1.0
+ensemble svm step: 43/70 | 1.91s
+auroc: 1.0
+ensemble svm step: 44/70 | 1.93s
+auroc: 1.0
+ensemble svm step: 45/70 | 1.92s
+auroc: 1.0
+ensemble svm step: 46/70 | 1.91sauroc: 0.760026298487837
+ensemble svm step: 1/70 | 2.71s
+auroc: 0.7285217834668385
+ensemble svm step: 2/70 | 2.65s
+auroc: 0.7514256195574877
+ensemble svm step: 3/70 | 2.63s
+auroc: 0.7517878946450374
+ensemble svm step: 4/70 | 2.60s
+auroc: 0.726603067262408
+ensemble svm step: 5/70 | 2.72s
+auroc: 0.7351769110010868
+ensemble svm step: 6/70 | 2.68s
+auroc: 0.7508218277449046
+ensemble svm step: 7/70 | 2.52s
+auroc: 0.7299440486253672
+ensemble svm step: 8/70 | 2.71s
+auroc: 0.7637966429175221
+ensemble svm step: 9/70 | 2.52s
+auroc: 0.7415368514269614
+ensemble svm step: 10/70 | 2.68s
+auroc: 0.7283071019334757
+ensemble svm step: 11/70 | 2.72s
+auroc: 0.7508218277449047
+ensemble svm step: 12/70 | 2.55s
+auroc: 0.7557997557997559
+ensemble svm step: 13/70 | 2.61s
+auroc: 0.7483798253029023
+ensemble svm step: 14/70 | 2.64s
+auroc: 0.7395913000308605
+ensemble svm step: 15/70 | 2.60s
+auroc: 0.7624280481423339
+ensemble svm step: 16/70 | 2.60s
+auroc: 0.7444216345315247
+ensemble svm step: 17/70 | 2.63s
+auroc: 0.7048665620094192
+ensemble svm step: 18/70 | 2.72s
+auroc: 0.7422748191978962
+ensemble svm step: 19/70 | 2.64s
+auroc: 0.7249929557621866
+ensemble svm step: 20/70 | 2.57s
+auroc: 0.7264018033248802
+ensemble svm step: 21/70 | 2.63s
+auroc: 0.7180560587153995
+ensemble svm step: 22/70 | 2.61s
+auroc: 0.7356733620469886
+ensemble svm step: 23/70 | 2.60s
+auroc: 0.7583490990084396
+ensemble svm step: 24/70 | 2.56s
+auroc: 0.7443545465523487
+ensemble svm step: 25/70 | 2.56s
+auroc: 0.7389606730266072
+ensemble svm step: 26/70 | 2.56s
+auroc: 0.7190623784030378
+ensemble svm step: 27/70 | 2.60s
+auroc: 0.7497350024822552
+ensemble svm step: 28/70 | 2.52s
+auroc: 0.7569670866374163
+ensemble svm step: 29/70 | 2.48s
+auroc: 0.7407586308685209
+ensemble svm step: 30/70 | 2.56s
+auroc: 0.7237182841578446
+ensemble svm step: 31/70 | 2.60s
+auroc: 0.7313528961880611
+ensemble svm step: 32/70 | 2.60s
+auroc: 0.7394302888808383
+ensemble svm step: 33/70 | 2.64s
+auroc: 0.7648566329885012
+ensemble svm step: 34/70 | 2.56s
+auroc: 0.7133867353647574
+ensemble svm step: 35/70 | 2.65s
+auroc: 0.7194649062780931
+ensemble svm step: 36/70 | 2.62s
+auroc: 0.7414697634477854
+ensemble svm step: 37/70 | 2.56s
+auroc: 0.7555448214788875
+ensemble svm step: 38/70 | 2.52s
+auroc: 0.7445558104898764
+ensemble svm step: 39/70 | 2.64s
+auroc: 0.75008385997397
+ensemble svm step: 40/70 | 2.52s
+auroc: 0.7504327174656845
+ensemble svm step: 41/70 | 2.52s
+auroc: 0.7145406486065827
+ensemble svm step: 42/70 | 2.68s
+auroc: 0.7302794885212469
+ensemble svm step: 43/70 | 2.64s
+auroc: 0.7597713641669686
+ensemble svm step: 44/70 | 2.48s
+auroc: 0.7219337439117659
+ensemble svm step: 45/70 | 2.60s
+auroc: 0.7383032108306834
+ensemble svm step: 46/70 | 2.56s
+auroc: 0.7478162862778246
+ensemble svm step: 47/70 | 2.60s
+auroc: 0.7365723409679454
+ensemble svm step: 48/70 | 2.60s
+auroc: 0.7427578526479626
+ensemble svm step: 49/70 | 2.56s
+auroc: 0.7480846381945284
+ensemble svm step: 50/70 | 2.56s
+auroc: 0.7446631512565578
+ensemble svm step: 51/70 | 2.52s
+auroc: 0.7441667002106562
+ensemble svm step: 52/70 | 2.56s
+auroc: 0.7309637859088408
+ensemble svm step: 53/70 | 2.60s
+auroc: 0.7270458479249687
+ensemble svm step: 54/70 | 2.60s
+auroc: 0.7327617437507548
+ensemble svm step: 55/70 | 2.56s
+auroc: 0.7516671362825209
+ensemble svm step: 56/70 | 2.60s
+auroc: 0.7576513840250104
+ensemble svm step: 57/70 | 2.56s
+auroc: 0.7472124944652417
+ensemble svm step: 58/70 | 2.52s
+auroc: 0.7442472057856673
+ensemble svm step: 59/70 | 2.59s
+auroc: 0.7341571737176132
+ensemble svm step: 60/70 | 2.60s
+auroc: 0.7217056447825678
+ensemble svm step: 61/70 | 2.64s
+auroc: 0.7480846381945283
+ensemble svm step: 62/70 | 2.57s
+auroc: 0.7215983040158864
+ensemble svm step: 63/70 | 2.60s
+auroc: 0.7340229977592615
+ensemble svm step: 64/70 | 2.60s
+auroc: 0.7337278106508878
+ensemble svm step: 65/70 | 2.64s
+auroc: 0.763179433509104
+ensemble svm step: 66/70 | 2.52s
+auroc: 0.7371358799930228
+ensemble svm step: 67/70 | 2.60s
+auroc: 0.7496679145030795
+ensemble svm step: 68/70 | 2.56s
+auroc: 0.7183512458237733
+ensemble svm step: 69/70 | 2.64s
+auroc: 0.7246843510579775
+ensemble svm step: 70/70 | 2.56s
+ensemble svm train: 181.74s
+auroc: 0.729238406795225
+ensemble svm step: 1/70 | 2.52s
+auroc: 0.7254505280073463
+ensemble svm step: 2/70 | 2.56s
+auroc: 0.7666150137741048
+ensemble svm step: 3/70 | 2.44s
+auroc: 0.7305297291092745
+ensemble svm step: 4/70 | 2.52s
+auroc: 0.7501434802571166
+ensemble svm step: 5/70 | 2.52s
+auroc: 0.7025223829201102
+ensemble svm step: 6/70 | 2.52s
+auroc: 0.7355658861340679
+ensemble svm step: 7/70 | 2.48s
+auroc: 0.7359102387511478
+ensemble svm step: 8/70 | 2.48s
+auroc: 0.7260387970615243
+ensemble svm step: 9/70 | 2.52s
+auroc: 0.7425246786042241
+ensemble svm step: 10/70 | 2.51s
+auroc: 0.7395259412304866
+ensemble svm step: 11/70 | 2.48s
+auroc: 0.7231404958677687
+ensemble svm step: 12/70 | 2.52s
+auroc: 0.7475464876033058
+ensemble svm step: 13/70 | 2.48s
+auroc: 0.7450499311294767
+ensemble svm step: 14/70 | 2.56s
+auroc: 0.7309888659320478
+ensemble svm step: 15/70 | 2.48s
+auroc: 0.7199982782369145
+ensemble svm step: 16/70 | 2.56s
+auroc: 0.7634010560146923
+ensemble svm step: 17/70 | 2.44s
+auroc: 0.7289657943067034
+ensemble svm step: 18/70 | 2.52s
+auroc: 0.7369863406795225
+ensemble svm step: 19/70 | 2.52s
+auroc: 0.7490530303030303
+ensemble svm step: 20/70 | 2.48s
+auroc: 0.7475034435261708
+ensemble svm step: 21/70 | 2.52s
+auroc: 0.7285783976124887
+ensemble svm step: 22/70 | 2.52s
+auroc: 0.7274735996326906
+ensemble svm step: 23/70 | 2.48s
+auroc: 0.727330119375574
+ensemble svm step: 24/70 | 2.52s
+auroc: 0.726512281910009
+ensemble svm step: 25/70 | 2.52s
+auroc: 0.7359102387511478
+ensemble svm step: 26/70 | 2.56s
+auroc: 0.7554522497704316
+ensemble svm step: 27/70 | 2.56s
+auroc: 0.7398846418732782
+ensemble svm step: 28/70 | 2.48s
+auroc: 0.7053919880624425
+ensemble svm step: 29/70 | 2.60s
+auroc: 0.7242739898989898
+ensemble svm step: 30/70 | 2.51s
+auroc: 0.7321510560146923
+ensemble svm step: 31/70 | 2.52s
+auroc: 0.7465995179063362
+ensemble svm step: 32/70 | 2.52s
+auroc: 0.7703024563820018
+ensemble svm step: 33/70 | 2.48s
+auroc: 0.7473456152433425
+ensemble svm step: 34/70 | 2.72s
+auroc: 0.7308023415977962
+ensemble svm step: 35/70 | 2.74s
+auroc: 0.727617079889807
+ensemble svm step: 36/70 | 2.52s
+auroc: 0.746312557392103
+ensemble svm step: 37/70 | 2.52s
+auroc: 0.7457242883379247
+ensemble svm step: 38/70 | 2.56s
+auroc: 0.7380480945821855
+ensemble svm step: 39/70 | 2.52s
+auroc: 0.7082328971533518
+ensemble svm step: 40/70 | 2.60s
+auroc: 0.7474460514233242
+ensemble svm step: 41/70 | 2.52s
+auroc: 0.7408459595959597
+ensemble svm step: 42/70 | 2.52s
+auroc: 0.7502008723599632
+ensemble svm step: 43/70 | 2.52s
+auroc: 0.7217343893480257
+ensemble svm step: 44/70 | 2.52s
+auroc: 0.7366419880624426
+ensemble svm step: 45/70 | 2.53s
+auroc: 0.7426825068870524
+ensemble svm step: 46/70 | 2.52s
+auroc: 0.7433138200183655
+ensemble svm step: 47/70 | 2.48s
+auroc: 0.7237000688705235
+ensemble svm step: 48/70 | 2.60s
+auroc: 0.7342889118457301
+ensemble svm step: 49/70 | 2.48s
+auroc: 0.7146034205693297
+ensemble svm step: 50/70 | 2.56s
+auroc: 0.7464560376492195
+ensemble svm step: 51/70 | 2.52s
+auroc: 0.7324380165289256
+ensemble svm step: 52/70 | 2.52s
+auroc: 0.7500717401285583
+ensemble svm step: 53/70 | 2.56s
+auroc: 0.7301710284664831
+ensemble svm step: 54/70 | 2.52s
+auroc: 0.7197400137741047
+ensemble svm step: 55/70 | 2.56s
+auroc: 0.7394972451790636
+ensemble svm step: 56/70 | 2.52s
+auroc: 0.7473743112947657
+ensemble svm step: 57/70 | 2.52s
+auroc: 0.7239583333333333
+ensemble svm step: 58/70 | 2.52s
+auroc: 0.7460686409550046
+ensemble svm step: 59/70 | 2.52s
+auroc: 0.7422664141414141
+ensemble svm step: 60/70 | 2.60s
+auroc: 0.724819214876033
+ensemble svm step: 61/70 | 2.52s
+auroc: 0.7467429981634528
+ensemble svm step: 62/70 | 2.48s
+auroc: 0.7444186179981634
+ensemble svm step: 63/70 | 2.52s
+auroc: 0.7350350091827365
+ensemble svm step: 64/70 | 2.56s
+auroc: 0.7296688475665749
+ensemble svm step: 65/70 | 2.47s
+auroc: 0.7665145775941229
+ensemble svm step: 66/70 | 2.52s
+auroc: 0.734762396694215
+ensemble svm step: 67/70 | 2.56s
+auroc: 0.7449638429752066
+ensemble svm step: 68/70 | 2.52s
+auroc: 0.7339015151515151
+ensemble svm step: 69/70 | 2.56s 0.6313561753902663
+ensemble svm step: 70/70 | 1.24s
+ensemble svm train: 86.95s
+auroc: 0.6513168724279835
+ensemble svm step: 1/70 | 1.24s
+auroc: 0.6102469135802469
+ensemble svm step: 2/70 | 1.33s
+auroc: 0.6468175582990396
+ensemble svm step: 3/70 | 1.28s
+auroc: 0.6424965706447188
+ensemble svm step: 4/70 | 1.28s
+auroc: 0.6645679012345679
+ensemble svm step: 5/70 | 1.28s
+auroc: 0.6596433470507544
+ensemble svm step: 6/70 | 1.28s
+auroc: 0.656323731138546
+ensemble svm step: 7/70 | 1.28s
+auroc: 0.6575994513031549
+ensemble svm step: 8/70 | 1.28s
+auroc: 0.6369958847736625
+ensemble svm step: 9/70 | 1.32s
+auroc: 0.6514951989026062
+ensemble svm step: 10/70 | 1.28s
+auroc: 0.6367489711934156
+ensemble svm step: 11/70 | 1.28s
+auroc: 0.6400411522633745
+ensemble svm step: 12/70 | 1.32s
+auroc: 0.6437585733882032
+ensemble svm step: 13/70 | 1.32s
+auroc: 0.6550891632373114
+ensemble svm step: 14/70 | 1.28s
+auroc: 0.6168449931412895
+ensemble svm step: 15/70 | 1.32s
+auroc: 0.656310013717421
+ensemble svm step: 16/70 | 1.28s
+auroc: 0.6389300411522634
+ensemble svm step: 17/70 | 1.28s
+auroc: 0.6646913580246914
+ensemble svm step: 18/70 | 1.28s
+auroc: 0.6719341563786009
+ensemble svm step: 19/70 | 1.28s
+auroc: 0.6416598079561042
+ensemble svm step: 20/70 | 1.28s
+auroc: 0.6333058984910837
+ensemble svm step: 21/70 | 1.32s
+auroc: 0.6497942386831277
+ensemble svm step: 22/70 | 1.28s
+auroc: 0.6459807956104252
+ensemble svm step: 23/70 | 1.28s
+auroc: 0.653045267489712
+ensemble svm step: 24/70 | 1.28s
+auroc: 0.6191906721536351
+ensemble svm step: 25/70 | 1.32s
+auroc: 0.6621399176954733
+ensemble svm step: 26/70 | 1.28s
+auroc: 0.6462002743484225
+ensemble svm step: 27/70 | 1.28s
+auroc: 0.6269958847736625
+ensemble svm step: 28/70 | 1.28s
+auroc: 0.6610562414266118
+ensemble svm step: 29/70 | 1.32s
+auroc: 0.6365020576131687
+ensemble svm step: 30/70 | 1.28s
+auroc: 0.6446776406035665
+ensemble svm step: 31/70 | 1.28s
+auroc: 0.6413168724279835
+ensemble svm step: 32/70 | 1.28s
+auroc: 0.6321673525377228
+ensemble svm step: 33/70 | 1.33s
+auroc: 0.6757201646090535
+ensemble svm step: 34/70 | 1.28s
+auroc: 0.6502743484224967
+ensemble svm step: 35/70 | 1.27s
+auroc: 0.6477777777777778
+ensemble svm step: 36/70 | 1.32s
+auroc: 0.6674897119341564
+ensemble svm step: 37/70 | 1.28s
+auroc: 0.6333607681755831
+ensemble svm step: 38/70 | 1.28s
+auroc: 0.6237174211248286
+ensemble svm step: 39/70 | 1.28s
+auroc: 0.6378326474622771
+ensemble svm step: 40/70 | 1.28s
+auroc: 0.6385185185185185
+ensemble svm step: 41/70 | 1.28s
+auroc: 0.6549794238683128
+ensemble svm step: 42/70 | 1.28s
+auroc: 0.6761179698216736
+ensemble svm step: 43/70 | 1.32s
+auroc: 0.6496707818930042
+ensemble svm step: 44/70 | 1.28s
+auroc: 0.6362002743484225
+ensemble svm step: 45/70 | 1.30s
+auroc: 0.6556378600823045
+ensemble svm step: 46/70 | 1.28s
+auroc: 0.6433058984910838
+ensemble svm step: 47/70 | 1.28s
+auroc: 0.635925925925926
+ensemble svm step: 48/70 | 1.28s
+auroc: 0.6406721536351166
+ensemble svm step: 49/70 | 1.28s
+auroc: 0.6220713305898491
+ensemble svm step: 50/70 | 1.32s
+auroc: 0.6437860082304527
+ensemble svm step: 51/70 | 1.28s
+auroc: 0.6498079561042525
+ensemble svm step: 52/70 | 1.28s
+auroc: 0.6544170096021948
+ensemble svm step: 53/70 | 1.32s
+auroc: 0.6421124828532234
+ensemble svm step: 54/70 | 1.32s
+auroc: 0.6430452674897118
+ensemble svm step: 55/70 | 1.28s
+auroc: 0.6484910836762688
+ensemble svm step: 56/70 | 1.28s
+auroc: 0.6331824417009603
+ensemble svm step: 57/70 | 1.32s
+auroc: 0.64
+ensemble svm step: 58/70 | 1.26s
+auroc: 0.6562825788751715
+ensemble svm step: 59/70 | 1.24s
+auroc: 0.6443072702331962
+ensemble svm step: 60/70 | 1.29s
+auroc: 0.6318655692729767
+ensemble svm step: 61/70 | 1.32s
+auroc: 0.6637037037037038
+ensemble svm step: 62/70 | 1.28s
+auroc: 0.6499039780521262
+ensemble svm step: 63/70 | 1.32s
+auroc: 0.6394513031550069
+ensemble svm step: 64/70 | 1.28s
+auroc: 0.6454869684499314
+ensemble svm step: 65/70 | 1.28s
+auroc: 0.6394650205761317
+ensemble svm step: 66/70 | 1.31s
+auroc: 0.6426200274348423
+ensemble svm step: 67/70 | 1.29s
+auroc: 0.6662825788751715
+ensemble svm step: 68/70 | 1.74s
+auroc: 0.6500137174211249
+ensemble svm step: 69/70 | 1.28s
+auroc: 0.6482990397805213
+ensemble svm step: 70/70 | 1.32s
+ensemble svm train: 90.73s
+auroc: 0.6438249585296751
+ensemble svm step: 1/70 | 1.20s
+auroc: 0.6489628748843969
+ensemble svm step: 2/70 | 1.20s
+auroc: 0.660633284890122
+ensemble svm step: 3/70 | 1.20s
+auroc: 0.6478325332863581
+ensemble svm step: 4/70 | 1.20s
+auroc: 0.6390540362002907
+ensemble svm step: 5/70 | 1.20s
+auroc: 0.6292332760822654
+ensemble svm step: 6/70 | 1.20s
+auroc: 0.6361180839975925
+ensemble svm step: 7/70 | 1.20s
+auroc: 0.6670776999750444
+ensemble svm step: 8/70 | 1.20s
+auroc: 0.6362648816077274
+ensemble svm step: 9/70 | 1.20s
+auroc: 0.6223337884059246
+ensemble svm step: 10/70 | 1.20s
+auroc: 0.6570073839197899
+ensemble svm step: 11/70 | 1.20s
+auroc: 0.6442653513600799
+ensemble svm step: 12/70 | 1.20s
+auroc: 0.6487279987081811
+ensemble svm step: 13/70 | 1.20s
+auroc: 0.6387898005020478
+ensemble svm step: 14/70 | 1.20s
+auroc: 0.6463939167070359
+ensemble svm step: 15/70 | 1.20s
+auroc: 0.6650812524772096
+ensemble svm step: 16/70 | 1.21s
+auroc: 0.6262239250744999
+ensemble svm step: 17/70 | 1.20s
+auroc: 0.6505629688348674
+ensemble svm step: 18/70 | 1.20s
+auroc: 0.6520015854141894
+ensemble svm step: 19/70 | 1.20s
+auroc: 0.6428560943027847
+ensemble svm step: 20/70 | 1.20s
+auroc: 0.6427092966926498
+ensemble svm step: 21/70 | 1.20s
+auroc: 0.6357364102112417
+ensemble svm step: 22/70 | 1.20s
+auroc: 0.6612057955696481
+ensemble svm step: 23/70 | 1.20s
+auroc: 0.6297764272397645
+ensemble svm step: 24/70 | 1.20s
+auroc: 0.6547760602457392
+ensemble svm step: 25/70 | 1.20s
+auroc: 0.6750047709223294
+ensemble svm step: 26/70 | 1.20s
+auroc: 0.6396705861628573
+ensemble svm step: 27/70 | 1.20s
+auroc: 0.629879185566859
+ensemble svm step: 28/70 | 1.20s
+auroc: 0.6501666152875031
+ensemble svm step: 29/70 | 1.21s
+auroc: 0.6555834471014812
+ensemble svm step: 30/70 | 1.24s
+auroc: 0.6435166835483919
+ensemble svm step: 31/70 | 1.20s
+auroc: 0.6427826954977173
+ensemble svm step: 32/70 | 1.20s
+auroc: 0.6386870421749533
+ensemble svm step: 33/70 | 1.20s
+auroc: 0.6394063504646144
+ensemble svm step: 34/70 | 1.20s
+auroc: 0.6548788185728337
+ensemble svm step: 35/70 | 1.20s
+auroc: 0.6487133189471675
+ensemble svm step: 36/70 | 1.20s
+auroc: 0.6575945743603295
+ensemble svm step: 37/70 | 1.20s
+auroc: 0.646423276229063
+ensemble svm step: 38/70 | 1.20s
+auroc: 0.6296736689126701
+ensemble svm step: 39/70 | 1.28s
+auroc: 0.6547907400067527
+ensemble svm step: 40/70 | 1.20s
+auroc: 0.6163738054344474
+ensemble svm step: 41/70 | 1.24s
+auroc: 0.6608094420222839
+ensemble svm step: 42/70 | 1.20s
+auroc: 0.6414174777234627
+ensemble svm step: 43/70 | 1.20s
+auroc: 0.6513997152126364
+ensemble svm step: 44/70 | 1.20s
+auroc: 0.6328444972915841
+ensemble svm step: 45/70 | 1.20s
+auroc: 0.6310242069259113
+ensemble svm step: 46/70 | 1.20s
+auroc: 0.6686043951204474
+ensemble svm step: 47/70 | 1.20s
+auroc: 0.6552311328371574
+ensemble svm step: 48/70 | 1.24s
+auroc: 0.6351785792927291
+ensemble svm step: 49/70 | 1.20s
+auroc: 0.6496087843689904
+ensemble svm step: 50/70 | 1.20s
+auroc: 0.6470398261916296
+ensemble svm step: 51/70 | 1.20s
+auroc: 0.6709971961656463
+ensemble svm step: 52/70 | 1.24s
+auroc: 0.6547613804847257
+ensemble svm step: 53/70 | 1.22s
+auroc: 0.6313178021461809
+ensemble svm step: 54/70 | 1.20s
+auroc: 0.6639802704011979
+ensemble svm step: 55/70 | 1.20s
+auroc: 0.6231852145447072
+ensemble svm step: 56/70 | 1.20s
+auroc: 0.6428560943027848
+ensemble svm step: 57/70 | 1.24s
+auroc: 0.6660501167041001
+ensemble svm step: 58/70 | 1.20s
+auroc: 0.6325949413543548
+ensemble svm step: 59/70 | 1.20s
+auroc: 0.6603690491918792
+ensemble svm step: 60/70 | 1.24s
+auroc: 0.6639068715961304
+ensemble svm step: 61/70 | 1.20s
+auroc: 0.6271340702573363
+ensemble svm step: 62/70 | 1.24s
+auroc: 0.6427533359756903
+ensemble svm step: 63/70 | 1.20s
+auroc: 0.6594735837700563
+ensemble svm step: 64/70 | 1.18s
+auroc: 0.6325802615933412
+ensemble svm step: 65/70 | 1.24s
+auroc: 0.6602369313427577
+ensemble svm step: 66/70 | 1.20s
+auroc: 0.6357951292552957
+ensemble svm step: 67/70 | 1.20s
+auroc: 0.6067438822095976
+ensemble svm step: 68/70 | 1.24s
+auroc: 0.6246269513314967
+ensemble svm step: 70/70 | 1.12s
+ensemble svm train: 87.21s
+auroc: 0.6400411522633745
+ensemble svm step: 1/70 | 1.28s
+auroc: 0.6102469135802469
+ensemble svm step: 2/70 | 1.28s
+auroc: 0.6331001371742113
+ensemble svm step: 3/70 | 1.28s
+auroc: 0.6361454046639232
+ensemble svm step: 4/70 | 1.28s
+auroc: 0.6557750342935528
+ensemble svm step: 5/70 | 1.32s
+auroc: 0.6519890260631
+ensemble svm step: 6/70 | 1.28s
+auroc: 0.6485322359396433
+ensemble svm step: 7/70 | 1.28s
+auroc: 0.6437174211248285
+ensemble svm step: 8/70 | 1.32s
+auroc: 0.6332647462277092
+ensemble svm step: 9/70 | 1.28s
+auroc: 0.6437997256515775
+ensemble svm step: 10/70 | 1.32s
+auroc: 0.6298628257887517
+ensemble svm step: 11/70 | 1.28s
+auroc: 0.6353086419753087
+ensemble svm step: 12/70 | 1.28s
+auroc: 0.6392318244170097
+ensemble svm step: 13/70 | 1.32s
+auroc: 0.6461316872427983
+ensemble svm step: 14/70 | 1.28s
+auroc: 0.6125240054869685
+ensemble svm step: 15/70 | 1.28s
+auroc: 0.6510973936899863
+ensemble svm step: 16/70 | 1.36s
+auroc: 0.6303703703703704
+ensemble svm step: 17/70 | 1.32s
+auroc: 0.6558710562414266
+ensemble svm step: 18/70 | 1.28s
+auroc: 0.6654320987654321
+ensemble svm step: 19/70 | 1.32s
+auroc: 0.6323593964334705
+ensemble svm step: 20/70 | 1.28s
+auroc: 0.6308230452674897
+ensemble svm step: 21/70 | 1.32s
+auroc: 0.6447050754458161
+ensemble svm step: 22/70 | 1.32s
+auroc: 0.6392181069958848
+ensemble svm step: 23/70 | 1.32s
+auroc: 0.6442524005486968
+ensemble svm step: 24/70 | 1.28s
+auroc: 0.6192455418381344
+ensemble svm step: 25/70 | 1.32s
+auroc: 0.6535665294924554
+ensemble svm step: 26/70 | 1.28s
+auroc: 0.6387379972565157
+ensemble svm step: 27/70 | 1.32s
+auroc: 0.6265843621399176
+ensemble svm step: 28/70 | 1.28s
+auroc: 0.6558299039780522
+ensemble svm step: 29/70 | 1.32s
+auroc: 0.629849108367627
+ensemble svm step: 30/70 | 1.32s
+auroc: 0.639437585733882
+ensemble svm step: 31/70 | 1.29s
+auroc: 0.6384910836762688
+ensemble svm step: 32/70 | 1.28s
+auroc: 0.628312757201646
+ensemble svm step: 33/70 | 1.32s
+auroc: 0.6624554183813443
+ensemble svm step: 34/70 | 1.28s
+auroc: 0.6384499314128944
+ensemble svm step: 35/70 | 1.32s
+auroc: 0.6434705075445817
+ensemble svm step: 36/70 | 1.32s
+auroc: 0.6540329218106997
+ensemble svm step: 37/70 | 1.29s
+auroc: 0.6304663923182441
+ensemble svm step: 38/70 | 1.28s
+auroc: 0.6183676268861454
+ensemble svm step: 39/70 | 1.32s
+auroc: 0.6349931412894376
+ensemble svm step: 40/70 | 1.32s
+auroc: 0.6333744855967077
+ensemble svm step: 41/70 | 1.28s
+auroc: 0.6471330589849109
+ensemble svm step: 42/70 | 1.32s
+auroc: 0.6704526748971195
+ensemble svm step: 43/70 | 1.28s
+auroc: 0.6431001371742113
+ensemble svm step: 44/70 | 1.32s
+auroc: 0.628244170096022
+ensemble svm step: 45/70 | 1.32s
+auroc: 0.648545953360768
+ensemble svm step: 46/70 | 1.28s
+auroc: 0.63599451303155
+ensemble svm step: 47/70 | 1.32s
+auroc: 0.6315363511659808
+ensemble svm step: 48/70 | 1.32s
+auroc: 0.6324691358024692
+ensemble svm step: 49/70 | 1.28s
+auroc: 0.6182853223593965
+ensemble svm step: 50/70 | 1.32s
+auroc: 0.6334842249657064
+ensemble svm step: 51/70 | 1.28s
+auroc: 0.6362962962962964
+ensemble svm step: 52/70 | 1.28s
+auroc: 0.6480246913580248
+ensemble svm step: 53/70 | 1.32s
+auroc: 0.6390946502057613
+ensemble svm step: 54/70 | 1.32s
+auroc: 0.6381207133058985
+ensemble svm step: 55/70 | 1.28s
+auroc: 0.6416598079561042
+ensemble svm step: 56/70 | 1.40s
+auroc: 0.6251577503429355
+ensemble svm step: 57/70 | 1.28s
+auroc: 0.632716049382716
+ensemble svm step: 58/70 | 1.32s
+auroc: 0.6475857338820302
+ensemble svm step: 59/70 | 1.28s
+auroc: 0.6345953360768176
+ensemble svm step: 60/70 | 1.32s
+auroc: 0.6267215363511659
+ensemble svm step: 61/70 | 1.32s
+auroc: 0.6562277091906723
+ensemble svm step: 62/70 | 1.28s
+auroc: 0.6429903978052126
+ensemble svm step: 63/70 | 1.32s
+auroc: 0.6332098765432098
+ensemble svm step: 64/70 | 1.28s
+auroc: 0.6371742112482852
+ensemble svm step: 65/70 | 1.32s
+auroc: 0.6353086419753087
+ensemble svm step: 66/70 | 1.32s
+auroc: 0.634883401920439
+ensemble svm step: 67/70 | 1.28s
+auroc: 0.6533196159122086
+ensemble svm step: 68/70 | 1.32s
+auroc: 0.6419341563786009
+ensemble svm step: 69/70 | 1.28s
+auroc: 0.6394238683127572
+ensemble svm step: 70/70 | 1.32s
+ensemble svm train: 91.15s
+auroc: 0.6393916707036009
+ensemble svm step: 1/70 | 1.20s
+auroc: 0.6398907825780596
+ensemble svm step: 2/70 | 1.20s
+auroc: 0.65112079975338
+ensemble svm step: 3/70 | 1.20s
+auroc: 0.6415789550946112
+ensemble svm step: 4/70 | 1.20s
+auroc: 0.6326683401594222
+ensemble svm step: 5/70 | 1.23s
+auroc: 0.6206162563673463
+ensemble svm step: 6/70 | 1.20s
+auroc: 0.6332995698830024
+ensemble svm step: 7/70 | 1.20s
+auroc: 0.6603103301478251
+ensemble svm step: 8/70 | 1.24s
+auroc: 0.6317435152155724
+ensemble svm step: 9/70 | 1.20s
+auroc: 0.6175041470324864
+ensemble svm step: 10/70 | 1.20s
+auroc: 0.6471572642797374
+ensemble svm step: 11/70 | 1.20s
+auroc: 0.63059849385652
+ensemble svm step: 12/70 | 1.20s
+auroc: 0.6392889123765065
+ensemble svm step: 13/70 | 1.20s
+auroc: 0.6381438910174542
+ensemble svm step: 14/70 | 1.24s
+auroc: 0.6401550182763024
+ensemble svm step: 15/70 | 1.20s
+auroc: 0.6584166409770849
+ensemble svm step: 16/70 | 1.20s
+auroc: 0.6167848387428253
+ensemble svm step: 17/70 | 1.20s
+auroc: 0.6437075204415672
+ensemble svm step: 18/70 | 1.24s
+auroc: 0.6439717561398102
+ensemble svm step: 19/70 | 1.24s
+auroc: 0.6307012521836144
+ensemble svm step: 20/70 | 1.20s
+auroc: 0.634694147179284
+ensemble svm step: 21/70 | 1.24s
+auroc: 0.6230384169345723
+ensemble svm step: 22/70 | 1.20s
+auroc: 0.6550256161829685
+ensemble svm step: 23/70 | 1.20s
+auroc: 0.6297764272397645
+ensemble svm step: 24/70 | 1.24s
+auroc: 0.6481261285066279
+ensemble svm step: 25/70 | 1.20s
+auroc: 0.6674006547173412
+ensemble svm step: 26/70 | 1.24s
+auroc: 0.6360006459094847
+ensemble svm step: 27/70 | 1.20s
+auroc: 0.6172399113342435
+ensemble svm step: 28/70 | 1.24s
+auroc: 0.6449993394107543
+ensemble svm step: 29/70 | 1.24s
+auroc: 0.6446910644294711
+ensemble svm step: 30/70 | 1.20s
+auroc: 0.6399495016221135
+ensemble svm step: 31/70 | 1.24s
+auroc: 0.6360006459094846
+ensemble svm step: 32/70 | 1.20s
+auroc: 0.6302608593532097
+ensemble svm step: 33/70 | 1.23s
+auroc: 0.6350905007266482
+ensemble svm step: 34/70 | 1.24s
+auroc: 0.6494473069978421
+ensemble svm step: 35/70 | 1.20s
+auroc: 0.6415349158115706
+ensemble svm step: 36/70 | 1.24s
+auroc: 0.6526034556157426
+ensemble svm step: 37/70 | 1.24s
+auroc: 0.6346794674182704
+ensemble svm step: 38/70 | 1.20s
+auroc: 0.6261358465084188
+ensemble svm step: 39/70 | 1.23s
+auroc: 0.6439717561398101
+ensemble svm step: 40/70 | 1.20s
+auroc: 0.6149498686161389
+ensemble svm step: 41/70 | 1.24s
+auroc: 0.6504308509857459
+ensemble svm step: 42/70 | 1.24s
+auroc: 0.6371603470295504
+ensemble svm step: 43/70 | 1.20s
+auroc: 0.6341803555438117
+ensemble svm step: 44/70 | 1.24s
+auroc: 0.6135993306028978
+ensemble svm step: 45/70 | 1.24s
+auroc: 0.6293360344093598
+ensemble svm step: 46/70 | 1.20s
+auroc: 0.659708459946272
+ensemble svm step: 47/70 | 1.24s
+auroc: 0.6488747963183159
+ensemble svm step: 48/70 | 1.20s
+auroc: 0.6246531906460564
+ensemble svm step: 49/70 | 1.24s
+auroc: 0.6430616109569737
+ensemble svm step: 50/70 | 1.20s
+auroc: 0.6413734384404222
+ensemble svm step: 51/70 | 1.24s
+auroc: 0.6564642327622907
+ensemble svm step: 52/70 | 1.20s
+auroc: 0.6502987331366246
+ensemble svm step: 53/70 | 1.24s
+auroc: 0.6226861026702486
+ensemble svm step: 54/70 | 1.24s
+auroc: 0.6536897579307409
+ensemble svm step: 55/70 | 1.21s
+auroc: 0.618663848152552
+ensemble svm step: 56/70 | 1.24s
+auroc: 0.635178579292729
+ensemble svm step: 57/70 | 1.20s
+auroc: 0.6571101422468842
+ensemble svm step: 58/70 | 1.24s
+auroc: 0.626532200055783
+ensemble svm step: 59/70 | 1.24s
+auroc: 0.6505629688348673
+ensemble svm step: 60/70 | 1.20s
+auroc: 0.6628792883251861
+ensemble svm step: 61/70 | 1.32s
+auroc: 0.6185610898254577
+ensemble svm step: 62/70 | 1.32s
+auroc: 0.6360740447145521
+ensemble svm step: 63/70 | 1.36s
+auroc: 0.6473774606949398
+ensemble svm step: 64/70 | 1.32s
+auroc: 0.6207043349334274
+ensemble svm step: 65/70 | 1.32s
+auroc: 0.6526915341818236
+ensemble svm step: 66/70 | 1.37s
+auroc: 0.6355749328400934
+ensemble svm step: 67/70 | 1.32s
+auroc: 0.6032941383714273
+ensemble svm step: 68/70 | 1.36sauroc: 0.834171933073032
+ensemble svm step: 1/70 | 2.50s
+auroc: 0.79827986421393
+ensemble svm step: 2/70 | 2.74s
+auroc: 0.8218009097129976
+ensemble svm step: 3/70 | 3.14s
+auroc: 0.8131599779951428
+ensemble svm step: 4/70 | 2.84s
+auroc: 0.7862174455581049
+ensemble svm step: 5/70 | 2.80s
+auroc: 0.7864455446873029
+ensemble svm step: 6/70 | 2.76s
+auroc: 0.7943082558467174
+ensemble svm step: 7/70 | 2.96s
+auroc: 0.7873176884165896
+ensemble svm step: 8/70 | 2.96s
+auroc: 0.8308980396892485
+ensemble svm step: 9/70 | 2.78s
+auroc: 0.8000778220558441
+ensemble svm step: 10/70 | 2.92s
+auroc: 0.7989373264098538
+ensemble svm step: 11/70 | 2.68s
+auroc: 0.8156824860121563
+ensemble svm step: 12/70 | 2.80s
+auroc: 0.8105167116156127
+ensemble svm step: 13/70 | 2.56s
+auroc: 0.8081015443652806
+ensemble svm step: 14/70 | 2.92s
+auroc: 0.7990178319848649
+ensemble svm step: 15/70 | 2.76s
+auroc: 0.8218009097129977
+ensemble svm step: 16/70 | 2.80s
+auroc: 0.7998765581183163
+ensemble svm step: 17/70 | 2.72s
+auroc: 0.7973406325054677
+ensemble svm step: 18/70 | 3.31s
+auroc: 0.8051094204940359
+ensemble svm step: 19/70 | 3.12s
+auroc: 0.8019831206644393
+ensemble svm step: 20/70 | 2.83s
+auroc: 0.8074306645735218
+ensemble svm step: 21/70 | 3.16s
+auroc: 0.7986153041098096
+ensemble svm step: 22/70 | 2.93s
+auroc: 0.7956231802385649
+ensemble svm step: 23/70 | 2.73s
+auroc: 0.8139650337452535
+ensemble svm step: 24/70 | 2.93s
+auroc: 0.8081015443652808
+ensemble svm step: 25/70 | 2.95s
+auroc: 0.8022917253686485
+ensemble svm step: 26/70 | 2.69s
+auroc: 0.7901622187336473
+ensemble svm step: 27/70 | 2.67s
+auroc: 0.7973808852929732
+ensemble svm step: 28/70 | 2.99s
+auroc: 0.797743160380523
+ensemble svm step: 29/70 | 2.77s
+auroc: 0.7985213809389633
+ensemble svm step: 30/70 | 2.93s
+auroc: 0.7931543426048921
+ensemble svm step: 31/70 | 2.89s
+auroc: 0.8036200673563311
+ensemble svm step: 32/70 | 2.81s
+auroc: 0.8027210884353742
+ensemble svm step: 33/70 | 2.90s
+auroc: 0.8159508379288599
+ensemble svm step: 34/70 | 2.61s
+auroc: 0.792698144346496
+ensemble svm step: 35/70 | 2.80s
+auroc: 0.7800721866655933
+ensemble svm step: 36/70 | 2.96s
+auroc: 0.8091346992445894
+ensemble svm step: 37/70 | 2.87s
+auroc: 0.8172120919373667
+ensemble svm step: 38/70 | 3.13s
+auroc: 0.8037139905271774
+ensemble svm step: 39/70 | 2.73s
+auroc: 0.8301198191308082
+ensemble svm step: 40/70 | 2.95s
+auroc: 0.8119389767741416
+ensemble svm step: 41/70 | 3.00s
+auroc: 0.7928054851131774
+ensemble svm step: 42/70 | 3.10s
+auroc: 0.7935702880757826
+ensemble svm step: 43/70 | 3.35s
+auroc: 0.83250815118947
+ensemble svm step: 44/70 | 2.82s
+auroc: 0.7931409250090569
+ensemble svm step: 45/70 | 3.25s
+auroc: 0.7996618765849536
+ensemble svm step: 46/70 | 2.81s
+auroc: 0.8106777227656348
+ensemble svm step: 47/70 | 3.09s
+auroc: 0.8021709670061319
+ensemble svm step: 48/70 | 3.12s
+auroc: 0.8159240027371896
+ensemble svm step: 49/70 | 3.34s
+auroc: 0.8299856431724564
+ensemble svm step: 50/70 | 2.90s
+auroc: 0.8012317352976693
+ensemble svm step: 51/70 | 3.04s
+auroc: 0.8036066497604959
+ensemble svm step: 52/70 | 3.07s
+auroc: 0.8030296931395833
+ensemble svm step: 53/70 | 2.95s
+auroc: 0.7808235720323633
+ensemble svm step: 54/70 | 2.67s
+auroc: 0.7882703377208872
+ensemble svm step: 55/70 | 3.05s
+auroc: 0.8140455393202647
+ensemble svm step: 56/70 | 2.89s
+auroc: 0.827328959197091
+ensemble svm step: 57/70 | 2.84s
+auroc: 0.808571160219512
+ensemble svm step: 58/70 | 2.72s
+auroc: 0.8147969246870346
+ensemble svm step: 59/70 | 3.58s
+auroc: 0.8127708677159227
+ensemble svm step: 60/70 | 2.96s
+auroc: 0.7819774852741885
+ensemble svm step: 61/70 | 2.77s
+auroc: 0.8131063076118021
+ensemble svm step: 62/70 | 2.64s
+auroc: 0.7862308631539401
+ensemble svm step: 63/70 | 3.07s
+auroc: 0.7833326624535415
+ensemble svm step: 64/70 | 2.91s
+auroc: 0.7933958593299253
+ensemble svm step: 65/70 | 2.72s
+auroc: 0.8247796159884072
+ensemble svm step: 66/70 | 2.76s
+auroc: 0.8207409196420186
+ensemble svm step: 67/70 | 2.84s
+auroc: 0.8158971675455192
+ensemble svm step: 68/70 | 2.80s
+auroc: 0.7958781145594334
+ensemble svm step: 69/70 | 2.80s
+auroc: 0.7885252720417555
+ensemble svm step: 70/70 | 2.80s
+ensemble svm train: 202.96s
+auroc: 0.7962149908172635
+ensemble svm step: 1/70 | 2.40s
+auroc: 0.7901027318640955
+ensemble svm step: 2/70 | 2.75s
+auroc: 0.829358930211203
+ensemble svm step: 3/70 | 2.77s
+auroc: 0.801122015610652
+ensemble svm step: 4/70 | 2.62s
+auroc: 0.8105773645546372
+ensemble svm step: 5/70 | 2.50s
+auroc: 0.7714072543617999
+ensemble svm step: 6/70 | 2.60s
+auroc: 0.8050677226813592
+ensemble svm step: 7/70 | 2.76s
+auroc: 0.806732093663912
+ensemble svm step: 8/70 | 2.80s
+auroc: 0.7884957529843895
+ensemble svm step: 9/70 | 2.72s
+auroc: 0.8139778466483011
+ensemble svm step: 10/70 | 2.92s
+auroc: 0.8105056244260791
+ensemble svm step: 11/70 | 2.64s
+auroc: 0.7925562442607897
+ensemble svm step: 12/70 | 2.44s
+auroc: 0.8216109963269055
+ensemble svm step: 13/70 | 2.83s
+auroc: 0.8206927226813591
+ensemble svm step: 14/70 | 2.68s
+auroc: 0.8044364095500459
+ensemble svm step: 15/70 | 2.57s
+auroc: 0.7894570707070706
+ensemble svm step: 16/70 | 2.88s
+auroc: 0.8212809917355373
+ensemble svm step: 17/70 | 2.33s
+auroc: 0.7833878558310376
+ensemble svm step: 18/70 | 2.60s
+auroc: 0.7981806703397613
+ensemble svm step: 19/70 | 2.72s
+auroc: 0.8212092516069789
+ensemble svm step: 20/70 | 2.53s
+auroc: 0.8330176767676769
+ensemble svm step: 21/70 | 2.72s
+auroc: 0.8018394168962352
+ensemble svm step: 22/70 | 2.72s
+auroc: 0.7926997245179064
+ensemble svm step: 23/70 | 2.73s
+auroc: 0.7799586776859504
+ensemble svm step: 24/70 | 2.72s
+auroc: 0.7944645316804408
+ensemble svm step: 25/70 | 2.64s
+auroc: 0.787405303030303
+ensemble svm step: 26/70 | 2.64s
+auroc: 0.8242940771349865
+ensemble svm step: 27/70 | 2.56s
+auroc: 0.8050390266299357
+ensemble svm step: 28/70 | 2.73s
+auroc: 0.7748651285583105
+ensemble svm step: 29/70 | 3.04s
+auroc: 0.79661673553719
+ensemble svm step: 30/70 | 2.52s
+auroc: 0.794837580348944
+ensemble svm step: 31/70 | 2.60s
+auroc: 0.8164170110192837
+ensemble svm step: 32/70 | 2.60s
+auroc: 0.8269197658402204
+ensemble svm step: 33/70 | 2.52s
+auroc: 0.8021694214876034
+ensemble svm step: 34/70 | 2.68s
+auroc: 0.7773186409550046
+ensemble svm step: 35/70 | 2.68s
+auroc: 0.7947945362718092
+ensemble svm step: 36/70 | 2.64s
+auroc: 0.8043072773186408
+ensemble svm step: 37/70 | 2.48s
+auroc: 0.8225292699724519
+ensemble svm step: 38/70 | 2.48s
+auroc: 0.8121126033057852
+ensemble svm step: 39/70 | 2.48s
+auroc: 0.7790977961432506
+ensemble svm step: 40/70 | 2.60s
+auroc: 0.7964445592286502
+ensemble svm step: 41/70 | 2.48s
+auroc: 0.8131169651056014
+ensemble svm step: 42/70 | 2.70s
+auroc: 0.8163022268135904
+ensemble svm step: 43/70 | 2.76s
+auroc: 0.7736311983471075
+ensemble svm step: 44/70 | 2.60s
+auroc: 0.7978650137741046
+ensemble svm step: 45/70 | 2.64s
+auroc: 0.8129017447199265
+ensemble svm step: 46/70 | 2.79s
+auroc: 0.8133034894398531
+ensemble svm step: 47/70 | 2.80s
+auroc: 0.7935032139577594
+ensemble svm step: 48/70 | 2.64s
+auroc: 0.8035755280073462
+ensemble svm step: 49/70 | 2.64s
+auroc: 0.789184458218549
+ensemble svm step: 50/70 | 2.68s
+auroc: 0.8016098484848485
+ensemble svm step: 51/70 | 2.39s
+auroc: 0.8172635445362719
+ensemble svm step: 52/70 | 2.44s
+auroc: 0.8066316574839303
+ensemble svm step: 53/70 | 2.68s
+auroc: 0.7890696740128558
+ensemble svm step: 54/70 | 2.67s
+auroc: 0.8074351469237832
+ensemble svm step: 55/70 | 2.80s
+auroc: 0.8050103305785125
+ensemble svm step: 56/70 | 2.72s
+auroc: 0.8284980486685031
+ensemble svm step: 57/70 | 2.55s
+auroc: 0.7869748622589531
+ensemble svm step: 58/70 | 2.56s
+auroc: 0.8146808999081727
+ensemble svm step: 59/70 | 2.68s
+auroc: 0.8034033516988064
+ensemble svm step: 60/70 | 2.64s
+auroc: 0.7846935261707989
+ensemble svm step: 61/70 | 2.85s
+auroc: 0.8102760560146924
+ensemble svm step: 62/70 | 2.96s
+auroc: 0.8025137741046833
+ensemble svm step: 63/70 | 2.96s
+auroc: 0.7978219696969697
+ensemble svm step: 64/70 | 2.88s
+auroc: 0.8146235078053259
+ensemble svm step: 65/70 | 2.60s
+auroc: 0.8119117309458218
+ensemble svm step: 66/70 | 2.79s
+auroc: 0.7920540633608815
+ensemble svm step: 67/70 | 2.98s
+auroc: 0.8003472222222224
+ensemble svm step: 68/70 | 2.48s
+auroc: 0.8040203168044078
+ensemble svm step: 69/70 | 2.64sauroc: 0.6564827114277663
+ensemble svm step: 1/70 | 3.08s
+auroc: 0.6465671081055697
+ensemble svm step: 2/70 | 2.93s
+auroc: 0.6381274403252424
+ensemble svm step: 3/70 | 2.88s
+auroc: 0.65413463215661
+ensemble svm step: 4/70 | 2.84s
+auroc: 0.6334312817829302
+ensemble svm step: 5/70 | 2.88s
+auroc: 0.6285472768989253
+ensemble svm step: 6/70 | 2.83s
+auroc: 0.6626413879161132
+ensemble svm step: 7/70 | 2.87s
+auroc: 0.6240255471024702
+ensemble svm step: 8/70 | 2.49s
+auroc: 0.6685451300835916
+ensemble svm step: 9/70 | 1.03s
+auroc: 0.6397241342296287
+ensemble svm step: 10/70 | 2.83s
+auroc: 0.6347864589622831
+ensemble svm step: 11/70 | 2.83s
+auroc: 0.6564827114277664
+ensemble svm step: 12/70 | 2.89s
+auroc: 0.6604677373908142
+ensemble svm step: 13/70 | 2.85s
+auroc: 0.6564692938319312
+ensemble svm step: 14/70 | 2.92s
+auroc: 0.664573521716379
+ensemble svm step: 15/70 | 2.88s
+auroc: 0.662708475895289
+ensemble svm step: 16/70 | 2.88s
+auroc: 0.6656871821706987
+ensemble svm step: 17/70 | 3.08s
+auroc: 0.618510915214212
+ensemble svm step: 18/70 | 2.88s
+auroc: 0.624159723060822
+ensemble svm step: 19/70 | 2.84s
+auroc: 0.6395362878879363
+ensemble svm step: 20/70 | 2.93s
+auroc: 0.6525111030605536
+ensemble svm step: 21/70 | 2.88s
+auroc: 0.6260113512860767
+ensemble svm step: 22/70 | 2.87s
+auroc: 0.6536650163023789
+ensemble svm step: 23/70 | 2.84s
+auroc: 0.660669001328342
+ensemble svm step: 24/70 | 2.84s
+auroc: 0.6604274846033087
+ensemble svm step: 25/70 | 2.87s
+auroc: 0.6582135812905043
+ensemble svm step: 26/70 | 2.85s
+auroc: 0.6291376511156731
+ensemble svm step: 27/70 | 2.80s
+auroc: 0.6617021562076508
+ensemble svm step: 28/70 | 2.84s
+auroc: 0.6638892243287846
+ensemble svm step: 29/70 | 2.84s
+auroc: 0.643655489809336
+ensemble svm step: 30/70 | 2.80s
+auroc: 0.6423942358008292
+ensemble svm step: 31/70 | 2.84s
+auroc: 0.6357391082665809
+ensemble svm step: 32/70 | 2.89s
+auroc: 0.66315125655785
+ensemble svm step: 33/70 | 2.85s
+auroc: 0.6742341907177072
+ensemble svm step: 34/70 | 2.83s
+auroc: 0.6310429497242683
+ensemble svm step: 35/70 | 2.85s
+auroc: 0.6506192220477934
+ensemble svm step: 36/70 | 2.88s
+auroc: 0.6374833957251539
+ensemble svm step: 37/70 | 2.80s
+auroc: 0.67330837660508
+ensemble svm step: 38/70 | 2.88s
+auroc: 0.6201344443102685
+ensemble svm step: 39/70 | 2.94s
+auroc: 0.6549799406942264
+ensemble svm step: 40/70 | 2.84s
+auroc: 0.6569254920903274
+ensemble svm step: 41/70 | 2.80s
+auroc: 0.6157200552804949
+ensemble svm step: 42/70 | 2.85s
+auroc: 0.6251928779401307
+ensemble svm step: 43/70 | 2.84s
+auroc: 0.6678071623126567
+ensemble svm step: 44/70 | 2.83s
+auroc: 0.6394691999087604
+ensemble svm step: 45/70 | 2.84s
+auroc: 0.6515316185645855
+ensemble svm step: 46/70 | 2.85s
+auroc: 0.6555434797193039
+ensemble svm step: 47/70 | 2.85s
+auroc: 0.6290705631364971
+ensemble svm step: 48/70 | 2.84s
+auroc: 0.6465000201263938
+ensemble svm step: 49/70 | 2.84s
+auroc: 0.6484858243100001
+ensemble svm step: 50/70 | 2.83s
+auroc: 0.6661702156207652
+ensemble svm step: 51/70 | 2.85s
+auroc: 0.6475465926015377
+ensemble svm step: 52/70 | 2.80s
+auroc: 0.6437225777885119
+ensemble svm step: 53/70 | 2.83s
+auroc: 0.6284131009405736
+ensemble svm step: 54/70 | 2.12s
+auroc: 0.6395497054837714
+ensemble svm step: 55/70 | 3.08s
+auroc: 0.6461779978263494
+ensemble svm step: 56/70 | 3.12s
+auroc: 0.6550604462692375
+ensemble svm step: 57/70 | 3.08s
+auroc: 0.647868614901582
+ensemble svm step: 58/70 | 3.12s
+auroc: 0.6600115391324184
+ensemble svm step: 59/70 | 3.10s
+auroc: 0.6371479558292745
+ensemble svm step: 60/70 | 3.12s
+auroc: 0.6224288531980839
+ensemble svm step: 61/70 | 3.12s
+auroc: 0.6631378389620148
+ensemble svm step: 62/70 | 3.12s
+auroc: 0.638315286666935
+ensemble svm step: 63/70 | 3.12s
+auroc: 0.6386641441586496
+ensemble svm step: 64/70 | 3.16s
+auroc: 0.6286143648781012
+ensemble svm step: 65/70 | 3.13s
+auroc: 0.6700344832212964
+ensemble svm step: 66/70 | 3.13s
+auroc: 0.6413879161131909
+ensemble svm step: 67/70 | 2.97s
+auroc: 0.6339545680205021
+ensemble svm step: 68/70 | 2.87s
+auroc: 0.6269103302070335
+ensemble svm step: 69/70 | 2.88s
+auroc: 0.6441921936427432
+ensemble svm step: 70/70 | 2.84s
+ensemble svm train: 200.60s
+auroc: 0.6392475895316805
+ensemble svm step: 1/70 | 2.67s
+auroc: 0.6154298668503213
+ensemble svm step: 2/70 | 2.69s
+auroc: 0.6651457759412305
+ensemble svm step: 3/70 | 2.67s
+auroc: 0.617567722681359
+ensemble svm step: 4/70 | 2.68s
+auroc: 0.6125459136822773
+ensemble svm step: 5/70 | 2.67s
+auroc: 0.6173811983471075
+ensemble svm step: 6/70 | 2.68s
+auroc: 0.6448433195592286
+ensemble svm step: 7/70 | 2.69s
+auroc: 0.6564939164370983
+ensemble svm step: 8/70 | 2.67s
+auroc: 0.6247417355371901
+ensemble svm step: 9/70 | 2.71s
+auroc: 0.6388171487603307
+ensemble svm step: 10/70 | 2.65s
+auroc: 0.6508120982552802
+ensemble svm step: 11/70 | 2.64s
+auroc: 0.6127180899908172
+ensemble svm step: 12/70 | 2.67s
+auroc: 0.6302800734618917
+ensemble svm step: 13/70 | 2.67s
+auroc: 0.6220443067033976
+ensemble svm step: 14/70 | 2.68s
+auroc: 0.6354597107438017
+ensemble svm step: 15/70 | 2.67s
+auroc: 0.6209251606978881
+ensemble svm step: 16/70 | 2.70s
+auroc: 0.6575269742883378
+ensemble svm step: 17/70 | 2.66s
+auroc: 0.6358327594123049
+ensemble svm step: 18/70 | 2.65s
+auroc: 0.6311553030303031
+ensemble svm step: 19/70 | 2.68s
+auroc: 0.6316574839302113
+ensemble svm step: 20/70 | 2.69s
+auroc: 0.6413137052341599
+ensemble svm step: 21/70 | 2.71s
+auroc: 0.6186438246097337
+ensemble svm step: 22/70 | 2.68s
+auroc: 0.6399075987144169
+ensemble svm step: 23/70 | 2.63s
+auroc: 0.6531795224977042
+ensemble svm step: 24/70 | 2.70s
+auroc: 0.633709251606979
+ensemble svm step: 25/70 | 2.67s
+auroc: 0.6332644628099173
+ensemble svm step: 26/70 | 2.74s
+auroc: 0.6471533516988063
+ensemble svm step: 27/70 | 2.64s
+auroc: 0.636421028466483
+ensemble svm step: 28/70 | 2.68s
+auroc: 0.6127037419651056
+ensemble svm step: 29/70 | 2.69s
+auroc: 0.6272669880624425
+ensemble svm step: 30/70 | 2.69s
+auroc: 0.6332357667584941
+ensemble svm step: 31/70 | 2.68s
+auroc: 0.6316574839302111
+ensemble svm step: 32/70 | 2.65s
+auroc: 0.6659205693296602
+ensemble svm step: 33/70 | 2.63s
+auroc: 0.6382288797061524
+ensemble svm step: 34/70 | 2.68s
+auroc: 0.6553030303030303
+ensemble svm step: 35/70 | 2.68s
+auroc: 0.6375975665748392
+ensemble svm step: 36/70 | 2.68s
+auroc: 0.6265926308539945
+ensemble svm step: 37/70 | 2.68s
+auroc: 0.6347710055096418
+ensemble svm step: 38/70 | 2.72s
+auroc: 0.6503099173553719
+ensemble svm step: 39/70 | 2.70s
+auroc: 0.6130193985307621
+ensemble svm step: 40/70 | 2.67s
+auroc: 0.6465363865932048
+ensemble svm step: 41/70 | 2.69s
+auroc: 0.6254017447199265
+ensemble svm step: 42/70 | 2.71s
+auroc: 0.6494059917355373
+ensemble svm step: 43/70 | 2.69s
+auroc: 0.6259900137741047
+ensemble svm step: 44/70 | 2.62s
+auroc: 0.6287448347107438
+ensemble svm step: 45/70 | 2.64s
+auroc: 0.6666092745638201
+ensemble svm step: 46/70 | 2.64s
+auroc: 0.6508838383838385
+ensemble svm step: 47/70 | 2.65s
+auroc: 0.5988722451790633
+ensemble svm step: 48/70 | 2.67s
+auroc: 0.6355457988980716
+ensemble svm step: 49/70 | 2.66s
+auroc: 0.6235938934802571
+ensemble svm step: 50/70 | 2.64s
+auroc: 0.64036673553719
+ensemble svm step: 51/70 | 2.64s
+auroc: 0.6449150596877868
+ensemble svm step: 52/70 | 2.64s
+auroc: 0.6319444444444444
+ensemble svm step: 53/70 | 2.61s
+auroc: 0.6358614554637281
+ensemble svm step: 54/70 | 2.63s
+auroc: 0.59884354912764
+ensemble svm step: 55/70 | 2.64s
+auroc: 0.64537419651056
+ensemble svm step: 56/70 | 2.65s
+auroc: 0.6174242424242424
+ensemble svm step: 57/70 | 2.66s
+auroc: 0.6423898071625344
+ensemble svm step: 58/70 | 2.63s
+auroc: 0.6357466712580349
+ensemble svm step: 59/70 | 2.64s
+auroc: 0.6487459825528008
+ensemble svm step: 60/70 | 2.64s
+auroc: 0.6350292699724518
+ensemble svm step: 61/70 | 2.64s
+auroc: 0.6492194674012857
+ensemble svm step: 62/70 | 2.64s
+auroc: 0.6644283746556474
+ensemble svm step: 63/70 | 2.63s
+auroc: 0.639477157943067
+ensemble svm step: 64/70 | 2.65s
+auroc: 0.6377553948576676
+ensemble svm step: 65/70 | 2.63s
+auroc: 0.6293474517906337
+ensemble svm step: 66/70 | 2.65s
+auroc: 0.6450728879706151
+ensemble svm step: 67/70 | 2.64s
+auroc: 0.642662419651056
+ensemble svm step: 68/70 | 2.64s
+auroc: 0.6244834710743802
+ensemble svm step: 69/70 | 2.64s
+auroc: auroc: 0.6584148452280321
+ensemble svm step: 1/70 | 2.98s
+auroc: 0.6485394946933408
+ensemble svm step: 2/70 | 2.87s
+auroc: 0.6403413436380468
+ensemble svm step: 3/70 | 2.66s
+auroc: 0.6564156234485905
+ensemble svm step: 4/70 | 2.59s
+auroc: 0.6352694924123496
+ensemble svm step: 5/70 | 2.66s
+auroc: 0.6331360946745562
+ensemble svm step: 6/70 | 2.77s
+auroc: 0.6643185873955104
+ensemble svm step: 7/70 | 2.92s
+auroc: 0.6278629795113312
+ensemble svm step: 8/70 | 2.92s
+auroc: 0.6712420668464625
+ensemble svm step: 9/70 | 2.94s
+auroc: 0.642005125521609
+ensemble svm step: 10/70 | 2.90s
+auroc: 0.6374431429376485
+ensemble svm step: 11/70 | 2.90s
+auroc: 0.6591930657864724
+ensemble svm step: 12/70 | 2.92s
+auroc: 0.6623864535952447
+ensemble svm step: 13/70 | 2.92s
+auroc: 0.6595955936615278
+ensemble svm step: 14/70 | 2.96s
+auroc: 0.6669350185833703
+ensemble svm step: 15/70 | 2.89s
+auroc: 0.6631244213661796
+ensemble svm step: 16/70 | 2.91s
+auroc: 0.6666264138791611
+ensemble svm step: 17/70 | 2.92s
+auroc: 0.6208321592936977
+ensemble svm step: 18/70 | 2.92s
+auroc: 0.6279032322988367
+ensemble svm step: 19/70 | 2.92s
+auroc: 0.6410390586214763
+ensemble svm step: 20/70 | 2.96s
+auroc: 0.6546310832025117
+ensemble svm step: 21/70 | 2.93s
+auroc: 0.6285472768989253
+ensemble svm step: 22/70 | 2.83s
+auroc: 0.6558386668276779
+ensemble svm step: 23/70 | 2.93s
+auroc: 0.6622656952327284
+ensemble svm step: 24/70 | 3.41s
+auroc: 0.662695058299454
+ensemble svm step: 25/70 | 2.96s
+auroc: 0.6591528129989669
+ensemble svm step: 26/70 | 2.96s
+auroc: 0.6305733338700371
+ensemble svm step: 27/70 | 2.97s
+auroc: 0.6629365750244871
+ensemble svm step: 28/70 | 2.92s
+auroc: 0.6657945229373801
+ensemble svm step: 29/70 | 2.97s
+auroc: 0.6454802828429202
+ensemble svm step: 30/70 | 2.88s
+auroc: 0.6448496558386669
+ensemble svm step: 31/70 | 2.92s
+auroc: 0.6371747910209449
+ensemble svm step: 32/70 | 2.96s
+auroc: 0.6664117323457982
+ensemble svm step: 33/70 | 3.11s
+auroc: 0.6760589837512915
+ensemble svm step: 34/70 | 2.91s
+auroc: 0.6337130512954688
+ensemble svm step: 35/70 | 2.91s
+auroc: 0.6523232567188613
+ensemble svm step: 36/70 | 2.92s
+auroc: 0.639603375867112
+ensemble svm step: 37/70 | 2.88s
+auroc: 0.674730641763609
+ensemble svm step: 38/70 | 2.88s
+auroc: 0.6220799957063694
+ensemble svm step: 39/70 | 2.92s
+auroc: 0.6567913161319755
+ensemble svm step: 40/70 | 2.92s
+auroc: 0.660521407774155
+ensemble svm step: 41/70 | 2.88s
+auroc: 0.6184974976183768
+ensemble svm step: 42/70 | 2.88s
+auroc: 0.6279434850863422
+ensemble svm step: 43/70 | 2.92s
+auroc: 0.6693367682378671
+ensemble svm step: 44/70 | 2.84s
+auroc: 0.6413744985173557
+ensemble svm step: 45/70 | 2.92s
+auroc: 0.6537186866857196
+ensemble svm step: 46/70 | 2.88s
+auroc: 0.6573682727528882
+ensemble svm step: 47/70 | 2.88s
+auroc: 0.6305196634866965
+ensemble svm step: 48/70 | 2.94s
+auroc: 0.6487407586308686
+ensemble svm step: 49/70 | 2.92s
+auroc: 0.6499617598518698
+ensemble svm step: 50/70 | 2.88s
+auroc: 0.6678608326959976
+ensemble svm step: 51/70 | 2.88s
+auroc: 0.6498007487018476
+ensemble svm step: 52/70 | 2.87s
+auroc: 0.6459230635054811
+ensemble svm step: 53/70 | 2.92s
+auroc: 0.6311234552992795
+ensemble svm step: 54/70 | 2.91s
+auroc: 0.6416696856257296
+ensemble svm step: 55/70 | 2.88s
+auroc: 0.6486200002683519
+ensemble svm step: 56/70 | 2.88s
+auroc: 0.6567913161319755
+ensemble svm step: 57/70 | 2.92s
+auroc: 0.649760495914342
+ensemble svm step: 58/70 | 2.88s
+auroc: 0.6625340471494319
+ensemble svm step: 59/70 | 2.88s
+auroc: 0.6394826175045956
+ensemble svm step: 60/70 | 2.88s
+auroc: 0.6257966697527136
+ensemble svm step: 61/70 | 2.92s
+auroc: 0.6646808624830604
+ensemble svm step: 62/70 | 2.89s
+auroc: 0.6400059037421675
+ensemble svm step: 63/70 | 2.88s
+auroc: 0.6410390586214763
+ensemble svm step: 64/70 | 2.92s
+auroc: 0.629808530907432
+ensemble svm step: 65/70 | 2.88s
+auroc: 0.6710944732922755
+ensemble svm step: 66/70 | 2.92s
+auroc: 0.6436152370218303
+ensemble svm step: 67/70 | 2.88s
+auroc: 0.6362221417166473
+ensemble svm step: 68/70 | 2.96s
+auroc: 0.6292986622656952
+ensemble svm step: 69/70 | 2.88s
+auroc: 0.6462316682096902
+ensemble svm step: 70/70 | 2.92s
+ensemble svm train: 203.40s
+auroc: 0.6428919880624427
+ensemble svm step: 1/70 | 2.67s
+auroc: 0.6172377180899908
+ensemble svm step: 2/70 | 2.76s
+auroc: 0.6677858126721764
+ensemble svm step: 3/70 | 2.72s
+auroc: 0.6195764462809917
+ensemble svm step: 4/70 | 2.68s
+auroc: 0.6148559458218549
+ensemble svm step: 5/70 | 2.72s
+auroc: 0.6188446969696969
+ensemble svm step: 6/70 | 2.72s
+auroc: 0.646995523415978
+ensemble svm step: 7/70 | 2.72s
+auroc: 0.6578426308539944
+ensemble svm step: 8/70 | 2.72s
+auroc: 0.6274535123966942
+ensemble svm step: 9/70 | 2.72s
+auroc: 0.6397210743801653
+ensemble svm step: 10/70 | 2.70s
+auroc: 0.6519455922865014
+ensemble svm step: 11/70 | 2.68s
+auroc: 0.6142533287419651
+ensemble svm step: 12/70 | 2.73s
+auroc: 0.6343262167125805
+ensemble svm step: 13/70 | 2.71s
+auroc: 0.6247560835629018
+ensemble svm step: 14/70 | 2.72s
+auroc: 0.6380280073461891
+ensemble svm step: 15/70 | 2.72s
+auroc: 0.6248421717171717
+ensemble svm step: 16/70 | 2.70s
+auroc: 0.6595356978879706
+ensemble svm step: 17/70 | 2.72s
+auroc: 0.6374684343434344
+ensemble svm step: 18/70 | 2.74s
+auroc: 0.6339818640955005
+ensemble svm step: 19/70 | 2.78s
+auroc: 0.6335944674012856
+ensemble svm step: 20/70 | 2.72s
+auroc: 0.6444272268135905
+ensemble svm step: 21/70 | 2.70s
+auroc: 0.6199781910009183
+ensemble svm step: 22/70 | 2.72s
+auroc: 0.6430785123966942
+ensemble svm step: 23/70 | 2.72s
+auroc: 0.6553747704315886
+ensemble svm step: 24/70 | 2.72s
+auroc: 0.6349144857667586
+ensemble svm step: 25/70 | 2.71s
+auroc: 0.6382001836547292
+ensemble svm step: 26/70 | 2.75s
+auroc: 0.6495494719926539
+ensemble svm step: 27/70 | 2.72s
+auroc: 0.6381284435261707
+ensemble svm step: 28/70 | 2.68s
+auroc: 0.6154585629017448
+ensemble svm step: 29/70 | 2.72s
+auroc: 0.6295483241505968
+ensemble svm step: 30/70 | 2.72s
+auroc: 0.63553145087236
+ensemble svm step: 31/70 | 2.72s
+auroc: 0.6339101239669422
+ensemble svm step: 32/70 | 2.68s
+auroc: 0.6689193067033976
+ensemble svm step: 33/70 | 2.69s
+auroc: 0.6403954315886135
+ensemble svm step: 34/70 | 2.71s
+auroc: 0.6558482552800735
+ensemble svm step: 35/70 | 2.72s
+auroc: 0.6388745408631772
+ensemble svm step: 36/70 | 2.72s
+auroc: 0.6275826446280992
+ensemble svm step: 37/70 | 2.68s
+auroc: 0.6360766758494031
+ensemble svm step: 38/70 | 2.72s
+auroc: 0.6519455922865014
+ensemble svm step: 39/70 | 2.72s
+auroc: 0.6154585629017447
+ensemble svm step: 40/70 | 2.72s
+auroc: 0.6486885904499541
+ensemble svm step: 41/70 | 2.68s
+auroc: 0.6300505050505051
+ensemble svm step: 42/70 | 2.71s
+auroc: 0.6519025482093664
+ensemble svm step: 43/70 | 2.72s
+auroc: 0.6279269972451791
+ensemble svm step: 44/70 | 2.68s
+auroc: 0.6320305325987143
+ensemble svm step: 45/70 | 2.76s
+auroc: 0.6689193067033977
+ensemble svm step: 46/70 | 2.68s
+auroc: 0.651873852157943
+ensemble svm step: 47/70 | 2.68s
+auroc: 0.6056875573921029
+ensemble svm step: 48/70 | 2.68s
+auroc: 0.6370666896235078
+ensemble svm step: 49/70 | 2.72s
+auroc: 0.6247130394857667
+ensemble svm step: 50/70 | 2.72s
+auroc: 0.6426337235996327
+ensemble svm step: 51/70 | 2.68s
+auroc: 0.6456037649219468
+ensemble svm step: 52/70 | 2.68s
+auroc: 0.6340105601469238
+ensemble svm step: 53/70 | 2.68s
+auroc: 0.6393193296602387
+ensemble svm step: 54/70 | 2.67s
+auroc: 0.6014979338842975
+ensemble svm step: 55/70 | 2.72s
+auroc: 0.6497216483011938
+ensemble svm step: 56/70 | 2.72s
+auroc: 0.6193612258953168
+ensemble svm step: 57/70 | 2.72s
+auroc: 0.6443554866850321
+ensemble svm step: 58/70 | 2.69s
+auroc: 0.6370666896235079
+ensemble svm step: 59/70 | 2.68s
+auroc: 0.653452134986226
+ensemble svm step: 60/70 | 2.70s
+auroc: 0.6393480257116622
+ensemble svm step: 61/70 | 2.72s
+auroc: 0.6511564508723601
+ensemble svm step: 62/70 | 2.72s
+auroc: 0.6674845041322314
+ensemble svm step: 63/70 | 2.68s
+auroc: 0.6425476354453628
+ensemble svm step: 64/70 | 2.68s
+auroc: 0.6401802112029384
+ensemble svm step: 65/70 | 2.68s
+auroc: 0.6324035812672176
+ensemble svm step: 66/70 | 2.72s
+auroc: 0.647669880624426
+ensemble svm step: 67/70 | 2.68s
+auroc: 0.64597681359045
+ensemble svm step: 68/70 | 2.70s
+auroc: 0.6263917584940311
+ensemble svm step: 69/70 | 2.68s

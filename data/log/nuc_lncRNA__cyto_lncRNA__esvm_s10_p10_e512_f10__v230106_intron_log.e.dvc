@@ -1,0 +1,4 @@
+outs:
+- md5: 1a41c82be87b901b6a7e671feda2f434
+  size: 929076
+  path: nuc_lncRNA__cyto_lncRNA__esvm_s10_p10_e512_f10__v230106_intron_log.e

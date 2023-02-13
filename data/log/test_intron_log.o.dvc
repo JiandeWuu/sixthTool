@@ -1,0 +1,4 @@
+outs:
+- md5: 834dd26d1c5f71ff297628aa81362a3e
+  size: 8774
+  path: test_intron_log.o

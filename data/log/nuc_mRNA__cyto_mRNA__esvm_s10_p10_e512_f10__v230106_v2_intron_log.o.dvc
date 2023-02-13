@@ -1,0 +1,4 @@
+outs:
+- md5: 88e9a824b8e129d1eb0fc9ebe74fb93d
+  size: 180
+  path: nuc_mRNA__cyto_mRNA__esvm_s10_p10_e512_f10__v230106_v2_intron_log.o

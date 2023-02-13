@@ -1,0 +1,1 @@
+-bash: line 1: 11033 Terminated              /var/spool/pbs/mom_priv/jobs/660486.pbs.aracluster.SC
