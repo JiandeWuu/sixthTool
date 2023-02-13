@@ -1,0 +1,4 @@
+outs:
+- md5: d1fb27d67dbdcd1138374d1a9980fcf3
+  size: 363918
+  path: benchmark_nuc_Subsequence_k2.csv

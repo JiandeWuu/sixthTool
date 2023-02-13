@@ -1,0 +1,4 @@
+outs:
+- md5: 06cfbc7ee72a00fd0dd65c296c48e2c6
+  size: 706496
+  path: nuc_lncRNA__cyto_lncRNA__train__REF_SVM-linearC1__rank39.npy

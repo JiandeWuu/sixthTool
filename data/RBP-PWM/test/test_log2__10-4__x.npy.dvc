@@ -1,0 +1,4 @@
+outs:
+- md5: b4a2e87d1f368c464e62afdb15a6145f
+  size: 490016
+  path: test_log2__10-4__x.npy

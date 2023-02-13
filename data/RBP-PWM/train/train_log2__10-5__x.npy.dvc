@@ -1,0 +1,4 @@
+outs:
+- md5: e622a06787aec912a6ac34267d96c6a0
+  size: 1956224
+  path: train_log2__10-5__x.npy

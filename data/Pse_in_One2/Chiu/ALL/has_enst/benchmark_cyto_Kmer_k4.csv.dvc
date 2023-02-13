@@ -1,0 +1,4 @@
+outs:
+- md5: 64d1decd4561650ad2575d5e5a163022
+  size: 971334
+  path: benchmark_cyto_Kmer_k4.csv
