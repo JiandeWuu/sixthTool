@@ -1,0 +1,4 @@
+outs:
+- md5: b94f2c10974693d5415ea79e3d852606
+  size: 652160
+  path: train_-log10__10-3__REF_SVM-linearC1__rank36.npy

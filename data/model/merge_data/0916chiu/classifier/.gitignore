@@ -6,3 +6,6 @@
 /nuc_lncRNA__nuc_mRNA__cyto_mRNA__svm.pickle
 /nuc_lncRNA__cyto_lncRNA__esvms10_v4.pickle
 /nuc_lncRNA__cyto_lncRNA__esvms50_v4.pickle
+/nuc_lncRNA__cyto_lncRNA__esvm_s10_p10_e512_f10__v230106.pickle
+/nuc_lncRNA__cyto_mRNA__esvm_s10_p10_e512_f10__v230106.pickle
+/nuc_lncRNA__cyto_lncRNA__cyto_mRNA__esvm_s10_p10_e512_f10__v230106.pickle
