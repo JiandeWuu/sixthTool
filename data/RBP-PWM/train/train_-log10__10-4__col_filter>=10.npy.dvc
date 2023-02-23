@@ -1,0 +1,4 @@
+outs:
+- md5: 48a74aa1f5cd5449e7d88bebefabae6f
+  size: 236
+  path: train_-log10__10-4__col_filter>=10.npy

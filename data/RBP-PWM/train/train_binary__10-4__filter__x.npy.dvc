@@ -1,0 +1,4 @@
+outs:
+- md5: 853f450b091797189560a1d7cfa67c53
+  size: 833456
+  path: train_binary__10-4__filter__x.npy

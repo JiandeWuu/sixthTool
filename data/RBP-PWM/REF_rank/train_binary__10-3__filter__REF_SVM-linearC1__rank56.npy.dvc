@@ -1,0 +1,4 @@
+outs:
+- md5: 9ff15bd46d1729a23d80bd637733c3e8
+  size: 1009920
+  path: train_binary__10-3__filter__REF_SVM-linearC1__rank56.npy
