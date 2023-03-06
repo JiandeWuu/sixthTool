@@ -35,3 +35,7 @@
 /train_-log10__10-3__col_filter>=10.npy
 /train_binary__10-3__filter__x.npy
 /train_-log10__10-4__filter__x.npy
+/train_binary__10-3__row_filter\!=0.npy
+/train_-log10__10-3__row_filter\!=0.npy
+/train_-log10__10-4__row_filter\!=0.npy
+/train_binary__10-4__row_filter\!=0.npy

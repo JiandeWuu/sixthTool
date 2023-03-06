@@ -1,0 +1,4 @@
+outs:
+- md5: ffe7c74b2d81b32c4ca6e91b28d0f88d
+  size: 2558
+  path: train_binary__10-3__filter__REF_SVM-linearC1__rank30__esvm_s10_p10_e512_f10__v230213.json
