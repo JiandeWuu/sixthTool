@@ -32,9 +32,9 @@ parser.add_argument('-f', '--fold', default=5, type=int, help='k-fold cross-vali
 parser.add_argument('-s', '--size', default=1, type=int, help='Ensemble SVM size')
 parser.add_argument('-p', '--pmap', default=1, type=int, help='hpo pmap')
 parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_evals')
+parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 args = parser.parse_args()
 
-max_iter = 1e7
 seed = 1212
 
 esvm_space = {'kernel': {
@@ -42,10 +42,10 @@ esvm_space = {'kernel': {
                     'C_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
                     'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    # 'Nu_linear': {'n': [0, 1]},
-                    # 'Nu_poly': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    # 'Nu_rbf': {'logGamma': [-10, 10], 'n': [0, 1]},
-                    # 'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
+                    'Nu_linear': {'n': [0, 1]},
+                    'Nu_poly': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'Nu_rbf': {'logGamma': [-10, 10], 'n': [0, 1]},
+                    'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
                     }
         }
 
@@ -78,81 +78,18 @@ data_x = np.load(args.input)
 print("Label file: %s" % (args.label))
 data_y = np.load(args.label)
 
+max_iter = args.max_iter
+
 if data_x.shape[0] != data_y.shape[0]:
     raise Exception("input file and label file not equal", (data_x.shape, data_y.shape))
 
 pmap = optunity.parallel.create_pmap(args.pmap)
 
-
-# def esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n):
-#     """A generic eSVM training function, with arguments based on the chosen kernel."""
-#     x_train, y_train = svm_function.ensemble_data(x_train, y_train, size=args.size)
-#     esvm = ensemble_svm()
-#     esvm.train(x_train, y_train, kernel, C, logGamma, degree, coef0, n, )
-    
-#     return esvm
-
 def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=args.size, max_iter=max_iter):
     model = svm_function.esvm_train_model(x_train, y_train, kernel=kernel, C=C, logGamma=logGamma, degree=degree, coef0=coef0, n=n, size=size, max_iter=max_iter)
     roc_score = model.test(x_test, y_test)
+    print("AUROC: %.2f" % roc_score)
     return roc_score
-
-
-# def cv_esvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=3, coef0=0, n=0.5):
-#     cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
-    
-#     acc_array = []
-#     recall_array = []
-#     prec_array = []
-#     spec_array = []
-#     f1sc_array = []
-#     auroc_array = []
-#     cm_array = []
-#     for i in range(fold):
-#         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
-#         model = esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n)
-        
-#         roc_score, pred_score = model.test(x_test, y_test)
-#         y_train_pred, _ = model.predict(x_train)
-#         y_test_pred, _ = model.predict(x_test)
-        
-#         auroc_array.append(roc_score)
-        
-#         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
-        
-#         tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
-        
-#         acc_array.append((tn + tp) / (tn + fp + fn + tp))
-#         recall_array.append(tp / (fn + tp))
-#         prec_array.append(tp / (fp + tp))
-#         spec_array.append(tn / (tn + fp))
-#         f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
-    
-#     json_dcit = {
-#         "fold Accy": acc_array,
-#         "avg Accy": sum(acc_array) / len(acc_array),
-#         "std Accy": np.std(acc_array),
-#         "fold Recall": recall_array,
-#         "avg Recall": sum(recall_array) / len(recall_array),
-#         "std Recall": np.std(recall_array),
-#         "fold Prec": prec_array,
-#         "avg Prec": sum(prec_array) / len(prec_array),
-#         "std Prec": np.std(prec_array),
-#         "fold Spec": spec_array,
-#         "avg Spec": sum(spec_array) / len(spec_array),
-#         "std Spec": np.std(spec_array),
-#         "fold F1sc": f1sc_array,
-#         "avg F1sc": sum(f1sc_array) / len(f1sc_array),
-#         "std F1sc": np.std(f1sc_array),
-#         "fold AUROC": auroc_array,
-#         "avg AUROC": sum(auroc_array) / len(auroc_array),
-#         "std AUROC": np.std(auroc_array),
-#         "kernel": kernel, "C": C, "logGamma": logGamma, "degree": degree, "coef0": coef0, "n": n, "size": args.size,
-#         "confusion matrix": cm_array
-#     }
-    
-#     with open('%s.json' % (args.output), 'w') as fp:
-#         json.dump(json_dcit, fp)
 
 def libsvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, w0, w1, n):
     """A generic SVM training function, with arguments based on the chosen kernel."""
@@ -238,41 +175,6 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
     with open('%s.json' % (args.output), 'w') as fp:
         json.dump(json_dcit, fp)
    
-# def svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n):
-#     """A generic SVM training function, with arguments based on the chosen kernel."""
-#     kernel = kernel.split("_")
-#     if C:
-#         C = float(C)
-#     if logGamma:
-#         logGamma = float(logGamma)
-#     if degree:
-#         degree = int(degree)
-#     if coef0:
-#         coef0 = float(coef0)
-#     if n:
-#         n = float(n)
-    
-#     if kernel[0] == "C":
-#         if kernel[1] == "linear":
-#             clf = svm.SVC(kernel=kernel[1], C=(2 ** C), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "poly":
-#             clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), degree=degree, coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "rbf":
-#             clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "sigmoid":
-#             clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#     elif kernel[0] == "Nu":
-#         if kernel[1] == "linear":
-#             clf = svm.NuSVC(kernel=kernel[1], nu=n, class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "poly":
-#             clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), degree=degree, coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "rbf":
-#             clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), class_weight='balanced', max_iter=max_iter).fit(x_train, y_train)
-#         elif kernel[1] == "sigmoid":
-#             clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), coef0=(2 ** coef0), class_weight='balanced').fit(x_train, y_train)
-    
-#     return clf
-
 def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=max_iter):
     try:
         model = svm_function.svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter)
@@ -287,66 +189,6 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, lo
     print("AUROC: %.2f" % roc_score)
     return roc_score
 
-# def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5):
-#     cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
-    
-#     acc_array = []
-#     recall_array = []
-#     prec_array = []
-#     spec_array = []
-#     f1sc_array = []
-#     auroc_array = []
-#     cm_array = []
-#     for i in range(fold):
-#         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
-#         model = svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n)
-        
-#         y_train_pred = model.predict(x_train)
-#         y_test_pred = model.predict(x_test)
-        
-#         decision_values = model.decision_function(x_test)
-#         decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
-#         try:
-#             roc_score = metrics.roc_auc_score(y_test, decision_values)
-#             auroc_array.append(roc_score)
-#         except:
-#             print(decision_values)
-        
-#         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
-        
-#         tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
-        
-#         acc_array.append((tn + tp) / (tn + fp + fn + tp))
-#         recall_array.append(tp / (fn + tp))
-#         prec_array.append(tp / (fp + tp))
-#         spec_array.append(tn / (tn + fp))
-#         f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
-    
-#     json_dcit = {
-#         "fold Accy": acc_array,
-#         "avg Accy": sum(acc_array) / len(acc_array),
-#         "std Accy": np.std(acc_array),
-#         "fold Recall": recall_array,
-#         "avg Recall": sum(recall_array) / len(recall_array),
-#         "std Recall": np.std(recall_array),
-#         "fold Prec": prec_array,
-#         "avg Prec": sum(prec_array) / len(prec_array),
-#         "std Prec": np.std(prec_array),
-#         "fold Spec": spec_array,
-#         "avg Spec": sum(spec_array) / len(spec_array),
-#         "std Spec": np.std(spec_array),
-#         "fold F1sc": f1sc_array,
-#         "avg F1sc": sum(f1sc_array) / len(f1sc_array),
-#         "std F1sc": np.std(f1sc_array),
-#         "fold AUROC": auroc_array,
-#         "avg AUROC": sum(auroc_array) / len(auroc_array),
-#         "std AUROC": np.std(auroc_array),
-#         "kernel": kernel, "C": C, "logGamma": logGamma, "degree": degree, "coef0": coef0, "n": n,
-#         "confusion matrix": cm_array
-#     }
-    
-#     with open('%s.json' % (args.output), 'w') as fp:
-#         json.dump(json_dcit, fp)
    
 cv_decorator = optunity.cross_validated(x=data_x, y=data_y, num_folds=args.fold)
 

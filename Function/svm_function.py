@@ -178,7 +178,7 @@ def cv_esvm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, deg
         x_train, y_train, x_test, y_test = cv_train_test(cv_x, cv_y, i)
         model = esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, size=size, max_iter=max_iter)
         
-        roc_score, pred_score = model.test(x_test, y_test)
+        roc_score = model.test(x_test, y_test)
         y_train_pred, _ = model.predict(x_train)
         y_test_pred, _ = model.predict(x_test)
         

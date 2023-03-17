@@ -76,7 +76,7 @@ if args.method == 'svm':
 elif args.method == 'esvm':
     train_def = esvm_train_model_hp_object
     model = train_def(x, y, hp)
-    roc_score, score = model.test(test_x, test_y)
+    roc_score = model.test(test_x, test_y)
     print("AUROC: %.2f" % (roc_score))
 
 print("save model file: %s" % (args.save))
