@@ -4,3 +4,11 @@
 /y.npy
 /Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index.npy
 /transcript2rbp_pvalue.npy
+/transcript2rbp_pvalue__cutoff10-3.csv
+/transcript2rbp_pvalue__cutoff10-4.csv
+/transcript2pse_in_one2rbp_pvalue_cutoff10-3_-log10.csv
+/transcript2rbp_pvalue__cutoff10-3__filter.csv
+/transcript2pse_in_one2rbp_pvalue_cutoff10-3_-log10_filter.csv
+/transcript2pse_in_one\*rbp_pvalue__cutoff10-3.csv
+/transcript2pse_in_one\*rbp_pvalue__cutoff10-3.csv
+/transcript2pse_in_one\*rbp_pvalue__cutoff10-3.csv

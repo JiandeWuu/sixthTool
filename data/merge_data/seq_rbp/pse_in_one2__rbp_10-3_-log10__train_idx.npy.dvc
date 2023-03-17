@@ -1,0 +1,4 @@
+outs:
+- md5: 3f261639caa430fa1756c8123c67c216
+  size: 18240
+  path: pse_in_one2__rbp_10-3_-log10__train_idx.npy

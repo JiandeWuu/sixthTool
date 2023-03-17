@@ -1,0 +1,4 @@
+outs:
+- md5: b2370ec00568b3127208806135a1ffc8
+  size: 3550080
+  path: transcript2pse_in_one__train__x.npy
