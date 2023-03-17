@@ -21,7 +21,8 @@ parser.add_argument('-i', '--input', type=str, help='input file .npy')
 parser.add_argument('-l', '--label', type=str, help='label file .npy')
 parser.add_argument('-o', '--output', default='output.csv', type=str, help='output file')
 # parser.add_argument('-m', '--method', default='svm', type=str, help='svm, libsvm, esvm')
-parser.add_argument('-p', '--proc', default=-1, type=str, help='multiprocessing')
+parser.add_argument('-p', '--proc', default=-1, type=int, help='multiprocessing')
+parser.add_argument('-u', '--popu', default=25, type=int, help='population size')
 parser.add_argument('-f', '--fold', default=5, type=int, help='k-fold cross-validation')
 parser.add_argument('-s', '--size', default=1, type=int, help='Ensemble SVM size')
 parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_evals')
@@ -40,19 +41,25 @@ fold = args.fold
 max_iter = args.max_iter
 num_evals = args.num_evals
 set_seed = args.set_seed
+popu = args.popu
 
 if X.shape[0] != y.shape[0]:
     raise Exception("input file and label file not equal", (X.shape, y.shape))
 
 class multi_ensemble_svm():
-    def __init__(self):
+    def __init__(self, processes=-1):
+        if processes == -1:
+            self.processes = multiprocessing.cpu_count()
+        else:
+            self.processes = processes
+            
         self.model_array = None
         self.model_size = None
         self.hp = {
             "kernel": 'C_linear', "C":0, "logGamma":0, "degree":0, "coef0":0, "n":0.5, "max_iter":1e7
         }
     
-    def train(self, data, label, ensemble_data_size=1, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7, processes=-1):
+    def train(self, data, label, ensemble_data_size=1, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7):
         train_time = time.time()
         self.hp["kernel"] = kernel
         self.hp["C"] = C
@@ -65,10 +72,8 @@ class multi_ensemble_svm():
         x, y = svm_function.ensemble_data(data, label, size=ensemble_data_size)
         self.model_size = len(x)
         
-        if processes == -1:
-            processes = multiprocessing.cpu_count()
         
-        pool = multiprocessing.Pool(processes=processes)
+        pool = multiprocessing.Pool(processes=self.processes)
         # with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
         result = pool.starmap(self._svm_train, tqdm.tqdm(zip(x, y), total=self.model_size))
         self.model_array = result
@@ -95,7 +100,7 @@ class multi_ensemble_svm():
     
     def predict(self, x):
         output = None
-        pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
+        pool = multiprocessing.Pool(processes=self.processes)
         output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(self.model_array, repeat(x)), total=self.model_size))
         pred_y_score = np.sum(output, axis=0) / self.model_size
         pred_y = np.where(pred_y_score >= 0.5, 1, 0)
@@ -178,15 +183,15 @@ class eSVMFeatureSelection(Problem):
 problem = eSVMFeatureSelection(X, y, size=size, max_iter=max_iter, fold=fold)
 
 task = Task(problem, max_iters=num_evals)
-algorithm = ParticleSwarmOptimization(seed=set_seed)
+algorithm = ParticleSwarmOptimization(population_size=popu, seed=set_seed)
 best_features, best_fitness = algorithm.run(task)
 
 
 params = get_params(best_features[:7])
 selected_features = best_features[7:] > 0.5
 
-subset_auroc = cv_mp_esvm(X[:, selected_features], y, fold=fold, **params)
-all_auroc = cv_mp_esvm(X, y, fold=fold, **params)
+subset_auroc = cv_mp_esvm(X[:, selected_features], y, size=size, max_iter=max_iter, fold=fold, **params)
+all_auroc = cv_mp_esvm(X, y, size=size, max_iter=max_iter, fold=fold, **params)
 
 print("params:")
 print(params)
@@ -195,11 +200,12 @@ print('Number of selected features:', selected_features.sum())
 print("Subset roc_score: %s" % subset_auroc)
 print("All roc_score: %s" % all_auroc)
 
-json_dcit = {
+json_dict = {
     "all_auroc": all_auroc,
     "subset_auroc": subset_auroc,
-    "selected_features": selected_features
+    "selected_features": list(selected_features.astype(str)),
 }
+print(json_dict)
 with open('%s.json' % (args.output), 'w') as fp:
-    json.dump(json_dcit, fp)
+    json.dump(json_dict, fp)
 print("total time: %2.f" % (time.time() - total_time))
