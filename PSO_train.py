@@ -53,7 +53,7 @@ class multi_ensemble_svm():
         else:
             self.processes = processes
             
-        self.model_array = None
+        self.model_array = []
         self.model_size = None
         self.hp = {
             "kernel": 'C_linear', "C":0, "logGamma":0, "degree":0, "coef0":0, "n":0.5, "max_iter":1e7
@@ -69,16 +69,18 @@ class multi_ensemble_svm():
         self.hp["n"] = n
         self.hp["max_iter"] = max_iter
         
+        self.model_array = []
+        
         x, y = svm_function.ensemble_data(data, label, size=ensemble_data_size)
         self.model_size = len(x)
         
         
         pool = multiprocessing.Pool(processes=self.processes)
         # with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
-        result = pool.starmap(self._svm_train, tqdm.tqdm(zip(x, y), total=self.model_size))
-        self.model_array = result
-        print("ensemble svm train: %.2fs" % (time.time() - train_time))
+        results = pool.starmap(self._svm_train, tqdm.tqdm(zip(x, y), total=self.model_size))
         pool.close()
+        self.model_array = results
+        print("ensemble svm train: %.2fs" % (time.time() - train_time))
         return None
 
     def _svm_train(self, d, l):
@@ -95,17 +97,19 @@ class multi_ensemble_svm():
             
         return metrics.roc_auc_score(y, pred_y_score)
     
-    def _svm_predict(self, m, x):
-        return m.predict(x)
+    def _svm_predict(self, i, x):
+        return self.model_array[i].predict(x)
     
     def predict(self, x):
-        output = None
-        pool = multiprocessing.Pool(processes=self.processes)
-        output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(self.model_array, repeat(x)), total=self.model_size))
+        # pool = multiprocessing.Pool(processes=self.processes)
+        # output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(range(self.model_size), repeat(x)), total=self.model_size))
+        output = []
+        for i in range(self.model_size):
+            output.append(self.model_array[i].predict(x))
         pred_y_score = np.sum(output, axis=0) / self.model_size
         pred_y = np.where(pred_y_score >= 0.5, 1, 0)
         
-        pool.close()
+        # pool.close()
         return pred_y, pred_y_score
 
 def cv_mp_esvm(data_x, data_y, fold=5,
