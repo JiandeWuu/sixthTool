@@ -42,6 +42,7 @@ max_iter = args.max_iter
 num_evals = args.num_evals
 set_seed = args.set_seed
 popu = args.popu
+proc = args.proc
 
 if X.shape[0] != y.shape[0]:
     raise Exception("input file and label file not equal", (X.shape, y.shape))
@@ -126,7 +127,7 @@ def cv_mp_esvm(data_x, data_y, fold=5,
     auroc_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
-        clf = multi_ensemble_svm()
+        clf = multi_ensemble_svm(processes=proc)
         clf.train(x_train, y_train, ensemble_data_size=size, kernel=kernel, 
                 C=C, 
                 logGamma=logGamma, 
@@ -149,7 +150,7 @@ def get_params(x):
     logGamma = (20 * x[3]) - 10
     degree = int(x[4] * 10)
     coef0 = (20 * x[5]) - 10
-    n = x[6]
+    n = x[6] - 1e-9
     
     params = {
         'kernel':kernel, 
