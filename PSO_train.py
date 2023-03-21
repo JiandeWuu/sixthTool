@@ -2,12 +2,13 @@ import time
 import tqdm
 import json
 import argparse
+import itertools
 import multiprocessing
 
 import numpy as np
 
 from sklearn import metrics
-from itertools import repeat
+from sklearn.metrics import confusion_matrix
 from niapy.task import Task
 from niapy.problems import Problem
 from niapy.algorithms.basic import ParticleSwarmOptimization
@@ -53,7 +54,6 @@ class multi_ensemble_svm():
             self.processes = multiprocessing.cpu_count()
         else:
             self.processes = processes
-            
         self.model_array = []
         self.model_size = None
         self.hp = {
@@ -102,15 +102,16 @@ class multi_ensemble_svm():
         return self.model_array[i].predict(x)
     
     def predict(self, x):
-        # pool = multiprocessing.Pool(processes=self.processes)
-        # output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(range(self.model_size), repeat(x)), total=self.model_size))
-        output = []
-        for i in range(self.model_size):
-            output.append(self.model_array[i].predict(x))
+        
+        pool = multiprocessing.Pool(processes=self.processes)
+        output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(range(self.model_size), itertools.repeat(x)), total=self.model_size))
+        # output = []
+        # for i in range(self.model_size):
+        #     output.append(self.model_array[i].predict(x))
         pred_y_score = np.sum(output, axis=0) / self.model_size
         pred_y = np.where(pred_y_score >= 0.5, 1, 0)
         
-        # pool.close()
+        pool.close()
         return pred_y, pred_y_score
 
 def cv_mp_esvm(data_x, data_y, fold=5,
@@ -124,7 +125,14 @@ def cv_mp_esvm(data_x, data_y, fold=5,
                 max_iter=1000):
     cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
         
+    acc_array = []
+    recall_array = []
+    prec_array = []
+    spec_array = []
+    npv_array = []
+    f1sc_array = []
     auroc_array = []
+    cm_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
         clf = multi_ensemble_svm(processes=proc)
@@ -135,8 +143,48 @@ def cv_mp_esvm(data_x, data_y, fold=5,
                 coef0=coef0, 
                 n=n, 
                 max_iter=max_iter)
-        auroc_array.append(clf.test(x_test, y_test))
-    return sum(auroc_array) / len(auroc_array)
+        y_train_pred, _ = clf.predict(x_train)
+        y_test_pred, y_test_pred_score = clf.predict(x_test)
+        
+        auroc_array.append(metrics.roc_auc_score(y_test, y_test_pred_score))
+        cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
+        
+        tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
+        
+        acc_array.append((tn + tp) / (tn + fp + fn + tp))
+        recall_array.append(tp / (fn + tp))
+        prec_array.append(tp / (fp + tp))
+        spec_array.append(tn / (tn + fp))
+        npv_array.append(tn / (tn + fn))
+        f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
+    
+    
+    json_dict = {
+        "fold Accy": acc_array,
+        "avg Accy": sum(acc_array) / len(acc_array),
+        "std Accy": np.std(acc_array),
+        "fold Recall": recall_array,
+        "avg Recall": sum(recall_array) / len(recall_array),
+        "std Recall": np.std(recall_array),
+        "fold Prec": prec_array,
+        "avg Prec": sum(prec_array) / len(prec_array),
+        "std Prec": np.std(prec_array),
+        "fold Spec": spec_array,
+        "avg Spec": sum(spec_array) / len(spec_array),
+        "std Spec": np.std(spec_array),
+        "fold Npv": npv_array,
+        "avg Npv": sum(npv_array) / len(npv_array),
+        "std Npv": np.std(npv_array),
+        "fold F1sc": f1sc_array,
+        "avg F1sc": sum(f1sc_array) / len(f1sc_array),
+        "std F1sc": np.std(f1sc_array),
+        "fold AUROC": auroc_array,
+        "avg AUROC": sum(auroc_array) / len(auroc_array),
+        "std AUROC": np.std(auroc_array),
+        "confusion matrix": cm_array
+    }
+    
+    return json_dict
 
 def get_params(x):
     C_Nu = "Nu" if x[0] > 0.5 else "C"
@@ -150,7 +198,7 @@ def get_params(x):
     logGamma = (20 * x[3]) - 10
     degree = int(x[4] * 10)
     coef0 = (20 * x[5]) - 10
-    n = x[6] - 1e-9
+    n = x[6] if x[6] != 0 else 1e-7
     
     params = {
         'kernel':kernel, 
@@ -182,7 +230,7 @@ class eSVMFeatureSelection(Problem):
             return 1.0
         auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
                     **params 
-                    )
+                    )['avg AUROC']
         return 1 - auroc
     
 problem = eSVMFeatureSelection(X, y, size=size, max_iter=max_iter, fold=fold)
@@ -193,24 +241,31 @@ best_features, best_fitness = algorithm.run(task)
 
 
 params = get_params(best_features[:7])
+params['size'] = size
+params['fold'] = fold
+params['max_iter'] = max_iter
+
 selected_features = best_features[7:] > 0.5
 
-subset_auroc = cv_mp_esvm(X[:, selected_features], y, size=size, max_iter=max_iter, fold=fold, **params)
-all_auroc = cv_mp_esvm(X, y, size=size, max_iter=max_iter, fold=fold, **params)
+print("subset eSVM train:")
+subset_perf = cv_mp_esvm(X[:, selected_features], y, **params)
+
+print("All eSVM train:")
+all_perf = cv_mp_esvm(X, y, **params)
 
 print("params:")
 print(params)
-print("size: %s, max_iter: %s" % (size, max_iter))
 print('Number of selected features:', selected_features.sum())
-print("Subset roc_score: %s" % subset_auroc)
-print("All roc_score: %s" % all_auroc)
+print("Subset roc_score: %s" % subset_perf['avg AUROC'])
+print("All roc_score: %s" % all_perf['avg AUROC'])
 
 json_dict = {
-    "all_auroc": all_auroc,
-    "subset_auroc": subset_auroc,
+    "all_perf": all_perf,
+    "subset_perf": subset_perf,
+    "params": params,
     "selected_features": list(selected_features.astype(str)),
 }
-print(json_dict)
+# print(json_dict)
 with open('%s.json' % (args.output), 'w') as fp:
     json.dump(json_dict, fp)
 print("total time: %2.f" % (time.time() - total_time))
