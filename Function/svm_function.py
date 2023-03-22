@@ -2,6 +2,9 @@ import math
 
 import numpy as np
 
+from sklearnex import patch_sklearn 
+patch_sklearn()
+
 from sklearn import svm
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
@@ -178,10 +181,10 @@ def cv_esvm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, deg
         x_train, y_train, x_test, y_test = cv_train_test(cv_x, cv_y, i)
         model = esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, size=size, max_iter=max_iter)
         
-        roc_score = model.test(x_test, y_test)
+        # roc_score = model.test(x_test, y_test)
         y_train_pred, _ = model.predict(x_train)
-        y_test_pred, _ = model.predict(x_test)
-        
+        y_test_pred, y_test_score = model.predict(x_test)
+        roc_score = metrics.roc_auc_score(y_test, y_test_score)
         auroc_array.append(roc_score)
         
         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())

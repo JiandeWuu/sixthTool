@@ -7,6 +7,9 @@ import multiprocessing
 
 import numpy as np
 
+from sklearnex import patch_sklearn 
+patch_sklearn()
+
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 from niapy.task import Task
@@ -44,6 +47,10 @@ num_evals = args.num_evals
 set_seed = args.set_seed
 popu = args.popu
 proc = args.proc
+
+print("size=%s, fold=%s, max_iter=%s, num_evals=%s, set_seed=%s, popu=%s, proc=%s" % (
+    size, fold, max_iter, num_evals, set_seed, popu, proc
+))
 
 if X.shape[0] != y.shape[0]:
     raise Exception("input file and label file not equal", (X.shape, y.shape))
@@ -228,7 +235,10 @@ class eSVMFeatureSelection(Problem):
         num_selected = selected.sum()
         if num_selected == 0:
             return 1.0
-        auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
+        # auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
+        #             **params 
+        #             )['avg AUROC']
+        auroc = svm_function.cv_esvm_perf(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
                     **params 
                     )['avg AUROC']
         return 1 - auroc
@@ -248,19 +258,23 @@ params['max_iter'] = max_iter
 selected_features = best_features[7:] > 0.5
 
 print("subset eSVM train:")
-subset_perf = cv_mp_esvm(X[:, selected_features], y, **params)
+# subset_perf = cv_mp_esvm(X[:, selected_features], y, **params)
+subset_perf = svm_function.cv_esvm_perf(X[:, selected_features], y, **params)
 
-print("All eSVM train:")
-all_perf = cv_mp_esvm(X, y, **params)
+# print("All eSVM train:")
+# all_perf = cv_mp_esvm(X, y, **params)
+# all_perf = svm_function.cv_esvm_perf(X, y, **params)
 
 print("params:")
 print(params)
 print('Number of selected features:', selected_features.sum())
 print("Subset roc_score: %s" % subset_perf['avg AUROC'])
-print("All roc_score: %s" % all_perf['avg AUROC'])
+# print("All roc_score: %s" % all_perf['avg AUROC'])
 
+total_time = time.time() - total_time
 json_dict = {
-    "all_perf": all_perf,
+    # "all_perf": all_perf,
+    "total_time": total_time,
     "subset_perf": subset_perf,
     "params": params,
     "selected_features": list(selected_features.astype(str)),
@@ -268,4 +282,4 @@ json_dict = {
 # print(json_dict)
 with open('%s.json' % (args.output), 'w') as fp:
     json.dump(json_dict, fp)
-print("total time: %2.f" % (time.time() - total_time))
+print("total time: %2.f" % (total_time))
