@@ -16,3 +16,8 @@
 /transcript2pse_in_one__train__x.npy
 /transcript2pse_in_one\*rbp_pvalue_cutoff10-3_-log10__train__x.npy
 /transcript2pse_in_one\*rbp_pvalue_cutoff10-3_-log10__test__x.npy
+/transcript2pse_in_one\*rbp_pvalue_cutoff10-3_-log10__train__x.npy
+/pse_in_one\*rbp_pvalue_cutoff10-3_-log10__utest_pval005__train__x.npy
+/pse_in_one\*rbp_pvalue_cutoff10-3_-log10__utest_pval001__train__x.npy
+/transcript2pse_in_one\*rbp_pvalue_cutoff10-3_-log10__test__x.npy
+/t2p\*r_p_10-3_-log10__trian__x__utest_pval.npy

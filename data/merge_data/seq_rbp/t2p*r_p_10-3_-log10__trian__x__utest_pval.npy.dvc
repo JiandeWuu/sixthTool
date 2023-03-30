@@ -1,0 +1,4 @@
+outs:
+- md5: 81f6ca60c8bfcdacc6601e956877b901
+  size: 169472
+  path: t2p*r_p_10-3_-log10__trian__x__utest_pval.npy
