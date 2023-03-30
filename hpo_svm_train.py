@@ -7,6 +7,8 @@ import pandas as pd
 import optunity
 import optunity.metrics
 
+from sklearnex import patch_sklearn 
+patch_sklearn()
 
 from sklearn import svm
 from sklearn import metrics
@@ -43,9 +45,9 @@ esvm_space = {'kernel': {
                     'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
                     'Nu_linear': {'n': [0, 1]},
-                    'Nu_poly': {'logGamma': [-10, 10], 'n': [0, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'Nu_rbf': {'logGamma': [-10, 10], 'n': [0, 1]},
-                    'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [0, 1], 'coef0': [-10, 10]}
+                    'Nu_poly': {'logGamma': [-10, 10], 'n': [1e-7, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'Nu_rbf': {'logGamma': [-10, 10], 'n': [1e-7, 1]},
+                    'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [1e-7, 1], 'coef0': [-10, 10]}
                     }
         }
 

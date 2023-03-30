@@ -2,9 +2,6 @@ import math
 
 import numpy as np
 
-from sklearnex import patch_sklearn 
-patch_sklearn()
-
 from sklearn import svm
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix

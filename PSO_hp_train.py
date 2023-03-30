@@ -40,11 +40,6 @@ X = np.load(args.input)
 print("Label file: %s" % (args.label))
 y = np.load(args.label)
 
-from sklearn.datasets import load_breast_cancer
-dataset = load_breast_cancer()
-X = dataset.data
-y = dataset.target
-
 size = args.size
 fold = args.fold
 max_iter = args.max_iter
@@ -224,7 +219,7 @@ def get_params(x):
 
 class eSVMFeatureSelection(Problem):
     def __init__(self, X_train, y_train, alpha=0.99, size=1, max_iter=1000, fold=5):
-        super().__init__(dimension=X_train.shape[1] + 7, lower=0, upper=1)
+        super().__init__(dimension=7, lower=0, upper=1)
         self.X_train = X_train
         self.y_train = y_train
         self.alpha = alpha
@@ -235,22 +230,14 @@ class eSVMFeatureSelection(Problem):
     def _evaluate(self, x):
         params = get_params(x[:7])
         
-        x = x[7:]
-        selected = x > 0.5
-        num_selected = selected.sum()
         
-        print("avg %.4f, std %.4f" % (sum(x) / len(x), np.std(x)))
-        if num_selected == 0 or num_selected > len(x) / 2:
-            auroc = 0
-        else:
-            # auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
-            #             **params 
-            #             )['avg AUROC']
-            auroc = svm_function.cv_esvm_perf(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
-                        **params 
-                        )['avg AUROC']
-        print("score: %.4f" % (self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])))
-        return self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])
+        # auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
+        #             **params 
+        #             )['avg AUROC']
+        auroc = svm_function.cv_esvm_perf(self.X_train, self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
+                    **params 
+                    )['avg AUROC']
+        return 1 - auroc
     
 problem = eSVMFeatureSelection(X, y, size=size, max_iter=max_iter, fold=fold)
 
@@ -259,34 +246,26 @@ algorithm = ParticleSwarmOptimization(population_size=popu, seed=set_seed)
 best_features, best_fitness = algorithm.run(task)
 
 
-params = get_params(best_features[:7])
+params = get_params(best_features)
 params['size'] = size
 params['fold'] = fold
 params['max_iter'] = max_iter
 
-selected_features = best_features[7:] > 0.5
 
-print("subset eSVM train:")
+print("eSVM train:")
 # subset_perf = cv_mp_esvm(X[:, selected_features], y, **params)
-subset_perf = svm_function.cv_esvm_perf(X[:, selected_features], y, **params)
+esvm_perf = svm_function.cv_esvm_perf(X, y, **params)
 
-# print("All eSVM train:")
-# all_perf = cv_mp_esvm(X, y, **params)
-# all_perf = svm_function.cv_esvm_perf(X, y, **params)
 
 print("params:")
 print(params)
-print('Number of selected features: %s / %s' % (selected_features.sum(), X.shape[1]))
-print("Subset roc_score: %s" % subset_perf['avg AUROC'])
-# print("All roc_score: %s" % all_perf['avg AUROC'])
+print("roc_score: %s" % esvm_perf['avg AUROC'])
 
 total_time = time.time() - total_time
 json_dict = {
-    # "all_perf": all_perf,
     "total_time": total_time,
-    "subset_perf": subset_perf,
     "params": params,
-    "selected_features": list(selected_features.astype(str)),
+    "esvm_perf": esvm_perf,
 }
 # print(json_dict)
 with open('%s.json' % (args.output), 'w') as fp:
