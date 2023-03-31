@@ -7,8 +7,8 @@ import pandas as pd
 import optunity
 import optunity.metrics
 
-from sklearnex import patch_sklearn 
-patch_sklearn()
+# from sklearnex import patch_sklearn 
+# patch_sklearn()
 
 from sklearn import svm
 from sklearn import metrics

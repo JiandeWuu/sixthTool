@@ -40,11 +40,6 @@ X = np.load(args.input)
 print("Label file: %s" % (args.label))
 y = np.load(args.label)
 
-from sklearn.datasets import load_breast_cancer
-dataset = load_breast_cancer()
-X = dataset.data
-y = dataset.target
-
 size = args.size
 fold = args.fold
 max_iter = args.max_iter
