@@ -410,8 +410,9 @@ class eSVMFeatureSelection(Problem):
         x = x[7:]
         selected = x > 0.5
         num_selected = selected.sum()
-        if num_selected == 0 or num_selected > 1000:
-            auroc = 0
+        print("avg %.4f, std %.4f" % (sum(x) / len(x), np.std(x)))
+        if num_selected == 0 :
+            return 1
         else:
             print("num_selected=%s" % (num_selected))
             # auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
@@ -423,6 +424,7 @@ class eSVMFeatureSelection(Problem):
             # auroc = svm_function.cv_esvm_perf(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
             #             **params 
             #             )['avg AUROC']
+        print("score: %.4f" % (self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])))
         return self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])
     
 problem = eSVMFeatureSelection(X, y, size=size, max_iter=max_iter, fold=fold)
