@@ -1,4 +1,0 @@
-outs:
-- md5: 0562b5aaa42e68f7b3ab971c25cb6906
-  size: 5010
-  path: linear_point_train_cv_msvm_s1t0_f10s500.npy

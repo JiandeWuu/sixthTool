@@ -1,4 +1,0 @@
-outs:
-- md5: 2d25d87ec5cabeac1a9020aeb43df07d
-  size: 7262
-  path: save_model__nuc_lncRNA__cyto_lncRNA__cyto_mRNA__esvm_s10_p10_e512_f10__v230106.txt

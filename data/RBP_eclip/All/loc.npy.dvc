@@ -1,0 +1,4 @@
+outs:
+- md5: 3a2cd73493d1b240835ee3bbbaf21241
+  size: 18024
+  path: loc.npy

@@ -1,4 +1,0 @@
-outs:
-- md5: dda6871bdf8f770acc50ca7c4562a5cd
-  size: 314
-  path: hpo_svm_train_svmp16e200_human_RNA_sequence_cdhit80_0320_hasLoc_DACC_lag1_train.npy.txt

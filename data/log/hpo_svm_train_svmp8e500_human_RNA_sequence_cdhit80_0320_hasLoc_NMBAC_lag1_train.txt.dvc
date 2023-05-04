@@ -1,4 +1,0 @@
-outs:
-- md5: 8959fd2c81f0c59b440324906e0f5bc8
-  size: 195
-  path: hpo_svm_train_svmp8e500_human_RNA_sequence_cdhit80_0320_hasLoc_NMBAC_lag1_train.txt

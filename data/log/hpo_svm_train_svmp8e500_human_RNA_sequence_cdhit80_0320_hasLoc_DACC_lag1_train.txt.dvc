@@ -1,4 +1,0 @@
-outs:
-- md5: a8f5654ee508a89cdf61cdbe99e743d3
-  size: 352
-  path: hpo_svm_train_svmp8e500_human_RNA_sequence_cdhit80_0320_hasLoc_DACC_lag1_train.txt

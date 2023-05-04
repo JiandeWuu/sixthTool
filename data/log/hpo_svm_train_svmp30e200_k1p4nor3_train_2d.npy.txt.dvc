@@ -1,4 +1,0 @@
-outs:
-- md5: 34cc8c90bc4ad597842dc1cc736631a0
-  size: 1500
-  path: hpo_svm_train_svmp30e200_k1p4nor3_train_2d.npy.txt

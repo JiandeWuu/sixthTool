@@ -1,4 +1,0 @@
-outs:
-- md5: 5396478caf414ab9dec75223e0988b13
-  size: 3245650
-  path: train_binary__10-5__REF_SVM-linearC1__rank37__esvm_s10_p10_e512_f10__v230213_intron_log.e
