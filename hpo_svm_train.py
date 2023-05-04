@@ -14,7 +14,7 @@ from sklearn import svm
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
-
+from sklearn.preprocessing import *
 from libsvm.svmutil import svm_problem
 from libsvm.svmutil import svm_parameter
 from libsvm.svmutil import svm_train
@@ -35,6 +35,7 @@ parser.add_argument('-s', '--size', default=1, type=int, help='Ensemble SVM size
 parser.add_argument('-p', '--pmap', default=1, type=int, help='hpo pmap')
 parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_evals')
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
+parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 args = parser.parse_args()
 
 seed = 1212
@@ -79,6 +80,11 @@ print("Input file: %s" % (args.input))
 data_x = np.load(args.input)
 print("Label file: %s" % (args.label))
 data_y = np.load(args.label)
+
+if args.normalize:
+    print("Normalize: %s" % (args.normalize))
+    scaler = MinMaxScaler()
+    data_x = scaler.fit_transform(data_x)
 
 max_iter = args.max_iter
 

@@ -304,16 +304,16 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
 def svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter=1e7):
     """A generic SVM training function, with arguments based on the chosen kernel."""
     kernel = kernel.split("_")
-    # if C is :
-    #     C = float(C)
-    # if logGamma:
-    #     logGamma = float(logGamma)
-    # if degree:
-    #     degree = int(degree)
-    # if coef0:
-    #     coef0 = float(coef0)
-    # if n:
-    #     n = float(n)
+    if C:
+        C = float(C)
+    if logGamma:
+        logGamma = float(logGamma)
+    if degree:
+        degree = int(degree)
+    if coef0:
+        coef0 = float(coef0)
+    if n:
+        n = float(n)
     
     if kernel[0] == "C":
         if kernel[1] == "linear":
