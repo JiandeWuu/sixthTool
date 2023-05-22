@@ -45,7 +45,7 @@ esvm_space = {'kernel': {
                     'C_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
                     'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    'Nu_linear': {'n': [0, 1]},
+                    'Nu_linear': {'n': [1e-2, 1]},
                     'Nu_poly': {'logGamma': [-10, 10], 'n': [1e-7, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
                     'Nu_rbf': {'logGamma': [-10, 10], 'n': [1e-7, 1]},
                     'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [1e-7, 1], 'coef0': [-10, 10]}
@@ -69,10 +69,10 @@ svm_space = {'kernel': {
                     'C_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
                     'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    # 'Nu_linear': {'n': [0, 0.99]},
-                    # 'Nu_poly': {'logGamma': [-10, 10], 'n': [0, 0.99], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    # 'Nu_rbf': {'logGamma': [-10, 10], 'n': [0, 0.99]},
-                    # 'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [0, 0.99], 'coef0': [-10, 10]}
+                    # 'Nu_linear': {'n': [1e-2, 1]},
+                    # 'Nu_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    # 'Nu_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1]},
+                    # 'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'coef0': [-10, 10]}
                     }
         }
 
@@ -185,6 +185,7 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
    
 def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=max_iter):
     try:
+        print("kernel=%s, C=%.2f, logGamma=%.2f, degree=%.2f, coef0=%.2f, n=%.2f" % (kernel, C, logGamma, degree, coef0, n))
         model = svm_function.svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter)
         decision_values = model.decision_function(x_test)
         decision_values = np.where(np.isnan(decision_values), 0, decision_values) 
@@ -193,7 +194,7 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, lo
     except:
         # print(decision_values)
         print("error return 0.5.")
-        return 0.5
+        roc_score = 0.5
     print("AUROC: %.2f" % roc_score)
     return roc_score
 
@@ -206,21 +207,21 @@ if args.method == 'svm':
     optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
     
-    json_dcit = svm_function.cv_svm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5, max_iter=max_iter)
+    json_dcit = svm_function.cv_svm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5 if optimal_svm_pars["kernel"][0] == "C" else optimal_svm_pars["n"], max_iter=max_iter)
     
 elif args.method == 'libsvm':
     cv_libsvm_tuned_auroc = cv_decorator(libsvm_tuned_auroc)
     optimal_svm_pars, info, _ = optunity.maximize_structured(cv_libsvm_tuned_auroc, libsvm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
     
-    cv_libsvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], w0=optimal_svm_pars["w0"], w1=optimal_svm_pars["w1"], n=0.5)
+    cv_libsvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], w0=optimal_svm_pars["w0"], w1=optimal_svm_pars["w1"], n=0.5 if optimal_svm_pars["kernel"][0] == "0" else optimal_svm_pars["n"])
 
 elif args.method == 'esvm':
     cv_esvm_tuned_auroc = cv_decorator(esvm_tuned_auroc)
     optimal_svm_pars, info, _ = optunity.maximize_structured(cv_esvm_tuned_auroc, esvm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
 
-    json_dcit = svm_function.cv_esvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5, size=args.size, max_iter=max_iter)
+    json_dcit = svm_function.cv_esvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], n=0.5 if optimal_svm_pars["kernel"][0] == "C" else optimal_svm_pars["n"], size=args.size, max_iter=max_iter)
 
 
 
