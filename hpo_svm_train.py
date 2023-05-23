@@ -2,29 +2,6 @@ import time
 import json
 import argparse
 
-import numpy as np
-import pandas as pd
-import optunity
-import optunity.metrics
-
-# from sklearnex import patch_sklearn 
-# patch_sklearn()
-
-from sklearn import svm
-from sklearn import metrics
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import *
-from libsvm.svmutil import svm_problem
-from libsvm.svmutil import svm_parameter
-from libsvm.svmutil import svm_train
-from libsvm.svmutil import svm_predict
-
-from Function import svm_function
-from Function.ensemble_svm import ensemble_svm
-
-total_time = time.time()
-
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', type=str, help='input file .npy')
 parser.add_argument('-l', '--label', type=str, help='label file .npy')
@@ -37,6 +14,31 @@ parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_eva
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 args = parser.parse_args()
+
+import numpy as np
+import optunity
+import optunity.metrics
+
+
+if args.pmap == 1:
+    from sklearnex import patch_sklearn 
+    patch_sklearn()
+else:
+    pmap = optunity.parallel.create_pmap(args.pmap)
+
+from sklearn import metrics
+from sklearn.metrics import confusion_matrix
+from sklearn.preprocessing import *
+from libsvm.svmutil import svm_problem
+from libsvm.svmutil import svm_parameter
+from libsvm.svmutil import svm_train
+from libsvm.svmutil import svm_predict
+
+from Function import svm_function
+
+total_time = time.time()
+
+
 
 seed = 1212
 
@@ -91,7 +93,6 @@ max_iter = args.max_iter
 if data_x.shape[0] != data_y.shape[0]:
     raise Exception("input file and label file not equal", (data_x.shape, data_y.shape))
 
-pmap = optunity.parallel.create_pmap(args.pmap)
 
 def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=args.size, max_iter=max_iter):
     model = svm_function.esvm_train_model(x_train, y_train, kernel=kernel, C=C, logGamma=logGamma, degree=degree, coef0=coef0, n=n, size=size, max_iter=max_iter)
@@ -203,7 +204,10 @@ cv_decorator = optunity.cross_validated(x=data_x, y=data_y, num_folds=args.fold)
 print("Method model: %s" % (args.method))
 if args.method == 'svm':
     cv_svm_tuned_auroc = cv_decorator(svm_tuned_auroc)
-    optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals, pmap=pmap)
+    if args.pmap == 1:
+        optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals)
+    else:
+        optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
     
     json_dcit = svm_function.cv_svm_perf(data_x, data_y, 
@@ -225,7 +229,11 @@ elif args.method == 'libsvm':
 
 elif args.method == 'esvm':
     cv_esvm_tuned_auroc = cv_decorator(esvm_tuned_auroc)
-    optimal_svm_pars, info, _ = optunity.maximize_structured(cv_esvm_tuned_auroc, esvm_space, num_evals=args.num_evals, pmap=pmap)
+    if args.pmap == 1:
+        optimal_svm_pars, info, _ = optunity.maximize_structured(cv_esvm_tuned_auroc, esvm_space, num_evals=args.num_evals)
+    else:
+        optimal_svm_pars, info, _ = optunity.maximize_structured(cv_esvm_tuned_auroc, esvm_space, num_evals=args.num_evals, pmap=pmap)
+        
     print("optunity done.")
 
     json_dcit = svm_function.cv_esvm_perf(data_x, data_y, 
