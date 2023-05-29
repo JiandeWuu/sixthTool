@@ -1,0 +1,4 @@
+outs:
+- md5: 1a3089d690fe7ff8c4d8f98930b0f45a
+  size: 139584
+  path: ensembl_has_rbpelic__IGF2BP3.npy

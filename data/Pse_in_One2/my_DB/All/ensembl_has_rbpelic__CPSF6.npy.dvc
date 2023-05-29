@@ -1,0 +1,4 @@
+outs:
+- md5: 67269fcd9212fcfbef984958d5f36802
+  size: 139584
+  path: ensembl_has_rbpelic__CPSF6.npy

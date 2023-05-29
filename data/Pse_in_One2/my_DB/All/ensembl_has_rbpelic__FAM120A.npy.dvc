@@ -1,0 +1,4 @@
+outs:
+- md5: 8f31b47dc7c6a98ab7454cb2a2a89eb1
+  size: 139584
+  path: ensembl_has_rbpelic__FAM120A.npy

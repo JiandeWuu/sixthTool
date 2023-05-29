@@ -1,0 +1,4 @@
+outs:
+- md5: 1f8505b80baf8d0151116001155d31f4
+  size: 139584
+  path: ensembl_has_rbpelic__U2AF1.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 3a33fe3b67f8ccb537a2c54cd44b22c4
+  size: 139584
+  path: ensembl_has_rbpelic__METAP2.npy

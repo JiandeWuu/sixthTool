@@ -1,0 +1,4 @@
+outs:
+- md5: d1ebec8dbbbbf89e2db09218920593f3
+  size: 139584
+  path: ensembl_has_rbpelic__PABPN1.npy

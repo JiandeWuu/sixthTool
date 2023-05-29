@@ -1,0 +1,4 @@
+outs:
+- md5: 2a0542c2544830f9f07cd48a8aa3d80f
+  size: 139584
+  path: ensembl_has_rbpelic__PRPF8.npy

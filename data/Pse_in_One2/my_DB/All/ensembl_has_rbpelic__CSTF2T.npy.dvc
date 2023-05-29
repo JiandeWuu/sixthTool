@@ -1,0 +1,4 @@
+outs:
+- md5: 92d6aaf0f49719cfd8d1a7d5b1960691
+  size: 139584
+  path: ensembl_has_rbpelic__CSTF2T.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 45de9e73a3a988bd20d91eb271665db7
+  size: 139584
+  path: ensembl_has_rbpelic__HNRNPU.npy

@@ -2,4 +2,3 @@ outs:
 - md5: 9e678db31d44422908885fd3ddea89d6
   size: 554
   path: Portuguese.txt
-  isexec: true

@@ -2,4 +2,3 @@ outs:
 - md5: 885f5a22943c99bdb2295cfeeca48df2
   size: 1247
   path: Chinese.txt
-  isexec: true

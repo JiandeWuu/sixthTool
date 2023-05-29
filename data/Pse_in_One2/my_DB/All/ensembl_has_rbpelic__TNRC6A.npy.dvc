@@ -1,0 +1,4 @@
+outs:
+- md5: 3595986b75287c95924d5782c09ac283
+  size: 139584
+  path: ensembl_has_rbpelic__TNRC6A.npy

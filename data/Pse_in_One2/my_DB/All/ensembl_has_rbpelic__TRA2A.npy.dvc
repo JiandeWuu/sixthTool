@@ -1,0 +1,4 @@
+outs:
+- md5: 9b58e6cb58e7ff97b4be27e7f120e3bc
+  size: 139584
+  path: ensembl_has_rbpelic__TRA2A.npy

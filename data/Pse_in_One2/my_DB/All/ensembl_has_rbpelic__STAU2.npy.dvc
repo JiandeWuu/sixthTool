@@ -1,0 +1,4 @@
+outs:
+- md5: be7e3650b052da02dabf1a6dbebb65a9
+  size: 139584
+  path: ensembl_has_rbpelic__STAU2.npy

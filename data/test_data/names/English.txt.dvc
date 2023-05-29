@@ -2,4 +2,3 @@ outs:
 - md5: 950fc1c5c1406e12f1d3c67bbb33ed66
   size: 27125
   path: English.txt
-  isexec: true

@@ -1,0 +1,4 @@
+outs:
+- md5: f412bfa46ac4b03b13d66491f428e688
+  size: 139584
+  path: ensembl_has_rbpelic__UCHL5.npy

@@ -2,4 +2,3 @@ outs:
 - md5: 20ca80761015630dbb80c0f1d43cb659
   size: 2178
   path: French.txt
-  isexec: true

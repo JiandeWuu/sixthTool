@@ -1,0 +1,4 @@
+outs:
+- md5: bf117c3c3fcea29ef12c641af274468e
+  size: 139584
+  path: ensembl_has_rbpelic__FUS.npy

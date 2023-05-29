@@ -1,0 +1,4 @@
+outs:
+- md5: 47944a515882a7fc115dfa80e728fa15
+  size: 139584
+  path: ensembl_has_rbpelic__SMNDC1.npy

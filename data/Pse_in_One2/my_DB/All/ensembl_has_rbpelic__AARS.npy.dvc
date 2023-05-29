@@ -1,0 +1,4 @@
+outs:
+- md5: 47b1f2c3a2f2e57e27a05933975cfd79
+  size: 139584
+  path: ensembl_has_rbpelic__AARS.npy

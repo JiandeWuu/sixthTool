@@ -1,0 +1,4 @@
+outs:
+- md5: 123a05eee1454ee267c404f89669a466
+  size: 139584
+  path: ensembl_has_rbpelic__EXOSC5.npy

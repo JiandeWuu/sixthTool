@@ -1,0 +1,4 @@
+outs:
+- md5: ec31ca5a57d1c4798d9633fa2e09aa60
+  size: 139584
+  path: ensembl_has_rbpelic__G3BP1.npy

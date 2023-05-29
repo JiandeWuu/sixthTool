@@ -2,4 +2,3 @@ outs:
 - md5: 2745382eaaafa224ed1029111ae24e47
   size: 85605
   path: Russian.txt
-  isexec: true

@@ -2,4 +2,3 @@ outs:
 - md5: f5b11bdb2e0435c0a22c1a731aa287d8
   size: 7622
   path: Japanese.txt
-  isexec: true

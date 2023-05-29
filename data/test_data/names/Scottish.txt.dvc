@@ -2,4 +2,3 @@ outs:
 - md5: 7cb6daa864d1beac09420ea666c10f3d
   size: 752
   path: Scottish.txt
-  isexec: true

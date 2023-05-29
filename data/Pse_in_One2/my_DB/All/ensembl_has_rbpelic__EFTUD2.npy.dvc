@@ -1,0 +1,4 @@
+outs:
+- md5: 13bea87621e41be38dcb0e96814f3527
+  size: 139584
+  path: ensembl_has_rbpelic__EFTUD2.npy

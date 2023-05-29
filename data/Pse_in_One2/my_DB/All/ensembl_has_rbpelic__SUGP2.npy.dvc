@@ -1,0 +1,4 @@
+outs:
+- md5: 48459f0a5e548b69c5a8c11c8ec689c5
+  size: 139584
+  path: ensembl_has_rbpelic__SUGP2.npy

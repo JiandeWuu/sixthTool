@@ -2,4 +2,3 @@ outs:
 - md5: d10473b75cbb39f75de4ba71dccd852a
   size: 5610
   path: German.txt
-  isexec: true

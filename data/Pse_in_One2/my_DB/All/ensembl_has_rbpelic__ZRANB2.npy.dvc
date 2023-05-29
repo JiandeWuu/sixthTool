@@ -1,0 +1,4 @@
+outs:
+- md5: dc84ca8f7721930d66d9c1ef9480dc9b
+  size: 139584
+  path: ensembl_has_rbpelic__ZRANB2.npy

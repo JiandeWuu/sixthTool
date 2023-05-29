@@ -2,4 +2,3 @@ outs:
 - md5: a9b83a6c85dd59ed024a09c61de0c0e9
   size: 423
   path: Korean.txt
-  isexec: true

@@ -1,0 +1,4 @@
+outs:
+- md5: 9834f9b6a4409087f7be3f02728ed82e
+  size: 139584
+  path: ensembl_has_rbpelic__DDX52.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 2536baee1022dc0ed5a03e764f6729dc
+  size: 139584
+  path: ensembl_has_rbpelic__APOBEC3C.npy

@@ -2,4 +2,3 @@ outs:
 - md5: 82fae9e94c57f0ce3971ff005db0429e
   size: 13190
   path: Arabic.txt
-  isexec: true

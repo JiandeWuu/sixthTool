@@ -2,4 +2,3 @@ outs:
 - md5: e7eb4e53253058c0744bbb76cb3110f1
   size: 1858
   path: Irish.txt
-  isexec: true

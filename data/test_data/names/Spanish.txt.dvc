@@ -2,4 +2,3 @@ outs:
 - md5: 61f0b4e4deb4acaad0086996124e9b32
   size: 2284
   path: Spanish.txt
-  isexec: true
