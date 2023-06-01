@@ -257,4 +257,4 @@ df = optunity.call_log2dataframe(info.call_log)
 df = df.sort_values(by=['value'], ascending=False)
 df.to_csv(args.output)
 with open('%s.json' % (args.output), 'w') as fp:
-        json.dump(json_dcit, fp)
+    json.dump(json_dcit, fp)
