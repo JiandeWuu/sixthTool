@@ -354,14 +354,16 @@ def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degr
         
         y_train_pred = model.predict(x_train)
         y_test_pred = model.predict(x_test)
+        y_test_pred_proba = model.predict_proba(x_test)
         
-        decision_values = model.decision_function(x_test)
-        decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
+        # decision_values = model.decision_function(x_test)
+        # decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
         try:
-            roc_score = metrics.roc_auc_score(y_test, decision_values)
+            roc_score = metrics.roc_auc_score(y_test, y_test_pred_proba)
             auroc_array.append(roc_score)
         except:
-            print(decision_values)
+            auroc_array.append(0.5)
+            # print(decision_values)
         
         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
         
