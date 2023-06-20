@@ -17,7 +17,7 @@ class ensemble_svm():
         self.model_array = None
         self.model_size = None
     
-    def train(self, data, label, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7):
+    def train(self, data, label, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, max_iter=1e7, log=False, print_score=False):
         train_time = time.time()
         model_array = []
         self.model_size = len(data)
@@ -31,19 +31,21 @@ class ensemble_svm():
             d = d[arr]
             l = l[arr]
             
-            m = svm_function.svm_train_model(d, l, kernel, C, logGamma, degree, coef0, n, max_iter=max_iter)
+            m = svm_function.svm_train_model(d, l, classifier, kernel, C, gamma, degree, coef0, nu, max_iter=max_iter, log=log)
             
             model_array.append(m)
             decision_values = m.decision_function(d)
             
-            try:
-                print("auroc:", metrics.roc_auc_score(l, decision_values))
-            except:
-                print("error return 0.5.")
-            print("ensemble svm step: %s/%s | %.2fs" % (i, self.model_size, time.time() - step_time))
+            if print_score:
+                try:
+                    print("auroc:", metrics.roc_auc_score(l, decision_values))
+                except:
+                    print("error return 0.5.")
+                print("ensemble svm step: %s/%s | %.2fs" % (i, self.model_size, time.time() - step_time))
         
         self.model_array = model_array
-        print("ensemble svm train: %.2fs" % (time.time() - train_time))
+        if print_score:
+            print("ensemble svm train: %.2fs" % (time.time() - train_time))
         
         return None
 

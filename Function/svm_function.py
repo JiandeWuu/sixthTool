@@ -68,27 +68,6 @@ def cv_train_test(cv_x, cv_y, test_fold=1):
                 train_y = np.append(train_y, cv_y[i], axis=0)
     return train_x, train_y, test_x, test_y
 
-# def cv_msvm_score(x, y, folder, size=15, parameter=""):
-#     cv_x, cv_y = CV(x, y, folder)
-#     score_array = []
-#     for j in range(len(cv_x)):
-#         train_x = None
-#         for i in range(len(cv_x)):
-#             if i == j :
-#                 test_x = cv_x[i]
-#                 test_y = cv_y[i]
-#             else:
-#                 if train_x is None:
-#                     train_x = cv_x[i]
-#                     train_y = cv_y[i]
-#                 else:
-#                     train_x = np.append(train_x, cv_x[i], axis=0)
-#                     train_y = np.append(train_y, cv_y[i], axis=0)
-#         msvm = ensemble_SVM(class_weight='balanced')
-#         msvm.train(train_x, train_y, size=size, parameter=parameter)
-#         score_array.append(msvm.test(test_x, test_y))
-#     return score_array
-
 def balanced_data(x, y):
     unique, count = np.unique(y, return_counts=True)
     min_count = min(count)
@@ -155,15 +134,15 @@ def cluster_sampler(data, cluster_class, size=1):
             output_data = np.append(output_data, data[class_idx[:n], :], axis=0)
     return output_data
 
-def esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, size, max_iter):
+def esvm_train_model(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, size, max_iter, log=False):
     """A generic eeSVM training function, with arguments based on the chosen kernel."""
     x_train, y_train = ensemble_data(x_train, y_train, size=size)
     esvm = ensemble_svm()
-    esvm.train(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter=max_iter)
+    esvm.train(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, max_iter=max_iter, log=log)
     
     return esvm
 
-def cv_esvm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=1, max_iter=1e7):
+def cv_esvm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, size=1, max_iter=1e7, log=False):
     cv_x, cv_y = CV_balanced(data_x, data_y, fold)
     
     acc_array = []
@@ -176,9 +155,8 @@ def cv_esvm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, deg
     cm_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = cv_train_test(cv_x, cv_y, i)
-        model = esvm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, size=size, max_iter=max_iter)
+        model = esvm_train_model(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, size=size, max_iter=max_iter, log=log)
         
-        # roc_score = model.test(x_test, y_test)
         y_train_pred, _ = model.predict(x_train)
         y_test_pred, y_test_score = model.predict(x_test)
         roc_score = metrics.roc_auc_score(y_test, y_test_score)
@@ -196,7 +174,16 @@ def cv_esvm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, deg
         f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
     
     json_dict = {
-        "kernel": kernel, "C": C, "logGamma": logGamma, "degree": degree, "coef0": coef0, "n": n, "size":size, "max_iter":max_iter,
+        "classifier": classifier,
+        "kernel": kernel, 
+        "C": C, 
+        "gamma": gamma, 
+        "degree": degree, 
+        "coef0": coef0, 
+        "nu": nu, 
+        "size":size, 
+        "max_iter": max_iter, 
+        "log": log,
         "fold Accy": acc_array,
         "avg Accy": sum(acc_array) / len(acc_array),
         "std Accy": np.std(acc_array),
@@ -301,43 +288,47 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
     return json_dict
         
    
-def svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter=1e7):
+def svm_train_model(x_train, y_train, classifier: str, kernel: str, C: float, gamma: float, degree: int, coef0: float, nu: float, max_iter=1e7, log=False):
     """A generic SVM training function, with arguments based on the chosen kernel."""
-    kernel = kernel.split("_")
     if C:
         C = float(C)
-    if logGamma:
-        logGamma = float(logGamma)
+    if gamma:
+        gamma = float(gamma)
     if degree:
         degree = int(degree)
     if coef0:
         coef0 = float(coef0)
-    if n:
-        n = float(n)
+    if nu:
+        nu = float(nu)
     
-    if kernel[0] == "C":
-        if kernel[1] == "linear":
-            clf = svm.SVC(kernel=kernel[1], C=(2 ** C), class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "poly":
-            clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), degree=degree, coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "rbf":
-            clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "sigmoid":
-            clf = svm.SVC(kernel=kernel[1], C=(2 ** C), gamma=(2 ** logGamma), coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter, probability=True)
-    elif kernel[0] == "Nu":
-        if kernel[1] == "linear":
-            clf = svm.NuSVC(kernel=kernel[1], nu=n, class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "poly":
-            clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), degree=degree, coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "rbf":
-            clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), class_weight='balanced', max_iter=max_iter, probability=True)
-        elif kernel[1] == "sigmoid":
-            clf = svm.NuSVC(kernel=kernel[1], nu=n, gamma=(2 ** logGamma), coef0=(2 ** coef0), class_weight='balanced', max_iter=max_iter, probability=True)
+    if log:
+        C = 2 ** C
+        gamma = 2 ** gamma
+        coef0 = 2 ** coef0
+    
+    if classifier == "SVC":
+        if kernel == "linear":
+            clf = svm.SVC(kernel=kernel, C=C, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "poly":
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "rbf":
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "sigmoid":
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+    elif classifier == "NuSVC":
+        if kernel == "linear":
+            clf = svm.NuSVC(kernel=kernel, nu=nu, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "poly":
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "rbf":
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, class_weight='balanced', max_iter=max_iter, probability=True)
+        elif kernel == "sigmoid":
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
     
     clf.fit(x_train, y_train)
     return clf
 
-def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7):
+def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, max_iter=1e7, log=False):
     cv_x, cv_y = CV_balanced(data_x, data_y, fold)
     
     acc_array = []
@@ -350,20 +341,17 @@ def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degr
     cm_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = cv_train_test(cv_x, cv_y, i)
-        model = svm_train_model(x_train, y_train, kernel, C, logGamma, degree, coef0, n, max_iter=max_iter)
+        model = svm_train_model(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, max_iter=max_iter, log=log)
         
         y_train_pred = model.predict(x_train)
         y_test_pred = model.predict(x_test)
         y_test_pred_proba = model.predict_proba(x_test)
         
-        # decision_values = model.decision_function(x_test)
-        # decision_values = np.where(np.isfinite(decision_values), decision_values, 0) 
         try:
             roc_score = metrics.roc_auc_score(y_test, y_test_pred_proba)
             auroc_array.append(roc_score)
         except:
             auroc_array.append(0.5)
-            # print(decision_values)
         
         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
         
@@ -377,7 +365,14 @@ def cv_svm_perf(data_x, data_y, fold=5, kernel='C_linear', C=0, logGamma=0, degr
         f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
     
     json_dict = {
-        "kernel": kernel, "C": C, "logGamma": logGamma, "degree": degree, "coef0": coef0, "n": n, "max_iter":max_iter,
+        "kernel": kernel, 
+        "C": C, 
+        "gamma": gamma, 
+        "degree": degree, 
+        "coef0": coef0, 
+        "nu": nu, 
+        "max_iter": max_iter, 
+        "log": log,
         "fold Accy": acc_array,
         "avg Accy": sum(acc_array) / len(acc_array),
         "std Accy": np.std(acc_array),
