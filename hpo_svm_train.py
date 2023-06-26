@@ -1,5 +1,6 @@
 import time
 import json
+import warnings
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -27,30 +28,29 @@ else:
     pmap = optunity.parallel.create_pmap(args.pmap)
 
 from sklearn import metrics
-from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import *
-from libsvm.svmutil import svm_problem
-from libsvm.svmutil import svm_parameter
-from libsvm.svmutil import svm_train
-from libsvm.svmutil import svm_predict
+from sklearn.metrics import confusion_matrix
+from sklearn.exceptions import ConvergenceWarning
 
 from Function import svm_function
 
 total_time = time.time()
 
-
+# Filter out ConvergenceWarning, RuntimeWarning
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 seed = 1212
 
 esvm_space = {'kernel': {
-                    'C_linear': {'C': [-10, 10]},
-                    'C_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
-                    'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    'Nu_linear': {'n': [1e-2, 1]},
-                    'Nu_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'Nu_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1]},
-                    'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'coef0': [-10, 10]}
+                    'SVC_linear': {'C': [-10, 10]},
+                    'SVC_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'SVC_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
+                    'SVC_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
+                    'NuSVC_linear': {'n': [1e-2, 1]},
+                    'NuSVC_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'NuSVC_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1]},
+                    'NuSVC_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1], 'coef0': [-10, 10]}
                     }
         }
 
@@ -67,14 +67,14 @@ libsvm_space = {'kernel': {
         }
 
 svm_space = {'kernel': {
-                    'C_linear': {'C': [-10, 10]},
-                    'C_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'C_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
-                    'C_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
-                    'Nu_linear': {'n': [1e-2, 1-1e-2]},
-                    'Nu_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'Nu_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2]},
-                    'Nu_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'coef0': [-10, 10]}
+                    'SVC_linear': {'C': [-10, 10]},
+                    'SVC_poly': {'logGamma': [-10, 10], 'C': [-10, 10], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'SVC_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
+                    'SVC_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
+                    'NuSVC_linear': {'n': [1e-2, 1-1e-2]},
+                    'NuSVC_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'NuSVC_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2]},
+                    'NuSVC_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'coef0': [-10, 10]}
                     }
         }
 
@@ -97,9 +97,10 @@ if data_x.shape[0] != data_y.shape[0]:
 def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=args.size, max_iter=max_iter):
     classifier, kernel = kernel.split("_")
     try:
-        model = svm_function.esvm_train_model(x_train, y_train, classifier=classifier, kernel=kernel, C=C, logGamma=logGamma, degree=degree, coef0=coef0, n=n, size=size, max_iter=max_iter, log=True)
+        model = svm_function.esvm_train_model(x_train, y_train, classifier=classifier, kernel=kernel, C=C, gamma=logGamma, degree=degree, coef0=coef0, nu=n, size=size, max_iter=max_iter, log=True)
         roc_score = model.test(x_test, y_test)
-    except:
+    except Exception as e:
+        print(e)
         roc_score = 0.5
     print("AUROC: %.2f" % roc_score)
     return roc_score
@@ -130,21 +131,15 @@ if args.method == 'svm':
     
     json_dcit = svm_function.cv_svm_perf(data_x, data_y, 
                                          fold=args.fold, 
-                                         kernel=optimal_svm_pars["kernel"], 
-                                         C=0 if optimal_svm_pars["kernel"][0] != "C" else optimal_svm_pars["C"], 
-                                         logGamma=optimal_svm_pars["logGamma"], 
+                                         classifier=optimal_svm_pars["kernel"].split("_")[0], 
+                                         kernel=optimal_svm_pars["kernel"].split("_")[1], 
+                                         C=0 if optimal_svm_pars["kernel"][0] != "SVC" else optimal_svm_pars["C"], 
+                                         gamma=optimal_svm_pars["logGamma"], 
                                          degree=optimal_svm_pars["degree"], 
                                          coef0=optimal_svm_pars["coef0"], 
-                                         n=0.5 if optimal_svm_pars["kernel"][0] == "C" else optimal_svm_pars["n"], 
-                                         max_iter=max_iter)
-    
-elif args.method == 'libsvm':
-    cv_libsvm_tuned_auroc = cv_decorator(libsvm_tuned_auroc)
-    optimal_svm_pars, info, _ = optunity.maximize_structured(cv_libsvm_tuned_auroc, libsvm_space, num_evals=args.num_evals, pmap=pmap)
-    print("optunity done.")
-    
-    cv_libsvm_perf(data_x, data_y, fold=args.fold, kernel=optimal_svm_pars["kernel"], C=optimal_svm_pars["C"], logGamma=optimal_svm_pars["logGamma"], degree=optimal_svm_pars["degree"], coef0=optimal_svm_pars["coef0"], w0=optimal_svm_pars["w0"], w1=optimal_svm_pars["w1"], n=0.5 if optimal_svm_pars["kernel"][0] == "0" else optimal_svm_pars["n"])
-
+                                         nu=0.5 if optimal_svm_pars["kernel"][0] == "SVC" else optimal_svm_pars["n"], 
+                                         max_iter=max_iter,
+                                         log=True)
 elif args.method == 'esvm':
     cv_esvm_tuned_auroc = cv_decorator(esvm_tuned_auroc)
     if args.pmap == 1:
@@ -156,14 +151,16 @@ elif args.method == 'esvm':
 
     json_dcit = svm_function.cv_esvm_perf(data_x, data_y, 
                                           fold=args.fold, 
-                                          kernel=optimal_svm_pars["kernel"], 
-                                          C=0 if optimal_svm_pars["kernel"][0] != "C" else optimal_svm_pars["C"], 
-                                          logGamma=optimal_svm_pars["logGamma"], 
+                                          classifier=optimal_svm_pars["kernel"].split("_")[0], 
+                                          kernel=optimal_svm_pars["kernel"].split("_")[1], 
+                                          C=0 if optimal_svm_pars["kernel"][0] != "SVC" else optimal_svm_pars["C"], 
+                                          gamma=optimal_svm_pars["logGamma"], 
                                           degree=optimal_svm_pars["degree"], 
                                           coef0=optimal_svm_pars["coef0"], 
-                                          n=0.5 if optimal_svm_pars["kernel"][0] == "C" else optimal_svm_pars["n"], 
+                                          nu=0.5 if optimal_svm_pars["kernel"][0] == "SVC" else optimal_svm_pars["n"], 
                                           size=args.size, 
-                                          max_iter=max_iter)
+                                          max_iter=max_iter,
+                                          log=True)
 
 
 

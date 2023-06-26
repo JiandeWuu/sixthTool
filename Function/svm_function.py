@@ -155,7 +155,16 @@ def cv_esvm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0,
     cm_array = []
     for i in range(fold):
         x_train, y_train, x_test, y_test = cv_train_test(cv_x, cv_y, i)
-        model = esvm_train_model(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, size=size, max_iter=max_iter, log=log)
+        model = esvm_train_model(x_train=x_train, 
+                                 y_train=y_train, 
+                                 classifier=classifier, 
+                                 kernel=kernel, 
+                                 C=C, 
+                                 gamma=gamma, 
+                                 degree=degree, 
+                                 coef0=coef0, 
+                                 nu=nu, 
+                                 size=size, max_iter=max_iter, log=log)
         
         y_train_pred, _ = model.predict(x_train)
         y_test_pred, y_test_score = model.predict(x_test)
@@ -291,20 +300,15 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
 def svm_train_model(x_train, y_train, classifier: str, kernel: str, C: float, gamma: float, degree: int, coef0: float, nu: float, max_iter=1e7, log=False):
     """A generic SVM training function, with arguments based on the chosen kernel."""
     if C:
-        C = float(C)
+        C = 2 ** float(C) if log else float(C)
     if gamma:
-        gamma = float(gamma)
+        gamma = 2 ** float(gamma) if log else float(gamma)
     if degree:
         degree = int(degree)
     if coef0:
-        coef0 = float(coef0)
+        coef0 = 2 ** float(coef0) if log else float(coef0)
     if nu:
         nu = float(nu)
-    
-    if log:
-        C = 2 ** C
-        gamma = 2 ** gamma
-        coef0 = 2 ** coef0
     
     if classifier == "SVC":
         if kernel == "linear":

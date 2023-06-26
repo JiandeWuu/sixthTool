@@ -33,8 +33,11 @@ from sklearn.exceptions import ConvergenceWarning
 
 total_time = time.time()
 
-# Filter out ConvergenceWarning
+# Filter out ConvergenceWarning, RuntimeWarning
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
+optuna.logging.set_verbosity(optuna.logging.WARN)
 
 hp_space = {
     'classifier': ["SVC", "NuSVC"],
@@ -139,67 +142,23 @@ class Objective:
 
 
     def callback(self, study, trial):
-        if study.best_trial == trial:
+        previous_best_value = study.user_attrs.get("previous_best_value", None)
+        if previous_best_value != study.best_value:
             self.best_perf = self._perf
+            study.set_user_attr("previous_best_value", study.best_value)
+            print(
+                "Trial {} finished with best value: {} and parameters: {}. ".format(
+                trial.number,
+                trial.value,
+                trial.params,
+                )
+            )
+        # if study.best_trial == trial:
+        #     self.best_perf = self._perf
+            
+            
 
-
-
-# def objective(trial):
-    
-#     classifier_name = trial.suggest_categorical("classifier", self.hp_space["classifier"])
-#     kernel = trial.suggest_categorical("kernel", self.hp_space["kernel"])
-    
-#     C = None
-#     nu = None
-#     gamma = None
-#     coef0 = None
-#     degree = None
-    
-#     if classifier_name == "SVC":
-#         C = trial.suggest_float("C", self.hp_space["C"]["low"], self.hp_space["C"]["high"], log=self.hp_space["C"]["log"])
-    
-#     if classifier_name == "NuSVC":
-#         nu = trial.suggest_float("nu", self.hp_space["nu"]["low"], self.hp_space["nu"]["high"], log=self.hp_space["nu"]["log"])
-    
-#     if kernel != "linear":
-#         gamma = trial.suggest_float("gamma", self.hp_space["gamma"]["low"], self.hp_space["gamma"]["high"], log=self.hp_space["gamma"]["log"])
-#         if kernel != "rbf":
-#             coef0 = trial.suggest_float("coef0", self.hp_space["coef0"]["low"], self.hp_space["coef0"]["high"], log=self.hp_space["coef0"]["log"])
-#             if kernel != "sigmoid":
-#                 degree = trial.suggest_int("degree", self.hp_space["degree"]["low"], self.hp_space["degree"]["high"], log=self.hp_space["degree"]["log"])
-    
-#     try:
-#         if args.method == "esvm":
-#             score = svm_function.cv_esvm_perf(x, y, 
-#                                               classifier=classifier_name,
-#                                               kernel=kernel,
-#                                               C=C,
-#                                               gamma=gamma,
-#                                               coef0=coef0,
-#                                               degree=degree,
-#                                               nu=nu,
-#                                               size=args.size,
-#                                               max_iter=args.max_iter,
-#                                               log=False,
-#                                               fold=args.fold
-#                                               )["avg %s" % args.performance_value]
-#         elif args.method == "svm":
-#             score = svm_function.cv_svm_perf(x, y, 
-#                                              classifier=classifier_name,
-#                                              kernel=kernel,
-#                                              C=C,
-#                                              gamma=gamma,
-#                                              coef0=coef0,
-#                                              degree=degree,
-#                                              nu=nu,
-#                                              max_iter=args.max_iter,
-#                                              log=False,
-#                                              fold=args.fold
-#                                              )["avg %s" % args.performance_value]
-#     except Exception as e: 
-#         print(e, "error return -1.")
-#         score = -1
-#     return score
+        
 
 objective = Objective(x=x, y=y, hp_space=hp_space)
 study = optuna.create_study(direction="maximize")
