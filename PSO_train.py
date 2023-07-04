@@ -1,22 +1,29 @@
 import time
 import tqdm
 import json
+import warnings
 import argparse
 import itertools
 import multiprocessing
 
 import numpy as np
 
-from sklearnex import patch_sklearn 
-patch_sklearn()
+# from sklearnex import patch_sklearn 
+# patch_sklearn()
 
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
+from sklearn.exceptions import ConvergenceWarning
+
 from niapy.task import Task
 from niapy.problems import Problem
 from niapy.algorithms.basic import ParticleSwarmOptimization
 
 from Function import svm_function
+
+# Filter out ConvergenceWarning, RuntimeWarning
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 total_time = time.time()
 
@@ -64,17 +71,25 @@ class multi_ensemble_svm():
         self.model_array = []
         self.model_size = None
         self.hp = {
-            "kernel": 'C_linear', "C":0, "logGamma":0, "degree":0, "coef0":0, "n":0.5, "max_iter":1e7
+            "classifier": 'SVC', 
+            "kernel": 'linear', 
+            "C":0, 
+            "gamma":0, 
+            "degree":0, 
+            "coef0":0, 
+            "nu":0.5, 
+            "max_iter":1e7
         }
     
-    def train(self, data, label, ensemble_data_size=1, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=1e7):
+    def train(self, data, label, ensemble_data_size=1, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, max_iter=1e7):
         train_time = time.time()
+        self.hp["classifier"] = classifier
         self.hp["kernel"] = kernel
         self.hp["C"] = C
-        self.hp["logGamma"] = logGamma
+        self.hp["gamma"] = gamma
         self.hp["degree"] = degree
         self.hp["coef0"] = coef0
-        self.hp["n"] = n
+        self.hp["nu"] = nu
         self.hp["max_iter"] = max_iter
         
         self.model_array = []
@@ -84,7 +99,6 @@ class multi_ensemble_svm():
         
         
         pool = multiprocessing.Pool(processes=self.processes)
-        # with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
         results = pool.starmap(self._svm_train, tqdm.tqdm(zip(x, y), total=self.model_size))
         pool.close()
         self.model_array = results
@@ -97,7 +111,17 @@ class multi_ensemble_svm():
         d = d[arr]
         l = l[arr]
         
-        m = svm_function.svm_train_model(d, l, self.hp["kernel"], self.hp["C"], self.hp["logGamma"], self.hp["degree"], self.hp["coef0"], self.hp["n"], max_iter=self.hp["max_iter"])
+        m = svm_function.svm_train_model(x_train=d, 
+                                         y_train=l, 
+                                         classifier=self.hp["classifier"], 
+                                         kernel=self.hp["kernel"], 
+                                         C=self.hp["C"], 
+                                         gamma=self.hp["gamma"], 
+                                         degree=self.hp["degree"], 
+                                         coef0=self.hp["coef0"], 
+                                         nu=self.hp["nu"], 
+                                         max_iter=self.hp["max_iter"],
+                                         log=True)
         return m
     
     def test(self, x, y):
@@ -112,24 +136,24 @@ class multi_ensemble_svm():
         
         pool = multiprocessing.Pool(processes=self.processes)
         output = pool.starmap(self._svm_predict, tqdm.tqdm(zip(range(self.model_size), itertools.repeat(x)), total=self.model_size))
-        # output = []
-        # for i in range(self.model_size):
-        #     output.append(self.model_array[i].predict(x))
+
         pred_y_score = np.sum(output, axis=0) / self.model_size
         pred_y = np.where(pred_y_score >= 0.5, 1, 0)
         
         pool.close()
         return pred_y, pred_y_score
 
-def cv_mp_esvm(data_x, data_y, fold=5,
-                kernel='C_rbf', 
-                C=0, 
-                logGamma=0, 
-                degree=3, 
-                coef0=0, 
-                n=0, 
-                size=10, 
-                max_iter=1000):
+def cv_mp_esvm(data_x, data_y, 
+               fold=5,
+               classifier='SVC', 
+               kernel='rbf', 
+               C=0, 
+               gamma=0, 
+               degree=3, 
+               coef0=0, 
+               nu=0, 
+               size=10, 
+               max_iter=1000):
     cv_x, cv_y = svm_function.CV_balanced(data_x, data_y, fold)
         
     acc_array = []
@@ -143,13 +167,17 @@ def cv_mp_esvm(data_x, data_y, fold=5,
     for i in range(fold):
         x_train, y_train, x_test, y_test = svm_function.cv_train_test(cv_x, cv_y, i)
         clf = multi_ensemble_svm(processes=proc)
-        clf.train(x_train, y_train, ensemble_data_size=size, kernel=kernel, 
-                C=C, 
-                logGamma=logGamma, 
-                degree=degree, 
-                coef0=coef0, 
-                n=n, 
-                max_iter=max_iter)
+        clf.train(data=x_train, 
+                  label=y_train, 
+                  ensemble_data_size=size, 
+                  classifier=classifier, 
+                  kernel=kernel, 
+                  C=C, 
+                  gamma=gamma, 
+                  degree=degree, 
+                  coef0=coef0, 
+                  nu=nu, 
+                  max_iter=max_iter)
         y_train_pred, _ = clf.predict(x_train)
         y_test_pred, y_test_pred_score = clf.predict(x_test)
         
@@ -194,26 +222,27 @@ def cv_mp_esvm(data_x, data_y, fold=5,
     return json_dict
 
 def get_params(x):
-    C_Nu = "Nu" if x[0] > 0.5 else "C"
+    classifier = "NuSVC" if x[0] > 0.5 else "SVC"
     kernel_list = ['linear',
                     'poly', 
                     'rbf', 
                     'sigmoid']
     kernel = kernel_list[int(x[1] * 3)]
-    kernel = "%s_%s" % (C_Nu, kernel)
+    # kernel = "%s_%s" % (C_Nu, kernel)
     C = (20 * x[2]) - 10
-    logGamma = (20 * x[3]) - 10
+    gamma = (20 * x[3]) - 10
     degree = int(x[4] * 10)
     coef0 = (20 * x[5]) - 10
-    n = x[6] if x[6] != 0 else 1e-7
+    nu = x[6] if x[6] != 0 else 1e-7
     
     params = {
+        'classifier':classifier, 
         'kernel':kernel, 
         'C':C, 
-        'logGamma':logGamma, 
+        'gamma':gamma, 
         'degree':degree, 
         'coef0':coef0, 
-        'n':n, 
+        'nu':nu, 
     }
     return params
 
@@ -234,16 +263,30 @@ class eSVMFeatureSelection(Problem):
         selected = x > 0.5
         num_selected = selected.sum()
         
-        print("avg %.4f, std %.4f" % (sum(x) / len(x), np.std(x)))
-        if num_selected == 0 or num_selected > len(x) / 2:
+        # print("avg %.4f, std %.4f" % (sum(x) / len(x), np.std(x)))
+        if num_selected == 0:
+            print("num_selected=0")
             auroc = 0
         else:
-            # auroc = cv_mp_esvm(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
-            #             **params 
-            #             )['avg AUROC']
-            auroc = svm_function.cv_esvm_perf(self.X_train[:, selected], self.y_train, fold=self.fold, size=self.size, max_iter=self.max_iter,
-                        **params 
-                        )['avg AUROC']
+            # auroc = cv_mp_esvm(data_x=self.X_train[:, selected], 
+            #                    data_y=self.y_train, 
+            #                    fold=self.fold, 
+            #                    size=self.size, 
+            #                    max_iter=self.max_iter,
+            #                    **params 
+            #                    )['avg AUROC']
+            try:
+                auroc = svm_function.cv_esvm_perf(data_x=self.X_train[:, selected], 
+                                                data_y=self.y_train, 
+                                                fold=self.fold, 
+                                                size=self.size, 
+                                                max_iter=self.max_iter, 
+                                                log=True,
+                                                **params 
+                                                )['avg AUROC']
+            except:
+                print("error auroc=0")
+                auroc = 0
         print("score: %.4f" % (self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])))
         return self.alpha * (1 - auroc) + (1 - self.alpha) * (num_selected / self.X_train.shape[1])
     
@@ -254,36 +297,40 @@ algorithm = ParticleSwarmOptimization(population_size=popu, seed=set_seed)
 best_features, best_fitness = algorithm.run(task)
 
 
-params = get_params(best_features[:7])
-params['size'] = size
-params['fold'] = fold
-params['max_iter'] = max_iter
+model_params = get_params(best_features[:7])
+model_params['size'] = size
+model_params['fold'] = fold
+model_params['max_iter'] = max_iter
+model_params['log'] = True
 
 selected_features = best_features[7:] > 0.5
 
 print("subset eSVM train:")
-# subset_perf = cv_mp_esvm(X[:, selected_features], y, **params)
-subset_perf = svm_function.cv_esvm_perf(X[:, selected_features], y, **params)
+subset_perf = svm_function.cv_esvm_perf(X[:, selected_features], y, **model_params)
 
-# print("All eSVM train:")
-# all_perf = cv_mp_esvm(X, y, **params)
-# all_perf = svm_function.cv_esvm_perf(X, y, **params)
 
-print("params:")
-print(params)
+print("model_params:")
+print(model_params)
 print('Number of selected features: %s / %s' % (selected_features.sum(), X.shape[1]))
 print("Subset roc_score: %s" % subset_perf['avg AUROC'])
-# print("All roc_score: %s" % all_perf['avg AUROC'])
+
+parmas = {}
+parmas["input"] = args.input
+parmas["label"] = args.label
+parmas["num_evals"] = args.num_evals
+parmas["popu"] = args.popu
+parmas["set_seed"] = args.set_seed
 
 total_time = time.time() - total_time
 json_dict = {
     # "all_perf": all_perf,
     "total_time": total_time,
     "subset_perf": subset_perf,
-    "params": params,
+    "model_params": model_params,
+    "params": parmas,
     "selected_features": list(selected_features.astype(str)),
 }
-# print(json_dict)
+
 with open('%s.json' % (args.output), 'w') as fp:
     json.dump(json_dict, fp)
 print("total time: %2.f" % (total_time))

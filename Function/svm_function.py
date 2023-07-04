@@ -138,11 +138,21 @@ def esvm_train_model(x_train, y_train, classifier, kernel, C, gamma, degree, coe
     """A generic eeSVM training function, with arguments based on the chosen kernel."""
     x_train, y_train = ensemble_data(x_train, y_train, size=size)
     esvm = ensemble_svm()
-    esvm.train(x_train, y_train, classifier, kernel, C, gamma, degree, coef0, nu, max_iter=max_iter, log=log)
+    esvm.train(data=x_train, 
+               label=y_train, 
+               classifier=classifier, 
+               kernel=kernel, 
+               C=C, 
+               gamma=gamma, 
+               degree=degree, 
+               coef0=coef0, 
+               nu=nu, 
+               max_iter=max_iter, 
+               log=log)
     
     return esvm
 
-def cv_esvm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, size=1, max_iter=1e7, log=False):
+def cv_esvm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0.0, gamma=0.0, degree=0.0, coef0=0.0, nu=0.5, size=1, max_iter=1e7, log=False):
     cv_x, cv_y = CV_balanced(data_x, data_y, fold)
     
     acc_array = []
@@ -164,7 +174,9 @@ def cv_esvm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0,
                                  degree=degree, 
                                  coef0=coef0, 
                                  nu=nu, 
-                                 size=size, max_iter=max_iter, log=log)
+                                 size=size, 
+                                 max_iter=max_iter, 
+                                 log=log)
         
         y_train_pred, _ = model.predict(x_train)
         y_test_pred, y_test_score = model.predict(x_test)

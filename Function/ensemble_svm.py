@@ -4,11 +4,6 @@ import math
 import numpy as np
 
 from sklearn import metrics
-# from libsvm.svmutil import svm_problem
-# from libsvm.svmutil import svm_parameter
-# from libsvm.svmutil import svm_train
-# from libsvm.svmutil import svm_predict
-
 
 from . import svm_function
 
@@ -17,7 +12,7 @@ class ensemble_svm():
         self.model_array = None
         self.model_size = None
     
-    def train(self, data, label, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, max_iter=1e7, log=False, print_score=False):
+    def train(self, data, label, classifier='SVC', kernel='linear', C=0.0, gamma=0.0, degree=0.0, coef0=0.0, nu=0.5, max_iter=1e7, log=False, print_score=False):
         train_time = time.time()
         model_array = []
         self.model_size = len(data)
@@ -31,7 +26,16 @@ class ensemble_svm():
             d = d[arr]
             l = l[arr]
             
-            m = svm_function.svm_train_model(d, l, classifier, kernel, C, gamma, degree, coef0, nu, max_iter=max_iter, log=log)
+            m = svm_function.svm_train_model(x_train=d, y_train=l, 
+                                             classifier=classifier, 
+                                             kernel=kernel, 
+                                             C=C, 
+                                             gamma=gamma, 
+                                             degree=degree, 
+                                             coef0=coef0, 
+                                             nu=nu, 
+                                             max_iter=max_iter, 
+                                             log=log)
             
             model_array.append(m)
             decision_values = m.decision_function(d)

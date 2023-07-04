@@ -133,11 +133,11 @@ if args.method == 'svm':
                                          fold=args.fold, 
                                          classifier=optimal_svm_pars["kernel"].split("_")[0], 
                                          kernel=optimal_svm_pars["kernel"].split("_")[1], 
-                                         C=0 if optimal_svm_pars["kernel"][0] != "SVC" else optimal_svm_pars["C"], 
+                                         C=0 if optimal_svm_pars["kernel"].split("_")[0] != "SVC" else optimal_svm_pars["C"], 
                                          gamma=optimal_svm_pars["logGamma"], 
                                          degree=optimal_svm_pars["degree"], 
                                          coef0=optimal_svm_pars["coef0"], 
-                                         nu=0.5 if optimal_svm_pars["kernel"][0] == "SVC" else optimal_svm_pars["n"], 
+                                         nu=0.5 if optimal_svm_pars["kernel"].split("_")[0] == "SVC" else optimal_svm_pars["n"], 
                                          max_iter=max_iter,
                                          log=True)
 elif args.method == 'esvm':
@@ -149,15 +149,17 @@ elif args.method == 'esvm':
         
     print("optunity done.")
 
+    print("Optimal parameters " + str(optimal_svm_pars))
+    
     json_dcit = svm_function.cv_esvm_perf(data_x, data_y, 
                                           fold=args.fold, 
                                           classifier=optimal_svm_pars["kernel"].split("_")[0], 
                                           kernel=optimal_svm_pars["kernel"].split("_")[1], 
-                                          C=0 if optimal_svm_pars["kernel"][0] != "SVC" else optimal_svm_pars["C"], 
+                                          C=0 if optimal_svm_pars["kernel"].split("_")[0] != "SVC" else optimal_svm_pars["C"], 
                                           gamma=optimal_svm_pars["logGamma"], 
                                           degree=optimal_svm_pars["degree"], 
                                           coef0=optimal_svm_pars["coef0"], 
-                                          nu=0.5 if optimal_svm_pars["kernel"][0] == "SVC" else optimal_svm_pars["n"], 
+                                          nu=0.5 if optimal_svm_pars["kernel"].split("_")[0] == "SVC" else optimal_svm_pars["n"], 
                                           size=args.size, 
                                           max_iter=max_iter,
                                           log=True)

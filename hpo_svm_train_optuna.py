@@ -1,10 +1,11 @@
 import time
 import json
-import joblib
 import warnings
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument('-storage', '--storage', default=None, type=str, help='storage file .log')
+parser.add_argument('-n', '--study_name', default=None, type=str, help='study name')
 parser.add_argument('-i', '--input', type=str, help='input file .npy')
 parser.add_argument('-l', '--label', type=str, help='label file .npy')
 parser.add_argument('-o', '--output', default='output', type=str, help='output file')
@@ -16,6 +17,7 @@ parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_eva
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 parser.add_argument('-perf', '--performance_value', default="AUROC", type=str, help='hpo evals performance value, default=AUROC, [Accy, Recall, Prec, Spec, Npv, F1sc]')
+parser.add_argument('-fs', '--feature_selection', default=False, type=bool, help='feature_selection, default=False')
 args = parser.parse_args()
 
 if args.n_jobs == 1:
@@ -26,10 +28,13 @@ import optuna
 import numpy as np
 
 from sklearn.preprocessing import *
+from sklearn.exceptions import ConvergenceWarning
+
+from optuna.samplers import TPESampler
+from optuna.samplers import CmaEsSampler
+
 
 from Function import svm_function
-
-from sklearn.exceptions import ConvergenceWarning
 
 total_time = time.time()
 
@@ -43,8 +48,8 @@ hp_space = {
     'classifier': ["SVC", "NuSVC"],
     'kernel': ["linear", "poly", "rbf", "sigmoid"],
     'C': {"low": 1e-10, "high": 1e10, "log": True},
-    'gamma': {"low": 1e-10, "high": 1e10, "log": False},
-    'coef0': {"low": 1e-10, "high": 1e10, "log": False},
+    'gamma': {"low": 1e-10, "high": 1e10, "log": True},
+    'coef0': {"low": 1e-10, "high": 1e10, "log": True},
     'degree': {"low": 1, "high": 10, "log": False},
     'nu': {"low": 1e-2, "high": 1-1e-2, "log": False},
     'max_iter': 1000
@@ -74,14 +79,22 @@ if args.normalize:
 
 class Objective:
 
-    def __init__(self, x, y, hp_space):
+    def __init__(self, x, y, hp_space, feature_selection):
         self.best_perf = None
         self._perf = None
         self.x = x
         self.y = y
         self.hp_space = hp_space
+        self.feature_selection = feature_selection
         
     def __call__(self, trial):
+        x = self.x.copy()
+        if self.feature_selection:
+            feature_selected = []
+            for i in range(x.shape[1]):
+                feature_selected.append(trial.suggest_categorical("feature_%s" % i, [True, False]))
+            x = x[:, feature_selected]
+        
         classifier_name = trial.suggest_categorical("classifier", self.hp_space["classifier"])
         kernel = trial.suggest_categorical("kernel", self.hp_space["kernel"])
         
@@ -106,32 +119,34 @@ class Objective:
         
         try:
             if args.method == "esvm":
-                perf_json = svm_function.cv_esvm_perf(self.x, self.y, 
-                                                classifier=classifier_name,
-                                                kernel=kernel,
-                                                C=C,
-                                                gamma=gamma,
-                                                coef0=coef0,
-                                                degree=degree,
-                                                nu=nu,
-                                                size=args.size,
-                                                max_iter=args.max_iter,
-                                                log=False,
-                                                fold=args.fold
-                                                )
+                perf_json = svm_function.cv_esvm_perf(data_x=x, 
+                                                      data_y=self.y, 
+                                                      classifier=classifier_name,
+                                                      kernel=kernel,
+                                                      C=C,
+                                                      gamma=gamma,
+                                                      coef0=coef0,
+                                                      degree=degree,
+                                                      nu=nu,
+                                                      size=args.size,
+                                                      max_iter=args.max_iter,
+                                                      log=False,
+                                                      fold=args.fold
+                                                      )
             elif args.method == "svm":
-                perf_json = svm_function.cv_svm_perf(self.x, self.y, 
-                                                classifier=classifier_name,
-                                                kernel=kernel,
-                                                C=C,
-                                                gamma=gamma,
-                                                coef0=coef0,
-                                                degree=degree,
-                                                nu=nu,
-                                                max_iter=args.max_iter,
-                                                log=False,
-                                                fold=args.fold
-                                                )
+                perf_json = svm_function.cv_svm_perf(data_x=x, 
+                                                     data_y=self.y, 
+                                                     classifier=classifier_name,
+                                                     kernel=kernel,
+                                                     C=C,
+                                                     gamma=gamma,
+                                                     coef0=coef0,
+                                                     degree=degree,
+                                                     nu=nu,
+                                                     max_iter=args.max_iter,
+                                                     log=False,
+                                                     fold=args.fold
+                                                     )
                 
             score = perf_json["avg %s" % args.performance_value]
             self._perf = perf_json
@@ -156,16 +171,25 @@ class Objective:
         # if study.best_trial == trial:
         #     self.best_perf = self._perf
             
-            
-
         
 
-objective = Objective(x=x, y=y, hp_space=hp_space)
-study = optuna.create_study(direction="maximize")
+objective = Objective(x=x, y=y, hp_space=hp_space, feature_selection=args.feature_selection)
+
+storage = None
+if not args.storage is None:
+    storage = optuna.storages.JournalStorage(
+        optuna.storages.JournalFileStorage(args.storage),
+    )
+    storage_study_name = [storage.get_study_name_from_id(temp_study._study_id) for temp_study in storage.get_all_studies()]
+    
+if not args.study_name is None and args.study_name in storage_study_name:
+    study = optuna.load_study(study_name=args.study_name, storage=storage)
+else:
+    study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=CmaEsSampler())
+    
 study.optimize(objective, n_trials=args.num_evals, n_jobs=args.n_jobs, gc_after_trial=True, callbacks=[objective.callback])
 
 print("output=%s" % args.output)
-joblib.dump(study, "%s.pkl" % args.output)
 
 with open('%s.json' % (args.output), 'w') as fp:
     json.dump(objective.best_perf, fp)
