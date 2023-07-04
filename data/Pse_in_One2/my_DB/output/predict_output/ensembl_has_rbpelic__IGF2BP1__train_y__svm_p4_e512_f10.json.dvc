@@ -1,0 +1,4 @@
+outs:
+- md5: 1322a80d2ee1d268aed71c2957d8dc64
+  size: 2237
+  path: ensembl_has_rbpelic__IGF2BP1__train_y__svm_p4_e512_f10.json

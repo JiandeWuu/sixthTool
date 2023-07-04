@@ -1,0 +1,4 @@
+outs:
+- md5: 95a8a120486355010f9dbdbd0b2302a9
+  size: 546370
+  path: test.log

@@ -1,0 +1,4 @@
+outs:
+- md5: 94ab74a81c3adf2c00da74a1afed2f38
+  size: 931520
+  path: ensembl__Kmer_k3__DACC_lag2__SC-PseDNC-General_all_index__non-RBPeclip.npy
