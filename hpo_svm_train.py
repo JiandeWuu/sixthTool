@@ -14,6 +14,7 @@ parser.add_argument('-p', '--pmap', default=1, type=int, help='hpo pmap')
 parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_evals')
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
+parser.add_argument('-perf', '--performance_value', default="auroc", type=str, help='hpo evals performance value, default=auroc, [acc, recall, prec, spec, npv, f1sc]')
 args = parser.parse_args()
 
 import numpy as np
@@ -93,29 +94,54 @@ max_iter = args.max_iter
 if data_x.shape[0] != data_y.shape[0]:
     raise Exception("input file and label file not equal", (data_x.shape, data_y.shape))
 
+def get_performance_value(y, y_pred, y_pred_proba, perf=args.performance_value):
+    
+    if perf == "auroc":
+        y_pred_proba = np.where(np.isnan(y_pred_proba), 0, y_pred_proba) 
+        y_pred_proba = np.where(np.isfinite(y_pred_proba), y_pred_proba, 0) 
+        perf_val = metrics.roc_auc_score(y, y_pred_proba)
+    else:
+        tn, fp, fn, tp = confusion_matrix(y, y_pred).ravel()
+        if perf == "acc":
+            perf_val = (tn + tp) / (tn + fp + fn + tp)
+        elif perf == "recall" :
+            perf_val = tp / (fn + tp)
+        elif perf == "prec" :
+            perf_val = tp / (fp + tp)
+        elif perf == "spec" :
+            perf_val = tn / (tn + fp)
+        elif perf == "npv" :
+            perf_val = tn / (tn + fn)
+        elif perf == "f1sc" :
+            perf_val = 2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp)))
+        else:
+            raise Exception("get_performance_value perf=%s is not in [acc, recall, prec, spec, npv, f1sc, auroc]" % perf)
+    return perf_val
 
 def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=args.size, max_iter=max_iter):
     classifier, kernel = kernel.split("_")
     try:
         model = svm_function.esvm_train_model(x_train, y_train, classifier=classifier, kernel=kernel, C=C, gamma=logGamma, degree=degree, coef0=coef0, nu=n, size=size, max_iter=max_iter, log=True)
-        roc_score = model.test(x_test, y_test)
-    except Exception as e:
-        print(e)
-        roc_score = 0.5
-    print("AUROC: %.2f" % roc_score)
-    return roc_score
+        y_pred, y_pred_score = model.predict(x_test)
+        pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=y_pred_score)
+    except:
+        print("error return 0.")
+        pref_val = 0
+    print("%s: %.2f" % (args.performance_value, pref_val))
+    return pref_val
 
 def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=max_iter):
     classifier, kernel = kernel.split("_")
     try:
         model = svm_function.svm_train_model(x_train, y_train, classifier, kernel, C, logGamma, degree, coef0, n, max_iter, log=True)
-        y_test_proba = model.predict_proba(x_test)
-        roc_score = metrics.roc_auc_score(y_test, y_test_proba)
+        y_pred = model.predict(x_test)
+        decision_values = model.decision_function(x_test)
+        pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=decision_values)
     except:
-        print("error return 0.5.")
-        roc_score = 0.5
-    print("AUROC: %.2f" % (roc_score))
-    return roc_score
+        print("error return 0.")
+        pref_val = 0
+    print("%s: %.2f" % (args.performance_value, pref_val))
+    return pref_val
 
    
 cv_decorator = optunity.cross_validated(x=data_x, y=data_y, num_folds=args.fold)
