@@ -185,7 +185,7 @@ if not args.storage is None:
 if not args.study_name is None and args.study_name in storage_study_name:
     study = optuna.load_study(study_name=args.study_name, storage=storage)
 else:
-    study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=CmaEsSampler())
+    study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=TPESampler(multivariate=True, group=True))
     
 study.optimize(objective, n_trials=args.num_evals, n_jobs=args.n_jobs, gc_after_trial=True, callbacks=[objective.callback])
 
