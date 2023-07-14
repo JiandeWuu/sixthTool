@@ -6,6 +6,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-storage', '--storage', default=None, type=str, help='storage file .log')
 parser.add_argument('-n', '--study_name', default=None, type=str, help='study name')
+parser.add_argument('-sampler', '--study_sampler', default=None, type=str, help='study sampler, default=None, [RandomSampler, CmaEsSampler]')
 parser.add_argument('-i', '--input', type=str, help='input file .npy')
 parser.add_argument('-l', '--label', type=str, help='label file .npy')
 parser.add_argument('-o', '--output', default='output', type=str, help='output file')
@@ -30,8 +31,8 @@ import numpy as np
 from sklearn.preprocessing import *
 from sklearn.exceptions import ConvergenceWarning
 
-from optuna.samplers import TPESampler
 from optuna.samplers import CmaEsSampler
+from optuna.samplers import RandomSampler
 
 
 from Function import svm_function
@@ -76,6 +77,11 @@ if args.normalize:
     scaler = MinMaxScaler()
     x = scaler.fit_transform(x)
 
+study_sampler = args.study_sampler
+if args.study_sampler == "RandomSampler":
+    study_sampler = RandomSampler
+if args.study_sampler == "CmaEsSampler":
+    study_sampler = CmaEsSampler
 
 class Objective:
 
@@ -183,9 +189,9 @@ if not args.storage is None:
     storage_study_name = [storage.get_study_name_from_id(temp_study._study_id) for temp_study in storage.get_all_studies()]
     
 if not args.study_name is None and args.study_name in storage_study_name:
-    study = optuna.load_study(study_name=args.study_name, storage=storage)
+    study = optuna.load_study(study_name=args.study_name, storage=storage, sampler=study_sampler)
 else:
-    study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage)
+    study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=study_sampler)
     
 study.optimize(objective, n_trials=args.num_evals, n_jobs=args.n_jobs, gc_after_trial=True, callbacks=[objective.callback])
 
