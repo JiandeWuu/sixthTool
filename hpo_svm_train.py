@@ -189,8 +189,18 @@ elif args.method == 'esvm':
                                           size=args.size, 
                                           max_iter=max_iter,
                                           log=True)
+    json_dcit["size"] = args.size
 
-
+# parameter
+json_dcit["input"] = args.input
+json_dcit["label"] = args.label
+json_dcit["method"] = args.method
+json_dcit["normalize"] = args.normalize
+json_dcit["max_iter"] = args.max_iter
+json_dcit["fold"] = args.fold
+json_dcit["performance_value"] = args.performance_value
+json_dcit["num_evals"] = args.num_evals
+json_dcit["pmap"] = args.pmap
 
 print("Optimal parameters" + str(optimal_svm_pars))
 print("AUROC of tuned SVM: %1.3f" % info.optimum)
