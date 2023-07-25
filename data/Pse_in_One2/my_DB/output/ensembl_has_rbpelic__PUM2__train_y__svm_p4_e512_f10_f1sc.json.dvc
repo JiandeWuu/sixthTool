@@ -1,0 +1,4 @@
+outs:
+- md5: 87669e65a6dc29fd2277c2872219ef9f
+  size: 2480
+  path: ensembl_has_rbpelic__PUM2__train_y__svm_p4_e512_f10_f1sc.json

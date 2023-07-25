@@ -1,0 +1,4 @@
+outs:
+- md5: e4e4a5c01cc89ec393465e8b71ad9c81
+  size: 2455
+  path: ensembl_has_rbpelic__FAM120A__train_y__svm_p4_e512_f10_f1sc.json
