@@ -1,0 +1,4 @@
+outs:
+- md5: a91d3a4b2f53e93cf2b243b12d4b7eeb
+  size: 1676
+  path: ensembl_has_rbpelic__STAU2__train_y__svm_p4_e512_f10_f1sc.json

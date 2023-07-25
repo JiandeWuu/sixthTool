@@ -1,0 +1,4 @@
+outs:
+- md5: 70bd1c7c4de1e71c74aef78143f52f94
+  size: 2474
+  path: ensembl_has_rbpelic__EIF3D__train_y__svm_p4_e512_f10_f1sc.json

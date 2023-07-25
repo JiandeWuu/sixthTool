@@ -1,0 +1,4 @@
+outs:
+- md5: 46e8da095fa57d54f619b5ccceb6672a
+  size: 2477
+  path: ensembl_has_rbpelic__FMR1__train_y__svm_p4_e512_f10_f1sc.json

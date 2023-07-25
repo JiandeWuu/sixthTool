@@ -1,0 +1,4 @@
+outs:
+- md5: 996f219b7313157d31bdf6e9014cc61c
+  size: 33796
+  path: ensembl_has_rbpelic__STAU2__train_y__svm_p4_e512_f10_f1sc

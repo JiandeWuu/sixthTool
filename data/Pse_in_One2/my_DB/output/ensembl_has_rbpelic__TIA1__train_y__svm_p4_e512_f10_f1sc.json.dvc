@@ -1,0 +1,4 @@
+outs:
+- md5: cbfaf7afe3e05ce8945ba3355f89436c
+  size: 2456
+  path: ensembl_has_rbpelic__TIA1__train_y__svm_p4_e512_f10_f1sc.json

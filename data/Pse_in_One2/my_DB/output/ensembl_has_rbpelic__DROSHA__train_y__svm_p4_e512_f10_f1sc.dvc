@@ -1,0 +1,4 @@
+outs:
+- md5: 801b1ffc8e6eed13bcdc42582ed0716a
+  size: 38891
+  path: ensembl_has_rbpelic__DROSHA__train_y__svm_p4_e512_f10_f1sc

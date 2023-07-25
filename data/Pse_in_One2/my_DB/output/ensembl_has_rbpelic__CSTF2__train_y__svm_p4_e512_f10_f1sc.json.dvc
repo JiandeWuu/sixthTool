@@ -1,0 +1,4 @@
+outs:
+- md5: 5d5e774aed280a5b462d661b349b47fe
+  size: 2475
+  path: ensembl_has_rbpelic__CSTF2__train_y__svm_p4_e512_f10_f1sc.json

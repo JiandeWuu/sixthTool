@@ -1,0 +1,4 @@
+outs:
+- md5: df766d046e6c417fb7e3d9edcb29619f
+  size: 25
+  path: .dvcignore

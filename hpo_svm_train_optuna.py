@@ -53,7 +53,7 @@ hp_space = {
     'coef0': {"low": 1e-10, "high": 1e10, "log": True},
     'degree': {"low": 1, "high": 10, "log": False},
     'nu': {"low": 1e-2, "high": 1-1e-2, "log": False},
-    'max_iter': 1000
+    'max_iter': args.max_iter
 }
 
 
@@ -79,9 +79,9 @@ if args.normalize:
 
 study_sampler = args.study_sampler
 if args.study_sampler == "RandomSampler":
-    study_sampler = RandomSampler
+    study_sampler = RandomSampler()
 if args.study_sampler == "CmaEsSampler":
-    study_sampler = CmaEsSampler
+    study_sampler = CmaEsSampler()
 
 class Objective:
 

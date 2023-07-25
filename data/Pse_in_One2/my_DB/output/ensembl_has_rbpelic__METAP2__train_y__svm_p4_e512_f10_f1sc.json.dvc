@@ -1,0 +1,4 @@
+outs:
+- md5: 3a4f8e7e1c2a17bc95800369d7d1880b
+  size: 2433
+  path: ensembl_has_rbpelic__METAP2__train_y__svm_p4_e512_f10_f1sc.json
