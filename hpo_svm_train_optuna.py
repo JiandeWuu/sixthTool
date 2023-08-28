@@ -19,6 +19,7 @@ parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_it
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 parser.add_argument('-perf', '--performance_value', default="AUROC", type=str, help='hpo evals performance value, default=AUROC, [Accy, Recall, Prec, Spec, Npv, F1sc]')
 parser.add_argument('-fs', '--feature_selection', default=False, type=bool, help='feature_selection, default=False')
+parser.add_argument('-timeout', '--timeout', default=None, type=float, help='timeout sec')
 args = parser.parse_args()
 
 if args.n_jobs == 1:
@@ -61,8 +62,8 @@ if not args.method in ["esvm", "svm"]:
     raise Exception("method is not [esvm, svm]", (args.method))
 
 
-print("method=%s, max_iter=%s, size=%s, fold=%s, n_jobs=%s, num_evals=%s, performance_value=%s," % 
-      (args.method, args.max_iter, args.size, args.fold, args.n_jobs, args.num_evals, args.performance_value))
+print("method=%s, max_iter=%s, size=%s, fold=%s, n_jobs=%s, num_evals=%s, performance_value=%s, timeout=%s" % 
+      (args.method, args.max_iter, args.size, args.fold, args.n_jobs, args.num_evals, args.performance_value, args.timeout))
 
 print("Input file: %s" % (args.input))
 x = np.load(args.input)
@@ -159,6 +160,7 @@ class Objective:
         except Exception as e: 
             print(e, "error return -1.")
             score = -1
+        print(score)
         return score
 
 
@@ -193,7 +195,10 @@ if not args.study_name is None and args.study_name in storage_study_name:
 else:
     study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=study_sampler)
     
-study.optimize(objective, n_trials=args.num_evals, n_jobs=args.n_jobs, gc_after_trial=True, callbacks=[objective.callback])
+try:
+    study.optimize(objective, n_trials=args.num_evals, timeout=args.timeout, n_jobs=args.n_jobs, gc_after_trial=True, show_progress_bar=True, callbacks=[objective.callback])
+except optuna.exceptions.TrialPruned as e:
+    print("Trial was pruned due to timeout.")
 
 print("output=%s" % args.output)
 

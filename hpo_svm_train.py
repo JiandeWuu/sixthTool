@@ -15,12 +15,12 @@ parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_eva
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 parser.add_argument('-perf', '--performance_value', default="auroc", type=str, help='hpo evals performance value, default=auroc, [acc, recall, prec, spec, npv, f1sc]')
+parser.add_argument('-timeout', '--timeout', default=None, type=int, help='timeout sec')
 args = parser.parse_args()
 
 import numpy as np
 import optunity
 import optunity.metrics
-
 
 if args.pmap == 1:
     from sklearnex import patch_sklearn 
@@ -32,6 +32,7 @@ from sklearn import metrics
 from sklearn.preprocessing import *
 from sklearn.metrics import confusion_matrix
 from sklearn.exceptions import ConvergenceWarning
+from wrapt_timeout_decorator import timeout
 
 from Function import svm_function
 
@@ -73,9 +74,9 @@ svm_space = {'kernel': {
                     'SVC_rbf': {'logGamma': [-10, 10], 'C': [-10, 10]},
                     'SVC_sigmoid': {'logGamma': [-10, 10], 'C': [-10, 10], 'coef0': [-10, 10]},
                     'NuSVC_linear': {'n': [1e-2, 1-1e-2]},
-                    'NuSVC_poly': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'degree': [1, 10], 'coef0': [-10, 10]},
-                    'NuSVC_rbf': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2]},
-                    'NuSVC_sigmoid': {'logGamma': [-10, 10], 'n': [1e-2, 1-1e-2], 'coef0': [-10, 10]}
+                    'NuSVC_poly': {'logGamma': [-10, 10], 'n': [1e-1, 1-1e-1], 'degree': [1, 10], 'coef0': [-10, 10]},
+                    'NuSVC_rbf': {'logGamma': [-10, 10], 'n': [1e-1, 1-1e-1]},
+                    'NuSVC_sigmoid': {'logGamma': [-10, 10], 'n': [1e-1, 1-1e-1], 'coef0': [-10, 10]}
                     }
         }
 
@@ -94,6 +95,19 @@ max_iter = args.max_iter
 if data_x.shape[0] != data_y.shape[0]:
     raise Exception("input file and label file not equal", (data_x.shape, data_y.shape))
 
+if args.timeout:
+    timeout_ = timeout(args.timeout, use_signals=False)
+    svm_train_model = timeout_(svm_function.svm_train_model)
+    esvm_train_model = timeout_(svm_function.esvm_train_model)
+    timeout_ = timeout(args.timeout * args.fold, use_signals=False)
+    cv_svm_perf = timeout_(svm_function.cv_svm_perf)
+    cv_esvm_perf = timeout_(svm_function.cv_esvm_perf)
+else:
+    svm_train_model = svm_function.svm_train_model
+    cv_svm_perf = svm_function.cv_svm_perf
+    esvm_train_model = svm_function.esvm_train_model
+    cv_esvm_perf = svm_function.cv_esvm_perf
+    
 def get_performance_value(y, y_pred, y_pred_proba, perf=args.performance_value):
     
     if perf == "auroc":
@@ -121,7 +135,7 @@ def get_performance_value(y, y_pred, y_pred_proba, perf=args.performance_value):
 def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, size=args.size, max_iter=max_iter):
     classifier, kernel = kernel.split("_")
     try:
-        model = svm_function.esvm_train_model(x_train, y_train, classifier=classifier, kernel=kernel, C=C, gamma=logGamma, degree=degree, coef0=coef0, nu=n, size=size, max_iter=max_iter, log=True)
+        model = esvm_train_model(x_train, y_train, classifier=classifier, kernel=kernel, C=C, gamma=logGamma, degree=degree, coef0=coef0, nu=n, size=size, max_iter=max_iter, log=True)
         y_pred, y_pred_score = model.predict(x_test)
         pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=y_pred_score)
     except:
@@ -131,16 +145,17 @@ def esvm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, l
     return pref_val
 
 def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, logGamma=0, degree=0, coef0=0, n=0.5, max_iter=max_iter):
-    classifier, kernel = kernel.split("_")
+    start_time = time.time()
     try:
-        model = svm_function.svm_train_model(x_train, y_train, classifier, kernel, C, logGamma, degree, coef0, n, max_iter, log=True)
+        classifier, kernel = kernel.split("_")
+        model = svm_train_model(x_train, y_train, classifier, kernel, C, logGamma, degree, coef0, n, max_iter, log=True)
         y_pred = model.predict(x_test)
         decision_values = model.decision_function(x_test)
         pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=decision_values)
-    except:
-        print("error return 0.")
+    except Exception as e:
+        print("error return 0.", e)
         pref_val = 0
-    print("%s: %.2f" % (args.performance_value, pref_val))
+    print("%s: %.2f | %.2fs" % (args.performance_value, pref_val, time.time() - start_time))
     return pref_val
 
    
@@ -201,6 +216,7 @@ json_dcit["fold"] = args.fold
 json_dcit["performance_value"] = args.performance_value
 json_dcit["num_evals"] = args.num_evals
 json_dcit["pmap"] = args.pmap
+json_dcit["timeout"] = args.timeout
 
 print("Optimal parameters" + str(optimal_svm_pars))
 print("AUROC of tuned SVM: %1.3f" % info.optimum)

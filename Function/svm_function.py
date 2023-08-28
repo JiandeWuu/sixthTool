@@ -1,4 +1,5 @@
 import math
+import time
 
 import numpy as np
 
@@ -309,8 +310,9 @@ def cv_libsvm_perf(data_x, data_y, fold=5, kernel='02', C=1, logGamma=1, degree=
     return json_dict
         
    
-def svm_train_model(x_train, y_train, classifier: str, kernel: str, C: float, gamma: float, degree: int, coef0: float, nu: float, max_iter=1e7, log=False):
+def svm_train_model(x_train, y_train, classifier: str, kernel: str, C: float, gamma: float, degree: int, coef0: float, nu: float, max_iter=1e7, cache_size=200, log=False):
     """A generic SVM training function, with arguments based on the chosen kernel."""
+    start_time = time.time()
     if C:
         C = 2 ** float(C) if log else float(C)
     if gamma:
@@ -324,24 +326,25 @@ def svm_train_model(x_train, y_train, classifier: str, kernel: str, C: float, ga
     
     if classifier == "SVC":
         if kernel == "linear":
-            clf = svm.SVC(kernel=kernel, C=C, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.SVC(kernel=kernel, C=C, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "poly":
-            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "rbf":
-            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "sigmoid":
-            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.SVC(kernel=kernel, C=C, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
     elif classifier == "NuSVC":
         if kernel == "linear":
-            clf = svm.NuSVC(kernel=kernel, nu=nu, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.NuSVC(kernel=kernel, nu=nu, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "poly":
-            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, degree=degree, coef0=coef0, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "rbf":
-            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
         elif kernel == "sigmoid":
-            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, probability=True)
+            clf = svm.NuSVC(kernel=kernel, nu=nu, gamma=gamma, coef0=coef0, class_weight='balanced', max_iter=max_iter, cache_size=cache_size, probability=True)
     
     clf.fit(x_train, y_train)
+    print("classifier=%s, kernel=%s, C=%s, gamma=%s, degree=%s, coef0=%s, nu=%s, max_iter=%s, cache_size=%s, log=%s, time=%ss" % (classifier, kernel, C, gamma, degree, coef0, nu, max_iter, cache_size, log, time.time() - start_time))
     return clf
 
 def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, gamma=0, degree=0, coef0=0, nu=0.5, max_iter=1e7, log=False):
