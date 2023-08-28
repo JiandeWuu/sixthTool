@@ -1,0 +1,4 @@
+outs:
+- md5: 7a193689f25a82d29293f9f7ef7c5b21
+  size: 543064
+  path: mRNA230719__CDC40___lncRNA__model_predict.npy

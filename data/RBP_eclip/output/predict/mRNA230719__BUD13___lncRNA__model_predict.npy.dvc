@@ -1,0 +1,4 @@
+outs:
+- md5: ee7bb5bff0d98b7b60ffd84cc9a75272
+  size: 543064
+  path: mRNA230719__BUD13___lncRNA__model_predict.npy

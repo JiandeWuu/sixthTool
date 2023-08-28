@@ -1,0 +1,4 @@
+outs:
+- md5: 33c24e1a7f82974698953d30ea03f751
+  size: 543064
+  path: mRNA230719__AARS___lncRNA__model_predict.npy

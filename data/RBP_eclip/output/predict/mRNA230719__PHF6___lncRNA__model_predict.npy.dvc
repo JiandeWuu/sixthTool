@@ -1,0 +1,4 @@
+outs:
+- md5: 433cdac553f53f597384e3c63b7c3a78
+  size: 543064
+  path: mRNA230719__PHF6___lncRNA__model_predict.npy

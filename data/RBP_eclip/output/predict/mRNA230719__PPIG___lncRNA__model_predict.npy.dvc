@@ -1,0 +1,4 @@
+outs:
+- md5: ad326fb86dcc7f8845330ae2c9bdbded
+  size: 543064
+  path: mRNA230719__PPIG___lncRNA__model_predict.npy

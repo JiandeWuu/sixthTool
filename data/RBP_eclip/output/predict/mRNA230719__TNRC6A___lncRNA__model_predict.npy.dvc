@@ -1,0 +1,4 @@
+outs:
+- md5: a49678475e51fb2093dbe7ac34045a4b
+  size: 543064
+  path: mRNA230719__TNRC6A___lncRNA__model_predict.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 59427a8b4c2fd9659d7099202846deb4
+  size: 543064
+  path: mRNA230719__PTBP1___lncRNA__model_predict.npy

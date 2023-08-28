@@ -1,0 +1,4 @@
+outs:
+- md5: bc605e167a16c72bb4693cb833b7195a
+  size: 543064
+  path: mRNA230719__DROSHA___lncRNA__model_predict.npy

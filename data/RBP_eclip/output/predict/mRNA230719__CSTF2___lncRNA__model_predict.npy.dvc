@@ -1,0 +1,4 @@
+outs:
+- md5: 3e8f4683a126c103192127e6e76f13f4
+  size: 543064
+  path: mRNA230719__CSTF2___lncRNA__model_predict.npy

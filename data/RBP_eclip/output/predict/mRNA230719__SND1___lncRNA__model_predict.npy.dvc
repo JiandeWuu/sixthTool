@@ -1,0 +1,4 @@
+outs:
+- md5: a1877cbf68b6181a162796356c82e680
+  size: 543064
+  path: mRNA230719__SND1___lncRNA__model_predict.npy

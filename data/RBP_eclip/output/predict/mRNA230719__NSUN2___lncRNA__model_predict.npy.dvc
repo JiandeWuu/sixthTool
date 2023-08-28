@@ -1,0 +1,4 @@
+outs:
+- md5: fec2d6445c67f02aa70eb28d8959f396
+  size: 543064
+  path: mRNA230719__NSUN2___lncRNA__model_predict.npy

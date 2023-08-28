@@ -1,0 +1,4 @@
+outs:
+- md5: 5de419c9f97e8cd19bdcdeacec7d5dbc
+  size: 543064
+  path: mRNA230719__DGCR8___lncRNA__model_predict.npy

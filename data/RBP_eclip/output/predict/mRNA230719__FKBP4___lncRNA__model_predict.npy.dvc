@@ -1,0 +1,4 @@
+outs:
+- md5: 81f33d4b989a98792292838e6340600a
+  size: 543064
+  path: mRNA230719__FKBP4___lncRNA__model_predict.npy

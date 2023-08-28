@@ -1,0 +1,4 @@
+outs:
+- md5: b47b395a4e752c1c98bbbb85810395b3
+  size: 543064
+  path: mRNA230719__FUS___lncRNA__model_predict.npy

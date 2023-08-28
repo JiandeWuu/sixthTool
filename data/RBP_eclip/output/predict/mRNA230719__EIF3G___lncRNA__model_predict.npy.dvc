@@ -1,0 +1,4 @@
+outs:
+- md5: 6c077cbf96e82d0270188095b904439d
+  size: 543064
+  path: mRNA230719__EIF3G___lncRNA__model_predict.npy

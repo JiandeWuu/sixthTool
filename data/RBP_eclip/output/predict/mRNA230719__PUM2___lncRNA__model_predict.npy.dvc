@@ -1,0 +1,4 @@
+outs:
+- md5: 278b246c448bf6d30df965b632de85c5
+  size: 543064
+  path: mRNA230719__PUM2___lncRNA__model_predict.npy

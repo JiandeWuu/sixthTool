@@ -1,0 +1,4 @@
+outs:
+- md5: 31ee7b5da45b3154a0b32ace0adb4792
+  size: 543064
+  path: mRNA230719__LIN28B___lncRNA__model_predict.npy

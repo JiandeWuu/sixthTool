@@ -1,0 +1,4 @@
+outs:
+- md5: 6d4c88a49bb5788d050890b78075b995
+  size: 543064
+  path: mRNA230719__STAU2___lncRNA__model_predict.npy

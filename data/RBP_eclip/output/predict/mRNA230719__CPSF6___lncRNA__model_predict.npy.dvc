@@ -1,0 +1,4 @@
+outs:
+- md5: 0d6d7707a75c3bb755e008daabf17c7c
+  size: 543064
+  path: mRNA230719__CPSF6___lncRNA__model_predict.npy

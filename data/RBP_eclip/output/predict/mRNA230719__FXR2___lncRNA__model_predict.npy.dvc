@@ -1,0 +1,4 @@
+outs:
+- md5: fff98b1136cb826d51a9415917d2a483
+  size: 543064
+  path: mRNA230719__FXR2___lncRNA__model_predict.npy

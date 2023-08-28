@@ -1,0 +1,4 @@
+outs:
+- md5: 72ce65c9bc335dd6eba4b187f01d0918
+  size: 543064
+  path: mRNA230719__IGF2BP1___lncRNA__model_predict.npy

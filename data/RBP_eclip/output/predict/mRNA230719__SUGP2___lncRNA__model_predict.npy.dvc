@@ -1,0 +1,4 @@
+outs:
+- md5: 29f8542f89a642c52a822075f9fee9b9
+  size: 543064
+  path: mRNA230719__SUGP2___lncRNA__model_predict.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: e9d87fc72c4996c35b8a2828bb683506
+  size: 543064
+  path: mRNA230719__EFTUD2___lncRNA__model_predict.npy

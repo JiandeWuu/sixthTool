@@ -1,0 +1,4 @@
+outs:
+- md5: adab7826a28a3e8c0aaac33f744e51fe
+  size: 543064
+  path: mRNA230719__PCBP2___lncRNA__model_predict.npy

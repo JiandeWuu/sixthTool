@@ -1,0 +1,4 @@
+outs:
+- md5: 06211baddf3e2c7ebeb215abfeae6094
+  size: 543064
+  path: mRNA230719__ZNF800___lncRNA__model_predict.npy

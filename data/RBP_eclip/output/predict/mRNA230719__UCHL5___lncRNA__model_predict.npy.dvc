@@ -1,0 +1,4 @@
+outs:
+- md5: 3c9b2eb5912063a63ba3e0d8a89c1ffc
+  size: 543064
+  path: mRNA230719__UCHL5___lncRNA__model_predict.npy
