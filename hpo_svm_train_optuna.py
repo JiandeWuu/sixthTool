@@ -14,7 +14,7 @@ parser.add_argument('-m', '--method', default='svm', type=str, help='svm, libsvm
 parser.add_argument('-f', '--fold', default=5, type=int, help='k-fold cross-validation')
 parser.add_argument('-s', '--size', default=1, type=int, help='Ensemble SVM size')
 parser.add_argument('-j', '--n_jobs', default=1, type=int, help='hpo n_jobs')
-parser.add_argument('-e', '--num_evals', default=10, type=int, help='hpo num_evals')
+parser.add_argument('-e', '--num_evals', default=None, type=int, help='hpo num_evals')
 parser.add_argument('-t', '--max_iter', default=1000, type=int, help='hpo max_iter')
 parser.add_argument('-nor', '--normalize', default=False, type=bool, help='normalize')
 parser.add_argument('-perf', '--performance_value', default="AUROC", type=str, help='hpo evals performance value, default=AUROC, [Accy, Recall, Prec, Spec, Npv, F1sc]')
@@ -34,6 +34,8 @@ from sklearn.exceptions import ConvergenceWarning
 
 from optuna.samplers import CmaEsSampler
 from optuna.samplers import RandomSampler
+
+from wrapt_timeout_decorator import timeout
 
 
 from Function import svm_function
@@ -84,6 +86,14 @@ if args.study_sampler == "RandomSampler":
 if args.study_sampler == "CmaEsSampler":
     study_sampler = CmaEsSampler()
 
+if args.timeout:
+    timeout_ = timeout(args.timeout * args.fold, use_signals=False)
+    cv_svm_perf = timeout_(svm_function.cv_svm_perf)
+    cv_esvm_perf = timeout_(svm_function.cv_esvm_perf)
+else:
+    cv_svm_perf = svm_function.cv_svm_perf
+    cv_esvm_perf = svm_function.cv_esvm_perf
+
 class Objective:
 
     def __init__(self, x, y, hp_space, feature_selection):
@@ -126,34 +136,34 @@ class Objective:
         
         try:
             if args.method == "esvm":
-                perf_json = svm_function.cv_esvm_perf(data_x=x, 
-                                                      data_y=self.y, 
-                                                      classifier=classifier_name,
-                                                      kernel=kernel,
-                                                      C=C,
-                                                      gamma=gamma,
-                                                      coef0=coef0,
-                                                      degree=degree,
-                                                      nu=nu,
-                                                      size=args.size,
-                                                      max_iter=args.max_iter,
-                                                      log=False,
-                                                      fold=args.fold
-                                                      )
+                perf_json = cv_esvm_perf(data_x=x, 
+                                        data_y=self.y, 
+                                        classifier=classifier_name,
+                                        kernel=kernel,
+                                        C=C,
+                                        gamma=gamma,
+                                        coef0=coef0,
+                                        degree=degree,
+                                        nu=nu,
+                                        size=args.size,
+                                        max_iter=args.max_iter,
+                                        log=False,
+                                        fold=args.fold
+                                        )
             elif args.method == "svm":
-                perf_json = svm_function.cv_svm_perf(data_x=x, 
-                                                     data_y=self.y, 
-                                                     classifier=classifier_name,
-                                                     kernel=kernel,
-                                                     C=C,
-                                                     gamma=gamma,
-                                                     coef0=coef0,
-                                                     degree=degree,
-                                                     nu=nu,
-                                                     max_iter=args.max_iter,
-                                                     log=False,
-                                                     fold=args.fold
-                                                     )
+                perf_json = cv_svm_perf(data_x=x, 
+                                        data_y=self.y, 
+                                        classifier=classifier_name,
+                                        kernel=kernel,
+                                        C=C,
+                                        gamma=gamma,
+                                        coef0=coef0,
+                                        degree=degree,
+                                        nu=nu,
+                                        max_iter=args.max_iter,
+                                        log=False,
+                                        fold=args.fold
+                                        )
                 
             score = perf_json["avg %s" % args.performance_value]
             self._perf = perf_json
@@ -196,7 +206,7 @@ else:
     study = optuna.create_study(study_name=args.study_name, direction="maximize", storage=storage, sampler=study_sampler)
     
 try:
-    study.optimize(objective, n_trials=args.num_evals, timeout=args.timeout, n_jobs=args.n_jobs, gc_after_trial=True, show_progress_bar=True, callbacks=[objective.callback])
+    study.optimize(objective, n_trials=args.num_evals, n_jobs=args.n_jobs, gc_after_trial=True, show_progress_bar=True, callbacks=[objective.callback])
 except optuna.exceptions.TrialPruned as e:
     print("Trial was pruned due to timeout.")
 
