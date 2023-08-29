@@ -170,7 +170,7 @@ if args.method == 'svm':
         optimal_svm_pars, info, _ = optunity.maximize_structured(cv_svm_tuned_auroc, svm_space, num_evals=args.num_evals, pmap=pmap)
     print("optunity done.")
     
-    json_dcit = svm_function.cv_svm_perf(data_x, data_y, 
+    json_dcit = cv_svm_perf(data_x, data_y, 
                                          fold=args.fold, 
                                          classifier=optimal_svm_pars["kernel"].split("_")[0], 
                                          kernel=optimal_svm_pars["kernel"].split("_")[1], 
@@ -192,7 +192,7 @@ elif args.method == 'esvm':
 
     print("Optimal parameters " + str(optimal_svm_pars))
     
-    json_dcit = svm_function.cv_esvm_perf(data_x, data_y, 
+    json_dcit = cv_esvm_perf(data_x, data_y, 
                                           fold=args.fold, 
                                           classifier=optimal_svm_pars["kernel"].split("_")[0], 
                                           kernel=optimal_svm_pars["kernel"].split("_")[1], 
