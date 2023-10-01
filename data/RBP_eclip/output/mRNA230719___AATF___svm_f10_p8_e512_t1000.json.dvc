@@ -1,0 +1,4 @@
+outs:
+- md5: b9ecd9a1617c0b527d1859198028f421
+  size: 2729
+  path: mRNA230719___AATF___svm_f10_p8_e512_t1000.json

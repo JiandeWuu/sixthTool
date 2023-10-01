@@ -364,12 +364,13 @@ def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, 
         
         y_train_pred = model.predict(x_train)
         y_test_pred = model.predict(x_test)
-        y_test_pred_proba = model.predict_proba(x_test)
+        y_test_pred_proba = model.predict_proba(x_test)[:, 1]
         
         try:
             roc_score = metrics.roc_auc_score(y_test, y_test_pred_proba)
             auroc_array.append(roc_score)
-        except:
+        except Exception as e:
+            print(e, "cv_svm_perf AUROC: 0.5")
             auroc_array.append(0.5)
         
         cm_array.append(np.array([confusion_matrix(y_train, y_train_pred), confusion_matrix(y_test, y_test_pred)]).tolist())
@@ -384,6 +385,7 @@ def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, 
         f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
     
     json_dict = {
+        "classifier": classifier, 
         "kernel": kernel, 
         "C": C, 
         "gamma": gamma, 
@@ -417,5 +419,5 @@ def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, 
     }
     
     return json_dict
-        
+    
    

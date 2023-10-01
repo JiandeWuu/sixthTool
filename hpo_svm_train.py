@@ -114,6 +114,12 @@ def get_performance_value(y, y_pred, y_pred_proba, perf=args.performance_value):
         y_pred_proba = np.where(np.isnan(y_pred_proba), 0, y_pred_proba) 
         y_pred_proba = np.where(np.isfinite(y_pred_proba), y_pred_proba, 0) 
         perf_val = metrics.roc_auc_score(y, y_pred_proba)
+    elif perf == "my_perf_val":
+        y_pred_proba = np.where(np.isnan(y_pred_proba), 0, y_pred_proba) 
+        y_pred_proba = np.where(np.isfinite(y_pred_proba), y_pred_proba, 0) 
+        perf_val1 = metrics.roc_auc_score(y, y_pred_proba)
+        perf_val2 = metrics.roc_auc_score(y, y_pred)
+        perf_val = 1 - ((1 - perf_val1) ** 2 + (1 - perf_val2) ** 2)
     else:
         tn, fp, fn, tp = confusion_matrix(y, y_pred).ravel()
         if perf == "acc":
@@ -150,8 +156,8 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, lo
         classifier, kernel = kernel.split("_")
         model = svm_train_model(x_train, y_train, classifier, kernel, C, logGamma, degree, coef0, n, max_iter, log=True)
         y_pred = model.predict(x_test)
-        decision_values = model.decision_function(x_test)
-        pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=decision_values)
+        y_pred_proba = model.predict_proba(x_test)
+        pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=y_pred_proba)
     except Exception as e:
         print("error return 0.", e)
         pref_val = 0
