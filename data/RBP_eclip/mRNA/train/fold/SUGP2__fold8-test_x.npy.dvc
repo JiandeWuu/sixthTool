@@ -1,0 +1,4 @@
+outs:
+- md5: 5255870252862be09de7f8cadfe86dd2
+  size: 10642144
+  path: SUGP2__fold8-test_x.npy

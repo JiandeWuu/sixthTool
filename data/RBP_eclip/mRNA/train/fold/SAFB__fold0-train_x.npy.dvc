@@ -1,0 +1,4 @@
+outs:
+- md5: 9ca7d349360fdb35ce75d37a31f3a906
+  size: 95775136
+  path: SAFB__fold0-train_x.npy

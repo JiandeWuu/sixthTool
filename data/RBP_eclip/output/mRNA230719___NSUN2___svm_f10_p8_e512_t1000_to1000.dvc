@@ -1,0 +1,4 @@
+outs:
+- md5: 7543af470987ddeeff49cb48196f7948
+  size: 41660
+  path: mRNA230719___NSUN2___svm_f10_p8_e512_t1000_to1000

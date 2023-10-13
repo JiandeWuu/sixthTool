@@ -1,0 +1,4 @@
+outs:
+- md5: cfcc66553ef8787aa3397a0e91f20b9b
+  size: 10642144
+  path: PTBP1__fold6-test_x.npy

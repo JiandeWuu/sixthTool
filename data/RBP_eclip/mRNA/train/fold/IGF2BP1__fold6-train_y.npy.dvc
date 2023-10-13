@@ -1,0 +1,4 @@
+outs:
+- md5: c2a399bbbfffba31a2abfb89b6b3a526
+  size: 488768
+  path: IGF2BP1__fold6-train_y.npy

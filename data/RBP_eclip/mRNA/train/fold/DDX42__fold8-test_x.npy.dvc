@@ -1,0 +1,4 @@
+outs:
+- md5: 18f1b67b01d8f4bc82add5da980968ad
+  size: 10640576
+  path: DDX42__fold8-test_x.npy

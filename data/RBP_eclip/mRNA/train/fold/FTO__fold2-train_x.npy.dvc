@@ -1,0 +1,4 @@
+outs:
+- md5: 34538fa8c2b5b36450c0255b85d5853c
+  size: 95773568
+  path: FTO__fold2-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 730b27e6389475e8cb47bd1154d9e484
+  size: 488768
+  path: SUB1__fold6-train_y.npy

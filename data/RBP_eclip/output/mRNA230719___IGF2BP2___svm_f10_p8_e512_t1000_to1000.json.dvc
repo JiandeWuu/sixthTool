@@ -1,0 +1,4 @@
+outs:
+- md5: 2a017744a79ef6f68543f0ad49299de5
+  size: 2259
+  path: mRNA230719___IGF2BP2___svm_f10_p8_e512_t1000_to1000.json

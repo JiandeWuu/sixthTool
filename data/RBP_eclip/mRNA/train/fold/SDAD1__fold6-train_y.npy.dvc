@@ -1,0 +1,4 @@
+outs:
+- md5: 160e46b0af64c50c4486d9750a7be98e
+  size: 488776
+  path: SDAD1__fold6-train_y.npy

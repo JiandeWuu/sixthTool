@@ -1,0 +1,4 @@
+outs:
+- md5: 0172d96506f2999a3990ac74896106d6
+  size: 54424
+  path: SF3B4__fold8-test_y.npy

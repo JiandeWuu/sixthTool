@@ -1,0 +1,4 @@
+outs:
+- md5: 7c8c2aaad1b33e102f6b400e9be1042a
+  size: 10642144
+  path: LSM11__fold7-test_x.npy

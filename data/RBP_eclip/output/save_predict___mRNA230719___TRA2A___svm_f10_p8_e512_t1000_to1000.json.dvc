@@ -1,0 +1,4 @@
+outs:
+- md5: 0a3eb1d685e974e6523ccd40e6f184e1
+  size: 33186546
+  path: save_predict___mRNA230719___TRA2A___svm_f10_p8_e512_t1000_to1000.json

@@ -1,0 +1,4 @@
+outs:
+- md5: 69787c3eff47c459c69a5e9b0e292a2c
+  size: 10642144
+  path: CSTF2__fold1-test_x.npy

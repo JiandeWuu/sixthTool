@@ -1,0 +1,4 @@
+outs:
+- md5: 267d26a5cf51bbbc3abde7e82940a139
+  size: 95775136
+  path: PRPF8__fold6-train_x.npy

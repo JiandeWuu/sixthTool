@@ -1,0 +1,4 @@
+outs:
+- md5: 23b80acb5ee0b1af2474d2275c11456f
+  size: 95775136
+  path: HNRNPK__fold2-train_x.npy

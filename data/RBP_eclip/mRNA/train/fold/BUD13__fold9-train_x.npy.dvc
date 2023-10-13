@@ -1,0 +1,4 @@
+outs:
+- md5: 1d208a72d507a9eb18ac656474a92f2e
+  size: 95773568
+  path: BUD13__fold9-train_x.npy

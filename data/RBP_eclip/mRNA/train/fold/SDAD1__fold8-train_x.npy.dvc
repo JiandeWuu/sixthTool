@@ -1,0 +1,4 @@
+outs:
+- md5: 4fd01743f258a21387113446ac1e4f13
+  size: 95775136
+  path: SDAD1__fold8-train_x.npy

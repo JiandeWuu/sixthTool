@@ -1,0 +1,4 @@
+outs:
+- md5: 8dcc8e34d93fb3e36234644d2873101f
+  size: 488776
+  path: CPEB4__fold5-train_y.npy

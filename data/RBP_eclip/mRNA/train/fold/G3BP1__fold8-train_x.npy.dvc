@@ -1,0 +1,4 @@
+outs:
+- md5: 17c0fd3586c6bb5287fb79657acc05a4
+  size: 95773568
+  path: G3BP1__fold8-train_x.npy

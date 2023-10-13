@@ -1,0 +1,4 @@
+outs:
+- md5: 36ea0df5fc5d3f3dbe39efb2a068b6f1
+  size: 95775136
+  path: RBM22__fold6-train_x.npy

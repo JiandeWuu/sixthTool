@@ -1,0 +1,4 @@
+outs:
+- md5: 6a1e85ecd6cd07ed999c913060c134a3
+  size: 488768
+  path: AARS__fold8-train_y.npy

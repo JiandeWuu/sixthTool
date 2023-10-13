@@ -1,0 +1,4 @@
+outs:
+- md5: 2d7331c8667de576f2a8c93846ac4e21
+  size: 95775136
+  path: CPSF6__fold5-train_x.npy

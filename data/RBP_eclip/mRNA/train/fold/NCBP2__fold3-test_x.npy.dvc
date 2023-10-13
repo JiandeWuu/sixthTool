@@ -1,0 +1,4 @@
+outs:
+- md5: 78ca67286c8af88d4914aae5612fc131
+  size: 10640576
+  path: NCBP2__fold3-test_x.npy

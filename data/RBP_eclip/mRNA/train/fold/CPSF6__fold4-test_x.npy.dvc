@@ -1,0 +1,4 @@
+outs:
+- md5: 65b2f7aed4b3747a96a5e281c33ee46b
+  size: 10642144
+  path: CPSF6__fold4-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 6adf72d61510917a76374bbaf1296f51
+  size: 95775136
+  path: YBX3__fold8-train_x.npy

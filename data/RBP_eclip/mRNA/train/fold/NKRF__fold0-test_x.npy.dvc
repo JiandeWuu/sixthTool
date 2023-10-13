@@ -1,0 +1,4 @@
+outs:
+- md5: d10a8fb2e7f6d5f5eec3778285c8b674
+  size: 10639008
+  path: NKRF__fold0-test_x.npy

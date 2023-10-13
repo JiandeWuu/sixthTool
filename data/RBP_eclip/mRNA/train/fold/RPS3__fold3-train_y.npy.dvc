@@ -1,0 +1,4 @@
+outs:
+- md5: 44bc989c6e9d4487fa3aed5b3688635e
+  size: 488768
+  path: RPS3__fold3-train_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 2996523aa42c9afc28251507d3309b1c
+  size: 10642144
+  path: SSB__fold5-test_x.npy

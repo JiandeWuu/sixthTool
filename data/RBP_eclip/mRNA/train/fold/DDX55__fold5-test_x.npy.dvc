@@ -1,0 +1,4 @@
+outs:
+- md5: faa3eb0d8be923d85bc10422f3d741e2
+  size: 10642144
+  path: DDX55__fold5-test_x.npy

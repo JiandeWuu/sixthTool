@@ -1,0 +1,4 @@
+outs:
+- md5: 5c8fd320d81560d67ec1d1829197b105
+  size: 488768
+  path: AKAP1__fold6-train_y.npy

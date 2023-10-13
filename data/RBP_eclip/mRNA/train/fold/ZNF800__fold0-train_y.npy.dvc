@@ -1,0 +1,4 @@
+outs:
+- md5: 7e29b27b357ec99ce6d1857f5d9d3218
+  size: 488776
+  path: ZNF800__fold0-train_y.npy

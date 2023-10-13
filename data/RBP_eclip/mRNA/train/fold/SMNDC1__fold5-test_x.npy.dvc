@@ -1,0 +1,4 @@
+outs:
+- md5: 15b2a50d02dbb61e205e2c0679593fdd
+  size: 10642144
+  path: SMNDC1__fold5-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: e20786fa0f39a67cabf69b3b56de415e
+  size: 54408
+  path: MTPAP__fold0-test_y.npy

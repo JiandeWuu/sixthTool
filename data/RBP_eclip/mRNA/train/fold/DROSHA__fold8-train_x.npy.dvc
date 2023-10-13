@@ -1,0 +1,4 @@
+outs:
+- md5: 6dad3cd76bd406f0406d2018aceae32d
+  size: 95775136
+  path: DROSHA__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 14df6c1df4ba98300f59bceb031cc9dc
+  size: 488784
+  path: CSTF2__fold0-train_y.npy

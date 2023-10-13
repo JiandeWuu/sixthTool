@@ -1,0 +1,4 @@
+outs:
+- md5: 8f2ba4af28a801561adf4ccd6124b49c
+  size: 10642144
+  path: SFPQ__fold8-test_x.npy

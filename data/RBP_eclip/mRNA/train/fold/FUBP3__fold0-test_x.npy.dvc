@@ -1,0 +1,4 @@
+outs:
+- md5: 02dd5ace32b1aed3f8ecada7690c9cf6
+  size: 10640576
+  path: FUBP3__fold0-test_x.npy

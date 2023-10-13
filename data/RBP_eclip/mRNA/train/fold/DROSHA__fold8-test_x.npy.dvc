@@ -1,0 +1,4 @@
+outs:
+- md5: 68192cec50f5cb587590f887a9eefac2
+  size: 10640576
+  path: DROSHA__fold8-test_x.npy

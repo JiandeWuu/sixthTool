@@ -1,0 +1,4 @@
+outs:
+- md5: b97dd95044c3e947b448721d247c212c
+  size: 95773568
+  path: ZC3H8__fold4-train_x.npy

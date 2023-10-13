@@ -1,0 +1,4 @@
+outs:
+- md5: d80f9169b5231a6fc55a73621d8c3334
+  size: 95775136
+  path: SFPQ__fold5-train_x.npy

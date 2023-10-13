@@ -1,0 +1,4 @@
+outs:
+- md5: 5f8969beac962bc3458b5da844fd0197
+  size: 10642144
+  path: ZNF800__fold8-test_x.npy

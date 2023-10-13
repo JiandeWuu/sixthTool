@@ -1,0 +1,4 @@
+outs:
+- md5: edf65735011ca7b5daeae99addab4536
+  size: 488768
+  path: ZC3H8__fold3-train_y.npy

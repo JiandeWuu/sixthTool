@@ -1,0 +1,4 @@
+outs:
+- md5: 7b6a936ed8c56aa7b1df73763ccd2561
+  size: 95775136
+  path: CSTF2T__fold5-train_x.npy

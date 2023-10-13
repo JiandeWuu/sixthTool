@@ -1,0 +1,4 @@
+outs:
+- md5: 162d5a4f433764550a20b756cb82abf4
+  size: 95773568
+  path: TIA1__fold1-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 14b887b81a55fe7ffb14b9021f2c014f
+  size: 95775136
+  path: EXOSC5__fold2-train_x.npy

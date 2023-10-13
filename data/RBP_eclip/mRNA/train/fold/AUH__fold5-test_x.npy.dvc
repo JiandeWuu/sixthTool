@@ -1,0 +1,4 @@
+outs:
+- md5: f8d4d631f9332613d7ef636029795a6d
+  size: 10640576
+  path: AUH__fold5-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: ab9b80bf9ac62852c867aaaed73300d1
+  size: 95775136
+  path: ABCF1__fold6-train_x.npy

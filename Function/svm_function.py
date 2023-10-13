@@ -419,5 +419,92 @@ def cv_svm_perf(data_x, data_y, fold=5, classifier='SVC', kernel='linear', C=0, 
     }
     
     return json_dict
+
+def get_pred_cutoff(proba, y, auto_threshold=False):
+    if auto_threshold:
+        print("Auto_threshold")
     
-   
+    if auto_threshold:
+        thresholds = sorted(np.unique(proba))
+    else:
+        thresholds = np.arange(0.05, 1, 0.05)
+    
+    diff = []
+    for i in range(len(thresholds)):
+        pred = np.where(proba > thresholds[i], 1, 0)
+        temp_roc = metrics.roc_auc_score(y, pred)
+        diff.append(temp_roc)
+
+    diff = np.array(diff)
+
+    diff[np.isnan(diff)] = 0
+    threshold = thresholds[np.argmax(diff)]
+    
+    return threshold
+
+def pred_proba_perf(train_proba, train_y, test_proba, test_y, auto_threshold=False):
+    if auto_threshold:
+        print("Auto_threshold")
+    
+    threshold_array = []
+    acc_array = []
+    recall_array = []
+    prec_array = []
+    spec_array = []
+    npv_array = []
+    f1sc_array = []
+    auroc_array = []
+    for i in range(len(test_y)):
+        y_train = np.array(train_y[i])
+        y_train_proba = np.array(train_proba[i])[:, 1]
+        
+        y_test = np.array(test_y[i])
+        y_test_proba = np.array(test_proba[i])[:, 1]
+        
+        threshold = get_pred_cutoff(y_train_proba, y_train, auto_threshold=auto_threshold)
+        
+        y_test_pred = np.where(y_test_proba > threshold, 1, 0)
+        try:
+            roc_score = metrics.roc_auc_score(y_test, y_test_pred)
+            auroc_array.append(roc_score)
+        except Exception as e:
+            print(e)
+            auroc_array.append(0.5)
+        
+        tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
+        
+        threshold_array.append(threshold)
+        acc_array.append((tn + tp) / (tn + fp + fn + tp))
+        recall_array.append(tp / (fn + tp))
+        prec_array.append(tp / (fp + tp))
+        spec_array.append(tn / (tn + fp))
+        npv_array.append(tn / (tn + fn))
+        f1sc_array.append(2 * (tp / (fn + tp)) * (tp / (fp + tp)) / ((tp / (fn + tp)) + (tp / (fp + tp))))
+    
+    json_dict = {
+        "threshold": threshold_array,
+        "fold Accy": acc_array,
+        "avg Accy": sum(acc_array) / len(acc_array),
+        "std Accy": np.std(acc_array),
+        "fold Recall": recall_array,
+        "avg Recall": sum(recall_array) / len(recall_array),
+        "std Recall": np.std(recall_array),
+        "fold Prec": prec_array,
+        "avg Prec": sum(prec_array) / len(prec_array),
+        "std Prec": np.std(prec_array),
+        "fold Spec": spec_array,
+        "avg Spec": sum(spec_array) / len(spec_array),
+        "std Spec": np.std(spec_array),
+        "fold Npv": npv_array,
+        "avg Npv": sum(npv_array) / len(npv_array),
+        "std Npv": np.std(npv_array),
+        "fold F1sc": f1sc_array,
+        "avg F1sc": sum(f1sc_array) / len(f1sc_array),
+        "std F1sc": np.std(f1sc_array),
+        "fold AUROC": auroc_array,
+        "avg AUROC": sum(auroc_array) / len(auroc_array),
+        "std AUROC": np.std(auroc_array),
+    }
+    
+    return json_dict
+ 

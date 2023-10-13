@@ -1,0 +1,4 @@
+outs:
+- md5: 52aa839bfe9d10d80be8222f24350f9d
+  size: 10640576
+  path: NONO__fold5-test_x.npy

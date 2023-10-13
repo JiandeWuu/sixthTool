@@ -60,16 +60,21 @@ def esvm_train_model_hp_object(x, y, hp_object):
 
 def svm_train_model_hp_object(x, y, hp_object):
     clf = svm_function.svm_train_model(x_train=x, y_train=y, 
+                                        classifier=hp_object['classifier'], 
                                         kernel=hp_object['kernel'], 
                                         C=hp_object['C'], 
-                                        logGamma=hp_object['logGamma'], 
+                                        gamma=hp_object['gamma'], 
                                         degree=hp_object['degree'], 
                                         coef0=hp_object['coef0'], 
-                                        n=hp_object['n'], 
-                                        max_iter=hp_object['max_iter'])
+                                        nu=hp_object['nu'], 
+                                        max_iter=hp_object['max_iter'],
+                                        log=hp_object['log'])
     return clf
 
 if args.method == 'svm':
+    print("classifier=%s, kernel=%s, C=%s, gamma=%s, degree=%s, coef0=%s, nu=%s, max_iter=%s, log=%s" % (
+        hp["classifier"], hp["kernel"], hp["C"], hp["gamma"], hp["degree"], hp["coef0"], hp["nu"], hp["max_iter"], hp["log"]))
+    
     train_def = svm_train_model_hp_object
     model = train_def(x, y, hp)
     if args.test_x and args.test_y:

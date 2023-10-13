@@ -1,0 +1,4 @@
+outs:
+- md5: 905e4bd90b7859101d6219d8298d23d4
+  size: 488776
+  path: AATF__fold6-train_y.npy

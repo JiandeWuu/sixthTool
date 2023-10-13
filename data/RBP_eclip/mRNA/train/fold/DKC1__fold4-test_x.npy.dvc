@@ -1,0 +1,4 @@
+outs:
+- md5: 54ab7b97bec48fd2f9311f1a57932b86
+  size: 10642144
+  path: DKC1__fold4-test_x.npy

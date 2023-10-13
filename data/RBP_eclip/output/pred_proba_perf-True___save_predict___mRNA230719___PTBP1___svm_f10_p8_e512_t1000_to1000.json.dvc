@@ -1,0 +1,4 @@
+outs:
+- md5: c965978871c6a89f3552cc2572eb7d0c
+  size: 2196
+  path: pred_proba_perf-True___save_predict___mRNA230719___PTBP1___svm_f10_p8_e512_t1000_to1000.json

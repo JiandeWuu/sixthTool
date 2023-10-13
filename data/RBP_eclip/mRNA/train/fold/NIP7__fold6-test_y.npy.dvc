@@ -1,0 +1,4 @@
+outs:
+- md5: 0024f0844ce3f5413fb803f76a28b197
+  size: 54416
+  path: NIP7__fold6-test_y.npy

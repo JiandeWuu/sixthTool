@@ -1,0 +1,4 @@
+outs:
+- md5: e48642453707a53fa89d6e1f800d01c6
+  size: 2132
+  path: pred_proba_perf-True___save_predict___mRNA230719___NIP7___svm_f10_p8_e512_t1000_to1000.json

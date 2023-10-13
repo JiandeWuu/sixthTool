@@ -1,0 +1,4 @@
+outs:
+- md5: 55a19a6b10cb2fcf518c1b623aa0b11c
+  size: 10640576
+  path: ZNF622__fold2-test_x.npy

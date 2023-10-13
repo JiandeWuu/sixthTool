@@ -1,0 +1,4 @@
+outs:
+- md5: a0f8757c0e3b720d3e7c5d215cd44ee2
+  size: 488768
+  path: LSM11__fold5-train_y.npy

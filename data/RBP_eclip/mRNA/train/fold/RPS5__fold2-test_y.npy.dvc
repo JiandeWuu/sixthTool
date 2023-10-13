@@ -1,0 +1,4 @@
+outs:
+- md5: 5ded0909ff1a77de285c586d8c959a27
+  size: 54416
+  path: RPS5__fold2-test_y.npy

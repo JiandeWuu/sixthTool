@@ -1,0 +1,4 @@
+outs:
+- md5: 5e8e2c310c37fb56c9b8c2051097ab57
+  size: 10642144
+  path: LIN28B__fold6-test_x.npy

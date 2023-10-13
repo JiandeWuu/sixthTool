@@ -1,0 +1,4 @@
+outs:
+- md5: e53caab656c6cacabe956e6e15c93140
+  size: 95773568
+  path: BCLAF1__fold6-train_x.npy

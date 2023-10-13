@@ -1,0 +1,4 @@
+outs:
+- md5: 68a1e8d9147d04abf0dd8320e009eb7a
+  size: 95775136
+  path: GTF2F1__fold5-train_x.npy

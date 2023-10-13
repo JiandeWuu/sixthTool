@@ -1,0 +1,4 @@
+outs:
+- md5: 4c4ba4429b7a0d268285f7064756a2f8
+  size: 10642144
+  path: EWSR1__fold8-test_x.npy

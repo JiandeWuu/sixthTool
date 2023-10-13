@@ -1,0 +1,4 @@
+outs:
+- md5: dc9b9451e00edfd307503cf7c76f6f9f
+  size: 54408
+  path: SFPQ__fold0-test_y.npy

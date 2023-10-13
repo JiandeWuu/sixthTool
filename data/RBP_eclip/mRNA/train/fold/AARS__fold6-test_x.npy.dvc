@@ -1,0 +1,4 @@
+outs:
+- md5: 4923007c87dc6a74158027cd5e6fd0b7
+  size: 10642144
+  path: AARS__fold6-test_x.npy

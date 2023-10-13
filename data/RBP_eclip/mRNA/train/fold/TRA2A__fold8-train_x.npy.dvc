@@ -1,0 +1,4 @@
+outs:
+- md5: 70c20b502a1b7a87cbab48ed6fbedb8f
+  size: 95773568
+  path: TRA2A__fold8-train_x.npy

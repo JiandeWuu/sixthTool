@@ -1,0 +1,4 @@
+outs:
+- md5: f15312be7489cc2b6b89dca1d7760f99
+  size: 95773568
+  path: HNRNPC__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: d260ae98617349732a4225a4ae9d80a0
+  size: 10640576
+  path: NOL12__fold8-test_x.npy

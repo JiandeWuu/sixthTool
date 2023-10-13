@@ -1,0 +1,4 @@
+outs:
+- md5: 95fc3547b6478ceddc506f51124a361f
+  size: 10642144
+  path: BUD13__fold9-test_x.npy

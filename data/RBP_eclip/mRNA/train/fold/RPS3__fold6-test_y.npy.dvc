@@ -1,0 +1,4 @@
+outs:
+- md5: 19cb723fec6726a043d38e281791cf5e
+  size: 54424
+  path: RPS3__fold6-test_y.npy

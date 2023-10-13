@@ -1,0 +1,4 @@
+outs:
+- md5: d2db83955f1170c84912da0ee79cf31b
+  size: 95775136
+  path: YWHAG__fold8-train_x.npy

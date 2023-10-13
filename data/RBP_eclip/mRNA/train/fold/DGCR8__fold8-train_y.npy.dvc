@@ -1,0 +1,4 @@
+outs:
+- md5: 54b64d63e9a30d3bd75a4aeda449a013
+  size: 488776
+  path: DGCR8__fold8-train_y.npy

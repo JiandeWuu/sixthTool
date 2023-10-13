@@ -1,0 +1,4 @@
+outs:
+- md5: 44b29cf37ccd045b5af8dc698ad069d0
+  size: 95775136
+  path: TAF15__fold8-train_x.npy

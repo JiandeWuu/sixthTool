@@ -1,0 +1,4 @@
+outs:
+- md5: 99204c4f5546d8dc0079e6a049a72c11
+  size: 54424
+  path: STAU2__fold6-test_y.npy

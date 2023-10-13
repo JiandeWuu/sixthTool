@@ -1,0 +1,4 @@
+outs:
+- md5: 26ec95b3ebd706d1d86360591836129a
+  size: 10640576
+  path: SBDS__fold5-test_x.npy

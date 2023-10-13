@@ -1,0 +1,4 @@
+outs:
+- md5: c00dd67ac3d53f98279f254701f02d1a
+  size: 95773568
+  path: PABPN1__fold3-train_x.npy

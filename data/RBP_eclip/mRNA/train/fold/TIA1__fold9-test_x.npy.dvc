@@ -1,0 +1,4 @@
+outs:
+- md5: 345db2c0dd1e885d29c6cd8088c7f595
+  size: 10642144
+  path: TIA1__fold9-test_x.npy

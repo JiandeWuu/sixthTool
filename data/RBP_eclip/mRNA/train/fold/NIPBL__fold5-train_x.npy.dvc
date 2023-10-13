@@ -1,0 +1,4 @@
+outs:
+- md5: e0516922b70b641d8ae77d4548befbc5
+  size: 95775136
+  path: NIPBL__fold5-train_x.npy

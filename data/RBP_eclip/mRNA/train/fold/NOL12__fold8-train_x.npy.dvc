@@ -1,0 +1,4 @@
+outs:
+- md5: 0f3760c1799ed3216fef0cabb3a9b202
+  size: 95775136
+  path: NOL12__fold8-train_x.npy

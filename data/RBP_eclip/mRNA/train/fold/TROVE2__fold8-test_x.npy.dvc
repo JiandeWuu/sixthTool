@@ -1,0 +1,4 @@
+outs:
+- md5: 288e2d9106b11fa879ca11fd2dd3e8bf
+  size: 10640576
+  path: TROVE2__fold8-test_x.npy

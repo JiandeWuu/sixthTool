@@ -1,0 +1,4 @@
+outs:
+- md5: e5074dee04ad7e5a6d5147e9a0a12b73
+  size: 95773568
+  path: DDX52__fold7-train_x.npy

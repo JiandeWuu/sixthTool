@@ -1,0 +1,4 @@
+outs:
+- md5: aface5582e9bbd3b799138982fc24c7f
+  size: 10640576
+  path: UCHL5__fold6-test_x.npy

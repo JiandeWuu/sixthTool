@@ -1,0 +1,4 @@
+outs:
+- md5: 8bb98006616dcaa45d8e3c33e1ad63d9
+  size: 10640576
+  path: SND1__fold8-test_x.npy

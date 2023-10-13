@@ -1,0 +1,4 @@
+outs:
+- md5: 5a7286af8dc396f3dbbc62a4b9e1da40
+  size: 95775136
+  path: WDR43__fold8-train_x.npy

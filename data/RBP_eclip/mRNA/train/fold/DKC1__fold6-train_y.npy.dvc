@@ -1,0 +1,4 @@
+outs:
+- md5: e3889450e2d9a6c1eb25690b6b46a80e
+  size: 488768
+  path: DKC1__fold6-train_y.npy

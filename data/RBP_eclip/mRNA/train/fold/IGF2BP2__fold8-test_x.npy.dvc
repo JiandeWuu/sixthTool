@@ -1,0 +1,4 @@
+outs:
+- md5: 990173197f0f63ffad24ddc45decafc7
+  size: 10640576
+  path: IGF2BP2__fold8-test_x.npy

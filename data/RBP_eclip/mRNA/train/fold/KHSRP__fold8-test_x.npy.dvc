@@ -1,0 +1,4 @@
+outs:
+- md5: ade4a45e825ac0bd388d5236726c21a1
+  size: 10640576
+  path: KHSRP__fold8-test_x.npy

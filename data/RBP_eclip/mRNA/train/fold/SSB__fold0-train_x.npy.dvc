@@ -1,0 +1,4 @@
+outs:
+- md5: 7ae9ec74e14462493a5775ed3bf5425f
+  size: 95775136
+  path: SSB__fold0-train_x.npy

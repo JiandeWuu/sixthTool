@@ -1,0 +1,4 @@
+outs:
+- md5: bdd1a2774e92504813aefafb593e1796
+  size: 54416
+  path: AATF__fold2-test_y.npy

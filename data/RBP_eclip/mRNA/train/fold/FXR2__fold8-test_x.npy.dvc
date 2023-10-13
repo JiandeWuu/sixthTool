@@ -1,0 +1,4 @@
+outs:
+- md5: 224f2c6cce65c043c7f51a40bba8d9a5
+  size: 10640576
+  path: FXR2__fold8-test_x.npy

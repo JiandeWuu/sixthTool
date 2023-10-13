@@ -1,0 +1,4 @@
+outs:
+- md5: 19409002a93113f28f2f9d98d185e3a9
+  size: 95773568
+  path: MATR3__fold8-train_x.npy

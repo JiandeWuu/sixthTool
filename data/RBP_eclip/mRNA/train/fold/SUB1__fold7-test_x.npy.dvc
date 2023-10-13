@@ -1,0 +1,4 @@
+outs:
+- md5: 34937f56b3e5b028d881cbe5dde4bc6c
+  size: 10642144
+  path: SUB1__fold7-test_x.npy

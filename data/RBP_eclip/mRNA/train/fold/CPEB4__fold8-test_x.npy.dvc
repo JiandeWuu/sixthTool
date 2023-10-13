@@ -1,0 +1,4 @@
+outs:
+- md5: 056c3ef6b74b140d4b07adee19273819
+  size: 10640576
+  path: CPEB4__fold8-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: a10f28d2a0497e3b1486af0309b93ae9
+  size: 95775136
+  path: AQR__fold8-train_x.npy

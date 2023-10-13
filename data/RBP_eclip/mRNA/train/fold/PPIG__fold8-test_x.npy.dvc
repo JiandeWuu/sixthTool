@@ -1,0 +1,4 @@
+outs:
+- md5: 8f16e21b5efe38bacbde4ec7be6fc565
+  size: 10642144
+  path: PPIG__fold8-test_x.npy

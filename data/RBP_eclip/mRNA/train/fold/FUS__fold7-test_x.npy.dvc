@@ -1,0 +1,4 @@
+outs:
+- md5: 683f6becea7778f2e36de7306127c533
+  size: 10642144
+  path: FUS__fold7-test_x.npy

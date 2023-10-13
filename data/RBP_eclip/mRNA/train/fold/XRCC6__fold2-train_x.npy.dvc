@@ -1,0 +1,4 @@
+outs:
+- md5: 149bbf9c61c85a21fb4988c9dd2865b5
+  size: 95775136
+  path: XRCC6__fold2-train_x.npy

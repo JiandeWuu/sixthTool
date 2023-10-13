@@ -1,0 +1,4 @@
+outs:
+- md5: 46b7bc826dce5af8b735da4e41f72213
+  size: 95775136
+  path: MTPAP__fold5-train_x.npy

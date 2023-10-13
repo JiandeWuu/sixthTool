@@ -1,0 +1,4 @@
+outs:
+- md5: 5341f9cc5b3fd842828f56b22db1dc77
+  size: 10642144
+  path: SAFB__fold6-test_x.npy

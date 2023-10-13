@@ -1,0 +1,4 @@
+outs:
+- md5: 5c6ee71ec9361cba3db1e4acc21e12b3
+  size: 10642144
+  path: FAM120A__fold8-test_x.npy

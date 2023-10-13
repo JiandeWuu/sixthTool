@@ -1,0 +1,4 @@
+outs:
+- md5: 6461e60087d85c9976e23f4632199e45
+  size: 3060
+  path: mRNA230719___EFTUD2___svm_f10_p8_e512_t1000_to300__my_perf_val.json

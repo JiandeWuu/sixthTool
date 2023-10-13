@@ -1,0 +1,4 @@
+outs:
+- md5: 1bbb5b90c742ff1c775a4335b6e5ad66
+  size: 10642144
+  path: FTO__fold8-test_x.npy

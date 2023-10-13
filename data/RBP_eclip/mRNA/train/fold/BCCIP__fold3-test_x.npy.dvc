@@ -1,0 +1,4 @@
+outs:
+- md5: c89085ae3779618625b52dffda20034c
+  size: 10642144
+  path: BCCIP__fold3-test_x.npy

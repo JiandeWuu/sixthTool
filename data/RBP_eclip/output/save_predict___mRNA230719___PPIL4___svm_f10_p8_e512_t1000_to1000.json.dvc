@@ -1,0 +1,4 @@
+outs:
+- md5: 3e2178b19b608a152dacf0ce8644d7eb
+  size: 34136882
+  path: save_predict___mRNA230719___PPIL4___svm_f10_p8_e512_t1000_to1000.json

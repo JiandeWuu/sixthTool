@@ -1,0 +1,4 @@
+outs:
+- md5: 998678c9282f16ec93a51319b7767575
+  size: 488776
+  path: SND1__fold8-train_y.npy

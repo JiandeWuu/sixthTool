@@ -1,0 +1,4 @@
+outs:
+- md5: 73f9ba04ef7a795f5bd863e10f4a9ac5
+  size: 10640576
+  path: MTPAP__fold5-test_x.npy

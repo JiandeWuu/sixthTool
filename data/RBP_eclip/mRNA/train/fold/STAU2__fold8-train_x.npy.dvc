@@ -1,0 +1,4 @@
+outs:
+- md5: 8c9cd0ebca97ee3fb3c41be96c595214
+  size: 95773568
+  path: STAU2__fold8-train_x.npy

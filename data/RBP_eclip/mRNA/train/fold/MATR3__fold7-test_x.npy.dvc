@@ -1,0 +1,4 @@
+outs:
+- md5: 6d9c74f004c763f360c7e3401881b9cd
+  size: 10640576
+  path: MATR3__fold7-test_x.npy

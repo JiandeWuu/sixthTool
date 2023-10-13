@@ -1,0 +1,4 @@
+outs:
+- md5: 946768f7376ec7cee0eed166260b7f75
+  size: 10640576
+  path: SDAD1__fold8-test_x.npy

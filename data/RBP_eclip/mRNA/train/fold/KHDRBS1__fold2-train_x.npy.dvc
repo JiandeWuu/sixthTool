@@ -1,0 +1,4 @@
+outs:
+- md5: 2e3e2a32906a61155db098cd1c5c9af9
+  size: 95775136
+  path: KHDRBS1__fold2-train_x.npy

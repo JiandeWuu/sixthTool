@@ -1,0 +1,4 @@
+outs:
+- md5: cd63cfb67b3837cea92b3132785a7f76
+  size: 10640576
+  path: AATF__fold8-test_x.npy

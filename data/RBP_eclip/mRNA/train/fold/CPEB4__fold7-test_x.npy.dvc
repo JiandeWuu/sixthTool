@@ -1,0 +1,4 @@
+outs:
+- md5: a69dade4a1a80bf287efae33c6c3e4fc
+  size: 10642144
+  path: CPEB4__fold7-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 187abbc142fd2f99bf21e1026bac7240
+  size: 54432
+  path: EIF3D__fold9-test_y.npy

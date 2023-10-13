@@ -1,0 +1,4 @@
+outs:
+- md5: fd6752b515dffd946fabdc5dc90f4fcb
+  size: 10642144
+  path: NOL12__fold7-test_x.npy

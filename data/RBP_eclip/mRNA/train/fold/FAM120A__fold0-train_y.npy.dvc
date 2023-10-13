@@ -1,0 +1,4 @@
+outs:
+- md5: 2e8e76e9193fd6caf009dfbfa4dc3dec
+  size: 488784
+  path: FAM120A__fold0-train_y.npy

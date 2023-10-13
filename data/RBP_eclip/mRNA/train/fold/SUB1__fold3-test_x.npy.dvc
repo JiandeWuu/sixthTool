@@ -1,0 +1,4 @@
+outs:
+- md5: cbf892736d02a91c8c38a22d132e7ec0
+  size: 10642144
+  path: SUB1__fold3-test_x.npy

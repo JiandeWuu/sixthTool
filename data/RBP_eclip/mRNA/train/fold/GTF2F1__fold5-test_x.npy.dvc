@@ -1,0 +1,4 @@
+outs:
+- md5: 0596039bc0efccba9c6af74ef2491adc
+  size: 10640576
+  path: GTF2F1__fold5-test_x.npy

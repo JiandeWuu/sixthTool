@@ -1,0 +1,4 @@
+outs:
+- md5: 4ac85e9bc5766abc6ed38c755b50b724
+  size: 34416
+  path: mRNA230719___CSTF2T___svm_f10_p8_e512_t1000_to300__my_perf_val

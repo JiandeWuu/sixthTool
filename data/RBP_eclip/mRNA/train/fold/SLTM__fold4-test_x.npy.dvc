@@ -1,0 +1,4 @@
+outs:
+- md5: bcb432696e12bc3c70ce45d2cc0455a5
+  size: 10642144
+  path: SLTM__fold4-test_x.npy

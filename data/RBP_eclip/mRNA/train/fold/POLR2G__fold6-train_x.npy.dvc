@@ -1,0 +1,4 @@
+outs:
+- md5: 0a768ed8872be2ed5261bffc67402fd1
+  size: 95773568
+  path: POLR2G__fold6-train_x.npy

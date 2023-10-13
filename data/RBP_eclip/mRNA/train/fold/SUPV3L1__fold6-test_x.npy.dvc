@@ -1,0 +1,4 @@
+outs:
+- md5: 23b46561adfc9bb2e5187b1c7ee02fce
+  size: 10642144
+  path: SUPV3L1__fold6-test_x.npy

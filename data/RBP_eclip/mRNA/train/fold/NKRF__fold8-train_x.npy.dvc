@@ -1,0 +1,4 @@
+outs:
+- md5: b5635b0ba61313a7077432672edd9f4f
+  size: 95773568
+  path: NKRF__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 67d92c5322334883aba9a2d62af15595
+  size: 32841336
+  path: save_predict___mRNA230719___KHSRP___svm_f10_p8_e512_t1000_to1000.json

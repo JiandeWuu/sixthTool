@@ -1,0 +1,4 @@
+outs:
+- md5: d59737774f4e3fe6fea920f2cac83edc
+  size: 10640576
+  path: NIP7__fold0-test_x.npy

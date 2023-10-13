@@ -1,0 +1,4 @@
+outs:
+- md5: 5c38792f3f02b3a1b40293d54f393289
+  size: 95773568
+  path: XRN2__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 834d7e1c5b7bdf41aef2cf6c21c1ab6f
+  size: 10640576
+  path: FUS__fold8-test_x.npy

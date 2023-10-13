@@ -1,0 +1,4 @@
+outs:
+- md5: f07c7d7521ab728327c205113cebae04
+  size: 34160108
+  path: save_predict___mRNA230719___AARS___svm_f10_p8_e512_t1000_to1000.json

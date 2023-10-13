@@ -1,0 +1,4 @@
+outs:
+- md5: 01e1bbd8b93c79ffdcf184efa95dd9b6
+  size: 2449947
+  path: mRNA230719___DDX24___svm_f10_p8_e512_t1000_to1000.pickle

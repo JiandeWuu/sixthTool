@@ -1,0 +1,4 @@
+outs:
+- md5: 8057987d8cf84bcf8b835be44b671dfb
+  size: 95773568
+  path: SUGP2__fold4-train_x.npy

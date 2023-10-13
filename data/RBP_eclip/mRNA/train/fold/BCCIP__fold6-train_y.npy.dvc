@@ -1,0 +1,4 @@
+outs:
+- md5: 790502c1b3500665fe464ed8adcf7b9b
+  size: 488768
+  path: BCCIP__fold6-train_y.npy

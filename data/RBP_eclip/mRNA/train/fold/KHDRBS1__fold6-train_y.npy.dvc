@@ -1,0 +1,4 @@
+outs:
+- md5: 150411ae8869a06d77f72e6882427a41
+  size: 488776
+  path: KHDRBS1__fold6-train_y.npy

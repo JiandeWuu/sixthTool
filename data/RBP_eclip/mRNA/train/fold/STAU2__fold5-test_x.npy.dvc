@@ -1,0 +1,4 @@
+outs:
+- md5: 072a4952e15adbf451c9f88ac7b4134e
+  size: 10640576
+  path: STAU2__fold5-test_x.npy

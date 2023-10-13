@@ -1,0 +1,4 @@
+outs:
+- md5: 036a1888756c311e1335866b50cda4a8
+  size: 10642144
+  path: NPM1__fold8-test_x.npy

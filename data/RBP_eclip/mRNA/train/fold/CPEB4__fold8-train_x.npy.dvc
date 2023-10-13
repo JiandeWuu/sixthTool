@@ -1,0 +1,4 @@
+outs:
+- md5: 2d2603b33f11ed6208bb56da0168de13
+  size: 95775136
+  path: CPEB4__fold8-train_x.npy

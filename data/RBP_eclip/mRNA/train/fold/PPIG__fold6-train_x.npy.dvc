@@ -1,0 +1,4 @@
+outs:
+- md5: 6b35ea3d38f6b7695f1704246bdb3c07
+  size: 95773568
+  path: PPIG__fold6-train_x.npy

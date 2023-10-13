@@ -1,0 +1,4 @@
+outs:
+- md5: 29676ad0e4e282ef55693e8be2d9a2f8
+  size: 10642144
+  path: NIPBL__fold8-test_x.npy

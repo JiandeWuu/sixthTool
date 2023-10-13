@@ -1,0 +1,4 @@
+outs:
+- md5: ac550ce2a6eb08a0a5ad45e4f43df8be
+  size: 95773568
+  path: RBM27__fold8-train_x.npy

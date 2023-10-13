@@ -1,0 +1,4 @@
+outs:
+- md5: c13166357f46d1e9c0d8760bd5c3d1e2
+  size: 10642144
+  path: TIAL1__fold8-test_x.npy

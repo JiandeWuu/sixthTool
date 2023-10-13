@@ -1,0 +1,4 @@
+outs:
+- md5: f569db198e113ba03669198559e2b1cb
+  size: 10642144
+  path: CDC40__fold1-test_x.npy

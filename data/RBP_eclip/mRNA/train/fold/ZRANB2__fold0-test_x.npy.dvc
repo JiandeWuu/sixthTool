@@ -1,0 +1,4 @@
+outs:
+- md5: 0b7b6aed995f5daa61ba4c89001d4c7f
+  size: 10640576
+  path: ZRANB2__fold0-test_x.npy

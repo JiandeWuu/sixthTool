@@ -1,0 +1,4 @@
+outs:
+- md5: f4fa71942be654bc8d4a5bbd2b575398
+  size: 10642144
+  path: POLR2G__fold7-test_x.npy

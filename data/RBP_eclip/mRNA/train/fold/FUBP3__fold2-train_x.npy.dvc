@@ -1,0 +1,4 @@
+outs:
+- md5: b05fa344ccf96a7aeeb3ebd1796ea0ad
+  size: 95773568
+  path: FUBP3__fold2-train_x.npy

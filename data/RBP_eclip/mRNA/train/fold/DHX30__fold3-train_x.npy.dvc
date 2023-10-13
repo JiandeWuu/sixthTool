@@ -1,0 +1,4 @@
+outs:
+- md5: 19dca9b751ee6a8c67ce0c67e90b4fbe
+  size: 95773568
+  path: DHX30__fold3-train_x.npy

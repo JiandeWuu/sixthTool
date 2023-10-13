@@ -1,0 +1,4 @@
+outs:
+- md5: 304dc71c88d65fe9955772f616d17bb7
+  size: 34640776
+  path: save_predict___mRNA230719___NSUN2___svm_f10_p8_e512_t1000_to1000.json

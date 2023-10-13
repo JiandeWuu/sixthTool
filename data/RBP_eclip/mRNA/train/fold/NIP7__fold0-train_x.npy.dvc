@@ -1,0 +1,4 @@
+outs:
+- md5: d49b020d529032398e1ff3f3da0288d3
+  size: 95775136
+  path: NIP7__fold0-train_x.npy

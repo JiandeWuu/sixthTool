@@ -1,0 +1,4 @@
+outs:
+- md5: 180c886eb32338ceb3dfce1669297806
+  size: 95773568
+  path: EWSR1__fold8-train_x.npy

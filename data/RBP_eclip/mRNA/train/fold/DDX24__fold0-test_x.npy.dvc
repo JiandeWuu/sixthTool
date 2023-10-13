@@ -1,0 +1,4 @@
+outs:
+- md5: 6f7c6c96f1a87c213053eb16253756fc
+  size: 10640576
+  path: DDX24__fold0-test_x.npy

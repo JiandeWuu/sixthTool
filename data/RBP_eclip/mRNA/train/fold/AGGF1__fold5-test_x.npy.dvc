@@ -1,0 +1,4 @@
+outs:
+- md5: 5179fe27b825a88fb520e45d06e0b10c
+  size: 10640576
+  path: AGGF1__fold5-test_x.npy

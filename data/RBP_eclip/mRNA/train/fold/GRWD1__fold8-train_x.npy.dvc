@@ -1,0 +1,4 @@
+outs:
+- md5: 82e8510b49cfff42a46c59e347dbdd7f
+  size: 95773568
+  path: GRWD1__fold8-train_x.npy

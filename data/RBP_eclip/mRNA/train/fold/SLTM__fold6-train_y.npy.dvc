@@ -1,0 +1,4 @@
+outs:
+- md5: d9f73a53e67a082417540210461fe0a3
+  size: 488768
+  path: SLTM__fold6-train_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 4e18b92f8d0c4cbb9356763ea45243fa
+  size: 95775136
+  path: QKI__fold5-train_x.npy

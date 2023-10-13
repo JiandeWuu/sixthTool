@@ -1,0 +1,4 @@
+outs:
+- md5: 480de265794d3db0bd80fdc1865a43c1
+  size: 2261
+  path: mRNA230719___DROSHA___svm_f10_p8_e512_t1000_to1000.json

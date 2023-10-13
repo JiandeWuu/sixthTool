@@ -1,0 +1,4 @@
+outs:
+- md5: 95e3d801a20af22e7d931bb124a191f2
+  size: 95773568
+  path: LIN28B__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 138cc6fd2b76b4c5185e167d975937f5
+  size: 95775136
+  path: PUM1__fold0-train_x.npy

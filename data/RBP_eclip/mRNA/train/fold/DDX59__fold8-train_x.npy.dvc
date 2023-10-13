@@ -1,0 +1,4 @@
+outs:
+- md5: fa7d296b93da5686d8c5f4c20da1d299
+  size: 95773568
+  path: DDX59__fold8-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: a039ceb9dcd50c1b11ccde7e5b69f1a7
+  size: 488768
+  path: MATR3__fold6-train_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: db2d2ea17269d4296bcaff03af7069fb
+  size: 10640576
+  path: SUB1__fold8-test_x.npy

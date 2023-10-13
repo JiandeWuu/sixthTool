@@ -1,0 +1,4 @@
+outs:
+- md5: 85a1a3ca21fb9fac82c85811e9b8756f
+  size: 10640576
+  path: XRCC6__fold0-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 80f02ba8cc18ea1116f703d2c2837a48
+  size: 95773568
+  path: PTBP1__fold6-train_x.npy

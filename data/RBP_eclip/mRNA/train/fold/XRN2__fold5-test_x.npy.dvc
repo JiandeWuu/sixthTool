@@ -1,0 +1,4 @@
+outs:
+- md5: 0c6a4476b4e0c4cd8a552025bede8e8b
+  size: 10640576
+  path: XRN2__fold5-test_x.npy

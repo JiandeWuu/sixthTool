@@ -1,0 +1,4 @@
+outs:
+- md5: 7b4d9c7a79c413132dd75e492a43cbcb
+  size: 95773568
+  path: SBDS__fold7-train_x.npy

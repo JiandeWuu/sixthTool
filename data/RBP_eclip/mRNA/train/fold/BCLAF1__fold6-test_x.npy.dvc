@@ -1,0 +1,4 @@
+outs:
+- md5: 27b3709f683fe8ad0150160d2a097f35
+  size: 10642144
+  path: BCLAF1__fold6-test_x.npy

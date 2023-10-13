@@ -1,0 +1,4 @@
+outs:
+- md5: 7e5c147a133c37faf4f019fe567f09c7
+  size: 95775136
+  path: YWHAG__fold6-train_x.npy

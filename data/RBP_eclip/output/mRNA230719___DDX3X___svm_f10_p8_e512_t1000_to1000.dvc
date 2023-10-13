@@ -1,0 +1,4 @@
+outs:
+- md5: fccd3eb79528272a0ac3f59e6920ab75
+  size: 42002
+  path: mRNA230719___DDX3X___svm_f10_p8_e512_t1000_to1000

@@ -1,0 +1,4 @@
+outs:
+- md5: 94b0caf84276d3de612a3ad47fa0a192
+  size: 10642144
+  path: DHX30__fold1-test_x.npy

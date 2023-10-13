@@ -1,0 +1,4 @@
+outs:
+- md5: cf9419906a4b9cac31bed7c2c71a94b2
+  size: 10642144
+  path: FTO__fold7-test_x.npy

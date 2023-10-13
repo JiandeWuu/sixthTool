@@ -1,0 +1,4 @@
+outs:
+- md5: 00fb4acbad226f2ad81eab5fc0ce3dbb
+  size: 488776
+  path: TROVE2__fold8-train_y.npy

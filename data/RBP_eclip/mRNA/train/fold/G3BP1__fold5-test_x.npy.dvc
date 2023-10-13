@@ -1,0 +1,4 @@
+outs:
+- md5: 018660f2a5eb24897d70da4a4905d676
+  size: 10640576
+  path: G3BP1__fold5-test_x.npy

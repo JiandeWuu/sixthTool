@@ -1,0 +1,4 @@
+outs:
+- md5: a70a45178ef0f636665434fb48574421
+  size: 10642144
+  path: SAFB__fold2-test_x.npy

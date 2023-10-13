@@ -1,0 +1,4 @@
+outs:
+- md5: 774ff78e0c5eacbdab95400cc54ffd8a
+  size: 95773568
+  path: FASTKD2__fold1-train_x.npy

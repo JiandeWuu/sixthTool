@@ -1,0 +1,4 @@
+outs:
+- md5: c99d01b82496da1f1bf060c41a3f9a3d
+  size: 488776
+  path: FXR1__fold8-train_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 33a078942cdbf9aa16d14b13b5751866
+  size: 10640576
+  path: RBM22__fold6-test_x.npy

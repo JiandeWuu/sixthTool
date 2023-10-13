@@ -1,0 +1,4 @@
+outs:
+- md5: 1c040b78ab8eeb2c16389203e7f39f62
+  size: 10642144
+  path: EIF3G__fold6-test_x.npy

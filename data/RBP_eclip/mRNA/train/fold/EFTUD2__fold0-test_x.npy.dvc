@@ -1,0 +1,4 @@
+outs:
+- md5: 85b13d6276add04d42784f1f9837c580
+  size: 10640576
+  path: EFTUD2__fold0-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 081aabb40558c7e3221e07a93d2bc34e
+  size: 10640576
+  path: SUPV3L1__fold5-test_x.npy

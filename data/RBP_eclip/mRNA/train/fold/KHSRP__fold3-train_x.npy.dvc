@@ -1,0 +1,4 @@
+outs:
+- md5: 23f2e73ec01e7cd98d6c82c3e7e6414e
+  size: 95773568
+  path: KHSRP__fold3-train_x.npy

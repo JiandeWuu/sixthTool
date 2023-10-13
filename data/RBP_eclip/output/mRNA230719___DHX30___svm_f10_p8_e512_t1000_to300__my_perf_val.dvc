@@ -1,0 +1,4 @@
+outs:
+- md5: 5ac00e219cbc4ea1d694bb29826294ac
+  size: 26031
+  path: mRNA230719___DHX30___svm_f10_p8_e512_t1000_to300__my_perf_val

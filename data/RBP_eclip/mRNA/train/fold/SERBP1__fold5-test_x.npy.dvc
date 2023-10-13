@@ -1,0 +1,4 @@
+outs:
+- md5: 82a5755c76cee38904c5ef2e65240374
+  size: 10640576
+  path: SERBP1__fold5-test_x.npy

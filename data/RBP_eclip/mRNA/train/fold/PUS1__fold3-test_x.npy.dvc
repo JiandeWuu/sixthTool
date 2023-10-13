@@ -1,0 +1,4 @@
+outs:
+- md5: 33b72bf8f3ce1017fb3161ceb0e7d76a
+  size: 10640576
+  path: PUS1__fold3-test_x.npy

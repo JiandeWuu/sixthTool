@@ -1,0 +1,4 @@
+outs:
+- md5: 253ccd4a1bf26582bee89c906b71ebf9
+  size: 488768
+  path: NONO__fold8-train_y.npy

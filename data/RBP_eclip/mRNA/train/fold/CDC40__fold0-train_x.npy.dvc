@@ -1,0 +1,4 @@
+outs:
+- md5: 4a357bd90d2ca6d413b50e09688be3c9
+  size: 95775136
+  path: CDC40__fold0-train_x.npy

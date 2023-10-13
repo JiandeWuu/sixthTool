@@ -1,0 +1,4 @@
+outs:
+- md5: e5c2be2956a0cfc966cc0ddb9c67e1b3
+  size: 10640576
+  path: SLTM__fold2-test_x.npy

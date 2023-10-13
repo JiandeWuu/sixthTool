@@ -1,0 +1,4 @@
+outs:
+- md5: 037f64a06a8738026ece34a50ac7ef00
+  size: 488768
+  path: GPKOW__fold2-train_y.npy

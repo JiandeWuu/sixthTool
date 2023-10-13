@@ -1,0 +1,4 @@
+outs:
+- md5: 34749011737f6eb60cbe7d15b5243c3d
+  size: 95772000
+  path: FUS__fold9-train_x.npy

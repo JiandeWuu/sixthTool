@@ -1,0 +1,4 @@
+outs:
+- md5: 1fe24fd52fc74b3f320f6e56478a007a
+  size: 10642144
+  path: DGCR8__fold7-test_x.npy

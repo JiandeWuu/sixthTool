@@ -1,0 +1,4 @@
+outs:
+- md5: e4e706a3ea2a3ee9fcc90a8adbc35aa0
+  size: 54432
+  path: ZNF800__fold9-test_y.npy

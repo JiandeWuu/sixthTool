@@ -1,0 +1,4 @@
+outs:
+- md5: 8607b095fea548e8018bf34b9961fd5e
+  size: 33991936
+  path: save_predict___mRNA230719___DGCR8___svm_f10_p8_e512_t1000_to1000.json

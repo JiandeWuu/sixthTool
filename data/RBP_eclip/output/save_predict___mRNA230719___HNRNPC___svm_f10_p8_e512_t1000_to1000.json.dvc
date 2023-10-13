@@ -1,0 +1,4 @@
+outs:
+- md5: d24f436aa897b39c7ad3e0aa19dd813a
+  size: 34234100
+  path: save_predict___mRNA230719___HNRNPC___svm_f10_p8_e512_t1000_to1000.json

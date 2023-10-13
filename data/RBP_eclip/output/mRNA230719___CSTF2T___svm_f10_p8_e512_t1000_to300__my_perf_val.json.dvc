@@ -1,0 +1,4 @@
+outs:
+- md5: 621bb008bbd3e1c92af232cecab7ffaa
+  size: 2455
+  path: mRNA230719___CSTF2T___svm_f10_p8_e512_t1000_to300__my_perf_val.json

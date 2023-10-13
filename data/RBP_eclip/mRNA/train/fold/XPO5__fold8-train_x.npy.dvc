@@ -1,0 +1,4 @@
+outs:
+- md5: 30899c5123d2a9d49e4afc05e96ee537
+  size: 95773568
+  path: XPO5__fold8-train_x.npy

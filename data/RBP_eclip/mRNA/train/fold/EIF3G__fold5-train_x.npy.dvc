@@ -1,0 +1,4 @@
+outs:
+- md5: fadbe91e6bcd3894892546b845b439db
+  size: 95775136
+  path: EIF3G__fold5-train_x.npy

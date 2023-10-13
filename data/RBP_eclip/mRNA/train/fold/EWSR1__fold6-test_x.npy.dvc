@@ -1,0 +1,4 @@
+outs:
+- md5: a428164f7e192b200e873d12b4097349
+  size: 10642144
+  path: EWSR1__fold6-test_x.npy

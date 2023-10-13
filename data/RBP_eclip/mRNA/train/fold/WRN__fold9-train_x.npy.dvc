@@ -1,0 +1,4 @@
+outs:
+- md5: d4c618789e346354bf4193c7506b0512
+  size: 95772000
+  path: WRN__fold9-train_x.npy

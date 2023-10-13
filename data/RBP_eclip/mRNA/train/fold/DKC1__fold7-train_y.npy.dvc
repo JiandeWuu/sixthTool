@@ -1,0 +1,4 @@
+outs:
+- md5: 27a1cb9efe5a5ce2b4252e24e29e4ab0
+  size: 488768
+  path: DKC1__fold7-train_y.npy

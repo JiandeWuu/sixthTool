@@ -1,0 +1,4 @@
+outs:
+- md5: 3c370bf776a1f924615e296d3b11bf68
+  size: 54424
+  path: CPEB4__fold2-test_y.npy

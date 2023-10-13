@@ -1,0 +1,4 @@
+outs:
+- md5: e28e0b14121288356c2143753b0e7e0d
+  size: 10640576
+  path: MATR3__fold0-test_x.npy

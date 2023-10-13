@@ -1,0 +1,4 @@
+outs:
+- md5: e9ee2f63bc3fff6976a99ac33e3eb202
+  size: 33326814
+  path: save_predict___mRNA230719___CSTF2T___svm_f10_p8_e512_t1000_to1000.json

@@ -1,0 +1,4 @@
+outs:
+- md5: 6e0c7951c386b3da756a1e70fe2aa915
+  size: 33324398
+  path: save_predict___mRNA230719___FASTKD2___svm_f10_p8_e512_t1000_to1000.json

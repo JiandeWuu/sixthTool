@@ -1,0 +1,4 @@
+outs:
+- md5: 843fe17b87f112b4908351b5dcf26f93
+  size: 95773568
+  path: RPS5__fold7-train_x.npy

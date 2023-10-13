@@ -1,0 +1,4 @@
+outs:
+- md5: 744b4e1a448857d463a229d664ebcb4a
+  size: 10642144
+  path: TRA2A__fold7-test_x.npy

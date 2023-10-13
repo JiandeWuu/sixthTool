@@ -1,0 +1,4 @@
+outs:
+- md5: 42977222e5195e1b79a8de1449f560a8
+  size: 10642144
+  path: TAF15__fold7-test_x.npy

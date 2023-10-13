@@ -1,0 +1,4 @@
+outs:
+- md5: 9b10b5b9c80f6c8ef0c8da5845d5bff2
+  size: 488776
+  path: HNRNPA1__fold5-train_y.npy

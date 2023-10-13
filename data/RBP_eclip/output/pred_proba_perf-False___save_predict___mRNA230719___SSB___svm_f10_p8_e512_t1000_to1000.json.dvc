@@ -1,0 +1,4 @@
+outs:
+- md5: 21a89477c65c75bf718ab06b2d4895d7
+  size: 2078
+  path: pred_proba_perf-False___save_predict___mRNA230719___SSB___svm_f10_p8_e512_t1000_to1000.json

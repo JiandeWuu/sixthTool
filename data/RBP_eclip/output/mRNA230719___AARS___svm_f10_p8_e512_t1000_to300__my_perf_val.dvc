@@ -1,0 +1,4 @@
+outs:
+- md5: 5a13ad3601d2cabf7307c7c1bf96c053
+  size: 42102
+  path: mRNA230719___AARS___svm_f10_p8_e512_t1000_to300__my_perf_val

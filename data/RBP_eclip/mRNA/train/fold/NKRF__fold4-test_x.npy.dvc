@@ -1,0 +1,4 @@
+outs:
+- md5: 088b8dab73c43f5aea002adca8f532d8
+  size: 10642144
+  path: NKRF__fold4-test_x.npy

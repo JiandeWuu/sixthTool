@@ -1,0 +1,4 @@
+outs:
+- md5: 3d521f9abf5a971e98c609ceb9f1d4ff
+  size: 488776
+  path: ZNF622__fold2-train_y.npy

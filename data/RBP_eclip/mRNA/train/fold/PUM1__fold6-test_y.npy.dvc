@@ -1,0 +1,4 @@
+outs:
+- md5: 097c916abb941b0628100040ebe21eaf
+  size: 54424
+  path: PUM1__fold6-test_y.npy

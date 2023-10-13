@@ -1,0 +1,4 @@
+outs:
+- md5: c5223a50c3b7222b866940689ffc24b4
+  size: 95775136
+  path: TROVE2__fold0-train_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 43e11fd29d8b18d30aa874286f3d9584
+  size: 2260
+  path: mRNA230719___FAM120A___svm_f10_p8_e512_t1000_to1000.json

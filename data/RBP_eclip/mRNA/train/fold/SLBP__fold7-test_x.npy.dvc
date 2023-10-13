@@ -1,0 +1,4 @@
+outs:
+- md5: 01bf0b5b0b3ef3c5ce5f767d35be11e0
+  size: 10642144
+  path: SLBP__fold7-test_x.npy

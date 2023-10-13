@@ -1,0 +1,4 @@
+outs:
+- md5: 3eaee2204d8aa89a02e8b8e30a5e0e3d
+  size: 10642144
+  path: TRA2A__fold4-test_x.npy

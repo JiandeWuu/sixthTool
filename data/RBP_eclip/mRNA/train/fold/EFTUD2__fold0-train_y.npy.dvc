@@ -1,0 +1,4 @@
+outs:
+- md5: a6a2874234d51747ae1f4772d6f940b0
+  size: 488776
+  path: EFTUD2__fold0-train_y.npy

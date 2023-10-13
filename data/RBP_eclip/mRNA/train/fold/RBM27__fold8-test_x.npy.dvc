@@ -1,0 +1,4 @@
+outs:
+- md5: 1eaa15642f98446eb5af0524b46f8980
+  size: 10642144
+  path: RBM27__fold8-test_x.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: dbe4ac8244cbf71317e63b574f3bb4cc
+  size: 95775136
+  path: DDX24__fold3-train_x.npy

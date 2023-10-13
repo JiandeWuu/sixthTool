@@ -1,0 +1,4 @@
+outs:
+- md5: 19f563640d51c4d5bdae071b8fa2599f
+  size: 10642144
+  path: FASTKD2__fold9-test_x.npy

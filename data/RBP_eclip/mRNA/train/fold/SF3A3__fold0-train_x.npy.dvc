@@ -1,0 +1,4 @@
+outs:
+- md5: 91d786b0752196727f42f0acfce93b27
+  size: 95775136
+  path: SF3A3__fold0-train_x.npy

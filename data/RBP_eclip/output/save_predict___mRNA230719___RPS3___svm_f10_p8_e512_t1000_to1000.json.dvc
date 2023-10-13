@@ -1,0 +1,4 @@
+outs:
+- md5: 5f6d490206d17ee725e8630743b9d726
+  size: 32960441
+  path: save_predict___mRNA230719___RPS3___svm_f10_p8_e512_t1000_to1000.json

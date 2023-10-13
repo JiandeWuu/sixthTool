@@ -1,0 +1,4 @@
+outs:
+- md5: eecf2cfd4efae969cb6fc57e7afabaaf
+  size: 95773568
+  path: AUH__fold8-train_x.npy

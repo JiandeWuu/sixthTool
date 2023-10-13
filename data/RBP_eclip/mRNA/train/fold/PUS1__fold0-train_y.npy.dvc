@@ -1,0 +1,4 @@
+outs:
+- md5: a90c056d62b9a802730389734f59e9ce
+  size: 488776
+  path: PUS1__fold0-train_y.npy

@@ -1,0 +1,4 @@
+outs:
+- md5: 0c05594ce676337b4cb74d9e3f115694
+  size: 54416
+  path: WRN__fold7-test_y.npy

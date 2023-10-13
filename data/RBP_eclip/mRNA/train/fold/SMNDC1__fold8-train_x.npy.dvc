@@ -1,0 +1,4 @@
+outs:
+- md5: 87dce61d1c3f17b652401683340f2c1e
+  size: 95773568
+  path: SMNDC1__fold8-train_x.npy

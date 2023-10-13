@@ -1,0 +1,4 @@
+outs:
+- md5: e66bcb0003c0356f2a32d9a6efadd035
+  size: 488768
+  path: TRA2A__fold6-train_y.npy
