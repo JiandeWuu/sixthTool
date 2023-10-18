@@ -16,3 +16,7 @@
 /transcript2pse_in_one\*rbp_pvalue__cutoff10-3.csv
 /transcript2pse_in_one\*rbp__col.npy
 /transcript2rbp_pvalue__col.npy
+/mRNA230719_RBPeclip_model__has_loc_predict_auto_cutoff.csv
+/mRNA230719_RBPeclip_model__has_loc_predict_auto_cutoff.npy
+/mRNA230719_RBPeclip_model__has_loc_predict_proba.csv
+/mRNA230719_RBPeclip_model__has_loc_predict_proba.npy

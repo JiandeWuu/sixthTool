@@ -156,7 +156,7 @@ def svm_tuned_auroc(x_train, y_train, x_test, y_test, kernel='C_linear', C=0, lo
         classifier, kernel = kernel.split("_")
         model = svm_train_model(x_train, y_train, classifier, kernel, C, logGamma, degree, coef0, n, max_iter, log=True)
         y_pred = model.predict(x_test)
-        y_pred_proba = model.predict_proba(x_test)
+        y_pred_proba = model.predict_proba(x_test)[:, 1]
         pref_val = get_performance_value(y=y_test, y_pred=y_pred, y_pred_proba=y_pred_proba)
     except Exception as e:
         print("error return 0.", e)
